@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class TilePuzzle : MonoBehaviour
 {
-    public Vector2[] placeablepoints;
+    public Vector2[] snapablePoints;
+    public int[] idSolution;
     public double snapRadius = 0.25;
     //public Sprite spritevar;
     private List<Transform> tiles = new List<Transform>();
@@ -22,24 +23,41 @@ public class TilePuzzle : MonoBehaviour
     void Update()
     {
 
-        foreach(Transform tile in tiles)
-        {
-            //tile.position += Vector3.right * Time.deltaTime;
-        }
     }
 
     public void snap(Tile tile)
     {
-        foreach (Vector2 point in placeablepoints)
+        foreach (Vector2 point in snapablePoints)
         {
             if (Vector2.Distance(point, new Vector2(tile.transform.position.x, tile.transform.position.y)) < snapRadius){
-                Debug.Log(new Vector2(tile.transform.position.x, tile.transform.position.y));
-                Debug.Log(point);
-                Debug.Log(Vector2.Distance(point, new Vector2(tile.transform.position.x, tile.transform.position.y)));
-                Debug.Log(snapRadius);
                 tile.transform.localPosition = point;
+                check();
+                break;
             }
         }
+    }
+    // check if puzzle is solved;
+    private void check()
+    {
+        for (int i = 0; i < snapablePoints.Length; i++)
+        {
+            bool hasTile = false;
+            foreach (Transform tile in tiles)
+            {
+                if (tile.position.x == snapablePoints[i].x && tile.position.y == snapablePoints[i].y && tile.gameObject.GetComponent<Tile>().id == idSolution[i])
+                {
+                    hasTile = true;
+                    break;
+                }
+            }
+
+            if (!hasTile)
+            {
+                return;
+            }
+        }
+
+        Debug.Log("Solved!");
     }
 }
 

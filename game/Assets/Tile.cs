@@ -9,13 +9,13 @@ public class Tile : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private Vector2 clickPosition;
