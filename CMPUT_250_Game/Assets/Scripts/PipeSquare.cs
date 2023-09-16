@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PipeSquare
 {
-    private readonly GameObject prefab;
+    public static GameObject prefab;
 
     private GameObject obj;
-    public int rotation = 0;
+    private Sprite emptySprite;
+    private Sprite waterSprite;
 
+    private bool hasWater = false;
+    public int rotation = 0;
+    
 
     private static HashSet<int>[] neighbours =
     {
@@ -20,20 +24,23 @@ public class PipeSquare
     };
     private Vector3[] directions = { Vector3.right, Vector3.down, Vector3.left, Vector3.up };
 
-    public PipeSquare(int x, int y, int pipeType, int rotation, GameObject pipePrefab)
+    public PipeSquare(int x, int y, int pipeType, int rotation, Sprite emSprite, Sprite watSprite)
     {
         X = x;
         Y = y;
         PipeType = pipeType;
-        prefab = pipePrefab;
         DefaultRotation = rotation;
+
+        waterSprite= watSprite;
+        emptySprite = emSprite;
 
         this.obj = Object.Instantiate(prefab, new Vector3(x, y, 0f), Quaternion.identity);
 
         SetRotation(rotation);
+        SetWater(false);
     }
 
-    public PipeSquare(int x, int y, int pipeType, int rotation, GameObject pipePrefab, string name) : this(x, y, pipeType, rotation, pipePrefab)
+    public PipeSquare(int x, int y, int pipeType, int rotation, Sprite emSprite, Sprite watSprite, string name) : this(x, y, pipeType, rotation, emSprite, watSprite)
     {
         Name = name;
     }
@@ -63,6 +70,19 @@ public class PipeSquare
         Debug.Log("rotate" + rotation);
 
         obj.transform.RotateAround(new Vector3(X + 0.5f, Y + 0.5f, obj.transform.position.z), new Vector3(0, 0, 1), -90);
+    }
+
+    public virtual void SetWater(bool has)
+    {
+        hasWater = has;
+        if (hasWater)
+        {
+            obj.GetComponent<SpriteRenderer>().sprite = waterSprite;
+        }
+        else
+        {
+            obj.GetComponent<SpriteRenderer>().sprite = emptySprite;
+        }
     }
 
     public HashSet<PipeSquare> GetNeighbours(PipeSquare[,] grid)

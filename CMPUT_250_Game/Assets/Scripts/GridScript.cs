@@ -8,20 +8,31 @@ public class GridScript : MonoBehaviour
     public static int GRID_HALF_SIZE = 4;
     public static int GRID_SIZE = (GRID_HALF_SIZE * 2 + 1) + 2;
 
-    public GameObject pipeCorner;
-    public GameObject pipeStraight;
-    public GameObject pipeIntersection;
-    public GameObject pipeStart;
-    public GameObject door;
+    public Sprite pipeCorner;
+    public Sprite pipeStraight;
+    public Sprite pipeIntersection;
+    public Sprite pipeStart;
+    public Sprite door;
+
+    public Sprite pipeWaterCorner;
+    public Sprite pipeWaterStraight;
+    public Sprite pipeWaterIntersection;
+    public Sprite pipeWaterStart;
+    public Sprite doorWater;
+
+    public GameObject pipePrefab;
 
     public PipeSquare[,] pipeGrid = new PipeSquare[GRID_SIZE, GRID_SIZE];
-    public PipeSquare[] doors;
+    public DoorSquare[] doors;
     public PipeSquare start;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] pipeTypes = { pipeCorner, pipeStraight, pipeIntersection, pipeStart, door};
+        PipeSquare.prefab = pipePrefab;
+        Sprite[] pipeSprites = { pipeCorner, pipeStraight, pipeIntersection, pipeStart, door};
+        Sprite[] pipeWaterSprites = { pipeWaterCorner, pipeWaterStraight, pipeWaterIntersection, pipeWaterStart, doorWater };
+
         for (int x=-GRID_HALF_SIZE; x<= GRID_HALF_SIZE; x++)
         {
             for(int y=-GRID_HALF_SIZE; y<= GRID_HALF_SIZE; y++)
@@ -31,12 +42,18 @@ public class GridScript : MonoBehaviour
                 int pipeType = Random.Range(0, 3);
                 int rotation = Random.Range(0, 4);
 
-                pipeGrid[GetArrayLoc(x), GetArrayLoc(y)] = new PipeSquare(x,y,pipeType,rotation, pipeTypes[pipeType]);
+                pipeGrid[GetArrayLoc(x), GetArrayLoc(y)] = new PipeSquare(x,y,pipeType,rotation, pipeSprites[pipeType], pipeWaterSprites[pipeType]);
             }
         }
 
-        doors = new PipeSquare[]{ new PipeSquare(0, GRID_HALF_SIZE + 1, 4, 0, door, "Top"), new PipeSquare(-GRID_HALF_SIZE - 1, 0, 4, 3, door, "Left"), new PipeSquare(0, -GRID_HALF_SIZE - 1, 4, 2, door, "Bottom"), new PipeSquare(GRID_HALF_SIZE + 1, 0, 4, 1, door, "Right") };
-        start = new PipeSquare(0, 0, 3, 0, pipeStart);
+        doors = new DoorSquare[]
+        { 
+            new DoorSquare(0, GRID_HALF_SIZE + 1, 4, 0, door, doorWater, "Top"), 
+            new DoorSquare(-GRID_HALF_SIZE - 1, 0, 4, 3, door, doorWater, "Left"), 
+            new DoorSquare(0, -GRID_HALF_SIZE - 1, 4, 2, door, doorWater, "Bottom"), 
+            new DoorSquare(GRID_HALF_SIZE + 1, 0, 4, 1, door, doorWater, "Right") 
+        };
+        start = new PipeSquare(0, 0, 3, 0, pipeStart, pipeWaterStart);
 
         pipeGrid[GRID_HALF_SIZE + 1, GRID_HALF_SIZE + 1] = start;   
         pipeGrid[GetArrayLoc(-GRID_HALF_SIZE - 1),GetArrayLoc(0)] = doors[1];//left
@@ -55,6 +72,7 @@ public class GridScript : MonoBehaviour
         
     }
 
+
     void Rotate()
     {
         int x = Mathf.FloorToInt(PlayerScript.player.transform.position.x);
@@ -63,38 +81,30 @@ public class GridScript : MonoBehaviour
 
         PipeSquare pipe = pipeGrid[GetArrayLoc(x), GetArrayLoc(y)];
         pipe.Rotate();
-        CheckDoors();
+        Flow();
     }
 
-    void CheckDoors()
+    public void Flow()
     {
 
-        string found = "Found: ";
-        foreach (PipeSquare door in doors)
+        for(int i=0; i<GRID_SIZE; i++)
         {
-            if (CheckDoor(door))
+            for(int j=0; j<GRID_SIZE; j++)
             {
-                found += door.Name + ", ";
+                PipeSquare s = pipeGrid[i, j];
+                s?.SetWater(false);
             }
         }
-        Debug.Log(found);   
-    }
 
-    bool CheckDoor(PipeSquare door)
-    {
         bool[,] checkedGrid = new bool[GRID_SIZE, GRID_SIZE];
         Queue<PipeSquare> queue = new Queue<PipeSquare>();
-        queue.Enqueue(door);
-        
+        queue.Enqueue(start);
+
         while(queue.Count > 0)
         {
             PipeSquare pipe = queue.Dequeue();
+            pipe.SetWater(true);
             checkedGrid[GetArrayLoc(pipe.X), GetArrayLoc(pipe.Y)] = true;
-
-            if (pipe == start)
-            {
-                return true;
-            }
 
             HashSet<PipeSquare> neighbours = pipe.GetNeighbours(pipeGrid);
             foreach (PipeSquare neighbour in neighbours)
@@ -106,14 +116,10 @@ public class GridScript : MonoBehaviour
                         //Not already checked
                         queue.Enqueue(neighbour);
                     }
-                    
+
                 }
             }
         }
-        return false;
-        
-
-        
     }
 
     public static int GetArrayLoc(int gridLoc)
