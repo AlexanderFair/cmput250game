@@ -39,7 +39,7 @@ public class MovingButton : DisplayUIRoomObject
 
     public void FinishedUI(GameObject o)
     {
-        Debug.Log("Clicked");
         UIObjectClass.DestroyUIObject(o);
+        Debug.Log(UIObjectClass.IsUIActive());
     }
 }

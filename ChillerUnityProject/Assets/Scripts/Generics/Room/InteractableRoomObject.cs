@@ -14,14 +14,16 @@ public abstract class InteractableRoomObject : RoomObjectClass
     /* The collider for the obect */
     public Collider2D interactableCollider;
 
+    public Settings.Controls interactionControl = Settings.Controls.Interact;
+
     private bool _interactable = false;
     public bool Interactable { get { return _interactable; } }
 
     protected override void UpdateRoomObject()
     {
         _interactable = interactableCollider.Distance(Player.Instance.interactCollider).distance
-                        < Settings.Player.InteractDistance;
-        if (Input.GetKeyDown(Settings.Controls.Interact) &&
+                        < Settings.FloatValues.PlayerInteractDistance.Get();
+        if (Input.GetKeyDown(interactionControl.Get()) &&
             _interactable && Condition())
         {
             Interact();

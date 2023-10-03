@@ -55,7 +55,7 @@ public abstract class UIObjectClass : MonoBehaviour
      * 
      * If the UI is enabled and this is the only object, the UI is disabled.
      */
-    void OnDestory()
+    void OnDestroy()
     {
         RemoveGameObject(gameObject);
         OnDestroyUIObject();
@@ -151,7 +151,7 @@ public abstract class UIObjectClass : MonoBehaviour
      * Adds a game object to the list of current game objects
      * Enables the ui if the ui is not enabled
      */
-    protected static void AddGameObject(GameObject g)
+    private static void AddGameObject(GameObject g)
     {
         currentUIObjects.Add(g);
         EnableUI();
@@ -161,7 +161,7 @@ public abstract class UIObjectClass : MonoBehaviour
      * Removes a game object from the list of current game objects
      * If no more game objects exists, the ui is disabled.
      */
-    protected static void RemoveGameObject(GameObject g)
+    private static void RemoveGameObject(GameObject g)
     {
         currentUIObjects.Remove(g);
         if (currentUIObjects.Count == 0)
