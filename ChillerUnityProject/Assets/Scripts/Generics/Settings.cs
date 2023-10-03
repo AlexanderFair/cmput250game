@@ -22,4 +22,5 @@ public static class Settings
          */
         public static float InteractDistance = 1f;
     }
+
 }
