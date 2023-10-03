@@ -28,5 +28,5 @@ public abstract class RoomObjectClass : MonoBehaviour
     }
 
     /* Called when the object is updated and the UI and Menu is not active */
-    public abstract void UpdateRoomObject();
+    protected abstract void UpdateRoomObject();
 }

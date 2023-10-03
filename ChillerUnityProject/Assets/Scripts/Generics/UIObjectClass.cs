@@ -64,17 +64,17 @@ public abstract class UIObjectClass : MonoBehaviour
     /* 
      * Called when the objcet is first created 
      */
-    public virtual void AwakeUIObject() { }
+    protected virtual void AwakeUIObject() { }
 
     /* 
      * Called when the object is destroyed 
      */
-    public virtual void OnDestroyUIObject() { }
+    protected virtual void OnDestroyUIObject() { }
 
     /*
      * Called each frame when the UI is enabled and the Menu is not active
      */
-    public abstract void UpdateUIObject();
+    protected abstract void UpdateUIObject();
 
 
 

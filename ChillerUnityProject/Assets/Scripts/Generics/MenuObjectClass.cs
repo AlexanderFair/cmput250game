@@ -64,17 +64,17 @@ public abstract class MenuObjectClass : MonoBehaviour
     /* 
      * Called when the objcet is first created 
      */
-    public virtual void AwakeMenuObject() { }
+    protected virtual void AwakeMenuObject() { }
 
     /* 
      * Called when the object is destroyed 
      */
-    public virtual void OnDestroyMenuObject() { }
+    protected virtual void OnDestroyMenuObject() { }
 
     /*
      * Called each frame when the Menu is enabled and the Menu is not active
      */
-    public abstract void UpdateMenuObject();
+    protected abstract void UpdateMenuObject();
 
 
 

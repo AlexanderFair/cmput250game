@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Room
+    uniqueID: 441991147
+    locked: 0
+  - name: UI
+    uniqueID: 638449741
+    locked: 0
+  - name: Menu
+    uniqueID: 1169289055
+    locked: 0
