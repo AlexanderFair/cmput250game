@@ -7,7 +7,10 @@ using UnityEngine;
  * UIObjectClass : MonoBehaviour
  * 
  * Represents the base class to be used for any object visible at the UI level.
- * Object in the ui should extend this class instead of MonoBehaviour
+ * Object in the ui should extend this class instead of MonoBehaviour for code purposes.
+ * 
+ * For any object that does not have a behaviour that should be added to the ui, instantiate it using the 
+ * InstantiateUIObject or InstantiateNewUIObject methods.
  * 
  * This class controls when the update method is called. Only if the UI is active and the Menus are not, 
  * any object extending this class will get updated.
@@ -35,15 +38,15 @@ public abstract class UIObjectClass : MonoBehaviour
     }
 
     /* 
-     * Called when the objcet is first created 
+     * Called when the objcet is first created and adds it to the set of objects if not already done so
      * 
      * If the UI is not enabled, this enables the UI
+     * 
+     * Having this method defined ensures that any UIObject is in the list of current UIObjects
      */
     void Awake()
     {
-        currentUIObjects.Add(gameObject);
-        EnableUI();
-
+        AddGameObject(gameObject);
         AwakeUIObject();
     }
 
@@ -54,24 +57,19 @@ public abstract class UIObjectClass : MonoBehaviour
      */
     void OnDestory()
     {
-        currentUIObjects.Remove(gameObject);
-        if ( currentUIObjects.Count == 0)
-        {
-            DisableUI();
-        }
-
+        RemoveGameObject(gameObject);
         OnDestroyUIObject();
     }
 
     /* 
      * Called when the objcet is first created 
      */
-    public abstract void AwakeUIObject();
+    public virtual void AwakeUIObject() { }
 
     /* 
      * Called when the object is destroyed 
      */
-    public abstract void OnDestroyUIObject();
+    public virtual void OnDestroyUIObject() { }
 
     /*
      * Called each frame when the UI is enabled and the Menu is not active
@@ -111,7 +109,7 @@ public abstract class UIObjectClass : MonoBehaviour
 
         foreach(GameObject ui in iter)
         {
-            Destroy(ui);
+            DestroyUIObject(ui);
         }
         DisableUI(); //just in case, the ui should already be disabled by this point
     }
@@ -121,10 +119,54 @@ public abstract class UIObjectClass : MonoBehaviour
      * Then instantiates the newUIprefab object
      * 
      * This will enable the UI with only the newUIprefab object
+     * 
+     * Returns the new game object
      */
-    public static void IntantiateNewUI(GameObject newUIprefab)
+    public static GameObject InstantiateNewUIElement(GameObject newUIprefab)
     {
         ClearUI();
-        Instantiate(newUIprefab);
+        return InstantiateUIElement(newUIprefab);
+    }
+
+    /*
+     * Instantiates the new object and adds it to the list of this current uis objects
+     * If no ui exists currenlty, a new ui is created.
+     * 
+     * Returns the new GameObject
+     */
+    public static GameObject InstantiateUIElement(GameObject uiPrefab)
+    {
+        GameObject t = Instantiate(uiPrefab);
+        AddGameObject(t);
+        return t;
+    }
+
+    public static void DestroyUIObject(GameObject uiObject)
+    {
+        RemoveGameObject(uiObject);
+        Destroy(uiObject);
+    }
+
+    /*
+     * Adds a game object to the list of current game objects
+     * Enables the ui if the ui is not enabled
+     */
+    protected static void AddGameObject(GameObject g)
+    {
+        currentUIObjects.Add(g);
+        EnableUI();
+    }
+
+    /*
+     * Removes a game object from the list of current game objects
+     * If no more game objects exists, the ui is disabled.
+     */
+    protected static void RemoveGameObject(GameObject g)
+    {
+        currentUIObjects.Remove(g);
+        if (currentUIObjects.Count == 0)
+        {
+            DisableUI();
+        }
     }
 }

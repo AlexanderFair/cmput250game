@@ -7,9 +7,12 @@ using UnityEngine;
  * MenuObjectClass : MonoBehaviour
  * 
  * Represents the base class to be used for any object visible at the Menu level.
- * Object in the Menu should extend this class instead of MonoBehaviour
+ * Object in the Menu should extend this class instead of MonoBehaviour for code purposes.
  * 
- * This class controls when the update method is called. Only if the Menu is enabled,
+ * For any object that does not have a behaviour that should be added to the Menu, instantiate it using the 
+ * InstantiateMenuObject or InstantiateNewMenuObject methods.
+ * 
+ * This class controls when the update method is called. Only if the Menu is active and the Menus are not, 
  * any object extending this class will get updated.
  * 
  * Subclasses must implement the UpdateMenuObject. This method will get called each frame
@@ -28,22 +31,22 @@ public abstract class MenuObjectClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsMenuActive())
+        if (IsMenuActive())
         {
             UpdateMenuObject();
         }
     }
 
     /* 
-     * Called when the objcet is first created 
+     * Called when the objcet is first created and adds it to the set of objects if not already done so
      * 
      * If the Menu is not enabled, this enables the Menu
+     * 
+     * Having this method defined ensures that any MenuObject is in the list of current MenuObjects
      */
     void Awake()
     {
-        currentMenuObjects.Add(gameObject);
-        EnableMenu();
-
+        AddGameObject(gameObject);
         AwakeMenuObject();
     }
 
@@ -54,27 +57,22 @@ public abstract class MenuObjectClass : MonoBehaviour
      */
     void OnDestory()
     {
-        currentMenuObjects.Remove(gameObject);
-        if ( currentMenuObjects.Count == 0)
-        {
-            DisableMenu();
-        }
-
+        RemoveGameObject(gameObject);
         OnDestroyMenuObject();
     }
 
     /* 
      * Called when the objcet is first created 
      */
-    public abstract void AwakeMenuObject();
+    public virtual void AwakeMenuObject() { }
 
     /* 
      * Called when the object is destroyed 
      */
-    public abstract void OnDestroyMenuObject();
+    public virtual void OnDestroyMenuObject() { }
 
     /*
-     * Called each frame when the Menu is enabled
+     * Called each frame when the Menu is enabled and the Menu is not active
      */
     public abstract void UpdateMenuObject();
 
@@ -104,14 +102,14 @@ public abstract class MenuObjectClass : MonoBehaviour
      */
     public static void ClearMenu()
     {
-        if(!IsMenuActive()) { return; }
+        if (!IsMenuActive()) { return; }
 
         //clone the list so we hit errors when removing while iterating
-        HashSet<GameObject> iter = new HashSet<GameObject>(currentMenuObjects); 
+        HashSet<GameObject> iter = new HashSet<GameObject>(currentMenuObjects);
 
-        foreach(GameObject menu in iter)
+        foreach (GameObject Menu in iter)
         {
-            Destroy(menu);
+            DestroyMenuObject(Menu);
         }
         DisableMenu(); //just in case, the Menu should already be disabled by this point
     }
@@ -121,10 +119,54 @@ public abstract class MenuObjectClass : MonoBehaviour
      * Then instantiates the newMenuprefab object
      * 
      * This will enable the Menu with only the newMenuprefab object
+     * 
+     * Returns the new game object
      */
-    public static void IntantiateNewMenu(GameObject newMenuprefab)
+    public static GameObject InstantiateNewMenuElement(GameObject newMenuprefab)
     {
         ClearMenu();
-        Instantiate(newMenuprefab);
+        return InstantiateMenuElement(newMenuprefab);
+    }
+
+    /*
+     * Instantiates the new object and adds it to the list of this current Menus objects
+     * If no Menu exists currenlty, a new Menu is created.
+     * 
+     * Returns the new GameObject
+     */
+    public static GameObject InstantiateMenuElement(GameObject MenuPrefab)
+    {
+        GameObject t = Instantiate(MenuPrefab);
+        AddGameObject(t);
+        return t;
+    }
+
+    public static void DestroyMenuObject(GameObject MenuObject)
+    {
+        RemoveGameObject(MenuObject);
+        Destroy(MenuObject);
+    }
+
+    /*
+     * Adds a game object to the list of current game objects
+     * Enables the Menu if the Menu is not enabled
+     */
+    protected static void AddGameObject(GameObject g)
+    {
+        currentMenuObjects.Add(g);
+        EnableMenu();
+    }
+
+    /*
+     * Removes a game object from the list of current game objects
+     * If no more game objects exists, the Menu is disabled.
+     */
+    protected static void RemoveGameObject(GameObject g)
+    {
+        currentMenuObjects.Remove(g);
+        if (currentMenuObjects.Count == 0)
+        {
+            DisableMenu();
+        }
     }
 }
