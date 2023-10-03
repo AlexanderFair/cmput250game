@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * A class for objects which can be dragged with collision physics
+ */
 public class CollidableDragableUIObject : ClickReleaseUIObject
 {
     public Rigidbody2D rigidBody;
@@ -13,10 +16,6 @@ public class CollidableDragableUIObject : ClickReleaseUIObject
         if (isClicked)
         {
             rigidBody.MovePosition(Util.GetMouseWorldPoint());
-        }
-        else
-        {
-            rigidBody.velocity = Vector2.zero;
         }
     }
 
