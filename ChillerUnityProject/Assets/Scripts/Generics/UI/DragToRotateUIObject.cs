@@ -11,7 +11,7 @@ public class DragToRotateUIObject : ClickReleaseUIObject
     {
         base.UpdateUIObject();
 
-        if (!isClicked)
+        if (!isClicked || !RotateCondition())
         {
             return;
         }
@@ -21,4 +21,9 @@ public class DragToRotateUIObject : ClickReleaseUIObject
         float rot_z = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
+
+    /*
+     * A condition for if the object should rotate this frame
+     */
+    protected virtual bool RotateCondition() { return true; }
 }
