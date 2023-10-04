@@ -33,8 +33,8 @@ public class MovingButton : DisplayUIRoomObject
     protected override void DisplayedUI()
     {
         Debug.Log("Clicked " + (count++));
-        UIManager uim = ui.GetComponent<UIManager>();
-        uim.RoomObjectClass = this;
+        //UIManager uim = ui.GetComponent<UIManager>();
+        //uim.RoomObjectClass = this;
     }
 
     public void FinishedUI(GameObject o)
