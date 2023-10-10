@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * A class for animations on the given sprite render
+ * 
+ * This class does not update by itself and its UpdateAnimation method
+ * must be explicitly called from another update method.
+ * 
+ * To use this on an object, attach the script to the obect and call the update method
+ * from that scripts update method
+ */
 public class AnimationSpriteClass : MonoBehaviour
 {
     // The nothing animation -- no sprites are rendered
@@ -23,13 +32,13 @@ public class AnimationSpriteClass : MonoBehaviour
     public bool IsAnimationActive { get { return activeAnimation; } }
 
     // Start is called before the first frame update
-    void Start()
+    public void AwakeAnimation()
     {
         spriteRenderer.sprite = animationStruct.sprites[0];
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateAnimation()
     {
         currentTime += Time.deltaTime;
         if ( currentTime >= animationStruct.Spf)

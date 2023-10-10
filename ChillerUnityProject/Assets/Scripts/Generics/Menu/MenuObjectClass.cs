@@ -27,6 +27,8 @@ using UnityEngine;
  */
 public abstract class MenuObjectClass : MonoBehaviour
 {
+    // Animations
+    public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 
     // Update is called once per frame
     void Update()
@@ -34,6 +36,10 @@ public abstract class MenuObjectClass : MonoBehaviour
         if (IsMenuActive())
         {
             UpdateMenuObject();
+            foreach(var anim in spriteAnimations)
+            {
+                anim?.UpdateAnimation();
+            }
         }
     }
 
@@ -48,6 +54,10 @@ public abstract class MenuObjectClass : MonoBehaviour
     {
         AddGameObject(gameObject);
         AwakeMenuObject();
+        foreach (var anim in spriteAnimations)
+        {
+            anim?.AwakeAnimation();
+        }
     }
 
     /* 
@@ -57,8 +67,13 @@ public abstract class MenuObjectClass : MonoBehaviour
      */
     void OnDestory()
     {
+        foreach (var anim in spriteAnimations)
+        {
+            anim?.PauseAnimation();
+        }
         RemoveGameObject(gameObject);
         OnDestroyMenuObject();
+        
     }
 
     /* 
