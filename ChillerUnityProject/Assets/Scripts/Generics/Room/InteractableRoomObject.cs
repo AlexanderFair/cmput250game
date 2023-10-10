@@ -11,13 +11,14 @@ using UnityEngine;
  */
 public abstract class InteractableRoomObject : RoomObjectClass
 {
-    /* The collider for the obect */
+    /* The collider for the object */
     public Collider2D interactableCollider;
 
     public Settings.Controls interactionControl = Settings.Controls.Interact;
 
     private bool _interactable = false;
     public bool Interactable { get { return _interactable; } }
+    public AudioClip interactSound = null;
 
     protected override void UpdateRoomObject()
     {
@@ -35,9 +36,16 @@ public abstract class InteractableRoomObject : RoomObjectClass
      * Defaults to always if this method is not overriden.
      */
     protected virtual bool Condition() { return true; }
+    
     /*
      * Called when the object is interacted with
+     * If overridden, STILL CALL THIS FUNCTION. This will
+     * only functionality that is mandatory for interactions.
      */
-    protected abstract void Interact();
+    protected virtual void Interact(){
+        if ((object)interactSound != null) {
+            AudioHandler.Instance.playSoundEffect(interactSound);
+        }
+    }
 
 }

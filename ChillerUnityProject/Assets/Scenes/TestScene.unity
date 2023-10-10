@@ -204,6 +204,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &635967533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635967535}
+  - component: {fileID: 635967534}
+  m_Layer: 0
+  m_Name: AudioHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &635967534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635967533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2b35763bcd4074785420087f48a8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracks:
+  - {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
+  trackInsanityScores: 00000000
+  doplay: 0
+--- !u!4 &635967535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635967533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.72, y: 6.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021760773
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120da6aa50e28a543b4080a21db21302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   interactCollider: {fileID: 1021760778}
 --- !u!50 &1021760777
 Rigidbody2D:
@@ -369,8 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c497374e170ef554abd972db702c455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   interactableCollider: {fileID: 1549306064}
   interactionControl: 0
+  interactSound: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   uiPrefab: {fileID: 2914792109874108078, guid: 009ebedd1a2e5274f903b913bdb82b32,
     type: 3}
   speed: 3
