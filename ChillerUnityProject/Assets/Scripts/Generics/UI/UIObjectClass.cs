@@ -27,6 +27,7 @@ using UnityEngine;
  */
 public abstract class UIObjectClass : MonoBehaviour
 {
+    [Header("UI Base Object Settings")]
     // Animations
     public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 

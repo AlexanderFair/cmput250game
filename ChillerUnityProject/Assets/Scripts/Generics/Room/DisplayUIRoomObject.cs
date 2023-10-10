@@ -7,6 +7,7 @@ using UnityEngine;
  */
 public class DisplayUIRoomObject : InteractableRoomObject
 {
+    [Header("Display UI Room Settings")]
     // The prefab of the UI object to display
     public GameObject uiPrefab;
     // The currently displayed ui

@@ -28,6 +28,7 @@ using UnityEngine;
 public abstract class MenuObjectClass : MonoBehaviour
 {
     // Animations
+    [Header("Menu Base Object Settings")]
     public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 
     // Update is called once per frame

@@ -211,33 +211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5252443571017988915, guid: 0509709439d67f84abe36d7e8330151a,
-        type: 3}
-      propertyPath: anim
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5590182347935610042, guid: 0509709439d67f84abe36d7e8330151a,
-        type: 3}
-      propertyPath: anim.fps
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5590182347935610042, guid: 0509709439d67f84abe36d7e8330151a,
-        type: 3}
-      propertyPath: anim.sprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5590182347935610042, guid: 0509709439d67f84abe36d7e8330151a,
-        type: 3}
-      propertyPath: anim.sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4ec7d9a7b984ece468232a114f6c72b2,
-        type: 3}
-    - target: {fileID: 5590182347935610042, guid: 0509709439d67f84abe36d7e8330151a,
-        type: 3}
-      propertyPath: anim.sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: c0dfcdc5f9d84444fac640c523e0fd9c,
-        type: 3}
     - target: {fileID: 6209545931262098330, guid: 0509709439d67f84abe36d7e8330151a,
         type: 3}
       propertyPath: m_RootOrder

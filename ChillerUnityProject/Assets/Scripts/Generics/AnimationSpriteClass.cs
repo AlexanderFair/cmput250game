@@ -13,9 +13,10 @@ using UnityEngine;
  */
 public class AnimationSpriteClass : MonoBehaviour
 {
+    
     // The nothing animation -- no sprites are rendered
     public static readonly AnimationStruct NULL_STRUCT = new AnimationStruct(new List<Sprite>() { null }, 0f);
-
+    [Header("Animation Sprite Settings")]
     // The animation struct to be rendered
     public AnimationStruct animationStruct = NULL_STRUCT;
     public SpriteRenderer spriteRenderer;

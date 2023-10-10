@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cf3eed62d93704aab14898e9d10a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
 --- !u!1 &1215538557904097953
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,9 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff993619a5698d5488aa8f5314fec9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   clickKey: 1
   clickCollider: {fileID: 7364489232027999790}
   menuObject: {fileID: 9191006974432439003}
+  clickableRenderer: {fileID: 4051373708483521616}
 --- !u!61 &7364489232027999790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -267,9 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff993619a5698d5488aa8f5314fec9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   clickKey: 1
   clickCollider: {fileID: 5210702481795083938}
   menuObject: {fileID: 9191006974432439003}
+  clickableRenderer: {fileID: 6931407875361406757}
 --- !u!61 &5210702481795083938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,9 +478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff993619a5698d5488aa8f5314fec9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   clickKey: 1
   clickCollider: {fileID: 286014826836788121}
   menuObject: {fileID: 9191006974432439003}
+  clickableRenderer: {fileID: 1215602736997534467}
 --- !u!61 &286014826836788121
 BoxCollider2D:
   m_ObjectHideFlags: 0

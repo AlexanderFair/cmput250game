@@ -16,15 +16,6 @@ public class MovingButton : DisplayUIRoomObject
         if(Mathf.Abs(transform.position.x) > bounds) { dir *= -1; }
 
         base.UpdateRoomObject();
-
-        if(Interactable)
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
         
     }
 

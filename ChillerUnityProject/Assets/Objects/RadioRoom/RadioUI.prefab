@@ -111,7 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40a5ec86073e5a48941ec296559f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   clickableCollider: {fileID: 4041370263404341053}
+  spriteClickableOutlineRenderer: {fileID: 5397454903858791927}
   clickControl: 1
   textDisplay: {fileID: 4124824759805808417}
   max: 9.99
@@ -121,6 +123,7 @@ MonoBehaviour:
   rotationRange: 675
   valueFormat: 0.00
   rotDifferenceScalar: -1
+  anim: 0
 --- !u!1 &997659924043799261
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40a5ec86073e5a48941ec296559f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   clickableCollider: {fileID: 2467366531671449010}
+  spriteClickableOutlineRenderer: {fileID: 3850488834442080407}
   clickControl: 1
   textDisplay: {fileID: 8494093767740607520}
   max: 9.99
@@ -342,6 +347,7 @@ MonoBehaviour:
   rotationRange: 675
   valueFormat: 0.00
   rotDifferenceScalar: 1
+  anim: 1
 --- !u!1 &4502726087041973642
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b1cd5a220c46c46bae7ecfafb5bf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   textComponent: {fileID: 3198297028098984342}
   defaultValue: '"0.00"'
 --- !u!1 &8039218377596480889
@@ -559,5 +566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b1cd5a220c46c46bae7ecfafb5bf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   textComponent: {fileID: 5910315128353328210}
   defaultValue: '"0.00"'
