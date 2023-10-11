@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnapDragObject : MonoBehaviour
+public class SnapDragUIObject : DragableUIObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Snap Drag UI Settings")]
+    public Collider2D snapCollider;
+
+    public void Snap(Collider2D snap)
     {
-        
+        transform.position = snap.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsMoving()
     {
-        
+        return isClicked;
     }
 }
