@@ -25,7 +25,7 @@ using UnityEngine;
  * The user is in charge of removing and adding the objects to the screen.
  * 
  */
-public abstract class MenuObjectClass : MonoBehaviour
+public class MenuObjectClass : MonoBehaviour
 {
     // Animations
     [Header("Menu Base Object Settings")]
@@ -90,7 +90,7 @@ public abstract class MenuObjectClass : MonoBehaviour
     /*
      * Called each frame when the Menu is enabled and the Menu is not active
      */
-    protected abstract void UpdateMenuObject();
+    protected virtual void UpdateMenuObject() { }
 
 
 
