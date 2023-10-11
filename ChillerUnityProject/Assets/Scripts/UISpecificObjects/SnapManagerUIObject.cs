@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
+/*
+ * A class which manages snappable tiles and the locations they can snap to
+ * 
+ * If the two colliders overlap, the tiles position becomes that of the location collider
+ */
 public class SnapManagerUIObject : UIObjectClass
 {
     [Header("Snap Manager UI Settings")]
+    // The movable tiles
     public SnapDragUIObject[] dragableTiles;
+    // The locations where tiles can snap to
     public Collider2D[] snapColliders;
+    // The number of tiles that can be snapped to one location at a time
     public int maxTilesPerCollider=1;
 
     private List<int>[] snapedTiles;
