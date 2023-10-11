@@ -54,13 +54,15 @@ MonoBehaviour:
     value: 324
   - key: 4
     value: 13
+  - key: 5
+    value: 27
   floatValues:
   - key: 1
     value: -3
   - key: 0
     value: 1
   - key: 2
-    value: 5
+    value: 32
   - key: 3
     value: 5
   prefabAnimValues:
@@ -78,3 +80,13 @@ MonoBehaviour:
   prefabObjectValues:
   - key: 0
     value: {fileID: 6209451717563512970, guid: 14ca2edaac16ea348b5582ff3adfcc85, type: 3}
+  prefabMaterialValues:
+  - key: 0
+    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - key: 1
+    value: {fileID: 2100000, guid: cd49e782367213540ada447ae404371b, type: 2}
+  - key: 2
+    value: {fileID: 2100000, guid: e78baf4283ccde745aa98dbc410a7b28, type: 2}
+  - key: 3
+    value: {fileID: 2100000, guid: 9ca2bc5507c521548af2e37f3c60cbde, type: 2}
+  logWarnings: 0

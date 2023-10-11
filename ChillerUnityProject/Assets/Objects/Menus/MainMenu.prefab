@@ -181,6 +181,7 @@ MonoBehaviour:
   clickKey: 1
   clickCollider: {fileID: 2644416936223759004}
   menuObject: {fileID: 8327887518989265936}
+  clickableRenderer: {fileID: 924284387766455067}
 --- !u!61 &2644416936223759004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -307,6 +308,7 @@ MonoBehaviour:
   clickKey: 1
   clickCollider: {fileID: 8005950456517539751}
   menuObject: {fileID: 8327887518989265936}
+  clickableRenderer: {fileID: 8952110708443299645}
 --- !u!61 &8005950456517539751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -563,6 +565,7 @@ MonoBehaviour:
   clickKey: 1
   clickCollider: {fileID: 779424611391990288}
   menuObject: {fileID: 8327887518989265936}
+  clickableRenderer: {fileID: 6114665163963816046}
 --- !u!61 &779424611391990288
 BoxCollider2D:
   m_ObjectHideFlags: 0

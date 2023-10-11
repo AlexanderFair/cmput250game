@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * A class for objects which can be dragged without physics
  */
-public class DragableUIObject : ClickReleaseUIObject
+public class DragableUIObject : ClickReleaseUIObject, IDragableSprite
 {
 
     protected override void UpdateUIObject()

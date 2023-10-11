@@ -17,6 +17,7 @@ using UnityEngine;
  */
 public abstract class RoomObjectClass : MonoBehaviour
 {
+    [Header("Room Base Object Settings")]
     // Animations
     public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 

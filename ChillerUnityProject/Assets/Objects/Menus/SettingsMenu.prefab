@@ -230,6 +230,7 @@ MonoBehaviour:
   clickKey: 1
   clickCollider: {fileID: 5497991502710558884}
   menuObject: {fileID: 5030076573249274827}
+  clickableRenderer: {fileID: 6875407716258207806}
 --- !u!61 &5497991502710558884
 BoxCollider2D:
   m_ObjectHideFlags: 0

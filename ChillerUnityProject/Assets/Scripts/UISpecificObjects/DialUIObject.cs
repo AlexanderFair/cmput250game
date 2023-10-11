@@ -8,6 +8,7 @@ using UnityEngine;
  */
 public class DialUIObject : DragToRotateUIObject
 {
+    [Header("Dial Settings")]
     // Where the value is displayed
     public UITextObject textDisplay;
     // the min and max values (inclusve)

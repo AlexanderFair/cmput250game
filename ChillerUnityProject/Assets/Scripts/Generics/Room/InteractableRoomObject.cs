@@ -9,23 +9,24 @@ using UnityEngine;
  * the distance between this collider and the player collider is less
  * than the InteractDistance and the Condition method evaluates to true.
  */
-public abstract class InteractableRoomObject : RoomObjectClass
+public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSprite 
 {
-    /* The collider for the object */
+
+    [Header("Interactable Room Settings")]
+    /* The collider for the obect */
     public Collider2D interactableCollider;
 
     public Settings.Controls interactionControl = Settings.Controls.Interact;
 
-    private bool _interactable = false;
-    public bool Interactable { get { return _interactable; } }
+    //The sprite renderer which should obtain an outline when the player is near enough
+    public SpriteRenderer interactableRenderer;
     public AudioClip interactSound = null;
 
     protected override void UpdateRoomObject()
     {
-        _interactable = interactableCollider.Distance(Player.Instance.interactCollider).distance
-                        < Settings.FloatValues.PlayerInteractDistance.Get();
-        if (Input.GetKeyDown(interactionControl.Get()) &&
-            _interactable && Condition())
+        this.UpdateOutlinableSprite(interactableRenderer);
+
+        if (Input.GetKeyDown(interactionControl.Get()) && InteractableCondition())
         {
             Interact();
         }
@@ -35,8 +36,11 @@ public abstract class InteractableRoomObject : RoomObjectClass
      * The condition for the object to be interactable.
      * Defaults to always if this method is not overriden.
      */
-    protected virtual bool Condition() { return true; }
-    
+
+    public virtual bool InteractableCondition() {
+        return interactableCollider.Distance(Player.Instance.interactCollider).distance
+                        < Settings.FloatValues.PlayerInteractDistance.Get(); 
+    }
     /*
      * Called when the object is interacted with
      * If overridden, STILL CALL THIS FUNCTION. This will
@@ -47,5 +51,7 @@ public abstract class InteractableRoomObject : RoomObjectClass
             AudioHandler.Instance.playSoundEffect(interactSound);
         }
     }
+
+    
 
 }

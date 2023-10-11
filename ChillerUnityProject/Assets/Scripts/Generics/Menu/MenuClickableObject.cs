@@ -3,22 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 
-public class MenuClickableObject : MenuObjectClass
+/*
+ * A menu object which can be clicked
+ */
+public class MenuClickableObject : MenuObjectClass, IClickableSprite
 {
+    [Header("Menu Clickable Settings")]
     public Settings.Controls clickKey = Settings.Controls.LeftClick;
+    //The area where the user can click
     public Collider2D clickCollider;
+    // the menu object which should be waiting for the click
     public MenuClickCaller menuObject;
-    
+
+    // The sprite renderer which should obtain an outline when the sprite is clickable
+    public SpriteRenderer clickableRenderer;
+
     protected override void UpdateMenuObject()
     {
-        if(Util.GetKeyDownWithMouseOverObject(clickKey.Get(), clickCollider))
+        this.UpdateOutlinableSprite(clickableRenderer);
+
+        if (Util.GetKeyDownWithMouseOverObject(clickKey.Get(), clickCollider) && ClickableCondition())
         {
             menuObject.OnMenuClick(this);
         }
+    }
+
+    // Returns true if the sprite can be clicked
+    public virtual bool ClickableCondition()
+    {
+        return true;
     }
 }
 
 public abstract class MenuClickCaller : MenuObjectClass
 {
+    // Called when the sprite is clicked
     public abstract void OnMenuClick(MenuClickableObject obj);
 }

@@ -16,6 +16,13 @@ public class Player : RoomObjectClass
 
     protected override void UpdateRoomObject()
     {
-        
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += (Vector3)Vector2.right * Time.deltaTime * 5f;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += (Vector3)Vector2.left * Time.deltaTime * 5f;
+        }
     }
 }
