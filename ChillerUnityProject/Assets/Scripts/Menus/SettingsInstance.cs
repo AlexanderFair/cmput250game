@@ -25,7 +25,8 @@ public class SettingsInstance : MonoBehaviour
         new KeyCodeValue { key = Controls.MenuTransition, value = KeyCode.Escape },
         new KeyCodeValue { key = Controls.LeftClick, value = KeyCode.Mouse0 },
         new KeyCodeValue { key = Controls.RightClick, value = KeyCode.Mouse1 },
-        new KeyCodeValue { key = Controls.DialogSkip, value = KeyCode.Return }
+        new KeyCodeValue { key = Controls.DialogSkip, value = KeyCode.Return },
+        new KeyCodeValue { key = Controls.DialogSkip, value = KeyCode.Escape }
     };
 
     [Header("Floats")]
@@ -93,7 +94,7 @@ public static class Settings
     // Key Code controls
     public enum Controls
     {
-        Interact, LeftClick, MenuTransition, RightClick, DialogSkip
+        Interact, LeftClick, MenuTransition, RightClick, DialogSkip, UIExit
     }
 
     // Float values

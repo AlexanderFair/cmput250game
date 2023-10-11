@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DragableOutline
-  m_Shader: {fileID: 4800000, guid: 62505ee61d20098489c6f861ed25cce1, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6f42e85d469e34f4494f6eb0aa790988,
+    type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _CONNECTEDALPHA_ON _OUTLINEENABLED_ON _OUTLINEMODE_SOLID
     _OUTLINEPOSITION_INSIDE_UNDER_SPRITE _OUTLINESHAPE_CONTOUR _TILEMODE_STRETCH
   m_LightmapFlags: 4
@@ -45,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8975082f9f168934ba131e0cc87610bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -61,6 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_68FE24B1: 1
     - _AlphaThreshold: 0
     - _Angle: 45
     - _BumpScale: 1
@@ -89,6 +91,7 @@ Material:
     - _Weight: 0.5
     - _ZWrite: 1
     m_Colors:
+    - Color_D58DD0CD: {r: 1, g: 0, b: 0.06575394, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GradientOutline1: {r: 1, g: 1, b: 1, a: 1}

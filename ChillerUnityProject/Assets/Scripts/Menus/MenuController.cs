@@ -32,7 +32,11 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Settings.Controls.MenuTransition.Get()))
+        if(UIObjectClass.IsUIActive() && Input.GetKeyDown(Settings.Controls.UIExit.Get()))
+        {
+            UIObjectClass.ClearUI();
+        }
+        else if (Input.GetKeyDown(Settings.Controls.MenuTransition.Get()))
         {
             ChangeMenu();
         }
