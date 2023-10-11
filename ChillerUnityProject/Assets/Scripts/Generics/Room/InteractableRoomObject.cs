@@ -21,7 +21,7 @@ public abstract class InteractableRoomObject : RoomObjectClass
 
     protected override void UpdateRoomObject()
     {
-        _interactable = interactableCollider.Distance(Player.Instance.interactCollider).distance
+        _interactable = interactableCollider.Distance(Player.plyInstance.getCollider()).distance
                         < Settings.FloatValues.PlayerInteractDistance.Get();
         if (Input.GetKeyDown(interactionControl.Get()) &&
             _interactable && Condition())
