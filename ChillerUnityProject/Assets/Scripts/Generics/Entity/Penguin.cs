@@ -14,20 +14,23 @@ public class Penguin : Entity {
     public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
 
     private static Penguin _instance;
+    private static bool _instanceDefined = false;
     public static Penguin instance {
         get {
+            if (!_instanceDefined)
+                Debug.Log("Warning: no valid penguin instance is present. ");
             return _instance;
         }
     }
-    public Penguin() {
-        if (_instance != null)
-            Debug.Log("Warning: a duplicated penguin instance might be present. " + this);
-        _instance = this;
-    }
+    
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (_instanceDefined)
+            Debug.Log("Warning: a duplicated penguin instance might be present. ");
+        _instance = this;
+        _instanceDefined = true;
     }
     // override the AI function: it should try to follow player when far away
     protected override void AI() {

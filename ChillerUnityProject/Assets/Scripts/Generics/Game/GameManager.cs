@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
 {
     private static Dictionary<String, GameSaveInfo> _roomData;
     private static GameManager _instance;
+    private static bool _instanceDefined = false;
     public static GameManager Instance {
         get {
+            if (!_instanceDefined)
+                Debug.Log("Warning: no valid game manager instance is present. ");
             return _instance;
         }
     }
@@ -21,16 +24,15 @@ public class GameManager : MonoBehaviour
         public static Dictionary<String, object> saveData = new Dictionary<String, object>();
     }
 
-    public GameManager() {
-        if (_instance != null)
-            Debug.Log("Warning: a duplicated game manager instance might be present. " + this);
-        _instance = this;
-        _roomData = new Dictionary<String, GameSaveInfo>();
-    }
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (_instanceDefined)
+            Debug.Log("Warning: a duplicated game manager instance might be present. ");
+        _instance = this;
+        _instanceDefined = true;
+        _roomData = new Dictionary<String, GameSaveInfo>();
     }
 
     // set 

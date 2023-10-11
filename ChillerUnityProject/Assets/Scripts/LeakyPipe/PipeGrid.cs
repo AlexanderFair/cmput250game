@@ -8,7 +8,12 @@ public class PipeGrid
 {
     private static Dictionary<String, PipeGrid> ALL_PUZZLES = new Dictionary<String, PipeGrid>();
     private static String currentPuzzle = "PUZZLE";
-    private static PuzzleRoomObj triggeredObj;
+    private static PuzzleRoomObj _triggeredObj;
+    public static PuzzleRoomObj triggeredRoomObj {
+        get {
+            return _triggeredObj;
+        }
+    }
     public static GameObject currUI;
 
     public int liquidRemaining, liquidDecrement = 0;
@@ -33,7 +38,7 @@ public class PipeGrid
     }
     public static void setPuzzle(String puzzleName, PuzzleRoomObj roomObj, GameObject UI) {
         currentPuzzle = puzzleName;
-        triggeredObj = roomObj;
+        _triggeredObj = roomObj;
         currUI = UI;
         initPuzzle(puzzleName);
     }
@@ -43,6 +48,26 @@ public class PipeGrid
             initPuzzle(puzzleIndex);
         }
         return ALL_PUZZLES[puzzleIndex];
+    }
+
+    public bool isSolved() {
+        return isSolved(true);
+    }
+    public bool isSolved(bool noLeak) {
+        // if water is gone
+        if (liquidRemaining <= 0)
+            return false;
+        // if the pipe has leak and leak is not allowed
+        if (noLeak && liquidDecrement > 0)
+            return false;
+        // if any exit is not yet connected
+        foreach( KeyValuePair<(int, int), BasicPipe> entry in PIPE_MAP ) {
+            BasicPipe pipe = entry.Value;
+            if (pipe is PipeOutput && ! (pipe.isConnected))
+                return false;
+        }
+        // yay!
+        return true;
     }
 
     public static class Directions {

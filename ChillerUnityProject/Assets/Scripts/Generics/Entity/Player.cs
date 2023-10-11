@@ -10,25 +10,26 @@ using UnityEngine;
  *
  */
 public class Player : Entity {
-    private static Player _plyInstance;
+    private static Player _plyInstance = null;
+    private static bool _instanceDefined = false;
     public static Player plyInstance {
         get {
+            if (!_instanceDefined)
+                Debug.Log("Warning: no valid player instance is present. ");
             return _plyInstance;
         }
     }
     // this is the acceleration per second. It may need additional tweaks to yield a satisfying result.
     public float MOVE_ACCELERATION_PER_SECOND = 2.5f;
-    
-    public Player() {
-        if (_plyInstance != null)
-            Debug.Log("Warning: a duplicated player instance might be present. " + this);
-        _plyInstance = this;
-    }
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (_instanceDefined)
+            Debug.Log("Warning: a duplicated player instance might be present. ");
+        _plyInstance = this;
+        _instanceDefined = true;
     }
     
     protected override void AI() {

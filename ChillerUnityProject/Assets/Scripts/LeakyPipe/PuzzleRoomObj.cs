@@ -6,26 +6,11 @@ using UnityEngine;
 public class PuzzleRoomObj : DisplayUIRoomObject
 {
     public String levelName;
-    bool isCompleted = false;
+    public bool isCompleted = false;
 
-    // Update is called once per frame
-    protected override void UpdateRoomObject()
-    {
-        base.UpdateRoomObject();
-
-        if (Condition())
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        
-    }
     // do not interact after this is finished
-    protected override bool Condition() {
-        return Interactable && !isCompleted;
+    public override bool InteractableCondition() {
+        return base.InteractableCondition() && !isCompleted;
     }
     // called after the UI is displayed
     protected override void DisplayedUI()
