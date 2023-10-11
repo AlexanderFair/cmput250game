@@ -11,6 +11,7 @@ using UnityEngine;
  */
 public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSprite 
 {
+
     [Header("Interactable Room Settings")]
     /* The collider for the obect */
     public Collider2D interactableCollider;
@@ -19,6 +20,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
 
     //The sprite renderer which should obtain an outline when the player is near enough
     public SpriteRenderer interactableRenderer;
+    public AudioClip interactSound = null;
 
     protected override void UpdateRoomObject()
     {
@@ -34,13 +36,21 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
      * The condition for the object to be interactable.
      * Defaults to always if this method is not overriden.
      */
+
     public virtual bool InteractableCondition() {
         return interactableCollider.Distance(Player.Instance.interactCollider).distance
-                        < Settings.FloatValues.PlayerInteractDistance.Get(); }
+                        < Settings.FloatValues.PlayerInteractDistance.Get(); 
+    }
     /*
      * Called when the object is interacted with
+     * If overridden, STILL CALL THIS FUNCTION. This will
+     * only functionality that is mandatory for interactions.
      */
-    protected abstract void Interact();
+    protected virtual void Interact(){
+        if ((object)interactSound != null) {
+            AudioHandler.Instance.playSoundEffect(interactSound);
+        }
+    }
 
     
 
