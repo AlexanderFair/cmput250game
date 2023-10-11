@@ -10,6 +10,7 @@ using UnityEngine;
  */
 public abstract class ClickReleaseUIObject : ClickableUIObject
 {
+    
     /*
      * True if the control was pressed overtop of the object and has not been released
      */

@@ -7,16 +7,22 @@ using UnityEngine;
  */
 public class DisplayUIRoomObject : InteractableRoomObject
 {
+    [Header("Display UI Room Settings")]
     // The prefab of the UI object to display
     public GameObject uiPrefab;
+
     // The currently displayed ui
     protected GameObject ui = null;
 
+    /* Called when the object is interacted with */
     protected override void Interact()
     {
+        base.Interact();
+
         ui = UIObjectClass.InstantiateNewUIElement(uiPrefab);
         DisplayedUI();
     }
+    
     /*
      * Called when the object is interacted with and a ui is displayed
      */

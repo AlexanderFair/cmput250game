@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * A class which rotates towards the mouse when the mouse is pressed down on it
  */
-public class DragToRotateUIObject : ClickReleaseUIObject
+public class DragToRotateUIObject : ClickReleaseUIObject, IDragableSprite
 {
     protected override void UpdateUIObject()
     {

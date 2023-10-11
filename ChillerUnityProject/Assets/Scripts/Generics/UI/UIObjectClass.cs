@@ -25,8 +25,11 @@ using UnityEngine;
  * The user is in charge of removing and adding the objects to the screen.
  * 
  */
-public abstract class UIObjectClass : MonoBehaviour
+public class UIObjectClass : MonoBehaviour
 {
+    [Header("UI Base Object Settings")]
+    // Animations
+    public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 
     // Update is called once per frame
     void Update()
@@ -34,6 +37,10 @@ public abstract class UIObjectClass : MonoBehaviour
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
             UpdateUIObject();
+            foreach (var anim in spriteAnimations)
+            {
+                anim?.UpdateAnimation();
+            }
         }
     }
 
@@ -48,6 +55,10 @@ public abstract class UIObjectClass : MonoBehaviour
     {
         AddGameObject(gameObject);
         AwakeUIObject();
+        foreach (var anim in spriteAnimations)
+        {
+            anim?.AwakeAnimation();
+        }
     }
 
     /* 
@@ -57,6 +68,10 @@ public abstract class UIObjectClass : MonoBehaviour
      */
     void OnDestroy()
     {
+        foreach (var anim in spriteAnimations)
+        {
+            anim?.PauseAnimation();
+        }
         RemoveGameObject(gameObject);
         OnDestroyUIObject();
     }
@@ -74,7 +89,7 @@ public abstract class UIObjectClass : MonoBehaviour
     /*
      * Called each frame when the UI is enabled and the Menu is not active
      */
-    protected abstract void UpdateUIObject();
+    protected virtual void UpdateUIObject() { }
 
 
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
  */
 public class UITextObject : UIObjectClass
 {
+    [Header("UI Text Settings")]
     public Text textComponent;
     public string defaultValue;
     private string currentText = "";

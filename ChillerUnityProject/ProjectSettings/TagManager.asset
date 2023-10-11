@@ -18,7 +18,7 @@ TagManager:
   - Room Physics
   - Menu
   - Menu Physics
-  - 
+  - Dialog Level
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 638449741
+    locked: 0
+  - name: Dialog
+    uniqueID: 490255111
     locked: 0
   - name: Menu
     uniqueID: 1169289055

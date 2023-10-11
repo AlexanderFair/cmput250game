@@ -17,6 +17,25 @@ using UnityEngine;
  */
 public abstract class RoomObjectClass : MonoBehaviour
 {
+    [Header("Room Base Object Settings")]
+    // Animations
+    public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
+
+    void Start()
+    {
+        foreach (var anim in spriteAnimations)
+        {
+            anim?.AwakeAnimation();
+        }
+    }
+
+    void OnDestroy()
+    {
+        foreach(var anim in spriteAnimations)
+        {
+            anim?.PauseAnimation();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +43,10 @@ public abstract class RoomObjectClass : MonoBehaviour
         if(!UIObjectClass.IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
             UpdateRoomObject();
+            foreach (var anim in spriteAnimations)
+            {
+                anim?.UpdateAnimation();
+            }
         }
     }
 
