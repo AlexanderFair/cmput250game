@@ -22,7 +22,7 @@ public class MenuClickableObject : MenuObjectClass, IClickableSprite
     {
         this.UpdateOutlinableSprite(clickableRenderer);
 
-        if (Util.GetKeyDownWithMouseOverObject(clickKey.Get(), clickCollider) && ClickableCondition())
+        if (Util.GetKeyDownWithMouseOverObject(clickKey, clickCollider, true) && ClickableCondition())
         {
             menuObject.OnMenuClick(this);
         }

@@ -35,13 +35,13 @@ public class Player : Entity {
     protected override void AI() {
         // positive: right & up
         float horMoveDir = 0, verMoveDir = 0;
-        if (Input.GetKey(KeyCode.W))
+        if (Settings.Controls.MoveUp.GetKey())
             verMoveDir ++;
-        if (Input.GetKey(KeyCode.S))
+        if (Settings.Controls.MoveDown.GetKey())
             verMoveDir --;
-        if (Input.GetKey(KeyCode.A))
+        if (Settings.Controls.MoveLeft.GetKey())
             horMoveDir --;
-        if (Input.GetKey(KeyCode.D))
+        if (Settings.Controls.MoveRight.GetKey())
             horMoveDir ++;
         // accelerate
         Vector3 accel = new Vector3(horMoveDir * MOVE_ACCELERATION_PER_SECOND, verMoveDir * MOVE_ACCELERATION_PER_SECOND, 0);

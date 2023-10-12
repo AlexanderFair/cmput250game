@@ -20,7 +20,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     {
         this.UpdateOutlinableSprite(spriteClickableOutlineRenderer);
 
-        if(Util.GetKeyDownWithMouseOverObject(clickControl.Get(), clickableCollider) 
+        if(Util.GetKeyDownWithMouseOverObject(clickControl, clickableCollider) 
             && ClickableCondition())
         {
             Clicked();

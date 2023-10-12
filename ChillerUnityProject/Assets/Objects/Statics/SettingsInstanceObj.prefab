@@ -56,6 +56,14 @@ MonoBehaviour:
     value: 13
   - key: 5
     value: 8
+  - key: 6
+    value: 97
+  - key: 7
+    value: 100
+  - key: 8
+    value: 119
+  - key: 9
+    value: 115
   floatValues:
   - key: 1
     value: -3

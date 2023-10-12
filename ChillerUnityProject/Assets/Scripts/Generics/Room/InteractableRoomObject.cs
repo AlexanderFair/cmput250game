@@ -26,7 +26,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     {
         this.UpdateOutlinableSprite(interactableRenderer);
 
-        if (Input.GetKeyDown(interactionControl.Get()) && InteractableCondition())
+        if (interactionControl.GetKeyDown() && InteractableCondition())
         {
             Interact();
         }

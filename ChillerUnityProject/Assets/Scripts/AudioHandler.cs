@@ -17,7 +17,7 @@ public class AudioHandler : MonoBehaviour
     public static AudioHandler Instance { 
         get {
             if ((object)_instance == null){
-                throw new System.Exception("AudioHandler does not exist. Most likely forgot to add AudioHandler Obj/script to the scene.");
+                throw new System.NullReferenceException("AudioHandler does not exist. Most likely forgot to add AudioHandler Obj/script to the scene.");
             }
             return _instance;
         }
@@ -48,7 +48,7 @@ public class AudioHandler : MonoBehaviour
         }
 
         if (shouldDestroy){
-            Debug.Log("Stopped creation of extra audio handler!!");
+            Settings.DisplayWarning("Stopped creation of extra audio handler!!", this.gameObject);
             Destroy(this);
         } else {
             _instance = this;
@@ -86,6 +86,11 @@ public class AudioHandler : MonoBehaviour
     * @param AudioClip soundEffect The sound effect to be played
     */
     public void playSoundEffect(AudioClip soundEffect){
+        if(soundEffect == null)
+        {
+            Settings.DisplayWarning("The sound effect is null", null);
+            return;
+        }
         this.effectSource.PlayOneShot(soundEffect);
     }
 }
