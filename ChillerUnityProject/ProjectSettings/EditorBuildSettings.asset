@@ -6,6 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LeakyPipe/room.unity
+    guid: 251ef98b142d6aa46a827f48ef1b9eb5
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: d4aec8a28409ddb4f87f3c4cf9eef222
     path: Assets/Scenes/RadioRoom.unity
     guid: 978370db229dcbb4db301461a221e141
   m_configObjects: {}
