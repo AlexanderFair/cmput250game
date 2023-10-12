@@ -21,6 +21,12 @@ public abstract class RoomObjectClass : MonoBehaviour
     // Animations
     public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 
+    // Returns true if the RoomObjectClass will update
+    public static bool CanUpdate()
+    {
+        return !UIObjectClass.IsUIActive() && !MenuObjectClass.IsMenuActive();
+    }
+
     public virtual void Start()
     {
         foreach (var anim in spriteAnimations)
@@ -40,7 +46,7 @@ public abstract class RoomObjectClass : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if(!UIObjectClass.IsUIActive() && !MenuObjectClass.IsMenuActive())
+        if(CanUpdate())
         {
             UpdateRoomObject();
             foreach (var anim in spriteAnimations)

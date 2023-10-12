@@ -16,10 +16,12 @@ public abstract class Entity : RoomObjectClass
     protected Vector3 velocity = Vector3.zero;
     public float speedDecayMultiplierPerSecond = 0.02f;
 
+    private bool aiUpdatedSinceLastMovementUpdate = false;
+
     /* Called when the object is updated and the UI and Menu is not active */
     protected override void UpdateRoomObject() {
         AI();
-        movement();
+        aiUpdatedSinceLastMovementUpdate = true;
     }
 
     public Rigidbody2D getRigidBody() {
@@ -45,12 +47,25 @@ public abstract class Entity : RoomObjectClass
             }
         }
     }
+
+    public void FixedUpdate()
+    {
+        if (aiUpdatedSinceLastMovementUpdate)
+        {
+            aiUpdatedSinceLastMovementUpdate = false;
+            movement();
+        }
+    }
+
     // player movement, penguin follow etc.
     protected abstract void AI();
     // movement
     protected void movement() {
         // move
-        getRigidBody().velocity = velocity;
+
+        getRigidBody().MovePosition(getRigidBody().position + (Vector2)velocity * Time.deltaTime);
+        //getRigidBody().velocity = velocity;
+
         // speed decay
         // a^x = speed multiplier per sec, where x = amount slows triggered within 1 sec = 1/deltatime, a = actual speed multi
         // a = speed multi per sec ^ 1/x = speed multi per sec ^ deltatime
