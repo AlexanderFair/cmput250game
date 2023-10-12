@@ -26,7 +26,6 @@ public class Penguin : Entity {
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
-        DontDestroyOnLoad(gameObject);
         if (_instanceDefined)
             Debug.Log("Warning: a duplicated penguin instance might be present. ");
         _instance = this;
@@ -35,8 +34,8 @@ public class Penguin : Entity {
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
         // get the distance and direction to follow
-        Player ply = Player.plyInstance;
-        float dist = getCollider().Distance(Player.plyInstance.getCollider()).distance;
+        Player ply = Player.Instance;
+        float dist = getCollider().Distance(Player.Instance.getCollider()).distance;
         // follow if not close enough; otherwise, stop movement
         if (dist < FOLLOW_RADIUS) {
             this.velocity = Vector3.zero;

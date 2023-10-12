@@ -17,10 +17,7 @@ public static class SpriteOutlineMethods
     {
         if (clickableSpriteRenderer==null)
         {
-            if (SettingsInstance.Instance.logWarnings)
-            {
-                Debug.LogWarning(outlineableSprite.name + " does not have a spriteRenderer attached but is trying to outline");
-            }
+            Settings.DisplayWarning("Does not have a spriteRenderer attached but is trying to outline", outlineableSprite.gameObject);
             return;
         }
 
@@ -59,6 +56,11 @@ public interface IDragableSprite : IClickableSprite
 public interface IInteractableSprite : IOutlineableSprite
 {
     bool InteractableCondition();
+}
+
+public interface ICollisionInteractionSprite : IOutlineableSprite
+{
+    bool CollisionInteractionCondition();
 }
 
 

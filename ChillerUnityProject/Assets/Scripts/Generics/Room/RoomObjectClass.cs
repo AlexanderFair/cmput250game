@@ -21,7 +21,7 @@ public abstract class RoomObjectClass : MonoBehaviour
     // Animations
     public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
 
-    void Start()
+    public virtual void Start()
     {
         foreach (var anim in spriteAnimations)
         {
@@ -29,7 +29,7 @@ public abstract class RoomObjectClass : MonoBehaviour
         }
     }
 
-    void OnDestroy()
+    public virtual void OnDestroy()
     {
         foreach(var anim in spriteAnimations)
         {
@@ -38,7 +38,7 @@ public abstract class RoomObjectClass : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if(!UIObjectClass.IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
@@ -51,5 +51,5 @@ public abstract class RoomObjectClass : MonoBehaviour
     }
 
     /* Called when the object is updated and the UI and Menu is not active */
-    protected abstract void UpdateRoomObject();
+    protected virtual void UpdateRoomObject() { }
 }

@@ -12,7 +12,7 @@ using UnityEngine;
 public class Player : Entity {
     private static Player _plyInstance = null;
     private static bool _instanceDefined = false;
-    public static Player plyInstance {
+    public static Player Instance {
         get {
             if (!_instanceDefined)
                 Debug.Log("Warning: no valid player instance is present. ");

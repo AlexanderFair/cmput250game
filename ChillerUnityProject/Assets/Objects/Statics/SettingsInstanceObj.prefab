@@ -55,7 +55,7 @@ MonoBehaviour:
   - key: 4
     value: 13
   - key: 5
-    value: 27
+    value: 8
   floatValues:
   - key: 1
     value: -3
@@ -89,4 +89,4 @@ MonoBehaviour:
     value: {fileID: 2100000, guid: e78baf4283ccde745aa98dbc410a7b28, type: 2}
   - key: 3
     value: {fileID: 2100000, guid: 9ca2bc5507c521548af2e37f3c60cbde, type: 2}
-  logWarnings: 0
+  canLogWarnings: 0
