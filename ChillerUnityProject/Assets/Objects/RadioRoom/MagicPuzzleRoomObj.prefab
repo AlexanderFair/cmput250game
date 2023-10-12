@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7904601597012462596}
   - component: {fileID: 2973827808258338174}
   - component: {fileID: 5614196630892240450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MagicPuzzleRoomObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 441991147
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 50c580570132fe243a227e8230b5e920, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,6 +99,7 @@ MonoBehaviour:
   interactableCollider: {fileID: 5614196630892240450}
   interactionControl: 0
   interactableRenderer: {fileID: 7904601597012462596}
+  interactSound: {fileID: 0}
   uiPrefab: {fileID: 7007206161572410451, guid: 9b36a06cadf9f5f43b5a2d85040a224e,
     type: 3}
 --- !u!61 &5614196630892240450
