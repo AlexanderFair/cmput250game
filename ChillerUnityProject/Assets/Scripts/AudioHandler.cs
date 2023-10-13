@@ -59,6 +59,7 @@ public class AudioHandler : MonoBehaviour
         }
 
         this.soundtrackAudioSource = gameObject.AddComponent<AudioSource>();
+        soundtrackAudioSource.volume = 0.1f;
         this.effectSource = gameObject.AddComponent<AudioSource>();
         DontDestroyOnLoad(this);
     }

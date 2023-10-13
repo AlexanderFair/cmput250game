@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3058162355218563540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3058162355218563542}
+  - component: {fileID: 3058162355218563543}
+  - component: {fileID: 3058162355218563545}
+  m_Layer: 0
+  m_Name: Insanity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3058162355218563542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058162355218563540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.0916398, y: 0.2711379, z: -1.7523742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3058162355218563543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058162355218563540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f963d0fa620764da54497b38942276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insanityThreshold: 3
+  insanityToTicRateGraph:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 2.9916773
+      value: 0.10372543
+      inSlope: 0.012676795
+      outSlope: 0.012676795
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 9.883556
+      value: 0.19109237
+      inSlope: 0.016794505
+      outSlope: 0.016794505
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.061556544
+      outWeight: 0.29274213
+    - serializedVersion: 3
+      time: 12.006592
+      value: 0.34308863
+      inSlope: 0.20542182
+      outSlope: 0.20542182
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.040490277
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 17.799454
+      value: 0.89428604
+      inSlope: 0.16610998
+      outSlope: 0.16610998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.029314207
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  insanityToMaxTicBeforeVisionGraph:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 3
+      value: 20
+      inSlope: -0.88048893
+      outSlope: -0.88048893
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 5.0316877
+      inSlope: -0.88048893
+      outSlope: -0.88048893
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &3058162355218563545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058162355218563540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd69d9d38f2369d43bf5ce4dca903cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visions:
+  - {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d, type: 3}
+  sounds:
+  - {fileID: 8300000, guid: e770c370ba50629488ac78ada566bbcd, type: 3}

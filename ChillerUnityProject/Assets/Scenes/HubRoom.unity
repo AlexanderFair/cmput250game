@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -276,6 +276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextSceneName
       value: BoilerRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
+        type: 3}
+      propertyPath: playerStartPosition.x
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}

@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_68FE24B1: 1
+    - Vector1_68FE24B1: 4
     - _AlphaThreshold: 0
     - _Angle: 45
     - _BumpScale: 1
