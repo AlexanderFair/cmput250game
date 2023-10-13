@@ -50,8 +50,10 @@ public class BasicPipe : UIObjectClass
             compRot += 90 * Math.Ceiling(compRot / -90);
         rotation = ((int) (4 - (compRot / 90) )) % 4;
         // generate grid x and y based on coords
-        gridX = (int) ((this.transform.position.x + 1e-5) / attatchedSpriteRenderer.size.x);
-        gridY = (int) ((this.transform.position.y + 1e-5) / attatchedSpriteRenderer.size.y);
+        // gridX = (int) ((this.transform.position.x + 1e-5) / attatchedSpriteRenderer.size.x);
+        // gridY = (int) ((this.transform.position.y + 1e-5) / attatchedSpriteRenderer.size.y);
+        gridX = (int) ((this.transform.position.x + 1e-5) / this.transform.lossyScale.x);
+        gridY = (int) ((this.transform.position.y + 1e-5) / this.transform.lossyScale.y);
         (int, int) coord = (gridX, gridY);
         // load current pipe into pipe grid
         // logs an error message when two pipes are at the same position
