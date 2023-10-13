@@ -99,7 +99,7 @@ MonoBehaviour:
   interactableCollider: {fileID: 5614196630892240450}
   interactionControl: 0
   interactableRenderer: {fileID: 7904601597012462596}
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   uiPrefab: {fileID: 7007206161572410451, guid: 9b36a06cadf9f5f43b5a2d85040a224e,
     type: 3}
 --- !u!61 &5614196630892240450

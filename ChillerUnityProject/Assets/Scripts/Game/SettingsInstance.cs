@@ -40,7 +40,8 @@ public class SettingsInstance : MonoBehaviour
         new FloatValue { key = FloatValues.DialogDisplayYLocation, value = -3.0f },
         new FloatValue { key = FloatValues.PlayerInteractDistance, value = 1.0f },
         new FloatValue { key = FloatValues.DialogCharactersPerSecond, value = 32f },
-        new FloatValue { key = FloatValues.DialogCompletionWaitForCloseSeconds, value = 5f }
+        new FloatValue { key = FloatValues.DialogCompletionWaitForCloseSeconds, value = 5f },
+        new FloatValue { key = FloatValues.FPS, value = 32f }
     };
 
     [Header("Animations")]
@@ -85,9 +86,10 @@ public class SettingsInstance : MonoBehaviour
     // Key value parings for each setting type
     [System.Serializable] public struct KeyCodeValue { public Controls key; public KeyCode value; }
     [System.Serializable] public struct FloatValue { public FloatValues key; public float value; }
-    [System.Serializable] public struct PrefabAnimationValue { public PrefabAnimations key; public AnimationSpriteClass.AnimationStruct value; }
+    [System.Serializable] public struct PrefabAnimationValue { public PrefabAnimations key; public Sprite[] value; }
     [System.Serializable] public struct PrefabObjectValue { public PrefabObjects key; public GameObject value; }
     [System.Serializable] public struct PrefabMaterialValue { public PrefabMaterials key; public Material value; }
+
 }
 
 /*
@@ -105,7 +107,7 @@ public static class Settings
     // Float values
     public enum FloatValues
     {
-        PlayerInteractDistance, DialogDisplayYLocation, DialogCharactersPerSecond, DialogCompletionWaitForCloseSeconds
+        PlayerInteractDistance, DialogDisplayYLocation, DialogCharactersPerSecond, DialogCompletionWaitForCloseSeconds, FPS
     }
 
     // Prefab animations
@@ -178,7 +180,7 @@ public static class Settings
     }
 
     //Returns the associated animation 
-    public static AnimationSpriteClass.AnimationStruct Get(this PrefabAnimations obj)
+    public static Sprite[] Get(this PrefabAnimations obj)
     {
         RequireSettingsInstance();
         return SettingsInstance.Instance.animPairings[obj].value;

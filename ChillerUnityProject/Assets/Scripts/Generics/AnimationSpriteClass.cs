@@ -15,10 +15,10 @@ public class AnimationSpriteClass : MonoBehaviour
 {
     
     // The nothing animation -- no sprites are rendered
-    public static readonly AnimationStruct NULL_STRUCT = new AnimationStruct(new List<Sprite>() { null }, 0f);
+    public static readonly Sprite[] NULL_STRUCT = { null };
     [Header("Animation Sprite Settings")]
     // The animation struct to be rendered
-    public AnimationStruct animationStruct = NULL_STRUCT;
+    public Sprite[] animationStruct = NULL_STRUCT;
     public SpriteRenderer spriteRenderer;
 
     protected float currentTime = 0;
@@ -35,21 +35,21 @@ public class AnimationSpriteClass : MonoBehaviour
     // Start is called before the first frame update
     public void AwakeAnimation()
     {
-        spriteRenderer.sprite = animationStruct.sprites[0];
+        spriteRenderer.sprite = animationStruct[0];
     }
 
     // Update is called once per frame
     public void UpdateAnimation()
     {
         currentTime += Time.deltaTime;
-        if ( currentTime >= animationStruct.Spf)
+        if ( currentTime >= 1f/Settings.FloatValues.FPS.Get())
         {
             currentFrame++;
-            currentFrame %= animationStruct.Frames;
-            currentTime -= animationStruct.Spf;
+            currentFrame %= animationStruct.Length;
+            currentTime -= 1f / Settings.FloatValues.FPS.Get();
         }
 
-        SetRender(animationStruct.sprites[currentFrame]);
+        SetRender(animationStruct[currentFrame]);
     }
 
     // Sets the currently rendering sprite
@@ -99,7 +99,7 @@ public class AnimationSpriteClass : MonoBehaviour
      * Otherwise, the animation will start (or be paused) at the same time/frame 
      * as the previous animation was last at
      */
-    public void ChangeAnimation(AnimationStruct newAnimation, bool restart = true)
+    public void ChangeAnimation(Sprite[] newAnimation, bool restart = true)
     {
         animationStruct = newAnimation;
         if(restart)
@@ -119,27 +119,4 @@ public class AnimationSpriteClass : MonoBehaviour
         currentFrame = 0;
     }
 
-    /*
-     * A structure used to store information about an animation
-     */
-    [System.Serializable]
-    public struct AnimationStruct
-    {   
-        //The list of sprites
-        public List<Sprite> sprites;
-        // the FPS of the animation
-        public float fps;
-
-        // Takes _sprites - the list of sprites, and _fps - the fps of the anim
-        public AnimationStruct(List<Sprite> _sprites, float _fps) 
-        {
-            sprites = _sprites;
-            fps = _fps;
-        }
-
-        // The seconds per frame of the animation
-        public float Spf { get { return 1f / fps; } }
-        // The number of frames in the 
-        public int Frames { get { return sprites.Count; } }
-    }
 }
