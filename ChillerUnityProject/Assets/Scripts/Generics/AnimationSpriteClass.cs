@@ -20,6 +20,10 @@ public class AnimationSpriteClass : MonoBehaviour
     // The animation struct to be rendered
     public Sprite[] animationStruct = NULL_STRUCT;
     public SpriteRenderer spriteRenderer;
+    // The amount of frames that each give frame should represet
+    // if this is 2 then each frame will be shown twice consecutively.
+    // i.e. it is now AABBCC instead of ABC
+    public int repetitionFactor = 1;
 
     protected float currentTime = 0;
     protected int currentFrame = 0;
@@ -36,12 +40,16 @@ public class AnimationSpriteClass : MonoBehaviour
     public void AwakeAnimation()
     {
         spriteRenderer.sprite = animationStruct[0];
+        if(repetitionFactor < 1)
+        {
+            throw new System.ArgumentOutOfRangeException("The repetition factor can not be less than 1 in " + name);
+        }
     }
 
     // Update is called once per frame
     public void UpdateAnimation()
     {
-        currentTime += Time.deltaTime;
+        currentTime += Time.deltaTime / repetitionFactor;
         if ( currentTime >= 1f/Settings.FloatValues.FPS.Get())
         {
             currentFrame++;

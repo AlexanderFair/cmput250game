@@ -70,11 +70,11 @@ MonoBehaviour:
   - key: 0
     value: 1
   - key: 2
-    value: 32
+    value: 24
   - key: 3
     value: 5
   - key: 4
-    value: 32
+    value: 24
   prefabAnimValues:
   - key: 0
     value:

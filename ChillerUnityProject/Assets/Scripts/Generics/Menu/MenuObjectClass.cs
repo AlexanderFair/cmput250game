@@ -66,7 +66,7 @@ public class MenuObjectClass : MonoBehaviour
      * 
      * If the Menu is enabled and this is the only object, the Menu is disabled.
      */
-    void OnDestory()
+    void OnDestroy()
     {
         foreach (var anim in spriteAnimations)
         {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MainMenu : GameMenuObject
 {
+    [Header("Main Menu Setting")]
+    public GameObject cutscenePrefab;
 
     protected override void UpdateMenuObject() { }
 
@@ -21,6 +23,11 @@ public class MainMenu : GameMenuObject
         {
             MenuController.Instance.ChangeMenu(MenuController.Instance.settingsMenuPrefab);
         }
+    }
+
+    protected override void OnDestroyMenuObject()
+    {
+        base.OnDestroyMenuObject();
     }
 
     public override MenuController.MenuTransitionDirection TransitionDirection()
