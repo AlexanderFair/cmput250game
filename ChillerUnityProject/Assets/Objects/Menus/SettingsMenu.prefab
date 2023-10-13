@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 7634522859444183986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7117957568932428861}
   m_RootOrder: 0
@@ -270,10 +270,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStruct:
-    sprites:
-    - {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
-    - {fileID: 1832331798393387851, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
-    fps: 2
+  - {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 175367390841714769, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 175367390841714769, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 175367390841714769, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
+  - {fileID: 175367390841714769, guid: 5319b10c5d341f34ca4824e49906e72f, type: 3}
   spriteRenderer: {fileID: 6875407716258207806}
 --- !u!1001 &6893303047027014540
 PrefabInstance:
@@ -282,6 +286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7117957568932428861}
     m_Modifications:
+    - target: {fileID: 1175093055335191723, guid: 326fd14b2cf93cb46b1bea663377f682,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1277926466144524286, guid: 326fd14b2cf93cb46b1bea663377f682,
         type: 3}
       propertyPath: m_Layer

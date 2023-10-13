@@ -10,24 +10,30 @@ public static class Util
 {
     /*
      * Returns true if the mouse position overlaps the collider and the keyCode was pressed this frame
+     * 
+     * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
      */
-    public static bool GetKeyDownWithMouseOverObject(KeyCode keyCode, Collider2D collider)
+    public static bool GetKeyDownWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
     {
-        return IsMouseOverObject(collider) && Input.GetKeyDown(keyCode);
+        return IsMouseOverObject(collider) && control.GetKeyDown(forceInputEnabled);
     }
-    /*
-     * Returns true if the mouse position overlaps the collider and the keyCode was released this frame
-     */
-    public static bool GetKeyUpWithMouseOverObject(KeyCode keyCode, Collider2D collider)
+/*
+ * Returns true if the mouse position overlaps the collider and the keyCode was released this frame
+ * 
+ * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
+ */
+public static bool GetKeyUpWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
     {
-        return IsMouseOverObject(collider) && Input.GetKeyUp(keyCode);
+        return IsMouseOverObject(collider) && control.GetKeyUp(forceInputEnabled);
     }
-    /*
-     * Returns true if the mouse position overlaps the collider and the keyCode is pressed
-     */
-    public static bool GetKeyWithMouseOverObject(KeyCode keyCode, Collider2D collider)
+/*
+ * Returns true if the mouse position overlaps the collider and the keyCode is pressed
+ * 
+ * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
+ */
+public static bool GetKeyWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
     {
-        return IsMouseOverObject(collider) && Input.GetKey(keyCode);
+        return IsMouseOverObject(collider) && control.GetKey(forceInputEnabled);
     }
     /*
      * Returns true if the mouse position overlaps the collider

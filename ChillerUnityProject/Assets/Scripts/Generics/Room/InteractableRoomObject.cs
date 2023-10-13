@@ -26,7 +26,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     {
         this.UpdateOutlinableSprite(interactableRenderer);
 
-        if (Input.GetKeyDown(interactionControl.Get()) && InteractableCondition())
+        if (interactionControl.GetKeyDown() && InteractableCondition())
         {
             Interact();
         }
@@ -38,7 +38,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
      */
 
     public virtual bool InteractableCondition() {
-        return interactableCollider.Distance(Player.plyInstance.getCollider()).distance
+        return interactableCollider.Distance(Player.Instance.getCollider()).distance
                         < Settings.FloatValues.PlayerInteractDistance.Get(); 
     }
     /*

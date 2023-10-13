@@ -35,7 +35,7 @@ public class DialogDisplay : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        bool skip = Input.GetKeyDown(Settings.Controls.DialogSkip.Get());
+        bool skip = Settings.Controls.DialogSkip.GetKeyDown();
         if(skip && Complete )
         {
             KillDialog();
@@ -173,7 +173,7 @@ public class DialogDisplay : MonoBehaviour
     }
 
     // Clears the current dialog display and displays the new dialog with the profilePic
-    public static void NewDialog(string _text, AnimationSpriteClass.AnimationStruct animationStruct)
+    public static void NewDialog(string _text, Sprite[] animationStruct)
     {
         StopCurrentDisplay();
 

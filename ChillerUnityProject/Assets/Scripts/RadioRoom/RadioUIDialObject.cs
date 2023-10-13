@@ -19,6 +19,7 @@ public class RadioUIDialObject : DialUIObject
         if(prevValue < 9 && currentValue >= 9)
         {
             DialogDisplay.NewDialog(display, anim.Get());
+            Insanity.Add(1);
         }
 
         if(prevValue >= 9 && currentValue < 9)

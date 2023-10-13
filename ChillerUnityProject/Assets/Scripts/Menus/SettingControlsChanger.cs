@@ -71,7 +71,7 @@ public class SettingControlsChanger : MenuClickCaller
         }
         else
         {
-            value.text = control.Get().ToString();
+            value.text = control.GetKeyCode().ToString();
         }
     }
 }
