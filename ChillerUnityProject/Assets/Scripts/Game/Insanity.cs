@@ -66,7 +66,6 @@ public class Insanity : MonoBehaviour
     {
         int ticCallPerVision = Mathf.RoundToInt(insanityToMaxTicBeforeVisionGraph.Evaluate(insanityStat));
         int ticProb = ticCallPerVision - ticsWithoutVision;
-        Debug.Log("tic " + ticsWithoutVision + " / " + ticCallPerVision);
         float call = Random.Range(0.0f, 1.0f);
         if (ticProb <= 0 || call < 1f / ticProb)
         {
