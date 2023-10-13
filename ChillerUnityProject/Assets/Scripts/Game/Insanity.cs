@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * The class which deals with the insanity metre
@@ -27,6 +24,7 @@ public class Insanity : MonoBehaviour
 
 
     private static Insanity _instance;
+    private static bool isDefined = false;
     public static Insanity Instance
     {
         get
@@ -41,6 +39,12 @@ public class Insanity : MonoBehaviour
 
     void Start()
     {
+        if(isDefined)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+        isDefined = true;
         _instance = this;
         DontDestroyOnLoad(gameObject);
     }

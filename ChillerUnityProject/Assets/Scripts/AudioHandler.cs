@@ -49,7 +49,8 @@ public class AudioHandler : MonoBehaviour
 
         if (shouldDestroy){
             Settings.DisplayWarning("Stopped creation of extra audio handler!!", this.gameObject);
-            Destroy(this);
+            DestroyImmediate(gameObject);
+            return;
         } else {
             _instance = this;
         }

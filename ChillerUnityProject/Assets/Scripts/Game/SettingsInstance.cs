@@ -16,6 +16,7 @@ public class SettingsInstance : MonoBehaviour
 {
     // The settings instance
     public static SettingsInstance Instance { get; private set; }
+    private static bool isDefined = false;
 
     [Header("Controls")]
     // The set of KeyCode pairings
@@ -72,7 +73,14 @@ public class SettingsInstance : MonoBehaviour
 
     void Awake()
     {
+        if (isDefined)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+
         Instance = this;
+        isDefined = true;
         DontDestroyOnLoad(gameObject);
 
         //Set up dicitonaries

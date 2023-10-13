@@ -18,7 +18,7 @@ public class Visions : MonoBehaviour
     private System.Random random = new System.Random();
 
     private static Visions _instance;
-
+    private static bool isDefined = false;
     public static Visions Instance
     {
         get
@@ -33,6 +33,13 @@ public class Visions : MonoBehaviour
 
     void Start()
     {
+        if (isDefined)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+        isDefined = true;
+
         _instance = this;
         DontDestroyOnLoad(gameObject);
     }

@@ -11,6 +11,7 @@ using static MenuClickableObject;
 public class MenuController : MonoBehaviour
 {
     public static MenuController Instance { get; private set; }
+    private static bool isDefined = false;
 
     public GameObject mainMenuPrefab;
     public GameObject pauseMenuPrefab;
@@ -24,6 +25,12 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(isDefined)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+        isDefined = true;
         Instance = this;
         DontDestroyOnLoad(gameObject);
         ChangeMenu(mainMenuPrefab);

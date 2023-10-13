@@ -27,7 +27,10 @@ public class Player : Entity {
     {
         DontDestroyOnLoad(gameObject);
         if (_instanceDefined)
-            Debug.Log("Warning: a duplicated player instance might be present. ");
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
         _plyInstance = this;
         _instanceDefined = true;
     }

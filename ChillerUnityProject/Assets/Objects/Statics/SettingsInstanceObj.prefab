@@ -96,10 +96,10 @@ MonoBehaviour:
   - key: 0
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - key: 1
-    value: {fileID: 2100000, guid: cd49e782367213540ada447ae404371b, type: 2}
+    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - key: 2
-    value: {fileID: 2100000, guid: e78baf4283ccde745aa98dbc410a7b28, type: 2}
+    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - key: 3
-    value: {fileID: 2100000, guid: 9ca2bc5507c521548af2e37f3c60cbde, type: 2}
-  canLogWarnings: 1
+    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  canLogWarnings: 0
   canInput: 1

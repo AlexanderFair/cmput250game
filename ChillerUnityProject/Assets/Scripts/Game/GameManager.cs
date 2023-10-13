@@ -50,14 +50,19 @@ public class GameManager : MonoBehaviour
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
-        DontDestroyOnLoad(gameObject);
         if (_instanceDefined)
-            Debug.Log("Warning: a duplicated game manager instance might be present. ");
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
         _instance = this;
         _instanceDefined = true;
         _roomData = new Dictionary<String, GameSaveInfo>();
 
-        if(switchMenuPrefab == null)
+
+        DontDestroyOnLoad(gameObject);
+
+        if (switchMenuPrefab == null)
         {
             throw new NullReferenceException("The switchMenuPrefab is null on the GameManager object");
         }
