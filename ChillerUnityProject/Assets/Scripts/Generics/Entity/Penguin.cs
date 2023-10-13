@@ -12,25 +12,13 @@ using UnityEngine;
 public class Penguin : Entity {
     // do not set the follow radius to a small number that the penguin actually pushes the player around the room
     public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
+    public static HashSet<Penguin> allPenguins = new HashSet<Penguin>();
 
-    private static Penguin _instance;
-    private static bool _instanceDefined = false;
-    public static Penguin instance {
-        get {
-            if (!_instanceDefined)
-                Debug.Log("Warning: no valid penguin instance is present. ");
-            return _instance;
-        }
-    }
-    
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if (_instanceDefined)
-            Debug.Log("Warning: a duplicated penguin instance might be present. ");
-        _instance = this;
-        _instanceDefined = true;
+        allPenguins.Add(this);
     }
     // override the AI function: it should try to follow player when far away
     protected override void AI() {

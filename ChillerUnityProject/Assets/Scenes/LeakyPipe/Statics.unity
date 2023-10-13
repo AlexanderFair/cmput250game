@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c3dde3b9bc70247bb08b2d1575be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   speedDecayMultiplierPerSecond: 1
 --- !u!212 &252376833
 SpriteRenderer:
@@ -404,8 +405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f109cb2cf0635744bbaa2250a7ceef35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimations: []
   speedDecayMultiplierPerSecond: 0.02
+  useAccelerationMode: 1
   MOVE_ACCELERATION_PER_SECOND: 2.5
+  FIXED_MOVE_SPEED_PER_SEC: 0.75
 --- !u!61 &1981907285
 BoxCollider2D:
   m_ObjectHideFlags: 0

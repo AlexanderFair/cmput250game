@@ -75,7 +75,9 @@ public class GameManager : MonoBehaviour
     private void finishSwitchScene(String sceneName, Vector3 targetPos) {
         // TODO: remove the loading screen
         // teleport player and penguin to new position
-        Player.plyInstance.transform.position = targetPos;
-        Penguin.instance.transform.position = targetPos;
+        Player.plyInstance.getRigidBody().position = targetPos;
+        foreach (Penguin penguin in Penguin.allPenguins) {
+            penguin.getRigidBody().position = targetPos;
+        }
     }
 }

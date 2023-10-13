@@ -12,6 +12,7 @@ using UnityEngine;
 public class Player : Entity {
     private static Player _plyInstance = null;
     private static bool _instanceDefined = false;
+    public bool useAccelerationMode = true;
     public static Player plyInstance {
         get {
             if (!_instanceDefined)
@@ -20,7 +21,7 @@ public class Player : Entity {
         }
     }
     // this is the acceleration per second. It may need additional tweaks to yield a satisfying result.
-    public float MOVE_ACCELERATION_PER_SECOND = 2.5f;
+    public float MOVE_ACCELERATION_PER_SECOND = 2.5f, FIXED_MOVE_SPEED_PER_SEC = 0.75f;
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
@@ -43,9 +44,17 @@ public class Player : Entity {
             horMoveDir --;
         if (Input.GetKey(KeyCode.D))
             horMoveDir ++;
+        // movement
+        Vector3 moveDir = new Vector3(horMoveDir, verMoveDir, 0);
         // accelerate
-        Vector3 accel = new Vector3(horMoveDir * MOVE_ACCELERATION_PER_SECOND, verMoveDir * MOVE_ACCELERATION_PER_SECOND, 0);
-        accel *= Time.deltaTime;
-        accelerate(accel, -1);
+        if (useAccelerationMode) {
+            moveDir *= MOVE_ACCELERATION_PER_SECOND * Time.deltaTime;
+            accelerate(moveDir, -1);
+        }
+        // set fixed velocity
+        else {
+            moveDir *= FIXED_MOVE_SPEED_PER_SEC;
+            velocity = moveDir;
+        }
     }
 }
