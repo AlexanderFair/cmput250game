@@ -20,7 +20,7 @@ public class CombinationUIObject : UIObjectClass
 
 
     private GameObject[] displayObjects;
-    private int[] values;
+    protected int[] values;
 
     protected override void AwakeUIObject()
     {
@@ -32,7 +32,7 @@ public class CombinationUIObject : UIObjectClass
             inputSections[i].changeUpButton?.Setup(i, true);
             inputSections[i].changeDownButton?.Setup(i, false);
             values[i] = inputSections[i].defaultValue;
-            UpdateOptions(i);
+            UpdateOptions(i, false);
         }
 
     }
@@ -45,7 +45,7 @@ public class CombinationUIObject : UIObjectClass
         UpdateOptions(comboBtn.Index);
     }
 
-    private void UpdateOptions(int index)
+    private void UpdateOptions(int index, bool awake = true)
     {
         if (displayObjects[index] != null)
         {
@@ -53,7 +53,10 @@ public class CombinationUIObject : UIObjectClass
         }
         displayObjects[index] = InstantiateUIElement(optionPrefabs[values[index]]);
         displayObjects[index].transform.position = inputSections[index].sectionLocation;
+        if(awake)CodeUpdated();
     }
+
+    protected virtual void CodeUpdated() { }
 }
 
 [System.Serializable]
