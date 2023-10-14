@@ -2198,7 +2198,7 @@ MonoBehaviour:
   interactionControl: 0
   interactableRenderer: {fileID: 1529616265}
   interactSound: {fileID: 0}
-  uiPrefab: {fileID: 8256515706262198471, guid: e204fabb910a81747a615a414038caa3,
+  uiPrefab: {fileID: 5378682738892436246, guid: f71aa2d19718e8b458b20ba3ef1d1a0d,
     type: 3}
   levelName: tutorial
   isCompleted: 0
