@@ -22,6 +22,13 @@ public class Player : Entity {
     // this is the acceleration per second. It may need additional tweaks to yield a satisfying result.
     public float MOVE_ACCELERATION_PER_SECOND = 2.5f;
 
+    // animation sprite lists
+    public Sprite[] idleAnim;
+    public Sprite[] walkEastAnim;
+    public Sprite[] walkWestAnim;
+    public Sprite[] walkSouthAnim;
+    public Sprite[] walkNorthAnim;
+
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
@@ -38,14 +45,24 @@ public class Player : Entity {
     protected override void AI() {
         // positive: right & up
         float horMoveDir = 0, verMoveDir = 0;
-        if (Settings.Controls.MoveUp.GetKey())
+
+        // sprite animation changes depending on which key is pressed
+        if (Settings.Controls.MoveUp.GetKey()) {
+            spriteAnimations[0].ChangeAnimation(walkNorthAnim, false);
             verMoveDir ++;
-        if (Settings.Controls.MoveDown.GetKey())
+        } else if (Settings.Controls.MoveDown.GetKey()) {
+            spriteAnimations[0].ChangeAnimation(walkSouthAnim, false);
             verMoveDir --;
-        if (Settings.Controls.MoveLeft.GetKey())
+        } else if (Settings.Controls.MoveLeft.GetKey()) {
+            spriteAnimations[0].ChangeAnimation(walkWestAnim, false);
             horMoveDir --;
-        if (Settings.Controls.MoveRight.GetKey())
+        } else if (Settings.Controls.MoveRight.GetKey()) {
+            spriteAnimations[0].ChangeAnimation(walkEastAnim, false);
             horMoveDir ++;
+        } else {
+            // idle animation
+            spriteAnimations[0].ChangeAnimation(idleAnim);
+        }
         // accelerate
         Vector3 accel = new Vector3(horMoveDir * MOVE_ACCELERATION_PER_SECOND, verMoveDir * MOVE_ACCELERATION_PER_SECOND, 0);
         accel *= Time.deltaTime;
