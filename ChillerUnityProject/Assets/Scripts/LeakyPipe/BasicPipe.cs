@@ -50,14 +50,17 @@ public class BasicPipe : UIObjectClass
             compRot += 90 * Math.Ceiling(compRot / -90);
         rotation = ((int) (4 - (compRot / 90) )) % 4;
         // generate grid x and y based on coords
-        gridX = (int) ((this.transform.position.x + 1e-5) / (attatchedSpriteRenderer.size.x));
-        gridY = (int) ((this.transform.position.y + 1e-5) / (attatchedSpriteRenderer.size.y));
+        gridX = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.x) / (attatchedSpriteRenderer.bounds.size.x)) );
+        gridY = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.y) / (attatchedSpriteRenderer.bounds.size.y)) );
+        Debug.Log( (attatchedSpriteRenderer.bounds.center) + 
+        "(" + (attatchedSpriteRenderer.bounds.size) + ")" + 
+        " ->> " + gridX + ", " + gridY);
         (int, int) coord = (gridX, gridY);
         // load current pipe into pipe grid
         // logs an error message when two pipes are at the same position
         if (PipeGrid.getPuzzle().PIPE_MAP.ContainsKey(coord)) {
             Debug.Log("Two pipes are at the same position? Coord: " + coord + "||" + this.transform.position);
-            Destroy(attatchedSpriteRenderer);
+            Destroy(this);
         }
         else 
             PipeGrid.getPuzzle().PIPE_MAP.Add(coord, this);
@@ -135,6 +138,10 @@ public class BasicPipe : UIObjectClass
         SpriteRenderer attatchedObj = this.gameObject.GetComponent<SpriteRenderer>();
         return attatchedObj;
     }
+    public BoxCollider2D getAttatchedCollider() {
+        BoxCollider2D collider = this.gameObject.GetComponent<BoxCollider2D>();
+        return collider;
+    }
 
     // 
     // ROTATION AND SPRITE RENDERING
@@ -147,18 +154,20 @@ public class BasicPipe : UIObjectClass
         // create sprite
         GameObject createdGameObj = Instantiate(LEAK_SPRITE_RENDERER_TEMPLATE);
         SpriteRenderer createdLeakDisplay = createdGameObj.GetComponent<SpriteRenderer>();
-        // modify sprite info
+        SpriteRenderer attatchedRenderer = getAttatchedRenderer();
+        // modify sprite scale
+        createdLeakDisplay.transform.localScale = attatchedRenderer.transform.localScale;
+        // modify sprite position
         float spriteX = this.transform.position.x, spriteY = this.transform.position.y;
-        SpriteRenderer attatchedObj = getAttatchedRenderer();
         // should have used switch, but this is not an enum so if-else statement is utilized
         if (direction == PipeGrid.Directions.RIGHT)
-            spriteX += (createdLeakDisplay.size.x + attatchedObj.size.x) / 2;
+            spriteX += (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.DOWN)
-            spriteY -= (createdLeakDisplay.size.y + attatchedObj.size.y) / 2;
+            spriteY -= (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
         else if (direction == PipeGrid.Directions.LEFT)
-            spriteX -= (createdLeakDisplay.size.x + attatchedObj.size.x) / 2;
+            spriteX -= (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.UP)
-            spriteY += (createdLeakDisplay.size.y + attatchedObj.size.y) / 2;
+            spriteY += (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
         else {
             Debug.Log("BasicPipe.getRelativePipe error: unknown direction " + direction);
             return;
