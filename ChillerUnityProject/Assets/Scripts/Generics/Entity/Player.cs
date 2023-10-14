@@ -19,8 +19,11 @@ public class Player : Entity {
             return _plyInstance;
         }
     }
-    // this is the acceleration per second. It may need additional tweaks to yield a satisfying result.
-    public float MOVE_ACCELERATION_PER_SECOND = 2.5f;
+    // this is the acceleration/fixed speed per second. It may need additional tweaks to yield a satisfying result.
+    // which one to use is determined by MOVE_WITH_ACCELERATION variable.
+    public float MOVE_ACCELERATION_PER_SECOND = 2.5f, MOVE_SPEED = 0.75f;
+    // is the player supposed to move with accelration or move with a fixed speed?
+    public bool MOVE_WITH_ACCELERATION = false;
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
@@ -44,8 +47,14 @@ public class Player : Entity {
         if (Input.GetKey(KeyCode.D))
             horMoveDir ++;
         // accelerate
-        Vector3 accel = new Vector3(horMoveDir * MOVE_ACCELERATION_PER_SECOND, verMoveDir * MOVE_ACCELERATION_PER_SECOND, 0);
-        accel *= Time.deltaTime;
-        accelerate(accel, -1);
+        Vector3 moveDir = new Vector3(horMoveDir, verMoveDir, 0);
+        if (MOVE_WITH_ACCELERATION) {
+            moveDir *= Time.deltaTime * MOVE_ACCELERATION_PER_SECOND;
+            accelerate(moveDir, -1);
+        }
+        else {
+            moveDir *= MOVE_SPEED;
+            this.velocity = moveDir;
+        }
     }
 }
