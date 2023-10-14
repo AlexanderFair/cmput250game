@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}
       propertyPath: playerStartPosition.x
-      value: 5.5
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c72c61a4a6349e0488b1cf48eb7b35e6, type: 3}

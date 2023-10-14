@@ -85,7 +85,10 @@ public class Insanity : MonoBehaviour
     
     // Adds the amount to the insanity level
     public void AddInsanity(float add)
-    { 
+    {
+        if (add <= 0) {
+            throw new System.Exception("added insanity must be a positive amount");
+        } 
         insanityStat += add;
     }
 
@@ -95,4 +98,9 @@ public class Insanity : MonoBehaviour
         Instance.AddInsanity(add);
     }
 
+
+    public float getInsanity()
+    {
+        return insanityStat;
+    }
 }

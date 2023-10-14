@@ -30,7 +30,7 @@ public class AudioHandler : MonoBehaviour
     
     /* The insanity scores for each track. These determine which tracks play at
      * which tim */
-    public int[] trackInsanityScores;
+    public float[] trackInsanityScores;
 
     /* The audio source (not the clip!) for sound effects. 
     * Unsure if this will stay seperate from the soundtrack*/
@@ -79,10 +79,27 @@ public class AudioHandler : MonoBehaviour
     public bool doplay = false;
     /* Chooses a track based off of insanity/game progress */
     private AudioClip chooseSoundtrack(){
-        if (doplay){
-            return tracks[0];
+        if (!doplay){
+            return null;
         }
-        return null;
+        // find number of 
+        int countOfPlayableTracks = 0;
+        foreach (float score in trackInsanityScores){
+            if (score <= Insanity.Instance.getInsanity()){
+                countOfPlayableTracks++;
+            }
+        }
+        int choice = Random.Range(0, countOfPlayableTracks+1);
+        int count = 0;
+        for (int i = 0; i < trackInsanityScores.Length; i++){
+            if (trackInsanityScores[i] <= Insanity.Instance.getInsanity()) {
+                count++;
+                if (count >= choice){
+                    return tracks[i];
+                }
+            }
+        }
+        return tracks[0];
     }
     /* Plays a sound effect. 
     * @param AudioClip soundEffect The sound effect to be played
