@@ -319,9 +319,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
+      propertyPath: idleAnim.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: idleAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: -4014768698575629655, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60,
+        type: 3}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkEastAnim.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkWestAnim.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkNorthAnim.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkSouthAnim.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkEastAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: 555268562263745817, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60,
+        type: 3}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkWestAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: -8168192578824759328, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60,
+        type: 3}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
       propertyPath: spriteAnimations.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkNorthAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: -9015408374822844398, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60,
+        type: 3}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: walkSouthAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: -9015408374822844398, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60,
+        type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: spriteAnimations.Array.data[0]
@@ -605,10 +660,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStruct:
-  - {fileID: -4014768698575629655, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60, type: 3}
-  - {fileID: -9015408374822844398, guid: 347c39b1b05aa6147b6ec3b8e7e3ca60, type: 3}
+  - {fileID: 0}
   spriteRenderer: {fileID: 503478534}
-  repetitionFactor: 20
+  repetitionFactor: 1
 --- !u!212 &503478534 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6329014479189841152, guid: 42b8dd245f3fdc34193359afec3c244e,
