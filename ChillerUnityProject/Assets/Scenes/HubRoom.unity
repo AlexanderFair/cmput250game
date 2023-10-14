@@ -581,7 +581,7 @@ PrefabInstance:
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}
       propertyPath: playerStartPosition.x
-      value: -4
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}
