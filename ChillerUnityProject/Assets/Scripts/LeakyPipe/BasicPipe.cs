@@ -52,9 +52,6 @@ public class BasicPipe : UIObjectClass
         // generate grid x and y based on coords
         gridX = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.x) / (attatchedSpriteRenderer.bounds.size.x)) );
         gridY = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.y) / (attatchedSpriteRenderer.bounds.size.y)) );
-        Debug.Log( (attatchedSpriteRenderer.bounds.center) + 
-        "(" + (attatchedSpriteRenderer.bounds.size) + ")" + 
-        " ->> " + gridX + ", " + gridY);
         (int, int) coord = (gridX, gridY);
         // load current pipe into pipe grid
         // logs an error message when two pipes are at the same position
