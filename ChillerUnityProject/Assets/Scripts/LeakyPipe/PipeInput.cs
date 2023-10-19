@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *
+ * The input pipe.
+ *
+ * THIS IS IMPLEMENTED CONSIDERING THAT THE GAME CONTAINS ONLY ONE OF THEM!
+ *
+ */
 public class PipeInput : BasicPipe
 {
     public static int PIPE_TYPE_IDX = 1;
