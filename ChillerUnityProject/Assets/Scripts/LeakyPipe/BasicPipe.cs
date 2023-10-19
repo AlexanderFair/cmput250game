@@ -71,9 +71,9 @@ public class BasicPipe : UIObjectClass
     }
     // if this is buggy, try let the other function run initStats()
     public void Start() {
+        initStats();
     }
     protected override void AwakeUIObject() {
-        initStats();
     }
     // the two functions below should be called when a pipe is rotating. In another word, this is the pipe's behaviour over "time", which is rotation operations.
     public void preOperationTick() {
