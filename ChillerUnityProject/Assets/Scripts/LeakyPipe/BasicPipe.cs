@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 
+ * This is the base class for all pipes in the pipe puzzle.
+ * 
+ * generally, it is sufficient to inherit this class then specify(override) the connected directions.
+ * 
+ */
 public class BasicPipe : UIObjectClass
 {
     public static GameObject LEAK_SPRITE_RENDERER_TEMPLATE;
@@ -41,8 +48,8 @@ public class BasicPipe : UIObjectClass
     // BELOW: FUNCTIONS RELATED TO WATER/FROZEN CHECK
     //
 
-    // initilaizes stats on start
-    public void Start() {
+    // initilaizes stats on awake
+    public void initStats() {
         SpriteRenderer attatchedSpriteRenderer = getAttatchedRenderer();
         // generate rotation based on component rotation
         double compRot = this.transform.rotation.eulerAngles.z;
@@ -62,6 +69,12 @@ public class BasicPipe : UIObjectClass
         else 
             PipeGrid.getPuzzle().PIPE_MAP.Add(coord, this);
     }
+    // if this is buggy, try let the other function run initStats()
+    public void Start() {
+    }
+    protected override void AwakeUIObject() {
+        initStats();
+    }
     // the two functions below should be called when a pipe is rotating. In another word, this is the pipe's behaviour over "time", which is rotation operations.
     public void preOperationTick() {
         if (!isConnected && FREEZE_ON_DISCONNECT) {
@@ -70,10 +83,12 @@ public class BasicPipe : UIObjectClass
                 frozenState = MAX_FROZEN_LAYERS;
         }
     }
+    // if the pipe is connected after the connection check ("post"OperationTick), the ice in it should melt.
     public void postOperationTick() {
         if (isConnected)
             frozenState = 0;
     }
+    // get the relative pipe in the given direction
     public BasicPipe getRelativePipe(int direction) {
         (int, int) targetCoord;
         // should have used switch, but this is not an enum so if-else statement is utilized
@@ -91,19 +106,25 @@ public class BasicPipe : UIObjectClass
         }
         return PipeGrid.getPuzzle().PIPE_MAP.ContainsKey(targetCoord) ? PipeGrid.getPuzzle().PIPE_MAP[targetCoord] : null;
     }
+    // reset pipe stats before a new connection check loop
     public void resetBeforeConnectionCheck() {
         isConnected = false;
         leakDir = new bool[]{false, false, false, false};
     }
+    // checks if the CURRENT pipe is attempting to connect to a given direction
+    // note that this function accounts for the pipe rotation
     public bool isConnectedTowardsDir(int targetDirection) {
         // add another total_directions before modulo it, in case of unexpected behaviour on mod operation with negative number
         int originalCorrespondingRotation = targetDirection - rotation + PipeGrid.Directions.TOTAL_DIRECTIONS;
         originalCorrespondingRotation %= PipeGrid.Directions.TOTAL_DIRECTIONS;
         return connectedDir[originalCorrespondingRotation];
     }
+    // the function called when a pipe is considered connected
     public void handleConnected() {
         isConnected = true;
     }
+    // the function to CACHE the leaking information
+    // THIS function has nothing to do with leak sprite display
     public void handleLeak(int leakDirection) {
         leakDir[leakDirection] = true;
         PipeGrid.getPuzzle().liquidDecrement ++;
@@ -131,6 +152,7 @@ public class BasicPipe : UIObjectClass
         }
         return results;
     }
+    // the getters to get an attatched component
     public SpriteRenderer getAttatchedRenderer() {
         SpriteRenderer attatchedObj = this.gameObject.GetComponent<SpriteRenderer>();
         return attatchedObj;
@@ -143,10 +165,17 @@ public class BasicPipe : UIObjectClass
     // 
     // ROTATION AND SPRITE RENDERING
     //
+
+    // this accounts for the sprite rotation
+    // spriteInfo would be XXX.transform
+    // spriteRotation: current rotation
+    // targetRotDir: +1, -1 (0 works too, then it is stationary)
+    // rotationInterpolate: the rotation progress, [0f, 1f]
     public void handleSpriteRotation(Transform spriteInfo, int spriteRotation, int targetRotDir, float rotationInterpolate) {
         spriteInfo.rotation = new Quaternion(0f, 0f, 0f, 0f);
         spriteInfo.Rotate(0f, 0f, -90f * (spriteRotation + (targetRotDir * rotationInterpolate) ) );
     }
+    // THIS is the function that RENDERS leak according to CACHED information.
     public void renderLeak(int direction) {
         // create sprite
         GameObject createdGameObj = Instantiate(LEAK_SPRITE_RENDERER_TEMPLATE);
@@ -255,9 +284,7 @@ public class BasicPipe : UIObjectClass
         }
     }
     
-    protected override void AwakeUIObject() {
-    }
-
+    // overrides to the parent class, nothing necessary yet.
     protected override void OnDestroyUIObject() {
     }
 }
