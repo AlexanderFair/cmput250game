@@ -10,6 +10,9 @@ using UnityEngine;
  *
  */
 public class Penguin : Entity {
+
+    public bool Locked { get; set; } = false;
+
     // do not set the follow radius to a small number that the penguin actually pushes the player around the room
     public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
 
@@ -26,13 +29,18 @@ public class Penguin : Entity {
     // this should not be destroyed when the scenes switch around.
     public void Awake()
     {
-        if (_instanceDefined)
-            Debug.Log("Warning: a duplicated penguin instance might be present. ");
+        //if (_instanceDefined)
+            //Debug.Log("Warning: a duplicated penguin instance might be present. ");
         _instance = this;
         _instanceDefined = true;
     }
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
+        if (Locked)
+        {
+            velocity = Vector3.zero;
+            return;
+        }
         // get the distance and direction to follow
         Player ply = Player.Instance;
         float dist = getCollider().Distance(Player.Instance.getCollider()).distance;
