@@ -24,20 +24,37 @@ public abstract class Entity : RoomObjectClass
         aiUpdatedSinceLastMovementUpdate = true;
     }
 
+    /*
+     * get the rigidbody2D attatched
+     */
     public Rigidbody2D getRigidBody() {
         return GetComponent<Rigidbody2D>();
     }
+    /*
+     * get the collider2D attatched
+     */
     public Collider2D getCollider() {
         return GetComponent<Collider2D>();
     }
+    /*
+     * get the velocity
+     * note that the velocity here is in units/sec, it HAS NOTHING TO DO WITH Time.deltaTime
+     */
     public Vector3 getVelocity() {
         return velocity;
     }
+    /*
+     * set the velocity
+     * note that the velocity here is in units/sec, it HAS NOTHING TO DO WITH Time.deltaTime
+     */
     public void setVelocity(Vector3 newVel) {
         velocity = newVel;
     }
-    // accelerate the entity, max speed can be set to negative to be ignored
-    // if it is not negative, the speed after acceleration would be scaled down to the max speed
+    /*
+     * accelerate the entity, max speed can be set to negative to be ignored
+     * if it is not negative, the speed after acceleration would be scaled down to the max speed
+     * NOTE: if this is called on a per-update basis, you may need to consider Time.deltaTime
+     */
     public void accelerate(Vector3 acceleration, float maxSpeed) {
         velocity += acceleration;
         if (maxSpeed > 0) {
@@ -57,9 +74,14 @@ public abstract class Entity : RoomObjectClass
         }
     }
 
-    // player movement, penguin follow etc.
+    /*
+     * player movement, penguin follow etc.
+     */
     protected abstract void AI();
-    // movement
+    /*
+     * movement tick
+     * AI stuff do not belong here. This is purely movement tick.
+     */
     protected void movement() {
         // move
 

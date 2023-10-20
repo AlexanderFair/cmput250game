@@ -17,6 +17,7 @@ public class MainMenu : GameMenuObject
         }
         else if(obj.name == "play")
         {
+            GameManager.Instance.StartSwitchScene("Cutscene", Vector3.zero);
             MenuController.Instance.ExitMenu();
         }
         else if (obj.name == "settings")

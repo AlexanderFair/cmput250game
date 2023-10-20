@@ -9,8 +9,10 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour
 {
+    // the prefab for a switch waiting (loading) screen
     public GameObject switchMenuPrefab;
 
+    // the room data storate. Make sure room objects update them on init based on those data!
     private static Dictionary<String, GameSaveInfo> _roomData;
     private static GameManager _instance;
     private static bool _instanceDefined = false;
@@ -28,10 +30,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // a game save for a room. you may create your own subclass of it if you find it necessary!
     public class GameSaveInfo {
         public static Dictionary<String, object> saveData = new Dictionary<String, object>();
     }
 
+    // make sure when room switching, the player do not wiggle around.
     public void FixedUpdate()
     {
 
@@ -68,10 +72,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // set 
+    // set a room save info for a given room
     public static void SetRoomSaveInfo(String RoomName, GameSaveInfo gameInfo) {
         _roomData[RoomName] = gameInfo;
     }
+    // get a room save info. if not found, a default one is saved and returned.
+    // you may specify the "default" value.
     public static GameSaveInfo GetRoomSaveInfo(String RoomName) {
         return GetRoomSaveInfo(RoomName, new GameSaveInfo());
     }
@@ -81,7 +87,11 @@ public class GameManager : MonoBehaviour
         return _roomData[RoomName];
     }
 
-    // call this function to switch to another room
+    /*
+     * call this function to switch to another room 
+     * sceneName: the name of target scene(should be configured in unity build option)
+     * _targetPos: the location (Vector3) you wish your player to end up with in the new scene
+     */
     public void StartSwitchScene(String sceneName, Vector3 _targetPos) {
         if (switching)
         {
@@ -101,7 +111,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(
             HandleSceneLoading( sceneName, SceneManager.LoadSceneAsync(sceneName)) );
     }
-    // helper function that is called when the new room is loading
+    /*
+     * helper function that is called when the new room is loading; it calls FinishSwitchScene after finishes loading
+     * this should not be called from other places!
+     */
     private IEnumerator HandleSceneLoading(String sceneName, AsyncOperation sceneLoadOperation) {
         // TODO: play a loading screen
         do {
@@ -111,12 +124,17 @@ public class GameManager : MonoBehaviour
         // upon reaching here, the new scene is loaded (hopefully).
         FinishSwitchScene(sceneName);
     }
-    // this function updates the progress UI according to the load progress
-    // TODO: update the progress bar (if we have time to make this feature)
+    /*
+     * this function updates the progress UI according to the load progress
+     * should not be called from other places.
+     */
     private void UpdateLoadingProgress(AsyncOperation sceneLoadOperation) {
         currentProgress = sceneLoadOperation.progress;
     }
-    // this function is called once the new scene has been fully loaded
+    /*
+     * this function is called exactly once when the new scene is fully loaded
+     * should not be called from other places.
+     */
     private void FinishSwitchScene(String sceneName) {
         // TODO: remove the loading screen
         // teleport player and penguin to new position

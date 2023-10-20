@@ -329,140 +329,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
-      propertyPath: idleAnim.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: idleAnim.Array.data[0]
-      value: 
-      objectReference: {fileID: -6146228445810789352, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkEastAnim.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkWestAnim.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkNorthAnim.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkSouthAnim.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkEastAnim.Array.data[0]
-      value: 
-      objectReference: {fileID: -928977912573480270, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkEastAnim.Array.data[1]
-      value: 
-      objectReference: {fileID: 1682792527920680344, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkEastAnim.Array.data[2]
-      value: 
-      objectReference: {fileID: 6558826759597504597, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkEastAnim.Array.data[3]
-      value: 
-      objectReference: {fileID: -9104338231464637163, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkWestAnim.Array.data[0]
-      value: 
-      objectReference: {fileID: -6290102571377557137, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkWestAnim.Array.data[1]
-      value: 
-      objectReference: {fileID: -7785267081450776548, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkWestAnim.Array.data[2]
-      value: 
-      objectReference: {fileID: -3503161958987233052, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkWestAnim.Array.data[3]
-      value: 
-      objectReference: {fileID: -6998434697483127933, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: spriteAnimations.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkNorthAnim.Array.data[0]
-      value: 
-      objectReference: {fileID: 9077531172592869304, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkNorthAnim.Array.data[1]
-      value: 
-      objectReference: {fileID: 6638382808445787457, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkNorthAnim.Array.data[2]
-      value: 
-      objectReference: {fileID: 2205796041738459191, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkNorthAnim.Array.data[3]
-      value: 
-      objectReference: {fileID: -536721495329070349, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkSouthAnim.Array.data[0]
-      value: 
-      objectReference: {fileID: 9077531172592869304, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkSouthAnim.Array.data[1]
-      value: 
-      objectReference: {fileID: 6638382808445787457, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkSouthAnim.Array.data[2]
-      value: 
-      objectReference: {fileID: 2205796041738459191, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: walkSouthAnim.Array.data[3]
-      value: 
-      objectReference: {fileID: -536721495329070349, guid: f5327e80a2ce88684942bfa733afc0e1,
-        type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: MOVE_ACCELERATION_PER_SECOND
-      value: 7.5
+      propertyPath: MOVE_DURATION_SEC
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
@@ -486,22 +354,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841159, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841159, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841159, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841159, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841159, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -581,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}
       propertyPath: playerStartPosition.x
-      value: -4
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4320276500190323998, guid: c72c61a4a6349e0488b1cf48eb7b35e6,
         type: 3}
@@ -977,8 +840,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577756677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 3.203, z: 0}
-  m_LocalScale: {x: 13.733724, y: 0.30061004, z: 1}
+  m_LocalPosition: {x: 0.11, y: 2.319, z: 0}
+  m_LocalScale: {x: 13.733724, y: 2.142449, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
