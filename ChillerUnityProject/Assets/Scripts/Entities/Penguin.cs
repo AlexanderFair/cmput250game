@@ -11,7 +11,8 @@ using UnityEngine;
  */
 public class Penguin : Entity {
 
-    public bool Locked { get; set; } = false;
+    // True if the penguin is locked in the cage
+    public bool Locked { get; private set; }
 
     // do not set the follow radius to a small number that the penguin actually pushes the player around the room
     public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
@@ -52,6 +53,23 @@ public class Penguin : Entity {
             Vector3 direction = ply.transform.position - this.transform.position;
             this.velocity = direction.normalized * FOLLOW_SPEED;
         }
+    }
+
+    /*
+     * If set to true, the penguins physics are disabled and the penguin will no longer move
+     * If set to false, the penguins physics are reenabled and the penguin will move
+     */
+    public void SetLockedInCage(bool isLocked)
+    {
+        if (isLocked)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Room");
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Room Physics");
+        }
+        Locked = isLocked;
     }
 }
 

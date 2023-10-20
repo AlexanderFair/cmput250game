@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9089529271155720132}
   - component: {fileID: 9089529271155720131}
   - component: {fileID: 9089529271155720130}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CageRoomObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 441991147
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9f74cbcda3da73043b50ac43ec5d5d46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
     type: 3}
   penguin: {fileID: 0}
   penguinPositionOnLock: {x: -3.64, y: 0.73, z: 0}
+  penguinPositionOnUnlock: {x: -2.64, y: 0.73, z: 0}
 --- !u!61 &9089529271155720130
 BoxCollider2D:
   m_ObjectHideFlags: 0
