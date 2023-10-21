@@ -21,7 +21,7 @@ public abstract class ClickReleaseUIObject : ClickableUIObject
     {
         base.UpdateUIObject();
 
-        if (clickControl.GetKeyUp())
+        if (clickControl.GetKeyUp() && isClicked)
         {
             MouseUp();
             isClicked = false;

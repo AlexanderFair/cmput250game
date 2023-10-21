@@ -11,6 +11,8 @@ public class SnapDragUIObject : DragableUIObject
     [Header("Snap Drag UI Settings")]
     //The collider that must overlap with the location collider before the object can snap
     public Collider2D snapCollider;
+    // the boolean representing if the object was placed that frame, otherwise the object is not updated by the manager.
+    public bool ChangedThisFrame { get; set; } = false;
 
     // Called when the object should snap to a location (this will happen every frame once the object is snapped)
     public virtual void Snap(Collider2D snap)
@@ -23,4 +25,12 @@ public class SnapDragUIObject : DragableUIObject
     {
         return isClicked;
     }
+
+    protected override void MouseUp()
+    {
+        base.MouseUp();
+        ChangedThisFrame = true;
+    }
+
+
 }

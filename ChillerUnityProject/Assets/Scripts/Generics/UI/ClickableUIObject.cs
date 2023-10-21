@@ -33,18 +33,18 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     protected override void AwakeUIObject()
     {
         base.AwakeUIObject();
-        if(clickableAnimation.Length == 0)
+        if (spriteClickableOutlineRenderer == null && animatorIndex < 0)
+        {
+            Settings.DisplayError("Both the renderer and animator are blank", gameObject);
+            return;
+        }
+        if (clickableAnimation.Length == 0)
         {
             clickableAnimation = new Sprite[] { spriteClickableOutlineRenderer.sprite };
         }
         if(clickedAnimation.Length == 0)
         {
             clickedAnimation = new Sprite[] { clickableAnimation[0] };
-        }
-        if(spriteClickableOutlineRenderer == null && animatorIndex < 0)
-        {
-            Settings.DisplayError("Both the renderer and animator are blank", gameObject);
-            return;
         }
         ChangeAnim();
     }
