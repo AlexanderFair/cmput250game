@@ -40,6 +40,7 @@ public abstract class ClickReleaseUIObject : ClickableUIObject
 
     protected sealed override void Clicked()
     {
+        base.Clicked();
         isClicked = true;
         MouseDown();
     }

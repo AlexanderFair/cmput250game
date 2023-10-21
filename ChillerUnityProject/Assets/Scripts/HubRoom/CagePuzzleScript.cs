@@ -36,6 +36,7 @@ public class CagePuzzleScript : ClickableUIObject
 
     protected override void Clicked()
     {
+        base.Clicked();
         AudioHandler.Instance.playSoundEffect(unlockedClip);
         room.UnlockCage();
         UpdateUnlockStatus();
