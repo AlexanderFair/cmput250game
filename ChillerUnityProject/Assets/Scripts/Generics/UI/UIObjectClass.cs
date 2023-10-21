@@ -29,7 +29,7 @@ public class UIObjectClass : MonoBehaviour
 {
     [Header("UI Base Object Settings")]
     // Animations
-    public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
+    public List<AnimationSpriteClass> spriteAnimators = new List<AnimationSpriteClass>();
 
     // Update is called once per frame
     void Update()
@@ -37,7 +37,7 @@ public class UIObjectClass : MonoBehaviour
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
             UpdateUIObject();
-            foreach (var anim in spriteAnimations)
+            foreach (var anim in spriteAnimators)
             {
                 anim?.UpdateAnimation();
             }
@@ -55,7 +55,7 @@ public class UIObjectClass : MonoBehaviour
     {
         AddGameObject(gameObject);
         AwakeUIObject();
-        foreach (var anim in spriteAnimations)
+        foreach (var anim in spriteAnimators)
         {
             anim?.AwakeAnimation();
         }
@@ -68,7 +68,7 @@ public class UIObjectClass : MonoBehaviour
      */
     void OnDestroy()
     {
-        foreach (var anim in spriteAnimations)
+        foreach (var anim in spriteAnimators)
         {
             anim?.PauseAnimation();
         }

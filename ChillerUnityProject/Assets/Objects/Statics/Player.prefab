@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6329014479189841158}
   - component: {fileID: 6329014479189841159}
   - component: {fileID: 6329014479189841156}
+  - component: {fileID: 7587812791696855156}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -96,10 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f109cb2cf0635744bbaa2250a7ceef35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations:
-  - {fileID: 0}
+  spriteAnimators:
+  - {fileID: 7587812791696855156}
   speedDecayMultiplierPerSecond: 0.02
   MOVE_ACCELERATION_PER_SECOND: 7.5
+  MOVE_DURATION_SEC: 0.1
+  MOVE_SPEED: 1
+  movement_progress: 0
+  moveDir: {x: 0, y: 0, z: 0}
   idleAnim:
   - {fileID: -6146228445810789352, guid: f5327e80a2ce88684942bfa733afc0e1, type: 3}
   walkEastAnim:
@@ -169,3 +174,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7587812791696855156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329014479189841155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389481c0f02669e4d94a3255e80a0f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStruct:
+  - {fileID: 0}
+  spriteRenderer: {fileID: 6329014479189841152}
+  repetitionFactor: 1

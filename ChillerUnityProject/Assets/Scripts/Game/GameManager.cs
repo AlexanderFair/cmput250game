@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
     // make sure when room switching, the player do not wiggle around.
     public void FixedUpdate()
     {
-
-
         if(switching && complete)
         {
             switching = false;
@@ -96,6 +94,7 @@ public class GameManager : MonoBehaviour
         switching = true;
         complete = false;
         targetPos = _targetPos;
+        DialogDisplay.StopCurrentDisplay();
         MenuObjectClass.EnableMenu();
         Settings.DisableInput();
         // load the future scene

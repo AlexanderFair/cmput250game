@@ -12,7 +12,7 @@ public class VisionUIObject : UIObjectClass
     protected override void AwakeUIObject()
     {
         base.AwakeUIObject();
-        if(spriteAnimations.Count == 0 || mainAnimationIndex >= spriteAnimations.Count)
+        if(spriteAnimators.Count == 0 || mainAnimationIndex >= spriteAnimators.Count)
         {
             throw new System.IndexOutOfRangeException("The mainAnimationIndex is greater than the count of sprite anaimations for " + name);
         }
@@ -21,11 +21,11 @@ public class VisionUIObject : UIObjectClass
     protected override void UpdateUIObject()
     {
         base.UpdateUIObject();
-        if (spriteAnimations[mainAnimationIndex].CurrentFrame == 0 && changedFrom0Frame)
+        if (spriteAnimators[mainAnimationIndex].CurrentFrame == 0 && changedFrom0Frame)
         {
             UIObjectClass.DestroyUIObject(gameObject);
         }
-        else if(spriteAnimations[mainAnimationIndex].CurrentFrame != 0)
+        else if(spriteAnimators[mainAnimationIndex].CurrentFrame != 0)
         {
             changedFrom0Frame = true;
         }

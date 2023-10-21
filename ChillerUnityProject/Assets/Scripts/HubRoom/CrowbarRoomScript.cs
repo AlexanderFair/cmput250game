@@ -10,7 +10,6 @@ public class CrowbarRoomScript : DisplayUIRoomObject
     public void Solved()
     {
         Complete = true;
-        Debug.Log("Solved");
     }
 
     protected override void DisplayedUI()

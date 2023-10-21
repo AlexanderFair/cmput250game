@@ -99,7 +99,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
         }
         else
         {
-            spriteAnimations[animatorIndex].ChangeAnimation(anim, false);
+            spriteAnimators[animatorIndex].ChangeAnimation(anim, false);
         }
     }
 
