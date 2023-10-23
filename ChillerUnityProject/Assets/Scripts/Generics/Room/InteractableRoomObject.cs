@@ -16,7 +16,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     /* The collider for the obect */
     public Collider2D interactableCollider;
 
-    public Settings.Controls interactionControl = Settings.Controls.Interact;
+    public Settings.Controls interactionControl = Settings.Controls.InteractWithRoom;
 
     //The sprite renderer which should obtain an outline when the player is near enough
     public SpriteRenderer interactableRenderer;

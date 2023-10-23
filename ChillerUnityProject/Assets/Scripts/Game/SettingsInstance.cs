@@ -22,16 +22,17 @@ public class SettingsInstance : MonoBehaviour
     // The set of KeyCode pairings
     public KeyCodeValue[] controlsValues =
     {
-        new KeyCodeValue { key = Controls.Interact, value = KeyCode.F },
-        new KeyCodeValue { key = Controls.MenuTransition, value = KeyCode.Escape },
-        new KeyCodeValue { key = Controls.LeftClick, value = KeyCode.Mouse0 },
-        new KeyCodeValue { key = Controls.RightClick, value = KeyCode.Mouse1 },
-        new KeyCodeValue { key = Controls.DialogSkip, value = KeyCode.Return },
-        new KeyCodeValue { key = Controls.UIExit, value = KeyCode.Backspace },
+        new KeyCodeValue { key = Controls.InteractWithRoom, value = KeyCode.F },
+        new KeyCodeValue { key = Controls.ExitMenu, value = KeyCode.Escape },
+        new KeyCodeValue { key = Controls.Click, value = KeyCode.Mouse0 },
+        new KeyCodeValue { key = Controls.RotatePipesLeft, value = KeyCode.Mouse0 },
+        new KeyCodeValue { key = Controls.SkipDialog, value = KeyCode.Return },
+        new KeyCodeValue { key = Controls.Pause, value = KeyCode.P },
         new KeyCodeValue { key = Controls.MoveUp, value = KeyCode.W },
         new KeyCodeValue { key = Controls.MoveDown, value = KeyCode.S },
         new KeyCodeValue { key = Controls.MoveLeft, value = KeyCode.A },
-        new KeyCodeValue { key = Controls.MoveRight, value = KeyCode.D }
+        new KeyCodeValue { key = Controls.MoveRight, value = KeyCode.D },
+        new KeyCodeValue { key = Controls.RotatePipesRight, value = KeyCode.Mouse1 }
     };
 
     [Header("Floats")]
@@ -109,7 +110,7 @@ public static class Settings
     // Key Code controls
     public enum Controls
     {
-        Interact, LeftClick, MenuTransition, RightClick, DialogSkip, UIExit, MoveLeft, MoveRight, MoveUp, MoveDown
+        InteractWithRoom, Click, ExitMenu, RotatePipesLeft, SkipDialog, Pause, MoveLeft, MoveRight, MoveUp, MoveDown, RotatePipesRight
     }
 
     // Float values

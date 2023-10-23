@@ -9,7 +9,7 @@ using UnityEngine.Diagnostics;
 public class MenuClickableObject : MenuObjectClass, IClickableSprite
 {
     [Header("Menu Clickable Settings")]
-    public Settings.Controls clickKey = Settings.Controls.LeftClick;
+    public Settings.Controls clickKey = Settings.Controls.Click;
     //The area where the user can click
     public Collider2D clickCollider;
     // the menu object which should be waiting for the click

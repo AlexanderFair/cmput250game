@@ -51,11 +51,11 @@ MonoBehaviour:
   - key: 1
     value: 323
   - key: 3
-    value: 324
+    value: 323
   - key: 4
     value: 13
   - key: 5
-    value: 8
+    value: 112
   - key: 6
     value: 97
   - key: 7
@@ -64,6 +64,8 @@ MonoBehaviour:
     value: 119
   - key: 9
     value: 115
+  - key: 10
+    value: 324
   floatValues:
   - key: 1
     value: -3

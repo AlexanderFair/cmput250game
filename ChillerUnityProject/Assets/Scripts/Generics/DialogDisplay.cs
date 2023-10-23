@@ -35,7 +35,7 @@ public class DialogDisplay : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        bool skip = Settings.Controls.DialogSkip.GetKeyDown();
+        bool skip = Settings.Controls.SkipDialog.GetKeyDown();
         if(skip && Complete )
         {
             KillDialog();
@@ -164,7 +164,6 @@ public class DialogDisplay : MonoBehaviour
 
     // The current displaying dialog
     public static DialogDisplay CurrentDisplay { get { return currentDisplay; } }
-
 
     // Stops and destroys the currently playing dialog if one is playing
     public static void StopCurrentDisplay()

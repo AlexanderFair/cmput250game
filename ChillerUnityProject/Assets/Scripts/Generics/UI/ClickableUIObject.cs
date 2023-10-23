@@ -25,7 +25,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     //The sound effect to be played when clicked
     public AudioClip soundEffect;
 
-    public Settings.Controls clickControl = Settings.Controls.LeftClick;
+    public Settings.Controls clickControl = Settings.Controls.Click;
 
     private bool clicked = false;
     private float timer = 0;
