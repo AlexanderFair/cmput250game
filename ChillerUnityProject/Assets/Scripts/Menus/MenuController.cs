@@ -39,13 +39,23 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(UIObjectClass.IsUIActive() && Settings.Controls.UIExit.GetKeyDown())
-        {
-            UIObjectClass.ClearUI();
+        if (Settings.Controls.Pause.GetKeyDown()){
+            ChangeMenu(); // Changes to pause if no menu is active otherwise exits menu
         }
-        else if (Settings.Controls.MenuTransition.GetKeyDown())
+        else if (Settings.Controls.ExitMenu.GetKeyDown())
         {
-            ChangeMenu();
+            if (MenuObjectClass.IsMenuActive())
+            {
+                ChangeMenu(); // if the menu is active, we leave the menu
+            }
+            else if (UIObjectClass.IsUIActive())
+            {
+                UIObjectClass.ClearUI();// If ui is active and no menus are active, we exit the ui
+            }
+            else
+            {
+                ChangeMenu(); // if a menu is not present and a ui isnt present, we change the menu (open pause)
+            }
         }
     }
 

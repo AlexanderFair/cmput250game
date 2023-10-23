@@ -18,8 +18,10 @@ public class SnapManagerUIObject : UIObjectClass
     // The number of tiles that can be snapped to one location at a time
     public int maxTilesPerCollider=1;
 
-    private List<int>[] snapedTiles;
-    private Dictionary<int, int?> snappedObjects = new Dictionary<int, int?>();
+    //collider index to list of snap index
+    protected List<int>[] snapedTiles;
+    //snap index to collider inex
+    protected Dictionary<int, int?> snappedObjects = new Dictionary<int, int?>();
 
     protected override void AwakeUIObject()
     {
@@ -37,8 +39,15 @@ public class SnapManagerUIObject : UIObjectClass
 
     protected override void UpdateUIObject()
     {
+        bool changed = false;
         for(int i=0; i<dragableTiles.Length; i++)
         {
+            if (!dragableTiles[i].ChangedThisFrame)
+            {
+                continue;
+            }
+            changed = true;
+            dragableTiles[i].ChangedThisFrame = false;
             int? v = snappedObjects[i];
             snappedObjects[i] = null;
             if(v != null)
@@ -63,5 +72,12 @@ public class SnapManagerUIObject : UIObjectClass
 
             nextElement:;
         }
+        if(changed) ItemsChanged();
+    }
+
+    //called when one or more snaps have possibly changed location
+    protected virtual void ItemsChanged()
+    {
+
     }
 }

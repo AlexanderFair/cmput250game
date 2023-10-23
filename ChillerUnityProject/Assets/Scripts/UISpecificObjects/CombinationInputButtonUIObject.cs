@@ -25,6 +25,7 @@ public class CombinationInputButtonUIObject : ClickableUIObject
 
     protected override void Clicked()
     {
+        base.Clicked();
         combinationLock.ClickCall(this);
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MainMenu : GameMenuObject
 {
-    [Header("Main Menu Setting")]
-    public GameObject cutscenePrefab;
 
     protected override void UpdateMenuObject() { }
 
@@ -17,7 +15,7 @@ public class MainMenu : GameMenuObject
         }
         else if(obj.name == "play")
         {
-            GameManager.Instance.StartSwitchScene("Cutscene", Vector3.zero);
+            //GameManager.Instance.StartSwitchScene("Cutscene", Vector3.zero);
             MenuController.Instance.ExitMenu();
         }
         else if (obj.name == "settings")

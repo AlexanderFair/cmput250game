@@ -10,7 +10,7 @@ using UnityEngine.UI;
  * and add this script to the object. Interactable UI room objects have this by default
  * for the interact sound. 
 */
-public class AudioHandler : MonoBehaviour
+public class AudioHandler : Settings.SettingsUpdateWatcher
 {
     /* Singleton */
     private static AudioHandler _instance;
@@ -33,9 +33,9 @@ public class AudioHandler : MonoBehaviour
     public float[] trackInsanityScores;
     
     /* The volume for the soundtrack */
-    public float soundTrackVolume = 1f;
+    //public float soundTrackVolume = 1f;
     /* The volume for ambient noise */
-    public float ambientVolume = 1f;
+    //public float ambientVolume = 1f; ---These settings are now located in Settings
 
     /* The audio source (not the clip!) for sound effects. 
     * Unsure if this will stay seperate from the soundtrack*/
@@ -76,10 +76,11 @@ public class AudioHandler : MonoBehaviour
         this.soundtrackAudioSource = gameObject.AddComponent<AudioSource>();
         this.effectSource = gameObject.AddComponent<AudioSource>();
         this.ambientSource = gameObject.AddComponent<AudioSource>();
-        
-        soundtrackAudioSource.volume = soundTrackVolume;
-        ambientSource.volume = ambientVolume;
-        
+
+        soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get();
+        ambientSource.volume = Settings.FloatValues.AmbientVolume.Get();
+        effectSource.volume = Settings.FloatValues.SoundEffectVolume.Get();
+
         DontDestroyOnLoad(this);
 
         ambientSource.loop = true;
@@ -88,6 +89,7 @@ public class AudioHandler : MonoBehaviour
         }
         ambientSource.clip = windNoiseLoop;
         ambientSource.Play();
+
     }
 
     void Update(){
@@ -141,5 +143,23 @@ public class AudioHandler : MonoBehaviour
             return;
         }
         this.effectSource.PlayOneShot(soundEffect);
+    }
+
+    public override void FloatValuesUpdated(Settings.FloatValues floatVal)
+    {
+        switch (floatVal)
+        {
+            case Settings.FloatValues.AmbientVolume:
+                ambientSource.volume = floatVal.Get();
+                break;
+            case Settings.FloatValues.SoundtrackVolume:
+                soundtrackAudioSource.volume = floatVal.Get();
+                break;
+            case Settings.FloatValues.SoundEffectVolume:
+                effectSource.volume = floatVal.Get();
+                break;
+            default:
+                break;
+        }
     }
 }

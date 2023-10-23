@@ -19,7 +19,7 @@ public abstract class RoomObjectClass : MonoBehaviour
 {
     [Header("Room Base Object Settings")]
     // Animations
-    public List<AnimationSpriteClass> spriteAnimations = new List<AnimationSpriteClass>();
+    public List<AnimationSpriteClass> spriteAnimators = new List<AnimationSpriteClass>();
 
     // Returns true if the RoomObjectClass will update
     public static bool CanUpdate()
@@ -29,7 +29,7 @@ public abstract class RoomObjectClass : MonoBehaviour
 
     public virtual void Start()
     {
-        foreach (var anim in spriteAnimations)
+        foreach (var anim in spriteAnimators)
         {
             anim?.AwakeAnimation();
         }
@@ -37,7 +37,7 @@ public abstract class RoomObjectClass : MonoBehaviour
 
     public virtual void OnDestroy()
     {
-        foreach(var anim in spriteAnimations)
+        foreach(var anim in spriteAnimators)
         {
             anim?.PauseAnimation();
         }
@@ -49,7 +49,7 @@ public abstract class RoomObjectClass : MonoBehaviour
         if(CanUpdate())
         {
             UpdateRoomObject();
-            foreach (var anim in spriteAnimations)
+            foreach (var anim in spriteAnimators)
             {
                 anim?.UpdateAnimation();
             }

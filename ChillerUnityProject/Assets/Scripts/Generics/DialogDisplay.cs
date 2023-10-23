@@ -35,7 +35,7 @@ public class DialogDisplay : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        bool skip = Settings.Controls.DialogSkip.GetKeyDown();
+        bool skip = Settings.Controls.SkipDialog.GetKeyDown();
         if(skip && Complete )
         {
             KillDialog();
@@ -165,7 +165,6 @@ public class DialogDisplay : MonoBehaviour
     // The current displaying dialog
     public static DialogDisplay CurrentDisplay { get { return currentDisplay; } }
 
-
     // Stops and destroys the currently playing dialog if one is playing
     public static void StopCurrentDisplay()
     {
@@ -175,6 +174,11 @@ public class DialogDisplay : MonoBehaviour
     // Clears the current dialog display and displays the new dialog with the profilePic
     public static void NewDialog(string _text, Sprite[] animationStruct)
     {
+        if(_text.Length == 0)
+        {
+            Settings.DisplayWarning("text is empty", null);
+            return;
+        }
         StopCurrentDisplay();
 
         GameObject gobj = Instantiate(Settings.PrefabObjects.DialogDisplay.Get(), new Vector2(0,Settings.FloatValues.DialogDisplayYLocation.Get()), Quaternion.identity);
