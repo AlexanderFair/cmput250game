@@ -58,9 +58,7 @@ public class SettingControlsChanger : MenuClickCaller
 
     private void ChangeValue(KeyCode newKey)
     {
-        var struc = SettingsInstance.Instance.controlsPairings[control];
-        struc.value = newKey;
-        SettingsInstance.Instance.controlsPairings[control] = struc;
+        control.Set(newKey);
         UpdateText();
     }
 

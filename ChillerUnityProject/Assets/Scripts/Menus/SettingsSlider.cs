@@ -75,7 +75,7 @@ public class SettingsSlider : MenuClickCaller
         float input = per * (maxInput - minInput) + minInput;
         string formattedValue = input.ToString(valueFormat);
         input = float.Parse(formattedValue);
-        SettingsInstance.Instance.floatPairings[floatValue] = new SettingsInstance.FloatValue { key = floatValue, value = input };
+        floatValue.Set(input);
         valueText.text = formattedValue;
     }
 

@@ -77,6 +77,12 @@ MonoBehaviour:
     value: 5
   - key: 4
     value: 24
+  - key: 5
+    value: 1
+  - key: 6
+    value: 1
+  - key: 7
+    value: 1
   prefabAnimValues:
   - key: 0
     value:
@@ -105,3 +111,5 @@ MonoBehaviour:
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   canLogWarnings: 0
   canInput: 1
+  settingsValueChangeWatchers:
+  - {fileID: 0}
