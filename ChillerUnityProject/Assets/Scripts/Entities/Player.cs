@@ -72,6 +72,7 @@ public class Player : Entity {
             }
             
             moveDir = new Vector3(horMoveDir, verMoveDir, 0);
+            moveDir.Normalize();
             moveDir *= MOVE_SPEED;
             // start movement if velocity is non-zero
             if (moveDir.sqrMagnitude > 1e-5)
