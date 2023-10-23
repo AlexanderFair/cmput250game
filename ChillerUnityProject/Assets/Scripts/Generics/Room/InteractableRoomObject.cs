@@ -22,6 +22,11 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     public SpriteRenderer interactableRenderer;
     public AudioClip interactSound = null;
 
+    [Header("Interactabe Dialog Settings")]
+    public bool displayDialogOnInteract = false;
+    public Sprite[] dialogProfileAnimation = AnimationSpriteClass.NULL_STRUCT;
+    public string dialog = "";
+
     protected override void UpdateRoomObject()
     {
         this.UpdateOutlinableSprite(interactableRenderer);
@@ -47,8 +52,10 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
      * only functionality that is mandatory for interactions.
      */
     protected virtual void Interact(){
-        if ((object)interactSound != null) {
-            AudioHandler.Instance.playSoundEffect(interactSound);
+        AudioHandler.Instance.playSoundEffect(interactSound);
+        if(displayDialogOnInteract)
+        {
+            DialogDisplay.NewDialog(dialog, dialogProfileAnimation);
         }
     }
 

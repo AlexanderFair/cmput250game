@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5aad186de2e984ea1e359717791597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   dragableTiles:
   - {fileID: 6082241852998859999}
   snapColliders:
@@ -364,9 +364,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aed846951e078646be32fe574ef842c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 8067160514886386242}
   spriteClickableOutlineRenderer: {fileID: 2766644775001970230}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   lockedText: {fileID: 2435942625475700678, guid: c8b77c68df2efd748b6909fc660fc994,
     type: 3}
@@ -533,17 +538,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac26f94d87093a4da4d7fea27918ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 5316845615395493220}
   spriteClickableOutlineRenderer: {fileID: 4613510301160330129}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   snapCollider: {fileID: 6952013643773449767}
   insideSprite: {fileID: -7902730071002513443, guid: 2f50044817e2b3b478b343e9d173ac88,
     type: 3}
   outsideSprite: {fileID: 2463104401002495578, guid: 2f50044817e2b3b478b343e9d173ac88,
     type: 3}
+  keyNotPresentSprite: {fileID: 21300000, guid: 39f6ec404f6ad094c942f9d8245d1d71,
+    type: 3}
   spriteRenderer: {fileID: 4613510301160330129}
   puzzle: {fileID: 3751792493946934850}
+  keyNotPresentPrompt: Not present
 --- !u!61 &6952013643773449767
 BoxCollider2D:
   m_ObjectHideFlags: 0

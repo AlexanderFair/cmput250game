@@ -175,6 +175,11 @@ public class DialogDisplay : MonoBehaviour
     // Clears the current dialog display and displays the new dialog with the profilePic
     public static void NewDialog(string _text, Sprite[] animationStruct)
     {
+        if(_text.Length == 0)
+        {
+            Settings.DisplayWarning("text is empty", null);
+            return;
+        }
         StopCurrentDisplay();
 
         GameObject gobj = Instantiate(Settings.PrefabObjects.DialogDisplay.Get(), new Vector2(0,Settings.FloatValues.DialogDisplayYLocation.Get()), Quaternion.identity);
