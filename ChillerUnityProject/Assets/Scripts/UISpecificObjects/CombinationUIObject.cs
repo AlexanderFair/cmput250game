@@ -21,6 +21,8 @@ public class CombinationUIObject : UIObjectClass
 
     private GameObject[] displayObjects;
     protected int[] values;
+    //If the combination can be changed
+    public bool CombinationActive { get; set; } = true;
 
     protected override void AwakeUIObject()
     {
@@ -45,7 +47,7 @@ public class CombinationUIObject : UIObjectClass
         UpdateOptions(comboBtn.Index);
     }
 
-    private void UpdateOptions(int index, bool awake = true)
+    protected void UpdateOptions(int index, bool awake = true)
     {
         if (displayObjects[index] != null)
         {

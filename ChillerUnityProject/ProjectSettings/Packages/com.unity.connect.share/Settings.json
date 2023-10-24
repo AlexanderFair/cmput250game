@@ -6,7 +6,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v5;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v4;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v3;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v2;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/09Oct23;;;;\"}"
+                "value": "{\"m_Value\":\"F:/Gareth/UofA/CMPUT/250/Project/Builds/23Oct23v2;F:/Gareth/UofA/CMPUT/250/Project/Builds/23Oct23v1;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v5;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v4;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v3;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23v2;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/13Oct23;F:/Gareth/UofA/CMPUT/250/Project/cmput250game/Builds/09Oct23;;\"}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",

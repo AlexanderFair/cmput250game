@@ -28,6 +28,7 @@ public class CrowbarUIScript : CombinationUIObject
             AudioHandler.Instance.playSoundEffect(correctSound);
             if(correctObject != null) { InstantiateUIElement(correctObject); }
             room.Solved();
+            CombinationActive = false;
         }
         else
         {
@@ -51,6 +52,15 @@ public class CrowbarUIScript : CombinationUIObject
     //Called by the room object when created
     public void Setup(CrowbarRoomScript _room){
         room = _room;
+        if (CrowbarRoomScript.Complete)
+        {
+            CombinationActive = false;
+            for(int i=0; i<solution.Length; i++)
+            {
+                values[i] = solution[i];
+                UpdateOptions(i, false);
+            }
+        }
     }
 
 }

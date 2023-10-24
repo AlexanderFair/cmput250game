@@ -28,4 +28,9 @@ public class CombinationInputButtonUIObject : ClickableUIObject
         base.Clicked();
         combinationLock.ClickCall(this);
     }
+
+    public override bool ClickableCondition()
+    {
+        return base.ClickableCondition() && combinationLock.CombinationActive;
+    }
 }

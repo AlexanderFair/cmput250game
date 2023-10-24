@@ -104,11 +104,10 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  uiPrefab: {fileID: 2138144330068885738, guid: 2a779800140fd8f44a763512e30f616a,
-    type: 3}
   penguin: {fileID: 0}
   penguinPositionOnLock: {x: -5.57, y: -2.86, z: 0}
   penguinPositionOnUnlock: {x: -4.57, y: -2.86, z: 0}
+  notUnlockedPrompt: 
 --- !u!61 &9089529271155720130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,12 +125,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 128, y: 128}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 128, y: 128}
   m_EdgeRadius: 0

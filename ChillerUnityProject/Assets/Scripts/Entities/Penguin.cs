@@ -15,7 +15,7 @@ public class Penguin : Entity {
     public bool Locked { get; private set; }
 
     // do not set the follow radius to a small number that the penguin actually pushes the player around the room
-    public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
+    public float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
 
     private static Penguin _instance;
     private static bool _instanceDefined = false;

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 435834347418176356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
   m_RootOrder: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471482942495076329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -120, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -177,9 +177,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 5559113025683380659}
   spriteClickableOutlineRenderer: {fileID: 8893354807648554999}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &5559113025683380659
@@ -199,14 +204,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &1155823001099135344
 GameObject:
@@ -235,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155823001099135344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 36, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -304,9 +309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 306180401760846609}
   spriteClickableOutlineRenderer: {fileID: 2550865372323538303}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &306180401760846609
@@ -326,14 +336,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &2987156355068160760
 GameObject:
@@ -362,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2987156355068160760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -2, z: 0}
+  m_LocalPosition: {x: 180, y: -120, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -431,9 +441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 2271434949893755768}
   spriteClickableOutlineRenderer: {fileID: 4267078033115983336}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &2271434949893755768
@@ -453,14 +468,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &6388133652350896159
 GameObject:
@@ -489,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6388133652350896159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -2, z: 0}
+  m_LocalPosition: {x: -180, y: -120, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -558,9 +573,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 383268891986768115}
   spriteClickableOutlineRenderer: {fileID: 6333792845844485402}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &383268891986768115
@@ -580,14 +600,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &6510661517511730720
 GameObject:
@@ -616,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510661517511730720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.6, z: 0}
+  m_LocalPosition: {x: 180, y: 36, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -685,9 +705,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 7838899956853806824}
   spriteClickableOutlineRenderer: {fileID: 3020463595869524504}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &7838899956853806824
@@ -707,14 +732,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &7875073088901983013
 GameObject:
@@ -743,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7875073088901983013}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.6, z: 0}
+  m_LocalPosition: {x: -180, y: 36, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8462790704883619186}
@@ -812,9 +837,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31841917c6690448bb81844b864119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 4005871942959564305}
   spriteClickableOutlineRenderer: {fileID: 6024895937745864506}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   combinationLock: {fileID: 3264617179738186004}
 --- !u!61 &4005871942959564305
@@ -834,14 +864,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
 --- !u!1 &8462790704883619187
 GameObject:
@@ -893,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f6bf34a24087641a7caa0d55e6b7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   optionPrefabs:
   - {fileID: 6466954015532027557, guid: cfcbff832c4dab44db72c4344490097e, type: 3}
   - {fileID: 1278096781415827801, guid: 88b76beabfbcb794f8f62597e9f6f54a, type: 3}
@@ -907,14 +937,14 @@ MonoBehaviour:
   - {fileID: 1325706848662359851, guid: 80a0697a91a6fb3419511c4e787dc600, type: 3}
   inputSections:
   - defaultValue: 0
-    sectionLocation: {x: 3, y: 3.13, z: 0}
+    sectionLocation: {x: 180, y: 187.8, z: 0}
     changeUpButton: {fileID: 2199249669748162486}
     changeDownButton: {fileID: 7326267579433092279}
   - defaultValue: 1
-    sectionLocation: {x: -3, y: 3.13, z: 0}
+    sectionLocation: {x: -180, y: 187.8, z: 0}
     changeUpButton: {fileID: 1746690384587271774}
     changeDownButton: {fileID: 4091682000864872461}
   - defaultValue: 2
-    sectionLocation: {x: 0, y: 3.13, z: 0}
+    sectionLocation: {x: 0, y: 187.8, z: 0}
     changeUpButton: {fileID: 4505716514019441479}
     changeDownButton: {fileID: 8250012673462364846}

@@ -26,7 +26,7 @@ public class HubPuzzleRoomDoors : InteractableRoomObject
             Settings.DisplayWarning("The selected startposition is zero", gameObject);
         }
 
-        if (CrowbarRoomScript.Complete)
+        if (CrowbarRoomScript.HasCrowbar)
         {
             isEnabled = true;
         }
@@ -36,9 +36,9 @@ public class HubPuzzleRoomDoors : InteractableRoomObject
     protected override void UpdateRoomObject()
     {
         base.UpdateRoomObject();
-        if(isEnabled != CrowbarRoomScript.Complete)
+        if(isEnabled != CrowbarRoomScript.HasCrowbar)
         {
-            isEnabled = CrowbarRoomScript.Complete;
+            isEnabled = CrowbarRoomScript.HasCrowbar;
             UpdateEnabledness();
         }
     }

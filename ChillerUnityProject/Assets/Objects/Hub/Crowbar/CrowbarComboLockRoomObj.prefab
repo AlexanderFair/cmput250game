@@ -95,12 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6f06cf1fe99ba46bd78deaeb68edee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   interactableCollider: {fileID: 1245658492868871435}
   interactionControl: 0
   interactableRenderer: {fileID: 6302340200890789807}
   interactSound: {fileID: 0}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation: []
+  dialog: 
   uiPrefab: {fileID: 379975150585201846, guid: de4719481bf6c094fa8400d5d1039688, type: 3}
+  completionUI: {fileID: 4791594978018382449, guid: 6acec73f21a0c384e85140b36b12169f,
+    type: 3}
 --- !u!61 &1245658492868871435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,12 +123,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.635, y: 0.556}
+    oldSize: {x: 635, y: 556}
     newSize: {x: 0.635, y: 0.556}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.635, y: 0.556}
+  m_Size: {x: 635, y: 556}
   m_EdgeRadius: 0

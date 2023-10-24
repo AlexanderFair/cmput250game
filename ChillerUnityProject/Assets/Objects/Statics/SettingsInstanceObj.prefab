@@ -68,9 +68,9 @@ MonoBehaviour:
     value: 324
   floatValues:
   - key: 1
-    value: -3
+    value: -180
   - key: 0
-    value: 1
+    value: 60
   - key: 2
     value: 24
   - key: 3

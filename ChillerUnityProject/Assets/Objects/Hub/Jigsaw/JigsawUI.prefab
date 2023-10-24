@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 934785351592158652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 6471877530410350082}
   m_RootOrder: 0
@@ -108,8 +108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2158981479663212794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -60, y: 60, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6471877530410350082}
   m_RootOrder: 5
@@ -131,14 +131,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1500, y: 1500}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1400, y: 1400}
   m_EdgeRadius: 0
 --- !u!212 &6108970167742625939
 SpriteRenderer:
@@ -216,8 +216,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3538637849709738901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -60, y: -60, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6471877530410350082}
   m_RootOrder: 7
@@ -239,14 +239,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1500, y: 1500}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1400, y: 1400}
   m_EdgeRadius: 0
 --- !u!212 &2301033936448653042
 SpriteRenderer:
@@ -324,8 +324,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6588371272005771209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 60, y: -60, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6471877530410350082}
   m_RootOrder: 8
@@ -347,14 +347,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1500, y: 1500}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1400, y: 1400}
   m_EdgeRadius: 0
 --- !u!212 &817623335515092646
 SpriteRenderer:
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62523b9c0afe9764a9eccce36d2b1044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   dragableTiles:
   - {fileID: 325153956088221479}
   - {fileID: 2079042741197463020}
@@ -510,8 +510,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7708628814239734227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 60, y: 60, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 6471877530410350082}
   m_RootOrder: 6
@@ -533,14 +533,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 1500, y: 1500}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1400, y: 1400}
   m_EdgeRadius: 0
 --- !u!212 &5765424911876159211
 SpriteRenderer:
@@ -612,12 +612,12 @@ PrefabInstance:
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.66
+      value: -279.6
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
@@ -715,12 +715,12 @@ PrefabInstance:
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.61
+      value: -396.6
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
@@ -812,12 +812,12 @@ PrefabInstance:
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.69
+      value: -401.4
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.82
+      value: -49.2
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
@@ -915,12 +915,12 @@ PrefabInstance:
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.72
+      value: -283.2
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.83
+      value: -49.8
       objectReference: {fileID: 0}
     - target: {fileID: 4774382164155814170, guid: f0f4354879ab0f34482b94d882dee458,
         type: 3}

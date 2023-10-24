@@ -4,7 +4,7 @@ using UnityEngine;
 
 // The cage that holds the penguin
 // This uses a static variable for unlock, so there should not be more than one instance of this
-public class CageRoomScript : DisplayUIRoomObject
+public class CageRoomScript : InteractableRoomObject
 {
     [Header("Cage Objects")]
     //the penguin object
@@ -13,6 +13,8 @@ public class CageRoomScript : DisplayUIRoomObject
     public Vector3 penguinPositionOnLock;
     //the position where the penguin should transport to when unlocked
     public Vector3 penguinPositionOnUnlock;
+
+    public string notUnlockedPrompt;
 
     private static int instanceExists = 0;
     public static bool unlocked = false;
@@ -63,10 +65,23 @@ public class CageRoomScript : DisplayUIRoomObject
         penguin.transform.position = penguinPositionOnUnlock;
     }
 
-    protected override void DisplayedUI()
+    public override bool InteractableCondition()
     {
-        base.DisplayedUI();
-        ui.GetComponent<CagePuzzleScript>().Setup(this);
+        return base.InteractableCondition() && !unlocked;
+    }
+
+
+    protected override void Interact()
+    {
+        base.Interact();
+        if(!CrowbarRoomScript.HasCrowbar)
+        {
+            DialogDisplay.NewDialog(notUnlockedPrompt, AnimationSpriteClass.NULL_STRUCT);
+        }
+        else
+        {
+            UnlockCage();
+        }
     }
 
 

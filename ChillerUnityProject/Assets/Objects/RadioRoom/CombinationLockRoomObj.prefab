@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3115731437023353293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
   - {fileID: 3644389770680132969}
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 441991147
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: fab3fc534ce6792479f9a3ae6f4f8ec5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,11 +96,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccee26c3a674ca49955a64b6abd3206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   interactableCollider: {fileID: -4133170392961326414}
   interactionControl: 0
   interactableRenderer: {fileID: 1113399927343620679}
   interactSound: {fileID: 0}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation:
+  - {fileID: 0}
+  dialog: 
   uiPrefab: {fileID: 8462790704883619187, guid: deddaa4adfab67744897fa7e9b987e64,
     type: 3}
   solve: 020000000300000007000000
@@ -121,18 +125,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25, y: 0}
+  m_Offset: {x: 150, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.765, y: 1.172}
+    oldSize: {x: 1765, y: 1172}
     newSize: {x: 12.5, y: 12.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 1}
+  m_Size: {x: 1400, y: 1200}
   m_EdgeRadius: 0
 --- !u!1 &8097671030957642267
 GameObject:
@@ -203,7 +207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 441991147
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 020f1894a1f4f3748b4b0fa5807e1ccb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

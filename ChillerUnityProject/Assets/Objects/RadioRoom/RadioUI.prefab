@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634322238663886679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 150, y: -75, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 6209545931262098330}
   m_RootOrder: 2
@@ -46,9 +46,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.19}
+  m_Offset: {x: 0, y: 180}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 100
 --- !u!212 &5397454903858791927
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,9 +111,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40a5ec86073e5a48941ec296559f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 4041370263404341053}
   spriteClickableOutlineRenderer: {fileID: 5397454903858791927}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   textDisplay: {fileID: 4124824759805808417}
   max: 9.99
@@ -152,7 +157,7 @@ RectTransform:
   m_GameObject: {fileID: 997659924043799261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 70, y: 70, z: 1}
   m_Children:
   - {fileID: 2156180388410818920}
   - {fileID: 4271515446282080166}
@@ -250,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 2953447119416176344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 6209545931262098330}
   m_RootOrder: 3
@@ -332,8 +337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456144464416863533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: -150, y: -75, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 6209545931262098330}
   m_RootOrder: 1
@@ -351,9 +356,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.19}
+  m_Offset: {x: 0, y: 180}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 100
 --- !u!212 &3850488834442080407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,9 +421,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40a5ec86073e5a48941ec296559f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 2467366531671449010}
   spriteClickableOutlineRenderer: {fileID: 3850488834442080407}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
   textDisplay: {fileID: 8494093767740607520}
   max: 9.99
@@ -520,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b1cd5a220c46c46bae7ecfafb5bf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   textComponent: {fileID: 3198297028098984342}
   defaultValue: '"0.00"'
 --- !u!1 &8039218377596480889
@@ -570,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e080639acf9283b409f8b05c273fed61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   dialX: {fileID: 5252443571017988915}
   dialY: {fileID: 5590182347935610042}
   waitForTime: 0.5
@@ -665,6 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b1cd5a220c46c46bae7ecfafb5bf85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   textComponent: {fileID: 5910315128353328210}
   defaultValue: '"0.00"'
