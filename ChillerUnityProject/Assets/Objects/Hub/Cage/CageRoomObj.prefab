@@ -69,10 +69,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9f74cbcda3da73043b50ac43ec5d5d46, type: 3}
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -4798286905723838487, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &9089529271155720131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +108,8 @@ MonoBehaviour:
   penguin: {fileID: 0}
   penguinPositionOnLock: {x: -5.57, y: -2.86, z: 0}
   penguinPositionOnUnlock: {x: -4.57, y: -2.86, z: 0}
+  unlockedAnimation:
+  - {fileID: -3852782487656736975, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec, type: 3}
   notUnlockedPrompt: 
 --- !u!61 &9089529271155720130
 BoxCollider2D:
@@ -124,8 +127,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 128, y: 128}
+    pivot: {x: 0.5, y: 0.1}
+    oldSize: {x: 120, y: 120}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

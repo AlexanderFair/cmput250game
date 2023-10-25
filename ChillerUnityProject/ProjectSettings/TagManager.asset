@@ -41,8 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Room
+  - name: Room - Below Player
     uniqueID: 441991147
+    locked: 0
+  - name: Room - Player
+    uniqueID: 1278940923
+    locked: 0
+  - name: Room - Above Player
+    uniqueID: 4293358049
     locked: 0
   - name: UI
     uniqueID: 638449741
