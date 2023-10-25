@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HubPuzzleRoomDoors : InteractableRoomObject
+public class HubPuzzleRoomDoors : DisableInteractableRoomObject
 {
     [Header("Change Scene Settings")]
     public String nextSceneName = "";
@@ -11,7 +11,6 @@ public class HubPuzzleRoomDoors : InteractableRoomObject
     // Dialogs that will be randomly choose from when the player interacts with the door when its locked
     public string[] lockedDialogs;
 
-    private bool isEnabled = false;
     private System.Random random = new System.Random();
 
     public override void Start()
@@ -28,43 +27,29 @@ public class HubPuzzleRoomDoors : InteractableRoomObject
 
         if (CrowbarRoomScript.HasCrowbar)
         {
-            isEnabled = true;
+            DisableInteract();
         }
-        UpdateEnabledness();
     }
 
     protected override void UpdateRoomObject()
     {
         base.UpdateRoomObject();
-        if(isEnabled != CrowbarRoomScript.HasCrowbar)
+        if(!disabledInteract && CrowbarRoomScript.HasCrowbar)
         {
-            isEnabled = CrowbarRoomScript.HasCrowbar;
-            UpdateEnabledness();
+            DisableInteract();
         }
     }
 
     protected override void Interact()
     {
         base.Interact();
-        if(isEnabled)
+        if(disabledInteract)
         {
             ChangeScenes();
         }
         else
         {
             StopPlayer();
-        }
-    }
-
-    private void UpdateEnabledness()
-    {
-        if (isEnabled)
-        {
-            gameObject.layer = LayerMask.NameToLayer("Room");
-        }
-        else
-        {
-            gameObject.layer = LayerMask.NameToLayer("Room Physics");
         }
     }
 

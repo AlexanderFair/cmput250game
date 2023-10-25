@@ -409,7 +409,7 @@ MonoBehaviour:
   movingColliders: []
   isTriggeredByPlayer: 1
   nextSceneName: HubRoom
-  playerStartPosition: {x: -371, y: 31, z: 0}
+  playerStartPosition: {x: -407, y: -104, z: 0}
   prompt: I should try and use the radio to call for help
 --- !u!1 &764171647
 GameObject:

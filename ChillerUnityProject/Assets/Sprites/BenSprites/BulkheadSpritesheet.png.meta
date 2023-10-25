@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3115613771865934756
-    second: BulkheadSpritesheet_0
+    second: BulkheadSpritesheet_closed
   - first:
       213: -98729243159403091
-    second: BulkheadSpritesheet_1
+    second: BulkheadSpritesheet_open
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -105,15 +105,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BulkheadSpritesheet_0
+      name: BulkheadSpritesheet_closed
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 150
         height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,15 +126,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BulkheadSpritesheet_1
+      name: BulkheadSpritesheet_open
       rect:
         serializedVersion: 2
         x: 150
         y: 0
         width: 150
         height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

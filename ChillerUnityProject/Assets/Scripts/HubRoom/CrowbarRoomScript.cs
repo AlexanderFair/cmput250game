@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrowbarRoomScript : DisplayUIRoomObject
+public class CrowbarRoomScript : DisableInteractableRoomObject
 {
     [Header("Crowbar room object")]
+    public GameObject puzzleUI;
     public GameObject completionUI;
 
     public static bool Complete { get; private set; } = false;
     public static bool HasCrowbar { get; set; } = false;
+
+    private GameObject uiPrefab;
 
     public override void Start()
     {
@@ -16,6 +19,11 @@ public class CrowbarRoomScript : DisplayUIRoomObject
         if (Complete)
         {
             uiPrefab = completionUI;
+            DisableInteract();
+        }
+        else
+        {
+            uiPrefab = puzzleUI;
         }
     }
 
@@ -23,14 +31,20 @@ public class CrowbarRoomScript : DisplayUIRoomObject
     public void Solved()
     {
         Complete = true;
-        UIObjectClass.InstantiateNewUIElement(completionUI);
         uiPrefab = completionUI;
+        DisableInteract();
+        UIObjectClass.InstantiateNewUIElement(completionUI);
+        
     }
 
-    protected override void DisplayedUI()
+    protected override void Interact()
     {
-        base.DisplayedUI();
-        ui.GetComponent<CrowbarUIScript>()?.Setup(this);
+        base.Interact();
+        if (uiPrefab != null)
+        {
+            GameObject ui = UIObjectClass.InstantiateNewUIElement(uiPrefab);
+            ui.GetComponent<CrowbarUIScript>()?.Setup(this);
+        }
     }
 
 }

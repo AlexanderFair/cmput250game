@@ -105,11 +105,13 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
+  disabledAnimation:
+  - {fileID: -3852782487656736975, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec, type: 3}
+  disabledAnimatorIndex: -1
+  disableInteractionMethod: 1
   penguin: {fileID: 0}
   penguinPositionOnLock: {x: -5.57, y: -2.86, z: 0}
   penguinPositionOnUnlock: {x: -4.57, y: -2.86, z: 0}
-  unlockedAnimation:
-  - {fileID: -3852782487656736975, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec, type: 3}
   notUnlockedPrompt: 
 --- !u!61 &9089529271155720130
 BoxCollider2D:
@@ -124,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.4862213, y: 11.289719}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.1}
@@ -135,5 +137,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 128, y: 128}
+  m_Size: {x: 70.602325, y: 22.802765}
   m_EdgeRadius: 0

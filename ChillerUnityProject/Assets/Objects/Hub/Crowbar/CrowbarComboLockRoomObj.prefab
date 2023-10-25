@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6302340200890789807}
   - component: {fileID: 4443220617412484263}
   - component: {fileID: 1245658492868871435}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CrowbarComboLockRoomObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7429108410422538452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 332.8, y: 66.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,10 +69,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 020f1894a1f4f3748b4b0fa5807e1ccb, type: 3}
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2178653027463500216, guid: 92c94a7208d05194d830c78c1776f1d8,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,11 @@ MonoBehaviour:
   displayDialogOnInteract: 0
   dialogProfileAnimation: []
   dialog: 
-  uiPrefab: {fileID: 379975150585201846, guid: de4719481bf6c094fa8400d5d1039688, type: 3}
+  disabledAnimation:
+  - {fileID: -1336005133913091796, guid: 92c94a7208d05194d830c78c1776f1d8, type: 3}
+  disabledAnimatorIndex: -1
+  disableInteractionMethod: 0
+  puzzleUI: {fileID: 379975150585201846, guid: de4719481bf6c094fa8400d5d1039688, type: 3}
   completionUI: {fileID: 4791594978018382449, guid: 6acec73f21a0c384e85140b36b12169f,
     type: 3}
 --- !u!61 &1245658492868871435
@@ -122,8 +127,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 635, y: 556}
+    pivot: {x: 0.5, y: 0.1470588}
+    oldSize: {x: 150, y: 170}
     newSize: {x: 0.635, y: 0.556}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

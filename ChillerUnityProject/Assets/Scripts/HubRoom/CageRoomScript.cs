@@ -4,7 +4,7 @@ using UnityEngine;
 
 // The cage that holds the penguin
 // This uses a static variable for unlock, so there should not be more than one instance of this
-public class CageRoomScript : InteractableRoomObject
+public class CageRoomScript : DisableInteractableRoomObject
 {
     [Header("Cage Objects")]
     //the penguin object
@@ -13,10 +13,6 @@ public class CageRoomScript : InteractableRoomObject
     public Vector3 penguinPositionOnLock;
     //the position where the penguin should transport to when unlocked
     public Vector3 penguinPositionOnUnlock;
-    //if the sprite animators empty, it sets the sprite renderer to the first sprite
-    //Otherwise, changes the first animator to the animation
-    //If this list is empty then nothing happens
-    public Sprite[] unlockedAnimation;
 
     public string notUnlockedPrompt;
 
@@ -67,24 +63,8 @@ public class CageRoomScript : InteractableRoomObject
         penguin.SetLockedInCage(false);
         unlocked = true;
         penguin.transform.position = penguinPositionOnUnlock;
-        if(unlockedAnimation.Length > 0)
-        {
-            if (spriteAnimators.Count > 0)
-            {
-                spriteAnimators[0].ChangeAnimation(unlockedAnimation);
-            }
-            else
-            {
-                interactableRenderer.sprite = unlockedAnimation[0];
-            }
-        }
+        DisableInteract();
     }
-
-    public override bool InteractableCondition()
-    {
-        return base.InteractableCondition() && !unlocked;
-    }
-
 
     protected override void Interact()
     {
