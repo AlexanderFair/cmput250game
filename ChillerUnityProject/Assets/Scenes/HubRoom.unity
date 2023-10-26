@@ -628,6 +628,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
+      propertyPath: prefabObjectValues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
+      propertyPath: prefabObjectValues.Array.data[1].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
+      propertyPath: prefabObjectValues.Array.data[1].value
+      value: 
+      objectReference: {fileID: 4565348638592779337, guid: 06c847bdc0258174da0b545c31adc15d,
+        type: 3}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
       propertyPath: settingsValueChangeWatchers.Array.data[0]
       value: 
       objectReference: {fileID: 1895510290}
