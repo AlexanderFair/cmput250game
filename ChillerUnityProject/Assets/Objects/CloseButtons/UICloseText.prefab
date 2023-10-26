@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd8af3cc1405fc4d9b166154f8628f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimators: []
   text: {fileID: 2433327266893335150}
   hint: <i><<key>></i>
 --- !u!1 &2433327266893335144
@@ -161,8 +162,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_Font: {fileID: 12800000, guid: 6b786b48d74f65a4eb20cd189ec35271, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

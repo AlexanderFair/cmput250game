@@ -9,7 +9,7 @@ public class PauseMenu : GameMenuObject
 
     public override void OnMenuClick(MenuClickableObject obj)
     {
-        if(obj.name == "cross" || obj.name == "exit")
+        if(obj.name == "MenuCloseBtn" || obj.name == "exit")
         {
             MenuController.Instance.ExitMenu();
         }

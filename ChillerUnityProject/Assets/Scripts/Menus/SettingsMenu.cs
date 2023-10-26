@@ -8,7 +8,7 @@ public class SettingsMenu : GameMenuObject
 
     public override void OnMenuClick(MenuClickableObject obj)
     {
-        if (obj.name == "cross")
+        if (obj.name == "MenuCloseBtn")
         {
             MenuController.Instance.ChangeMenu();
         }

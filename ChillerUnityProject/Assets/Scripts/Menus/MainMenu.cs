@@ -9,9 +9,9 @@ public class MainMenu : GameMenuObject
 
     public override void OnMenuClick(MenuClickableObject obj)
     {
-        if (obj.name == "cross")
+        if (obj.name == "MenuCloseBtn")
         {
-            Application.Quit();
+            MenuController.Instance.ExitMenu(); //Application.Quit();
         }
         else if(obj.name == "play")
         {

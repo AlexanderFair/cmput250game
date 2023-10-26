@@ -16,7 +16,6 @@ public class KeyControlHintManager : RoomObjectClass
         base.Start();
         if (defined)
         {
-            Settings.DisplayError("an instance already exist", gameObject);
             DestroyImmediate(gameObject);
             return;
         }

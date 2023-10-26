@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 1914859322900221479}
   m_LocalRotation: {x: 0, y: 0, z: 0.13035314, w: 0.99146765}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617361084614173584}
   m_Father: {fileID: 8035195196710697596}
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.98}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.1229, y: 0.018}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: -5.92, y: 5.11}
+  m_SizeDelta: {x: 114.57672, y: 98.1699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8085549877804449233
 Canvas:
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 200
+  m_DynamicPixelsPerUnit: 4
 --- !u!114 &6043875360856069382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,15 +233,15 @@ RectTransform:
   m_GameObject: {fileID: 7586281396866533243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8584585757794572475}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000000089407, y: 0.01}
-  m_SizeDelta: {x: 13.333334, y: 10}
+  m_AnchoredPosition: {x: 0.00042534, y: 0}
+  m_SizeDelta: {x: 114.57587, y: 98.17241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &479555475486961434
 CanvasRenderer:
@@ -271,11 +271,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 1
+    m_Font: {fileID: 12800000, guid: 6b786b48d74f65a4eb20cd189ec35271, type: 3}
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hello its me
+  m_Text: 0123456789001234567890112345678902123456789031234567890412345678905123456789061234567890712345678908123456789091234567890a1234567890b1234567890c1234567890d1234567890e1234567890f1234567890g1234567890h123456789
 --- !u!1001 &8445800309838706146
 PrefabInstance:
   m_ObjectHideFlags: 0

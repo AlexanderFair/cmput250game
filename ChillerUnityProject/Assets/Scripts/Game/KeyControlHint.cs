@@ -19,6 +19,7 @@ public class KeyControlHint : RoomObjectClass, Settings.ISettingsUpdateWatcher
     {
         base.Start();
         UpdateText();
+        this.AwakeSettingsWatcher();
     }
 
     protected override void UpdateRoomObject()
@@ -44,6 +45,7 @@ public class KeyControlHint : RoomObjectClass, Settings.ISettingsUpdateWatcher
     public override void OnDestroy()
     {
         base.OnDestroy();
+        this.DestroySettingsWatcher();
     }
 
     public void Clear()
