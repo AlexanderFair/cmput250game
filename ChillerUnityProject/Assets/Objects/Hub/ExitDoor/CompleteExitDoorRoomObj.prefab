@@ -99,7 +99,8 @@ MonoBehaviour:
   interactableCollider: {fileID: 3508867845000328460}
   interactionControl: 0
   interactableRenderer: {fileID: 3508867845000328458}
-  interactSound: {fileID: 0}
+  interactSound:
+  - {fileID: 8300000, guid: 3d0fcabdc0aad134aa06f74f79810036, type: 3}
   displayDialogOnInteract: 1
   dialogProfileAnimation:
   - {fileID: 0}

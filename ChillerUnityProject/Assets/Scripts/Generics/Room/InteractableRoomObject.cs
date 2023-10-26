@@ -20,7 +20,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
 
     //The sprite renderer which should obtain an outline when the player is near enough
     public SpriteRenderer interactableRenderer;
-    public AudioClip interactSound = null;
+    public AudioClip[] interactSound = new AudioClip[0];
 
     [Header("Interactabe Dialog Settings")]
     public bool displayDialogOnInteract = false;
@@ -52,11 +52,15 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
      * only functionality that is mandatory for interactions.
      */
     protected virtual void Interact(){
-        AudioHandler.Instance.playSoundEffect(interactSound);
+        if(interactSound.Length > 0)
+        {
+            AudioHandler.Instance.playSoundEffect(interactSound[Settings.randomInstance.Next(interactSound.Length)]);
+        }
         if(displayDialogOnInteract)
         {
             DialogDisplay.NewDialog(dialog, dialogProfileAnimation);
         }
+        interactionControl.UseControl();
     }
 
     

@@ -45,6 +45,11 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
     /* The wind noise that is always looping */
     public AudioClip windNoiseLoop = null;
 
+    [Header("Volume Settings")]
+    public float trackVolume = 1;
+    public float effectVolume = 1;
+    public float ambientVolume = 1;
+
     /* How long between tracks */
     private float cooldown = 10f;
     /* If a track just finished playing - dont play another right away. Determines if its on cooldown */
@@ -77,9 +82,7 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
         this.effectSource = gameObject.AddComponent<AudioSource>();
         this.ambientSource = gameObject.AddComponent<AudioSource>();
 
-        soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get();
-        ambientSource.volume = Settings.FloatValues.AmbientVolume.Get();
-        effectSource.volume = Settings.FloatValues.SoundEffectVolume.Get();
+        SetVolumes();
 
         DontDestroyOnLoad(this);
 
@@ -90,6 +93,13 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
         ambientSource.clip = windNoiseLoop;
         ambientSource.Play();
 
+    }
+
+    private void SetVolumes()
+    {
+        soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get() * Settings.FloatValues.MasterVolume.Get() * trackVolume;
+        ambientSource.volume = Settings.FloatValues.AmbientVolume.Get() * Settings.FloatValues.MasterVolume.Get() * ambientVolume;
+        effectSource.volume = Settings.FloatValues.SoundEffectVolume.Get() * Settings.FloatValues.MasterVolume.Get() * effectVolume;
     }
 
     void Update(){
@@ -149,14 +159,11 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
     {
         switch (floatVal)
         {
+            case Settings.FloatValues.MasterVolume:
             case Settings.FloatValues.AmbientVolume:
-                ambientSource.volume = floatVal.Get();
-                break;
             case Settings.FloatValues.SoundtrackVolume:
-                soundtrackAudioSource.volume = floatVal.Get();
-                break;
             case Settings.FloatValues.SoundEffectVolume:
-                effectSource.volume = floatVal.Get();
+                SetVolumes();
                 break;
             default:
                 break;

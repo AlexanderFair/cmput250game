@@ -10,6 +10,9 @@ public class HubPuzzleRoomDoors : DisableInteractableRoomObject
     public Vector3 playerStartPosition;
     // Dialogs that will be randomly choose from when the player interacts with the door when its locked
     public string[] lockedDialogs;
+    public AudioClip[] lockedEffects = new AudioClip[0];
+    //indexes of clips in the settingsInstance.audioClips
+    public int[] unlockedEffectsSettingsIndex = new int[0];
 
     private System.Random random = new System.Random();
 
@@ -46,9 +49,17 @@ public class HubPuzzleRoomDoors : DisableInteractableRoomObject
         if(disabledInteract)
         {
             ChangeScenes();
+            if (unlockedEffectsSettingsIndex.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(SettingsInstance.Instance.audioClips[unlockedEffectsSettingsIndex[Settings.randomInstance.Next(unlockedEffectsSettingsIndex.Length)]]);
+            }
         }
         else
         {
+            if (lockedEffects.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(lockedEffects[Settings.randomInstance.Next(lockedEffects.Length)]);
+            }
             StopPlayer();
         }
     }

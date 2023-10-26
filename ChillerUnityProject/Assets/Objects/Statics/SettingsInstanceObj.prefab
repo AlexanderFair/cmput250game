@@ -66,6 +66,10 @@ MonoBehaviour:
     value: 115
   - key: 10
     value: 324
+  controlSoundEffects:
+  - key: 1
+    sounds:
+    - {fileID: 8300000, guid: f13c55f7432e7da4f86a2cb34332c544, type: 3}
   floatValues:
   - key: 1
     value: -180
@@ -80,6 +84,8 @@ MonoBehaviour:
   - key: 5
     value: 1
   - key: 6
+    value: 1
+  - key: 8
     value: 1
   - key: 7
     value: 1
@@ -111,5 +117,7 @@ MonoBehaviour:
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   canLogWarnings: 0
   canInput: 1
+  audioClips:
+  - {fileID: 8300000, guid: 73f25514693166c43a7aece47f2a3a5e, type: 3}
   settingsValueChangeWatchers:
   - {fileID: 0}

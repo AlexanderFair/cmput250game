@@ -16,6 +16,9 @@ public class CageRoomScript : DisableInteractableRoomObject
 
     public string notUnlockedPrompt;
 
+    public AudioClip[] noCrowbarEffects = new AudioClip[0];
+    public AudioClip crowbarEffects = null;
+
     private static int instanceExists = 0;
     public static bool unlocked = false;
 
@@ -54,7 +57,7 @@ public class CageRoomScript : DisableInteractableRoomObject
     private void StartUnlocked()
     {
         UnlockCage();
-        //TODO set penguin location
+        penguin.transform.position = penguinPositionOnUnlock;
     }
 
     // Sets the puzzle to unlocked an dreleases the penguin
@@ -62,7 +65,6 @@ public class CageRoomScript : DisableInteractableRoomObject
     {
         penguin.SetLockedInCage(false);
         unlocked = true;
-        penguin.transform.position = penguinPositionOnUnlock;
         DisableInteract();
     }
 
@@ -71,10 +73,18 @@ public class CageRoomScript : DisableInteractableRoomObject
         base.Interact();
         if(!CrowbarRoomScript.HasCrowbar)
         {
+            if (noCrowbarEffects.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(noCrowbarEffects[Settings.randomInstance.Next(noCrowbarEffects.Length)]);
+            }
             DialogDisplay.NewDialog(notUnlockedPrompt, AnimationSpriteClass.NULL_STRUCT);
         }
         else
         {
+            if (crowbarEffects != null)
+            {
+                AudioHandler.Instance.playSoundEffect(crowbarEffects);
+            }
             UnlockCage();
         }
     }

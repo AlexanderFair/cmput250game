@@ -23,7 +23,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     //Time to wait between clicks
     public float clickRechargeTime;
     //The sound effect to be played when clicked
-    public AudioClip soundEffect;
+    public AudioClip[] soundEffect = new AudioClip[0];
 
     public Settings.Controls clickControl = Settings.Controls.Click;
 
@@ -112,6 +112,10 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
      * Called when the object is interacted with
      */
     protected virtual void Clicked() {
-        AudioHandler.Instance.playSoundEffect(soundEffect);
+        if(soundEffect.Length > 0)
+        {
+            AudioHandler.Instance.playSoundEffect(soundEffect[Settings.randomInstance.Next(soundEffect.Length)]);
+        }
+        clickControl.UseControl();
     }
 }

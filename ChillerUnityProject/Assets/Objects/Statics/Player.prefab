@@ -197,6 +197,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa631955e48c56145bfcba8f5e30332d, type: 3}
   walkNorthAnim:
   - {fileID: 21300000, guid: fa631955e48c56145bfcba8f5e30332d, type: 3}
+  walkingEffects:
+  - {fileID: 8300000, guid: 617e642d6b10ce3418a9976ba95ffe39, type: 3}
+  - {fileID: 8300000, guid: 309b29c5b3f66c6498be5f760896038d, type: 3}
+  - {fileID: 8300000, guid: c3362be76534da84599a867a10b12f3c, type: 3}
+  - {fileID: 8300000, guid: 7aaa08a7cb31f9d499b5d56c24960af6, type: 3}
+  - {fileID: 8300000, guid: 9336f5cf368fb634fb5f33c9be6913d5, type: 3}
+  - {fileID: 8300000, guid: b5f8eda3334664148bafe6a31e7e34f2, type: 3}
+  - {fileID: 8300000, guid: e1cae25eb14a08148b8570b515a1cd8a, type: 3}
+  - {fileID: 8300000, guid: 58346a25e36b4b84280e29758845f814, type: 3}
+  - {fileID: 8300000, guid: 30db52b1a235a234facec5386cac481e, type: 3}
+  timeBetweenWalkingEffect: 0.4
 --- !u!50 &6329014479189841156
 Rigidbody2D:
   serializedVersion: 4

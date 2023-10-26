@@ -25,7 +25,10 @@ public class JigsawPuzzleScript : SnapManagerUIObject
         room = _room;
         if (room.IsSolved())
         {
-
+            foreach (JigsawSolutionElement sol in solution)
+            {
+                dragableTiles[sol.elementIndex].Snap(snapColliders[sol.colliderIndex]);
+            }
         }
     }
 

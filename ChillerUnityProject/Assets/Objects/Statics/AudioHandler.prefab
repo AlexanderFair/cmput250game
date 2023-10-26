@@ -44,6 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracks:
+  - {fileID: 8300000, guid: 7e9b1dce1697c494aa22d6d26c4bcd0e, type: 3}
+  - {fileID: 8300000, guid: dca885d09a843c242b301d5cd85175fb, type: 3}
   - {fileID: 8300000, guid: 132139ff4ad5cfa41bb7bdf46a1794f8, type: 3}
-  trackInsanityScores: 00000000
-  doplay: 0
+  trackInsanityScores:
+  - 0
+  - 2
+  - 5
+  windNoiseLoop: {fileID: 8300000, guid: b6f1ce1a1271cd14eb46f80180e540c5, type: 3}
+  trackVolume: 1
+  effectVolume: 0.5
+  ambientVolume: 0.1
+  doplay: 1
