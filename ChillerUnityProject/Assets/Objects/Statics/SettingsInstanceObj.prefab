@@ -106,6 +106,8 @@ MonoBehaviour:
   prefabObjectValues:
   - key: 0
     value: {fileID: 6209451717563512970, guid: 14ca2edaac16ea348b5582ff3adfcc85, type: 3}
+  - key: 1
+    value: {fileID: 4565348638592779337, guid: 06c847bdc0258174da0b545c31adc15d, type: 3}
   prefabMaterialValues:
   - key: 0
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

@@ -24,7 +24,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     public bool giveControlHint = true;
     public Vector2 controlHintOffset = Vector2.zero;
 
-    [Header("Interactable Dialog Settings")]
+    [Header("Interactabe Dialog Settings")]
     public bool displayDialogOnInteract = false;
     public Sprite[] dialogProfileAnimation = AnimationSpriteClass.NULL_STRUCT;
     public string dialog = "";
