@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseRoomBtnText : Settings.SettingsUpdateWatcher
+public class PauseRoomBtnText : RoomObjectClass, Settings.ISettingsUpdateWatcher
 {
 
     [Header("Pause Room Btn Text")]
@@ -15,15 +15,21 @@ public class PauseRoomBtnText : Settings.SettingsUpdateWatcher
     public void Setup(PauseRoomBtn b)
     {
         btn = b;
+        this.AwakeSettingsWatcher();
     }
 
-    public override void ControlsUpdated(Settings.Controls control)
+    public void ControlsUpdated(Settings.Controls control)
     {
-        base.ControlsUpdated(control);
         if (control == Settings.Controls.ExitMenu)
         {
             UpdateText();
         }
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        this.DestroySettingsWatcher();
     }
 
     private void UpdateText()
@@ -32,4 +38,7 @@ public class PauseRoomBtnText : Settings.SettingsUpdateWatcher
         text.text = s;
     }
 
+    public void FloatValuesUpdated(Settings.FloatValues floatVal)
+    {
+    }
 }

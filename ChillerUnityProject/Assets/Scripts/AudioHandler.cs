@@ -10,7 +10,7 @@ using UnityEngine.UI;
  * and add this script to the object. Interactable UI room objects have this by default
  * for the interact sound. 
 */
-public class AudioHandler : Settings.SettingsUpdateWatcher
+public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
 {
     /* Singleton */
     private static AudioHandler _instance;
@@ -92,6 +92,7 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
         }
         ambientSource.clip = windNoiseLoop;
         ambientSource.Play();
+        this.AwakeSettingsWatcher();
 
     }
 
@@ -155,7 +156,7 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
         this.effectSource.PlayOneShot(soundEffect);
     }
 
-    public override void FloatValuesUpdated(Settings.FloatValues floatVal)
+    public void FloatValuesUpdated(Settings.FloatValues floatVal)
     {
         switch (floatVal)
         {
@@ -168,5 +169,10 @@ public class AudioHandler : Settings.SettingsUpdateWatcher
             default:
                 break;
         }
+    }
+
+    public void ControlsUpdated(Settings.Controls control)
+    {
+
     }
 }

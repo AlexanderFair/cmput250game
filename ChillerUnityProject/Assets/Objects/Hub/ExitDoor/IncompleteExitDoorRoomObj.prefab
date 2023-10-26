@@ -102,6 +102,7 @@ MonoBehaviour:
   interactableRenderer: {fileID: 2473796976967510348}
   interactSound:
   - {fileID: 8300000, guid: 3d0fcabdc0aad134aa06f74f79810036, type: 3}
+  controlHintOffset: {x: 0, y: 160}
   displayDialogOnInteract: 1
   dialogProfileAnimation:
   - {fileID: 0}

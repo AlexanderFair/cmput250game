@@ -183,10 +183,13 @@ MonoBehaviour:
   interactableCollider: {fileID: 6886009229727363514}
   interactionControl: 0
   interactableRenderer: {fileID: 0}
-  interactSound: {fileID: 0}
+  interactSound:
+  - {fileID: 0}
+  giveControlHint: 1
+  controlHintOffset: {x: 0, y: 70}
   displayDialogOnInteract: 1
   dialogProfileAnimation:
-  - {fileID: -3852782487656736975, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec, type: 3}
+  - {fileID: 0}
   dialog: '*Penguin Noise*'
   penguin: {fileID: 6886009229727363513}
 --- !u!114 &6886009229727363513
@@ -205,6 +208,7 @@ MonoBehaviour:
   speedDecayMultiplierPerSecond: 1
   FOLLOW_RADIUS: 12
   FOLLOW_SPEED: 30
+  lockMovementTime: 2
 --- !u!50 &6886009229727363517
 Rigidbody2D:
   serializedVersion: 4

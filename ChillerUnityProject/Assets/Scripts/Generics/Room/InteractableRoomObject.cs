@@ -21,17 +21,33 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     //The sprite renderer which should obtain an outline when the player is near enough
     public SpriteRenderer interactableRenderer;
     public AudioClip[] interactSound = new AudioClip[0];
+    public bool giveControlHint = true;
+    public Vector2 controlHintOffset = Vector2.zero;
 
-    [Header("Interactabe Dialog Settings")]
+    [Header("Interactable Dialog Settings")]
     public bool displayDialogOnInteract = false;
     public Sprite[] dialogProfileAnimation = AnimationSpriteClass.NULL_STRUCT;
     public string dialog = "";
+
+    private bool couldInteract = false;
 
     protected override void UpdateRoomObject()
     {
         this.UpdateOutlinableSprite(interactableRenderer);
 
-        if (interactionControl.GetKeyDown() && InteractableCondition())
+        if(couldInteract && !InteractableCondition() && giveControlHint)
+        {
+            KeyControlHintManager.Instance.RemoveObjectHint(gameObject);
+        }
+        else if(!couldInteract && InteractableCondition() && giveControlHint)
+        {
+            Transform t = interactableRenderer != null ? interactableRenderer.transform : transform;
+            KeyControlHintManager.Instance.GiveObjectHint(gameObject, t, interactionControl, controlHintOffset);
+        }
+
+        couldInteract = InteractableCondition();
+
+        if (interactionControl.GetKeyDown() && couldInteract)
         {
             Interact();
         }

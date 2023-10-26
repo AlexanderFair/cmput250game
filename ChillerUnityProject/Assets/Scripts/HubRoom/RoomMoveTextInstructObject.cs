@@ -19,8 +19,13 @@ public class RoomMoveTextInstructObject : RoomObjectClass
         }
         base.Start();
         UpdateText();
-        controlChangeWatcher = gameObject.AddComponent<RoomMoveTextSettingsWatcher>();
-        controlChangeWatcher.Setup(this);
+        controlChangeWatcher = new RoomMoveTextSettingsWatcher(this);
+        controlChangeWatcher.AwakeSettingsWatcher();
+    }
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        controlChangeWatcher.DestroySettingsWatcher();
     }
     protected override void UpdateRoomObject()
     {

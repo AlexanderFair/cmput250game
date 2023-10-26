@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UICloseText : Settings.SettingsUpdateWatcher
+public class UICloseText : UIObjectClass, Settings.ISettingsUpdateWatcher
 {
 
     private UICloseButton btn;
@@ -15,11 +15,11 @@ public class UICloseText : Settings.SettingsUpdateWatcher
     {
         btn = b;
         UpdateText();
+        this.AwakeSettingsWatcher();
     }
 
-    public override void ControlsUpdated(Settings.Controls control)
+    public void ControlsUpdated(Settings.Controls control)
     {
-        base.ControlsUpdated(control);
         if(control == Settings.Controls.ExitMenu)
         {
             UpdateText();
@@ -30,5 +30,15 @@ public class UICloseText : Settings.SettingsUpdateWatcher
     {
         string s = hint.Replace("<key>", Settings.Controls.ExitMenu.GetKeyCode().ToString());
         text.text = s;
+    }
+
+    public void FloatValuesUpdated(Settings.FloatValues floatVal)
+    {
+    }
+
+    protected override void OnDestroyUIObject()
+    {
+        base.OnDestroyUIObject();
+        this.DestroySettingsWatcher();
     }
 }

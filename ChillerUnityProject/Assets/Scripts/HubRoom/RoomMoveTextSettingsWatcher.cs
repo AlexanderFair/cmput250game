@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class RoomMoveTextSettingsWatcher : Settings.SettingsUpdateWatcher
+public class RoomMoveTextSettingsWatcher : Settings.ISettingsUpdateWatcher
 {
     private RoomMoveTextInstructObject move;
 
-    public void Setup(RoomMoveTextInstructObject _t)
+    public RoomMoveTextSettingsWatcher(RoomMoveTextInstructObject roomMoveTextInstructObject)
     {
-        move = _t;
+        this.move = roomMoveTextInstructObject;
     }
 
-    public override void ControlsUpdated(Settings.Controls control)
+
+    public void ControlsUpdated(Settings.Controls control)
     {
-        base.ControlsUpdated(control);
         switch (control)
         {
             case Settings.Controls.MoveUp:
@@ -26,5 +26,9 @@ public class RoomMoveTextSettingsWatcher : Settings.SettingsUpdateWatcher
             default:
                 break;
         }
+    }
+
+    public void FloatValuesUpdated(Settings.FloatValues floatVal)
+    {
     }
 }
