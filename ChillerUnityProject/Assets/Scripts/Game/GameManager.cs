@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour
 {
-    // the prefab for a switch waiting (loading) screen
-    public GameObject switchMenuPrefab;
 
     // the room data storate. Make sure room objects update them on init based on those data!
     private static Dictionary<String, GameSaveInfo> _roomData;
@@ -38,8 +36,6 @@ public class GameManager : MonoBehaviour
     // make sure when room switching, the player do not wiggle around.
     public void FixedUpdate()
     {
-
-
         if(switching && complete)
         {
             switching = false;
@@ -66,10 +62,6 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        if (switchMenuPrefab == null)
-        {
-            throw new NullReferenceException("The switchMenuPrefab is null on the GameManager object");
-        }
     }
 
     // set a room save info for a given room
@@ -102,7 +94,7 @@ public class GameManager : MonoBehaviour
         switching = true;
         complete = false;
         targetPos = _targetPos;
-        //MenuObjectClass.InstantiateNewMenuElement(switchMenuPrefab);
+        DialogDisplay.StopCurrentDisplay();
         MenuObjectClass.EnableMenu();
         Settings.DisableInput();
         // load the future scene

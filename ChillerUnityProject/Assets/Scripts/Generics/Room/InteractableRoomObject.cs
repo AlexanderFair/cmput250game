@@ -16,11 +16,16 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     /* The collider for the obect */
     public Collider2D interactableCollider;
 
-    public Settings.Controls interactionControl = Settings.Controls.Interact;
+    public Settings.Controls interactionControl = Settings.Controls.InteractWithRoom;
 
     //The sprite renderer which should obtain an outline when the player is near enough
     public SpriteRenderer interactableRenderer;
     public AudioClip interactSound = null;
+
+    [Header("Interactabe Dialog Settings")]
+    public bool displayDialogOnInteract = false;
+    public Sprite[] dialogProfileAnimation = AnimationSpriteClass.NULL_STRUCT;
+    public string dialog = "";
 
     protected override void UpdateRoomObject()
     {
@@ -47,8 +52,10 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
      * only functionality that is mandatory for interactions.
      */
     protected virtual void Interact(){
-        if ((object)interactSound != null) {
-            AudioHandler.Instance.playSoundEffect(interactSound);
+        AudioHandler.Instance.playSoundEffect(interactSound);
+        if(displayDialogOnInteract)
+        {
+            DialogDisplay.NewDialog(dialog, dialogProfileAnimation);
         }
     }
 

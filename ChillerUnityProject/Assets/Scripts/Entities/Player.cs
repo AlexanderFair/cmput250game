@@ -72,6 +72,7 @@ public class Player : Entity {
             }
             
             moveDir = new Vector3(horMoveDir, verMoveDir, 0);
+            moveDir.Normalize();
             moveDir *= MOVE_SPEED;
             // start movement if velocity is non-zero
             if (moveDir.sqrMagnitude > 1e-5)
@@ -81,19 +82,19 @@ public class Player : Entity {
         {
             // north
             if (moveDir.y > 1e-5)
-                spriteAnimations[0].ChangeAnimation(walkNorthAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkNorthAnim, false);
             // south
             else if (moveDir.y < -1e-5)
-                spriteAnimations[0].ChangeAnimation(walkSouthAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkSouthAnim, false);
             // east
             else if (moveDir.x > 1e-5)
-                spriteAnimations[0].ChangeAnimation(walkEastAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkEastAnim, false);
             // west 
             else if (moveDir.x < -1e-5)
-                spriteAnimations[0].ChangeAnimation(walkWestAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkWestAnim, false);
             // idle
             else
-                spriteAnimations[0].ChangeAnimation(idleAnim);
+                spriteAnimators[0].ChangeAnimation(idleAnim);
         }
         // move until timeout, then wait for next action
         if (movement_progress > 0f) {

@@ -10,7 +10,7 @@ using UnityEngine.UI;
  * and add this script to the object. Interactable UI room objects have this by default
  * for the interact sound. 
 */
-public class AudioHandler : MonoBehaviour
+public class AudioHandler : Settings.SettingsUpdateWatcher
 {
     /* Singleton */
     private static AudioHandler _instance;
@@ -31,10 +31,24 @@ public class AudioHandler : MonoBehaviour
     /* The insanity scores for each track. These determine which tracks play at
      * which tim */
     public float[] trackInsanityScores;
+    
+    /* The volume for the soundtrack */
+    //public float soundTrackVolume = 1f;
+    /* The volume for ambient noise */
+    //public float ambientVolume = 1f; ---These settings are now located in Settings
 
     /* The audio source (not the clip!) for sound effects. 
     * Unsure if this will stay seperate from the soundtrack*/
     private AudioSource effectSource;
+    /* Audio source for wind and other ambient sounds */
+    private AudioSource ambientSource;
+    /* The wind noise that is always looping */
+    public AudioClip windNoiseLoop = null;
+
+    /* How long between tracks */
+    private float cooldown = 10f;
+    /* If a track just finished playing - dont play another right away. Determines if its on cooldown */
+    private float cooldownTimer = 0f;
 
     void Awake(){
         bool shouldDestroy = true;
@@ -60,18 +74,35 @@ public class AudioHandler : MonoBehaviour
         }
 
         this.soundtrackAudioSource = gameObject.AddComponent<AudioSource>();
-        soundtrackAudioSource.volume = 0.1f;
         this.effectSource = gameObject.AddComponent<AudioSource>();
+        this.ambientSource = gameObject.AddComponent<AudioSource>();
+
+        soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get();
+        ambientSource.volume = Settings.FloatValues.AmbientVolume.Get();
+        effectSource.volume = Settings.FloatValues.SoundEffectVolume.Get();
+
         DontDestroyOnLoad(this);
+
+        ambientSource.loop = true;
+        if ((object)windNoiseLoop == null){
+            throw new System.Exception("Wind noise is not set in Audio Handler");
+        }
+        ambientSource.clip = windNoiseLoop;
+        ambientSource.Play();
+
     }
 
     void Update(){
         if (!soundtrackAudioSource.isPlaying){
-            AudioClip nextTrack = chooseSoundtrack();
-            //dont play if theres nothing to play
-            if ((object)nextTrack != null){
-                soundtrackAudioSource.clip = nextTrack;
-                soundtrackAudioSource.Play();
+            cooldownTimer += Time.deltaTime;
+            if (cooldownTimer > cooldown){
+                AudioClip nextTrack = chooseSoundtrack();
+                //dont play if theres nothing to play
+                if ((object)nextTrack != null){
+                    soundtrackAudioSource.clip = nextTrack;
+                    soundtrackAudioSource.Play();
+                    cooldownTimer = 0;
+                }
             }
         }
     }
@@ -99,6 +130,7 @@ public class AudioHandler : MonoBehaviour
                 }
             }
         }
+        Debug.Log("please let xander know if you saw this thanks (choose soundtrack)");
         return tracks[0];
     }
     /* Plays a sound effect. 
@@ -111,5 +143,23 @@ public class AudioHandler : MonoBehaviour
             return;
         }
         this.effectSource.PlayOneShot(soundEffect);
+    }
+
+    public override void FloatValuesUpdated(Settings.FloatValues floatVal)
+    {
+        switch (floatVal)
+        {
+            case Settings.FloatValues.AmbientVolume:
+                ambientSource.volume = floatVal.Get();
+                break;
+            case Settings.FloatValues.SoundtrackVolume:
+                soundtrackAudioSource.volume = floatVal.Get();
+                break;
+            case Settings.FloatValues.SoundEffectVolume:
+                effectSource.volume = floatVal.Get();
+                break;
+            default:
+                break;
+        }
     }
 }

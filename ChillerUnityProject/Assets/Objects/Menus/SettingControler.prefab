@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 0}
-  m_SizeDelta: {x: 5.33, y: 1.33}
+  m_AnchoredPosition: {x: 2.852, y: 0}
+  m_SizeDelta: {x: 7.6011353, y: 1.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2949446775105624637
 CanvasRenderer:
@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 0}
-  m_SizeDelta: {x: 5.33, y: 1.33}
+  m_AnchoredPosition: {x: -2.822, y: 0}
+  m_SizeDelta: {x: 7.5228195, y: 1.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2132951952741255736
 CanvasRenderer:
@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 9000366520268545029}
   - component: {fileID: 1175093055335191723}
   - component: {fileID: 3216584166103676708}
-  - component: {fileID: 2616171438973675326}
   m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
@@ -238,8 +237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: -1.005, y: 0}
+  m_SizeDelta: {x: 11.913389, y: 2.0582924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1175093055335191723
 Canvas:
@@ -275,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 120
   m_ScaleFactor: 100
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -283,24 +282,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 100
---- !u!114 &2616171438973675326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459896047710429491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  m_DynamicPixelsPerUnit: 120
 --- !u!1 &5001087215876334322
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 5001087215876334322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 9000366520268545029}
   - {fileID: 3133264138393987408}

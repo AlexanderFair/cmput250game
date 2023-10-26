@@ -98,7 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteAnimations: []
   clickableCollider: {fileID: 4049266295986590215}
-  spriteClickableOutlineRenderer: {fileID: 0}
+  spriteClickableOutlineRenderer: {fileID: 4049266295986590217}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: {fileID: 0}
   clickControl: 1
 --- !u!61 &4049266295986590215
 BoxCollider2D:

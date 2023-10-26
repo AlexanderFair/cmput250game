@@ -267,12 +267,12 @@ public class BasicPipe : UIObjectClass
             // initialize rotation direction
             bool isAttemptingToRotate = false;
             // left click, rotate clockwise
-            if (Input.GetMouseButtonDown(0)) {
+            if (Settings.Controls.RotatePipesRight.GetKeyDown()) {
                 targetRotationDir = 1;
                 isAttemptingToRotate = true;
             }
             // right click, rotate counter clockwise
-            else if (Input.GetMouseButtonDown(1)) {
+            else if (Settings.Controls.RotatePipesLeft.GetKeyDown()) {
                 targetRotationDir = -1;
                 isAttemptingToRotate = true;
             }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6886009229727363515}
   - component: {fileID: 6886009229727363512}
+  - component: {fileID: 5527948025746113203}
   - component: {fileID: 6886009229727363513}
   - component: {fileID: 6886009229727363517}
   - component: {fileID: 6886009229727363514}
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 441991147
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0b027c552cfe17f47a0bd203aece1ead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,6 +85,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5527948025746113203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886009229727363142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1709084e3cd53b468c561d432894112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimators: []
+  interactableCollider: {fileID: 6886009229727363514}
+  interactionControl: 0
+  interactableRenderer: {fileID: 0}
+  interactSound: {fileID: 0}
+  displayDialogOnInteract: 1
+  dialogProfileAnimation:
+  - {fileID: 0}
+  dialog: '*Penguin Noise*'
+  penguin: {fileID: 6886009229727363513}
 --- !u!114 &6886009229727363513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c3dde3b9bc70247bb08b2d1575be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   speedDecayMultiplierPerSecond: 1
 --- !u!50 &6886009229727363517
 Rigidbody2D:

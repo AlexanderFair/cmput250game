@@ -45,6 +45,11 @@ public class RadioPuzzle : DisplayUIRoomObject
                 DialogDisplay.NewDialog(completionNoteCombo + (snap ? "" : tryAgain), AnimationSpriteClass.NULL_STRUCT);
             }
         }
+
+        if(combo && snap)
+        {
+            GameCompletionManager.RadioRoomComplete = true;
+        }
     }
 
 

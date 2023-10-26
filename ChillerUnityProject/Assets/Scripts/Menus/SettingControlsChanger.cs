@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class SettingControlsChanger : MenuClickCaller
 
     void Start()
     {
-        key.text = control.ToString();
+        key.text = Regex.Replace(control.ToString(), "(\\B[A-Z])", " $1");
         UpdateText(); 
     }
 
@@ -57,9 +58,7 @@ public class SettingControlsChanger : MenuClickCaller
 
     private void ChangeValue(KeyCode newKey)
     {
-        var struc = SettingsInstance.Instance.controlsPairings[control];
-        struc.value = newKey;
-        SettingsInstance.Instance.controlsPairings[control] = struc;
+        control.Set(newKey);
         UpdateText();
     }
 
