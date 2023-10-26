@@ -65,6 +65,6 @@ public class PipeInput : BasicPipe
         }
     }
     // sadly, such pipe can not be rotated :(
-    public void OnMouseDown() {
+    public void OnMouseOver() {
     }
 }
