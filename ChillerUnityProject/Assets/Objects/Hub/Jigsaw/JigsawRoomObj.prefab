@@ -101,14 +101,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.82, y: 0.79333335}
+    oldSize: {x: 246, y: 238}
     newSize: {x: 0.82, y: 0.79333335}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.82, y: 0.79333335}
+  m_Size: {x: 246, y: 238}
   m_EdgeRadius: 0
 --- !u!114 &-3621729454942805488
 MonoBehaviour:
@@ -122,10 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7785cdd4f094aa446825fe535bf0397a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   interactableCollider: {fileID: 5832596280765838350}
   interactionControl: 0
   interactableRenderer: {fileID: 5178704005004537520}
-  interactSound: {fileID: 0}
+  interactSound:
+  - {fileID: 8300000, guid: 0cb6949580b1fd44f8f1be03b3e0aca0, type: 3}
+  - {fileID: 8300000, guid: 5bec9d9f218037c4690cb8b95df43eb8, type: 3}
+  - {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
+  - {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation: []
+  dialog: 
   uiPrefab: {fileID: 6816583050486508122, guid: af90f5453e80a8e48b113026d6e5a366,
     type: 3}

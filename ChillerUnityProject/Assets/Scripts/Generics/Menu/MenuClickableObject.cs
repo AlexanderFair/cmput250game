@@ -24,6 +24,7 @@ public class MenuClickableObject : MenuObjectClass, IClickableSprite
 
         if (Util.GetKeyDownWithMouseOverObject(clickKey, clickCollider, true) && ClickableCondition())
         {
+            clickKey.UseControl(true);
             menuObject.OnMenuClick(this);
         }
     }

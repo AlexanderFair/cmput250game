@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HubPuzzleRoomDoors : InteractableRoomObject
+public class HubPuzzleRoomDoors : DisableInteractableRoomObject
 {
     [Header("Change Scene Settings")]
     public String nextSceneName = "";
     public Vector3 playerStartPosition;
     // Dialogs that will be randomly choose from when the player interacts with the door when its locked
     public string[] lockedDialogs;
+    public AudioClip[] lockedEffects = new AudioClip[0];
+    //indexes of clips in the settingsInstance.audioClips
+    public int[] unlockedEffectsSettingsIndex = new int[0];
 
-    private bool isEnabled = false;
     private System.Random random = new System.Random();
 
     public override void Start()
@@ -26,45 +28,39 @@ public class HubPuzzleRoomDoors : InteractableRoomObject
             Settings.DisplayWarning("The selected startposition is zero", gameObject);
         }
 
-        if (CrowbarRoomScript.Complete)
+        if (CrowbarRoomScript.HasCrowbar)
         {
-            isEnabled = true;
+            DisableInteract();
         }
-        UpdateEnabledness();
     }
 
     protected override void UpdateRoomObject()
     {
         base.UpdateRoomObject();
-        if(isEnabled != CrowbarRoomScript.Complete)
+        if(!disabledInteract && CrowbarRoomScript.HasCrowbar)
         {
-            isEnabled = CrowbarRoomScript.Complete;
-            UpdateEnabledness();
+            DisableInteract();
         }
     }
 
     protected override void Interact()
     {
         base.Interact();
-        if(isEnabled)
+        if(disabledInteract)
         {
             ChangeScenes();
+            if (unlockedEffectsSettingsIndex.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(SettingsInstance.Instance.audioClips[unlockedEffectsSettingsIndex[Settings.randomInstance.Next(unlockedEffectsSettingsIndex.Length)]]);
+            }
         }
         else
         {
+            if (lockedEffects.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(lockedEffects[Settings.randomInstance.Next(lockedEffects.Length)]);
+            }
             StopPlayer();
-        }
-    }
-
-    private void UpdateEnabledness()
-    {
-        if (isEnabled)
-        {
-            gameObject.layer = LayerMask.NameToLayer("Room");
-        }
-        else
-        {
-            gameObject.layer = LayerMask.NameToLayer("Room Physics");
         }
     }
 

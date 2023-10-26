@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41a6d6d5acb67c47819fff605a11094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations:
+  spriteAnimators:
   - {fileID: 894795001281358410}
   mainAnimationIndex: 0
 --- !u!114 &894795001281358410
@@ -128,3 +128,4 @@ MonoBehaviour:
   - {fileID: -5141128511496197232, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
   - {fileID: -7924325515865952776, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
   spriteRenderer: {fileID: 8943921214195164188}
+  repetitionFactor: 1

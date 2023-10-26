@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1307770014195546248}
   - component: {fileID: 1307770014195546254}
   - component: {fileID: 7605607480603368085}
-  - component: {fileID: 8215565819108103399}
   m_Layer: 9
   m_Name: HubPuzzleRoomDoors
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307770014195546249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0, z: 0}
+  m_LocalPosition: {x: 450, y: -126, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 70}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 32, y: 32}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 32, y: 120}
   m_EdgeRadius: 0
 --- !u!114 &7605607480603368085
 MonoBehaviour:
@@ -123,44 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5402b64a642acf4f9a39e95cb9a2353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimators:
-  - {fileID: 8215565819108103399}
+  spriteAnimators: []
   interactableCollider: {fileID: 1307770014195546254}
   interactionControl: 0
   interactableRenderer: {fileID: 1307770014195546248}
   interactSound: {fileID: 0}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation: []
+  dialog: 
+  disabledAnimation:
+  - {fileID: -3923943803249788361, guid: 9cedceffc5e8cd54cb4a705024de56f3, type: 3}
+  disabledAnimatorIndex: -1
   nextSceneName: TestScene
   playerStartPosition: {x: 0, y: 0, z: 0}
   lockedDialogs: []
---- !u!114 &8215565819108103399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307770014195546249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389481c0f02669e4d94a3255e80a0f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationStruct:
-  - {fileID: 1377573764528820815, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 1402969213739693402, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 4006812171482158672, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 841323577593185862, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 2345812398349279593, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 4180290179491212068, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 2946591981878063724, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -8405745246273637176, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -5777086346639369065, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -1392555427903791824, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -939953663026511241, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 5890952606021367885, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -8446580543346335973, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 752435158038814112, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 6663427890834759421, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: 4025101358685925691, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  - {fileID: -830947731475636123, guid: aa3908e143398044f9dbccf279d493ed, type: 3}
-  spriteRenderer: {fileID: 1307770014195546248}
-  repetitionFactor: 2

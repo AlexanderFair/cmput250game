@@ -4,7 +4,7 @@ using UnityEngine;
 
 // The cage that holds the penguin
 // This uses a static variable for unlock, so there should not be more than one instance of this
-public class CageRoomScript : DisplayUIRoomObject
+public class CageRoomScript : DisableInteractableRoomObject
 {
     [Header("Cage Objects")]
     //the penguin object
@@ -13,6 +13,11 @@ public class CageRoomScript : DisplayUIRoomObject
     public Vector3 penguinPositionOnLock;
     //the position where the penguin should transport to when unlocked
     public Vector3 penguinPositionOnUnlock;
+
+    public string notUnlockedPrompt;
+
+    public AudioClip[] noCrowbarEffects = new AudioClip[0];
+    public AudioClip crowbarEffects = null;
 
     private static int instanceExists = 0;
     public static bool unlocked = false;
@@ -51,8 +56,8 @@ public class CageRoomScript : DisplayUIRoomObject
     // called when the cage is initialized in the lock state
     private void StartUnlocked()
     {
-        penguin.SetLockedInCage(false);
-        //TODO set penguin location
+        UnlockCage();
+        penguin.transform.position = penguinPositionOnUnlock;
     }
 
     // Sets the puzzle to unlocked an dreleases the penguin
@@ -60,13 +65,28 @@ public class CageRoomScript : DisplayUIRoomObject
     {
         penguin.SetLockedInCage(false);
         unlocked = true;
-        penguin.transform.position = penguinPositionOnUnlock;
+        DisableInteract();
     }
 
-    protected override void DisplayedUI()
+    protected override void Interact()
     {
-        base.DisplayedUI();
-        ui.GetComponent<CagePuzzleScript>().Setup(this);
+        base.Interact();
+        if(!CrowbarRoomScript.HasCrowbar)
+        {
+            if (noCrowbarEffects.Length > 0)
+            {
+                AudioHandler.Instance.playSoundEffect(noCrowbarEffects[Settings.randomInstance.Next(noCrowbarEffects.Length)]);
+            }
+            DialogDisplay.NewDialog(notUnlockedPrompt, AnimationSpriteClass.NULL_STRUCT);
+        }
+        else
+        {
+            if (crowbarEffects != null)
+            {
+                AudioHandler.Instance.playSoundEffect(crowbarEffects);
+            }
+            UnlockCage();
+        }
     }
 
 

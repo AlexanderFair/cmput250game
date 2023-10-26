@@ -15,7 +15,11 @@ public class Penguin : Entity {
     public bool Locked { get; private set; }
 
     // do not set the follow radius to a small number that the penguin actually pushes the player around the room
-    public static float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
+    public float FOLLOW_RADIUS = 0.2f, FOLLOW_SPEED = 0.5f;
+
+    private bool wasLocked = false;
+    private float lockTime = 0;
+    public float lockMovementTime = 1f;
 
     private static Penguin _instance;
     private static bool _instanceDefined = false;
@@ -34,13 +38,28 @@ public class Penguin : Entity {
             //Debug.Log("Warning: a duplicated penguin instance might be present. ");
         _instance = this;
         _instanceDefined = true;
+        wasLocked = Locked;
     }
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
         if (Locked)
         {
             velocity = Vector3.zero;
+            wasLocked = true;
             return;
+        }
+        if (wasLocked)
+        {
+            if(lockTime < lockMovementTime)
+            {
+                lockTime += Time.deltaTime;
+            }
+            else
+            {
+                wasLocked = false;
+                gameObject.layer = LayerMask.NameToLayer("Room Physics");
+                GetComponent<SpriteRenderer>().sortingOrder = 0;
+            }
         }
         // get the distance and direction to follow
         Player ply = Player.Instance;
@@ -67,7 +86,8 @@ public class Penguin : Entity {
         }
         else
         {
-            gameObject.layer = LayerMask.NameToLayer("Room Physics");
+            gameObject.layer = LayerMask.NameToLayer("Room Physics - Penguin");
+            GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
         Locked = isLocked;
     }

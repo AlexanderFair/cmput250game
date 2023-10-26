@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8, y: 1.8}
+  m_Size: {x: 60, y: 60}
   m_EdgeRadius: 0
 --- !u!1 &5245139976848366063
 GameObject:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1d0a4842d0124ab8e5ebd04c72e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimations: []
+  spriteAnimators: []
   clickableCollider: {fileID: 7737860119021450357}
   spriteClickableOutlineRenderer: {fileID: 7058189596267864664}
   animatorIndex: -1
@@ -164,6 +164,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   clickControl: 1
   snapCollider: {fileID: 4516109280663866002}
+  puzzle: {fileID: 0}
 --- !u!1 &8382851360001545920
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,5 +220,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 30, y: 30}
   m_EdgeRadius: 0
