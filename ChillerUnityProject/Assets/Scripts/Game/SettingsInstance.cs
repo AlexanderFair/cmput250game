@@ -142,7 +142,7 @@ public static class Settings
     // Prefab objects
     public enum PrefabObjects
     {
-        DialogDisplay
+        DialogDisplay, InteractableHint
     }
 
     // Prefab Materials
