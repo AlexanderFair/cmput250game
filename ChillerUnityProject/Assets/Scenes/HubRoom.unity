@@ -1811,10 +1811,35 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3612720215667135827, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612720215667135827, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 5517375819429941261, guid: e04ba70dc7ea4d244832da18c79e63ee,
         type: 3}
       propertyPath: m_Name
       value: RandomNoteRoomObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190339712771767296, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190339712771767296, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190339712771767296, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.03773582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e04ba70dc7ea4d244832da18c79e63ee, type: 3}
@@ -2278,6 +2303,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910696908272907203, guid: c2b7a89e56ac9704aa80f551b0b781b5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910696908272907203, guid: c2b7a89e56ac9704aa80f551b0b781b5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b7a89e56ac9704aa80f551b0b781b5, type: 3}
