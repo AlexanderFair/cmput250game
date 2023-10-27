@@ -115,7 +115,11 @@ MonoBehaviour:
   penguin: {fileID: 0}
   penguinPositionOnLock: {x: -251, y: 65, z: 0}
   penguinPositionOnUnlock: {x: 5, y: -104, z: 0}
-  notUnlockedPrompt: 
+  notUnlockedPrompts:
+  - <i>Cautious eyes observe your movement, a timid squabble escapes the animal</i>
+  - <i>You scan the cage, you fail to discern a way to open it.</i>
+  unlockPrompt: <i>Wary quiet gives way to warm trust, the penguin assertively situates
+    themself wedged between your feet</i>
   noCrowbarEffects:
   - {fileID: 8300000, guid: 508587beae297b84c98ae87e6aeb8e98, type: 3}
   crowbarEffects: {fileID: 8300000, guid: 9f1f3915e517c3f4899b64f44ea75029, type: 3}

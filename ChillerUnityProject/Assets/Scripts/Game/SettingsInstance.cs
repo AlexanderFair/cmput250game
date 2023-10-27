@@ -142,7 +142,6 @@ public class SettingsInstance : MonoBehaviour
  */
 public static class Settings
 {
-    public static System.Random randomInstance = new System.Random();
 
     // Key Code controls
     public enum Controls
@@ -230,7 +229,7 @@ public static class Settings
         List<AudioClip> clipList = SettingsInstance.Instance.controlSoundEffectsDict[control];
         if (clipList.Count > 0)
         {
-            AudioHandler.Instance.playSoundEffect(clipList[randomInstance.Next(clipList.Count)]);
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(clipList));
         }
     }
 
@@ -364,8 +363,10 @@ public static class Settings
 
     public static void DestroySettingsWatcher(this ISettingsUpdateWatcher watcher)
     {
-        RequireSettingsInstance();
-        SettingsInstance.Instance.settingsValueChangeWatchers.Remove(watcher);
+        if(SettingsInstance.Instance != null)
+        {
+            SettingsInstance.Instance.settingsValueChangeWatchers.Remove(watcher);
+        }
     }
 
 }

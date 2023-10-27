@@ -72,7 +72,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f13c55f7432e7da4f86a2cb34332c544, type: 3}
   floatValues:
   - key: 1
-    value: -180
+    value: -220
   - key: 0
     value: 60
   - key: 2

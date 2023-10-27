@@ -245,5 +245,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f3b1abd7fc02574580f3ab58a52d609, type: 3}
   clickControl: 1
   alreadyRetrievedPrompt: 
-  retrievedPrompt: 
+  retrievedPrompt: "A crowbar! This\u2019ll do nicely. Now to get off this boat\u2026"
   presentPrompt: 

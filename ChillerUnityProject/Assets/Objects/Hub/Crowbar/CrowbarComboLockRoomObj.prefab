@@ -114,6 +114,8 @@ MonoBehaviour:
   puzzleUI: {fileID: 379975150585201846, guid: de4719481bf6c094fa8400d5d1039688, type: 3}
   completionUI: {fileID: 4791594978018382449, guid: 6acec73f21a0c384e85140b36b12169f,
     type: 3}
+  lockedPrompts:
+  - There might be a tool to help unjam the doors in here.
 --- !u!61 &1245658492868871435
 BoxCollider2D:
   m_ObjectHideFlags: 0

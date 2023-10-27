@@ -14,7 +14,6 @@ public class HubPuzzleRoomDoors : DisableInteractableRoomObject
     //indexes of clips in the settingsInstance.audioClips
     public int[] unlockedEffectsSettingsIndex = new int[0];
 
-    private System.Random random = new System.Random();
 
     public override void Start()
     {
@@ -51,14 +50,14 @@ public class HubPuzzleRoomDoors : DisableInteractableRoomObject
             ChangeScenes();
             if (unlockedEffectsSettingsIndex.Length > 0)
             {
-                AudioHandler.Instance.playSoundEffect(SettingsInstance.Instance.audioClips[unlockedEffectsSettingsIndex[Settings.randomInstance.Next(unlockedEffectsSettingsIndex.Length)]]);
+                AudioHandler.Instance.playSoundEffect(SettingsInstance.Instance.audioClips[Util.ChooseRandom(unlockedEffectsSettingsIndex)]);
             }
         }
         else
         {
             if (lockedEffects.Length > 0)
             {
-                AudioHandler.Instance.playSoundEffect(lockedEffects[Settings.randomInstance.Next(lockedEffects.Length)]);
+                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(lockedEffects));
             }
             StopPlayer();
         }
@@ -80,7 +79,7 @@ public class HubPuzzleRoomDoors : DisableInteractableRoomObject
     {
         if(lockedDialogs.Length > 0)
         {
-            DialogDisplay.NewDialog(lockedDialogs[random.Next(lockedDialogs.Length)], AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(Util.ChooseRandom(lockedDialogs), AnimationSpriteClass.NULL_STRUCT);
         }
     }
 }

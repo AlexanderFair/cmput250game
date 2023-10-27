@@ -9,7 +9,6 @@ public class CrowbarDrawerScript : ClickableUIObject
     public string retrievedPrompt;
     public string presentPrompt;
 
-
     protected override void AwakeUIObject()
     {
         base.AwakeUIObject();

@@ -44,22 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f963d0fa620764da54497b38942276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insanityThreshold: 3
+  insanityThreshold: 20
   insanityToTicRateGraph:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 2.9916773
-      value: 0.10372543
-      inSlope: 0.012676795
-      outSlope: 0.012676795
+      time: 0.042214394
+      value: 0.17083359
+      inSlope: 0.001464909
+      outSlope: 0.001464909
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 9.883556
-      value: 0.19109237
+      time: 25.329418
+      value: 0.20787704
       inSlope: 0.016794505
       outSlope: 0.016794505
       tangentMode: 0
@@ -67,50 +67,62 @@ MonoBehaviour:
       inWeight: 0.061556544
       outWeight: 0.29274213
     - serializedVersion: 3
-      time: 12.006592
-      value: 0.34308863
-      inSlope: 0.20542182
-      outSlope: 0.20542182
+      time: 72.78107
+      value: 0.52768946
+      inSlope: 0.011853689
+      outSlope: 0.011853689
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.040490277
-      outWeight: 0.33333334
+      outWeight: 0.04959951
     - serializedVersion: 3
-      time: 17.799454
-      value: 0.89428604
-      inSlope: 0.16610998
-      outSlope: 0.16610998
+      time: 100.07399
+      value: 1.5487355
+      inSlope: 0.032509718
+      outSlope: 0.032509718
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.029314207
+      inWeight: 0.047815535
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  insanityToTicRateGraphScalar: 0.4
   insanityToMaxTicBeforeVisionGraph:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 3
-      value: 20
-      inSlope: -0.88048893
-      outSlope: -0.88048893
+      time: -0.09943271
+      value: 19.923674
+      inSlope: 0.0019985326
+      outSlope: 0.0019985326
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 20
-      value: 5.0316877
-      inSlope: -0.88048893
-      outSlope: -0.88048893
-      tangentMode: 34
+      time: 63.002857
+      value: 20.049786
+      inSlope: 0.18790568
+      outSlope: 0.18790568
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.06711302
+      outWeight: 0.08847114
+    - serializedVersion: 3
+      time: 100.03916
+      value: 10.00128
+      inSlope: -0.006664295
+      outSlope: -0.006664295
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.124023676
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  lowInsanityMax: 40
+  medInsanityMax: 70
 --- !u!114 &3058162355218563545
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,6 +136,10 @@ public class DialogDisplay : MonoBehaviour
      */
     private char GetChar()
     {
+        if(currentChar >= targetText.Length)
+        {
+            return '\0';
+        }
         char c = targetText[currentChar++];
         currentText += c;
         return c;

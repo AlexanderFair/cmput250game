@@ -153,6 +153,7 @@ MonoBehaviour:
   - reddish, a faint blue, perplexed, silver
   - Two, Three, Many, Decaying, Shimmering
   - horns, tusks, appendages, dorsal fins
+  insanityAdd: 2
   textElement: {fileID: 7476134834926047502}
 --- !u!1 &7586281396866533243
 GameObject:
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

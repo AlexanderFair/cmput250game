@@ -8,6 +8,7 @@ using static System.Runtime.CompilerServices.RuntimeHelpers;
  */
 public static class Util
 {
+    public static System.Random randomInstance = new System.Random();
     /*
      * Returns true if the mouse position overlaps the collider and the keyCode was pressed this frame
      * 
@@ -17,21 +18,21 @@ public static class Util
     {
         return IsMouseOverObject(collider) && control.GetKeyDown(forceInputEnabled);
     }
-/*
- * Returns true if the mouse position overlaps the collider and the keyCode was released this frame
- * 
- * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
- */
-public static bool GetKeyUpWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
-    {
-        return IsMouseOverObject(collider) && control.GetKeyUp(forceInputEnabled);
-    }
-/*
- * Returns true if the mouse position overlaps the collider and the keyCode is pressed
- * 
- * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
- */
-public static bool GetKeyWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
+    /*
+     * Returns true if the mouse position overlaps the collider and the keyCode was released this frame
+     * 
+     * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
+     */
+    public static bool GetKeyUpWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
+        {
+            return IsMouseOverObject(collider) && control.GetKeyUp(forceInputEnabled);
+        }
+    /*
+     * Returns true if the mouse position overlaps the collider and the keyCode is pressed
+     * 
+     * If forceInputEnabled, the keyPress is returned independent of if Input is enabled in settings
+     */
+    public static bool GetKeyWithMouseOverObject(Settings.Controls control, Collider2D collider, bool forceInputEnabled = false)
     {
         return IsMouseOverObject(collider) && control.GetKey(forceInputEnabled);
     }
@@ -48,5 +49,16 @@ public static bool GetKeyWithMouseOverObject(Settings.Controls control, Collider
     public static Vector2 GetMouseWorldPoint()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition); ;
+    }
+
+    // Retunrs a radnom item from the array
+    public static T ChooseRandom<T>(T[] vals)
+    {
+        return vals[randomInstance.Next(vals.Length)];
+    }
+    // Retunrs a radnom item from the list
+    public static T ChooseRandom<T>(List<T> vals)
+    {
+        return vals[randomInstance.Next(vals.Count)];
     }
 }

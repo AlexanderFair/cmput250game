@@ -114,7 +114,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     protected virtual void Clicked() {
         if(soundEffect.Length > 0)
         {
-            AudioHandler.Instance.playSoundEffect(soundEffect[Settings.randomInstance.Next(soundEffect.Length)]);
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(soundEffect));
         }
         clickControl.UseControl();
     }

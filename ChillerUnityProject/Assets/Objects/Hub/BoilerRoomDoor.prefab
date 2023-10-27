@@ -128,6 +128,7 @@ MonoBehaviour:
   interactableRenderer: {fileID: 2743143220845132167}
   interactSound:
   - {fileID: 0}
+  giveControlHint: 1
   controlHintOffset: {x: 0, y: 140}
   displayDialogOnInteract: 0
   dialogProfileAnimation: []
@@ -138,7 +139,11 @@ MonoBehaviour:
   nextSceneName: BoilerRoom
   playerStartPosition: {x: -238, y: -116, z: 0}
   lockedDialogs:
-  - Locked B
+  - "That crash jammed the doors! If only I had some tool to open it with\u2026"
+  - "This must lead to the rest of the ship.. I\u2019ll have to come back when I
+    can unjam this door."
+  - <i>Jiggling the doorknob proves futile, with a grunt you ram your shoulder into
+    the unforgiving door. Nothing</i>
   lockedEffects:
   - {fileID: 8300000, guid: 34c43efd992ae584ca2f890ef1230afe, type: 3}
   - {fileID: 8300000, guid: 65a7d6e4907b01f49bca1b6e11552460, type: 3}
