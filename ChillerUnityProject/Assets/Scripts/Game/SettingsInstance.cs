@@ -71,6 +71,7 @@ public class SettingsInstance : MonoBehaviour
     [Header("Other")]
     public bool canLogWarnings = false;
     public bool canInput = true;
+    public bool hideControlHintsWhenOverlappingPlayer = false;
     public AudioClip[] audioClips;
 
     //The list of interfaces which should get updated if a float value changes
