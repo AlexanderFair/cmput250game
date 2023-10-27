@@ -31,7 +31,10 @@ public class KeyControlHint : RoomObjectClass, Settings.ISettingsUpdateWatcher
         }
 
         UpdatePos();
-
+        if(!SettingsInstance.Instance.hideControlHintsWhenOverlappingPlayer)
+        {
+            return;
+        }
         if (colliderB.Distance(Player.Instance.getCollider()).distance < 0)
         {
             text.gameObject.SetActive(false);

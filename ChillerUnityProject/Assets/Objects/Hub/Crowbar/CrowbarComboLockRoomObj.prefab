@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7429108410422538452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 332.8, y: 66.8, z: 0}
+  m_LocalPosition: {x: 332, y: 66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   interactableRenderer: {fileID: 6302340200890789807}
   interactSound:
   - {fileID: 8300000, guid: fb0c0868aeb74f641a179513583cee13, type: 3}
+  giveControlHint: 1
   controlHintOffset: {x: 0, y: 140}
   displayDialogOnInteract: 0
   dialogProfileAnimation: []
@@ -113,6 +114,8 @@ MonoBehaviour:
   puzzleUI: {fileID: 379975150585201846, guid: de4719481bf6c094fa8400d5d1039688, type: 3}
   completionUI: {fileID: 4791594978018382449, guid: 6acec73f21a0c384e85140b36b12169f,
     type: 3}
+  lockedPrompts:
+  - There might be a tool to help unjam the doors in here.
 --- !u!61 &1245658492868871435
 BoxCollider2D:
   m_ObjectHideFlags: 0

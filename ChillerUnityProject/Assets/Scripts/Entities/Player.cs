@@ -65,7 +65,7 @@ public class Player : Entity {
             if(soundEffectTimer >= timeBetweenWalkingEffect)
             {
                 soundEffectTimer %= timeBetweenWalkingEffect;
-                AudioHandler.Instance.playSoundEffect(walkingEffects[Settings.randomInstance.Next(walkingEffects.Length)]);
+                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(walkingEffects));
             }
         }
         // update movement direction if idle

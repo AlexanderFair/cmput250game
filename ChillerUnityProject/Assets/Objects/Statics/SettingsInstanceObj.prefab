@@ -72,13 +72,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f13c55f7432e7da4f86a2cb34332c544, type: 3}
   floatValues:
   - key: 1
-    value: -180
+    value: -220
   - key: 0
     value: 60
   - key: 2
     value: 24
   - key: 3
-    value: 5
+    value: 2
   - key: 4
     value: 24
   - key: 5
@@ -119,7 +119,6 @@ MonoBehaviour:
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   canLogWarnings: 0
   canInput: 1
+  hideControlHintsWhenOverlappingPlayer: 0
   audioClips:
   - {fileID: 8300000, guid: 73f25514693166c43a7aece47f2a3a5e, type: 3}
-  settingsValueChangeWatchers:
-  - {fileID: 0}

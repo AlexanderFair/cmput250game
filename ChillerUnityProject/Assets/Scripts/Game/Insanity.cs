@@ -7,14 +7,20 @@
 public class Insanity : MonoBehaviour
 {
 
-    [Header("insanity G")]
+    [Header("Insanity settings")]
     // The Min value before insanity starts kicking in
     public float insanityThreshold;
     // function of insanity to tics per second
     public AnimationCurve insanityToTicRateGraph;
+    // scales the result
+    public float insanityToTicRateGraphScalar;
     // function of insanity to max tic class before vision (gets rounded to int after evaluating)
     public AnimationCurve insanityToMaxTicBeforeVisionGraph;
 
+    // The insanity is low if it is below lowInsanityMax
+    public float lowInsanityMax;
+    // The insanity is high if it is above medInsanityMax
+    public float medInsanityMax;
 
 
     private float insanityStat = 0;
@@ -90,6 +96,21 @@ public class Insanity : MonoBehaviour
             throw new System.Exception("added insanity must be a positive amount");
         } 
         insanityStat += add;
+    }
+
+    public bool IsHigh()
+    {
+        return insanityStat > medInsanityMax;
+    }
+
+    public bool IsMedium()
+    {
+        return insanityStat > lowInsanityMax && insanityStat <= medInsanityMax;
+    }
+
+    public bool IsLow()
+    {
+        return insanityStat <= lowInsanityMax;
     }
 
     // Adds the amount to the insanity level

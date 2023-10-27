@@ -87,7 +87,7 @@ public class Penguin : Entity {
         else
         {
             gameObject.layer = LayerMask.NameToLayer("Room Physics - Penguin");
-            GetComponent<SpriteRenderer>().sortingOrder = 1;
+            GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         Locked = isLocked;
     }

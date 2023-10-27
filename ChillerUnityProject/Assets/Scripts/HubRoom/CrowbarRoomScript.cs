@@ -7,6 +7,7 @@ public class CrowbarRoomScript : DisableInteractableRoomObject
     [Header("Crowbar room object")]
     public GameObject puzzleUI;
     public GameObject completionUI;
+    public string[] lockedPrompts;
 
     public static bool Complete { get; private set; } = false;
     public static bool HasCrowbar { get; set; } = false;
@@ -40,6 +41,10 @@ public class CrowbarRoomScript : DisableInteractableRoomObject
     protected override void Interact()
     {
         base.Interact();
+        if (!Complete)
+        {
+            DialogDisplay.NewDialog(Util.ChooseRandom(lockedPrompts), AnimationSpriteClass.NULL_STRUCT);
+        }
         if (uiPrefab != null)
         {
             GameObject ui = UIObjectClass.InstantiateNewUIElement(uiPrefab);

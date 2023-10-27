@@ -70,7 +70,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     protected virtual void Interact(){
         if(interactSound.Length > 0)
         {
-            AudioHandler.Instance.playSoundEffect(interactSound[Settings.randomInstance.Next(interactSound.Length)]);
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(interactSound));
         }
         if(displayDialogOnInteract)
         {
