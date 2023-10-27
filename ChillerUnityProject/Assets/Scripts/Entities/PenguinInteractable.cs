@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 //WWorks on a late interaction such that it waits for the next frame to interact
 //Only interacts if no other element interacted the previous frame
 // Does not have an outline renderer nor hints
-public class PenguinInteractable : MonoBehaviour
+public class PenguinInteractable : RoomObjectClass
 {
     [Header("Penguin Interactable")]
     public Settings.Controls interactControl;
@@ -23,8 +23,9 @@ public class PenguinInteractable : MonoBehaviour
     private bool interacting = false;
     private int lastFrame = 0;
 
-    public void Update()
+    protected override void UpdateRoomObject()
     {
+        base.UpdateRoomObject();
         if (interacting)
         {
             if (SettingsInstance.Instance.controlsLastUsedFrame[interactControl] != lastFrame)
