@@ -911,7 +911,7 @@ MonoBehaviour:
   spriteAnimators: []
   attatchedCutscenePlayer: {fileID: 1223528603}
   sceneOnFinish: 
-  posOnFinish: {x: 1, y: -9, z: 0}
+  posOnFinish: {x: 0, y: 0, z: 0}
   cutsceneIdentifier: 0
 --- !u!328 &1223528603
 VideoPlayer:
