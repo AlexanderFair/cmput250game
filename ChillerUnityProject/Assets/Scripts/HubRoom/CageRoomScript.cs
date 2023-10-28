@@ -14,8 +14,8 @@ public class CageRoomScript : DisableInteractableRoomObject
     //the position where the penguin should transport to when unlocked
     public Vector3 penguinPositionOnUnlock;
 
-    public string[] notUnlockedPrompts;
-    public string unlockPrompt;
+    public DialogDisplay.DialogStruct[] notUnlockedPrompts;
+    public DialogDisplay.DialogStruct unlockPrompt;
 
     public AudioClip[] noCrowbarEffects = new AudioClip[0];
     public AudioClip crowbarEffects = null;
@@ -78,7 +78,7 @@ public class CageRoomScript : DisableInteractableRoomObject
             {
                 AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(noCrowbarEffects));
             }
-            DialogDisplay.NewDialog(Util.ChooseRandom(notUnlockedPrompts), AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(Util.ChooseRandom(notUnlockedPrompts));
         }
         else
         {
@@ -87,7 +87,7 @@ public class CageRoomScript : DisableInteractableRoomObject
                 AudioHandler.Instance.playSoundEffect(crowbarEffects);
             }
             UnlockCage();
-            DialogDisplay.NewDialog(unlockPrompt, AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(unlockPrompt);
         }
     }
 

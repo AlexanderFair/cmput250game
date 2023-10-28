@@ -5,21 +5,21 @@ using UnityEngine;
 public class CrowbarDrawerScript : ClickableUIObject
 {
     [Header("Crowbar Drawer Settings")]
-    public string alreadyRetrievedPrompt;
-    public string retrievedPrompt;
-    public string presentPrompt;
+    public DialogDisplay.DialogStruct alreadyRetrievedPrompt;
+    public DialogDisplay.DialogStruct retrievedPrompt;
+    public DialogDisplay.DialogStruct presentPrompt;
 
     protected override void AwakeUIObject()
     {
         base.AwakeUIObject();
         if (CrowbarRoomScript.HasCrowbar)
         {
-            DialogDisplay.NewDialog(alreadyRetrievedPrompt, AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(alreadyRetrievedPrompt);
             spriteClickableOutlineRenderer.enabled = false;
         }
         else
         {
-            DialogDisplay.NewDialog(presentPrompt, AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(presentPrompt);
         }
     }
 
@@ -33,6 +33,6 @@ public class CrowbarDrawerScript : ClickableUIObject
         base.Clicked();
         CrowbarRoomScript.HasCrowbar = true;
         spriteClickableOutlineRenderer.enabled = false;
-        DialogDisplay.NewDialog(retrievedPrompt, AnimationSpriteClass.NULL_STRUCT);
+        DialogDisplay.NewDialog(retrievedPrompt);
     }
 }

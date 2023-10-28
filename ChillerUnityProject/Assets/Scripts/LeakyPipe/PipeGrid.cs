@@ -84,6 +84,8 @@ public class PipeGrid
                 return false;
         }
         // yay!
+        GameCompletionManager.BoilerRoomComplete = true;//CHANGE
+        Debug.Log("Complete B");
         return true;
     }
     // pseudo "enum" class for direction declarition

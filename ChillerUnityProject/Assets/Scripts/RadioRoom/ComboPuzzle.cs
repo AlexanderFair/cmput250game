@@ -6,8 +6,8 @@ public class ComboPuzzle : DisplayUIRoomObject
 {
     [Header("Combo Puzzle")]
     public int[] solve;
-    public string incompletePrompt;
-    public string completePrompt;
+    public DialogDisplay.DialogStruct incompletePrompt;
+    public DialogDisplay.DialogStruct completePrompt;
     public AudioClip unlockAudio;
     public GameObject noteUi;
 
@@ -24,7 +24,7 @@ public class ComboPuzzle : DisplayUIRoomObject
         else
         {
             ui.GetComponent<ComboUI>().Setup(this);
-            DialogDisplay.NewDialog(incompletePrompt, AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(incompletePrompt);
         }
     }
 
@@ -42,7 +42,7 @@ public class ComboPuzzle : DisplayUIRoomObject
         complete = true;
         AudioHandler.Instance.playSoundEffect(unlockAudio);
         UIObjectClass.InstantiateNewUIElement(noteUi);
-        DialogDisplay.NewDialog(completePrompt, AnimationSpriteClass.NULL_STRUCT);
+        DialogDisplay.NewDialog(completePrompt);
     }
 
 }

@@ -179,23 +179,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1709084e3cd53b468c561d432894112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimators: []
   interactControl: 0
   interactCollider: {fileID: 6886009229727363514}
   isClickControl: 0
   penguin: {fileID: 6886009229727363513}
   lowPrompts:
-  - <i>The playful wobble of your penguin friend relieves you, if only for a moment,
-    of your dire mission</i>
-  - <i>The penguin pauses and returns your gaze expectantly.</i>
-  - <i>Upon your regard of the animal, it squawks in acknowledgement.</i>
+  - dialog: <i>The playful wobble of your penguin friend relieves you, if only for
+      a moment, of your dire mission</i>
+    animation: 2
+  - dialog: <i>The penguin pauses and returns your gaze expectantly.</i>
+    animation: 2
+  - dialog: <i>Upon your regard of the animal, it squawks in acknowledgement.</i>
+    animation: 2
   medPrompts:
-  - <i>The way the penguin watches you is intense, there is an uneasiness to it.</i>
-  - "<i>Suddenly the penguin freezes, you trace their line of sight to the boat\u2019s
-    window..</i>"
+  - dialog: <i>The way the penguin watches you is intense, there is an uneasiness
+      to it.</i>
+    animation: 2
+  - dialog: "<i>Suddenly the penguin freezes, you trace their line of sight to the
+      boat\u2019s window.. </i>"
+    animation: 2
   highPrompts:
-  - <i>The penguin, with blank empty eyes, stares back at you.</i>
-  - "<i>You discern a pattern to the penguin\u2019s squawking. It seems as if it\u2019s
-    trying to talk to you.</i>"
+  - dialog: <i>The penguin, with blank empty eyes, stares back at you.</i>
+    animation: 2
+  - dialog: "<i>You discern a pattern to the penguin\u2019s squawking. It seems as
+      if it\u2019s trying to talk to you.</i>"
+    animation: 2
   sounds:
   - {fileID: 8300000, guid: f9604144424c14b4481e3fa4ea643a40, type: 3}
   - {fileID: 8300000, guid: 68fc213e34f0d5f448f85a0ab9134f38, type: 3}

@@ -82,32 +82,26 @@ MonoBehaviour:
   - key: 4
     value: 24
   - key: 5
-    value: 1
+    value: 0.5
   - key: 6
-    value: 1
+    value: 0.5
   - key: 8
-    value: 1
+    value: 0.75
   - key: 7
-    value: 1
+    value: 0.5
   prefabAnimValues:
   - key: 0
     value:
-    - {fileID: 21300000, guid: 4ec7d9a7b984ece468232a114f6c72b2, type: 3}
-    - {fileID: 21300000, guid: 4ec7d9a7b984ece468232a114f6c72b2, type: 3}
-    - {fileID: 21300000, guid: 4ec7d9a7b984ece468232a114f6c72b2, type: 3}
-    - {fileID: 21300000, guid: 4ec7d9a7b984ece468232a114f6c72b2, type: 3}
-    - {fileID: 21300000, guid: c0dfcdc5f9d84444fac640c523e0fd9c, type: 3}
-    - {fileID: 21300000, guid: c0dfcdc5f9d84444fac640c523e0fd9c, type: 3}
-    - {fileID: 21300000, guid: c0dfcdc5f9d84444fac640c523e0fd9c, type: 3}
-    - {fileID: 21300000, guid: c0dfcdc5f9d84444fac640c523e0fd9c, type: 3}
+    - {fileID: 0}
   - key: 1
+    value:
+    - {fileID: 21300000, guid: 5712f8e9a4f0e1a4b902673d598a7666, type: 3}
+  - key: 2
     value:
     - {fileID: 0}
   prefabObjectValues:
   - key: 0
     value: {fileID: 6209451717563512970, guid: 14ca2edaac16ea348b5582ff3adfcc85, type: 3}
-  - key: 1
-    value: {fileID: 4565348638592779337, guid: 06c847bdc0258174da0b545c31adc15d, type: 3}
   prefabMaterialValues:
   - key: 0
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

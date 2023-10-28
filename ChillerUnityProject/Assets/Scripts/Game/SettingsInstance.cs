@@ -159,12 +159,12 @@ public static class Settings
     // Prefab animations
     public enum PrefabAnimations
     {
-        BoeBon, NullAnim
+        NullAnim, Player, Narrator
     }
     // Prefab objects
     public enum PrefabObjects
     {
-        DialogDisplay, InteractableHint
+        DialogDisplay
     }
 
     // Prefab Materials

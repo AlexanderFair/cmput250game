@@ -13,7 +13,7 @@ public class DialogDisplay : MonoBehaviour
     public bool Complete { set; get; } = false;
 
     // The profile animation
-    private GameObject profilePicGameObject = null;
+    public AnimationSpriteClass profileAnimator;
     // The text object
     private Text textObject = null;
 
@@ -47,6 +47,8 @@ public class DialogDisplay : MonoBehaviour
             currentTime = 0;
             Complete = true;
         }
+
+        profileAnimator.UpdateAnimation();
 
         if (Complete)
         {
@@ -178,19 +180,19 @@ public class DialogDisplay : MonoBehaviour
     // Clears the current dialog display and displays the new dialog with the profilePic
     public static void NewDialog(string _text, Sprite[] animationStruct)
     {
-        if(_text.Length == 0)
+        if (_text == null || _text.Length == 0)
         {
             Settings.DisplayWarning("text is empty", null);
             return;
         }
         StopCurrentDisplay();
-
+        
         GameObject gobj = Instantiate(Settings.PrefabObjects.DialogDisplay.Get(), new Vector2(0,Settings.FloatValues.DialogDisplayYLocation.Get()), Quaternion.identity);
         currentDisplay = gobj.GetComponent<DialogDisplay>();
 
         //Set the profile animation
-        currentDisplay.profilePicGameObject = gobj.transform.Find("ProfileBackground").Find("ProfilePic").gameObject;
-        currentDisplay.profilePicGameObject.GetComponent<AnimationSpriteClass>().ChangeAnimation(animationStruct);
+        currentDisplay.profileAnimator.ChangeAnimation(animationStruct);
+        currentDisplay.profileAnimator.StartAnimation();
 
         //Set text object
         currentDisplay.textObject = gobj.transform.Find("Canvas").Find("Text").GetComponent<Text>();
@@ -199,5 +201,22 @@ public class DialogDisplay : MonoBehaviour
         currentDisplay.targetText = _text.ToCharArray();
 
 
+    }
+
+    public static void NewDialog(string _text, Settings.PrefabAnimations anim)
+    {
+        NewDialog(_text, anim.Get());
+    }
+
+    public static void NewDialog(DialogStruct dialogStruct)
+    {
+        NewDialog(dialogStruct.dialog, dialogStruct.animation);
+    }
+
+    [System.Serializable]
+    public struct DialogStruct
+    {
+        public string dialog;
+        public Settings.PrefabAnimations animation;
     }
 }

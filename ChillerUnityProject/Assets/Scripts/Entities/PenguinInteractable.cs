@@ -15,9 +15,9 @@ public class PenguinInteractable : RoomObjectClass
     //If not set, the player must be within the interact distance
     public bool isClickControl = false;
     public Penguin penguin;
-    public string[] lowPrompts;
-    public string[] medPrompts;
-    public string[] highPrompts;
+    public DialogDisplay.DialogStruct[] lowPrompts;
+    public DialogDisplay.DialogStruct[] medPrompts;
+    public DialogDisplay.DialogStruct[] highPrompts;
     public AudioClip[] sounds;
 
     private bool interacting = false;
@@ -55,15 +55,15 @@ public class PenguinInteractable : RoomObjectClass
         }
         if (Insanity.Instance.IsHigh())
         {
-            DialogDisplay.NewDialog(Util.ChooseRandom(highPrompts), AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(Util.ChooseRandom(highPrompts));
         }
         else if (Insanity.Instance.IsMedium()) 
         {
-            DialogDisplay.NewDialog(Util.ChooseRandom(medPrompts), AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(Util.ChooseRandom(medPrompts));
         }
         else
         {
-            DialogDisplay.NewDialog(Util.ChooseRandom(lowPrompts), AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(Util.ChooseRandom(lowPrompts));
         }
     }
 }

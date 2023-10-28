@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2473796976967510351}
   - component: {fileID: 2473796976967510348}
-  - component: {fileID: 4012012395207474012}
   - component: {fileID: 2473796976967510346}
+  - component: {fileID: 6519328186155984102}
   m_Layer: 10
   m_Name: IncompleteExitDoorRoomObj
   m_TagString: Untagged
@@ -84,30 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4012012395207474012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2473796976967510347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 651de4df9c3927a41bb5430adefc3824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteAnimators: []
-  interactableCollider: {fileID: 2473796976967510346}
-  interactionControl: 0
-  interactableRenderer: {fileID: 2473796976967510348}
-  interactSound:
-  - {fileID: 8300000, guid: 3d0fcabdc0aad134aa06f74f79810036, type: 3}
-  controlHintOffset: {x: 0, y: 160}
-  displayDialogOnInteract: 1
-  dialogProfileAnimation:
-  - {fileID: 0}
-  dialog: InComplete
-  uiPrefab: {fileID: 0}
 --- !u!61 &2473796976967510346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +110,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 65, y: 150}
   m_EdgeRadius: 0
+--- !u!114 &6519328186155984102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473796976967510347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844a23e1b4cd2ce4ba21b491a8ff0512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimators: []
+  interactableCollider: {fileID: 2473796976967510346}
+  interactionControl: 0
+  interactableRenderer: {fileID: 2473796976967510348}
+  interactSound: []
+  giveControlHint: 1
+  controlHintOffset: {x: 0, y: 160}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation:
+  - {fileID: 0}
+  dialog: 
+  radioIncompletePrompts:
+  - dialog: "I\u2019m stranded out here, I should try to contact help."
+    animation: 1
+  - dialog: I have no way of getting to safety by myself...
+    animation: 1
+  boilerIncompletePrompts:
+  - dialog: "<i>You can feel your body gradually succumbing to the cold\u2019s frigid
+      numbness.. </i>"
+    animation: 2
+  - dialog: "I won\u2019t last long unless I find a way to warm up."
+    animation: 1
+  bothIncompletePrompts: []
+  addRadioAndBoilerIncompleteToBoth: 1
+  hubIncompletePrompts: []
