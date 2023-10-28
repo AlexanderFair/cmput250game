@@ -93,10 +93,15 @@ public class MenuController : MonoBehaviour
     // Exits the menu
     public void ExitMenu()
     {
-        currentMenuPrefab = null;
         previousMenuPrefab = null;
         currentMenuObject = null;
         MenuObjectClass.ClearMenu();
+        if (currentMenuPrefab == mainMenuPrefab)
+        {
+            Cutscene.getCutsceneByID(Cutscene.CutsceneID.INTRO).startPlayingCutscene();
+        }
+        currentMenuPrefab = null;
+
     }
 
     /* Goes to the previous menu
