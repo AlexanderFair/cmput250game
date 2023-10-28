@@ -512,6 +512,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f25f99498e3e944d91d11abbd5f223d, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6388060e174379242805e9e8e4e7b35c, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e001d6c1b02ceb947b7bce6013533863, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: trackInsanityScores.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: trackInsanityScores.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a19c0e716e47b43b5081743d698624, type: 3}
 --- !u!114 &503478531 stripped
