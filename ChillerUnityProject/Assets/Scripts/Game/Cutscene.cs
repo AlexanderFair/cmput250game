@@ -133,6 +133,9 @@ public class Cutscene : UIObjectClass {
     public void startPlayingCutscene() {
         attatchedCutscenePlayer.renderMode = VideoRenderMode.CameraNearPlane;
         _shouldStart = true;
+        // pauses musics while playing cutscene
+        AudioHandler.Instance.pauseAmbient();
+        AudioHandler.Instance.pauseSoundtrack();
     }
     /*
      * This is called when the cutscene stops playing
@@ -142,11 +145,15 @@ public class Cutscene : UIObjectClass {
             return;
         _finishTriggered = true;
         _playingPhase = PlayPhase.FINISHED;
+        // unpause the sounds
+        AudioHandler.Instance.unpauseAmbient();
+        AudioHandler.Instance.unpauseSoundtrack();
+        // destroy the UI
+        UIObjectClass.DestroyUIObject(gameObject);
+        // switch scene, if configured
         if (sceneOnFinish != "") {
             GameManager.Instance.StartSwitchScene(sceneOnFinish, posOnFinish);
         }
-        // destroy the UI
-        UIObjectClass.DestroyUIObject(gameObject);
         if (SHOULD_LOG_INFO)
             Debug.Log("Cutscene " + cutsceneIdentifier + " was finished.");
     }
