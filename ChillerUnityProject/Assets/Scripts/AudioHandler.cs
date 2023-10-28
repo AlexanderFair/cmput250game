@@ -51,7 +51,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     public float ambientVolume = 1;
 
     /* How long between tracks */
-    private float cooldown = 10f;
+    public float cooldown = 20f;
     /* If a track just finished playing - dont play another right away. Determines if its on cooldown */
     private float cooldownTimer = 0f;
 
