@@ -55,6 +55,12 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     /* If a track just finished playing - dont play another right away. Determines if its on cooldown */
     private float cooldownTimer = 0f;
 
+    // only play if this is zero, things will ask it to pause by incrementing this counter
+    private int ambientPause = 0;
+
+    // only play if this is zero, things will ask it to pause by incrementing this counter
+    private int soundtrackPause = 0;
+
     void Awake(){
         bool shouldDestroy = true;
         try {
@@ -104,7 +110,21 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     }
 
     void Update(){
-        if (!soundtrackAudioSource.isPlaying){
+        // handle pausing
+        if(soundtrackAudioSource.isPlaying && soundtrackPause > 0){
+            soundtrackAudioSource.Pause();
+        }
+        else if (!soundtrackAudioSource.isPlaying && soundtrackPause == 0){
+            soundtrackAudioSource.UnPause();
+        }
+
+        if (ambientSource.isPlaying && ambientPause > 0){
+            ambientSource.Pause();
+        } else if (!ambientSource.isPlaying && ambientPause == 0){
+            ambientSource.UnPause();
+        }
+
+        if (!soundtrackAudioSource.isPlaying && soundtrackPause == 0){
             cooldownTimer += Time.deltaTime;
             if (cooldownTimer > cooldown){
                 AudioClip nextTrack = chooseSoundtrack();
@@ -175,4 +195,19 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     {
 
     }
+
+    public void pauseAmbient(){
+        ambientPause++;
+    }
+    public void unpauseAmbient(){
+        ambientPause--;
+    }
+
+    public void pauseSoundtrack(){
+        soundtrackPause++;
+    }
+    public void unpauseSoundtrack(){
+        soundtrackPause--;
+    }
+
 }
