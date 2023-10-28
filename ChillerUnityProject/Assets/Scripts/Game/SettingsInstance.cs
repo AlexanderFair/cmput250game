@@ -293,7 +293,7 @@ public static class Settings
         {
             // This can occur if the object calling is loaded before settings
             // And this is required in the load method
-            throw new NullReferenceException("The Settings instance is not in the scene");
+            throw new NullReferenceException("The Settings instance is not in the scene or requested before loaded");
         }
     }
 
