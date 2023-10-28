@@ -210,6 +210,7 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: f9604144424c14b4481e3fa4ea643a40, type: 3}
   - {fileID: 8300000, guid: 68fc213e34f0d5f448f85a0ab9134f38, type: 3}
+  addToInsanityOnInteract: 2
 --- !u!114 &6886009229727363513
 MonoBehaviour:
   m_ObjectHideFlags: 0

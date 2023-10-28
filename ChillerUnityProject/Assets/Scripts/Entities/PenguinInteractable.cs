@@ -20,6 +20,8 @@ public class PenguinInteractable : RoomObjectClass
     public DialogDisplay.DialogStruct[] highPrompts;
     public AudioClip[] sounds;
 
+    public float addToInsanityOnInteract = 0f;
+
     private bool interacting = false;
     private int lastFrame = 0;
 
@@ -49,7 +51,9 @@ public class PenguinInteractable : RoomObjectClass
 
     protected void Interact()
     {
-        if(sounds.Length > 0)
+
+        Insanity.Add(addToInsanityOnInteract);
+        if (sounds.Length > 0)
         {
             AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(sounds));
         }
@@ -65,5 +69,6 @@ public class PenguinInteractable : RoomObjectClass
         {
             DialogDisplay.NewDialog(Util.ChooseRandom(lowPrompts));
         }
+
     }
 }
