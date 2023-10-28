@@ -137,5 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visions:
   - {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d, type: 3}
+  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
+  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
+  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
   sounds:
   - {fileID: 8300000, guid: e770c370ba50629488ac78ada566bbcd, type: 3}
