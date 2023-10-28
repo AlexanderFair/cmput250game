@@ -122,6 +122,7 @@ public class Cutscene : UIObjectClass {
                 case PlayPhase.PLAYING:
                     if (_isPaused) {
                         _isPaused = false;
+                        attatchedCutscenePlayer.renderMode = VideoRenderMode.CameraNearPlane;
                         attatchedCutscenePlayer.Play();
                     }
                     if ((! attatchedCutscenePlayer.isPlaying) ) {
@@ -133,6 +134,7 @@ public class Cutscene : UIObjectClass {
         // pause when menu is open
         else {
             _isPaused = true;
+            attatchedCutscenePlayer.renderMode = VideoRenderMode.CameraFarPlane;
             attatchedCutscenePlayer.Pause();
         }
     }
