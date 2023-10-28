@@ -51,12 +51,16 @@ public class Cutscene : UIObjectClass {
 
     /*
      * internal use: caches THIS CURRENT cutscene based on its identifier; recommended to have a single call on awake. 
+     * returns false if duplication is found (hence is the component destroyed at once).
      */
-    protected void cacheCutscene() {
+    protected bool cacheCutscene() {
         if (_cutsceneMap.ContainsKey(cutsceneIdentifier) ) {
             Debug.Log("WARNING: possible duplication for cutscene " + cutsceneIdentifier + ". Do your cutscene have a wrong identifier?");
+            DestroyImmediate(gameObject);
+            return false;
         }
         _cutsceneMap.Add(cutsceneIdentifier, this);
+        return true;
     }
     /*
      * gets the cutscene cached with provided identifier.
@@ -76,9 +80,10 @@ public class Cutscene : UIObjectClass {
     }
     // overwrites
     protected override void AwakeUIObject() {
-        cacheCutscene();
-        attatchedCutscenePlayer.Prepare();
-        attatchedCutscenePlayer.prepareCompleted += afterCompletion;
+        if ( cacheCutscene() ) {
+            attatchedCutscenePlayer.prepareCompleted += afterCompletion;
+            attatchedCutscenePlayer.Prepare();
+        }
     }
     protected override void OnDestroyUIObject() {
         finishPlayingCutscene();
