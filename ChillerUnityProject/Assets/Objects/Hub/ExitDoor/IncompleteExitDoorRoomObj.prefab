@@ -126,9 +126,7 @@ MonoBehaviour:
   interactableCollider: {fileID: 2473796976967510346}
   interactionControl: 0
   interactableRenderer: {fileID: 2473796976967510348}
-  interactSound:
-  - {fileID: 8300000, guid: 34c43efd992ae584ca2f890ef1230afe, type: 3}
-  - {fileID: 8300000, guid: 65a7d6e4907b01f49bca1b6e11552460, type: 3}
+  interactSound: []
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 160}
   displayDialogOnInteract: 0
