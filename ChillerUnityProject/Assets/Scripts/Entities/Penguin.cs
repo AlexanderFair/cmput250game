@@ -11,6 +11,10 @@ using UnityEngine;
  */
 public class Penguin : Entity {
 
+    [Header("Penguin Add")]
+    public Sprite[] movingAnim;
+    public Sprite[] idleAnim;
+    public AnimationSpriteClass animator;
     // True if the penguin is locked in the cage
     public bool Locked { get; private set; }
 
@@ -40,6 +44,7 @@ public class Penguin : Entity {
         _instanceDefined = true;
         wasLocked = Locked;
     }
+    private bool moving = false;
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
         if (Locked)
@@ -71,6 +76,22 @@ public class Penguin : Entity {
         else {
             Vector3 direction = ply.transform.position - this.transform.position;
             this.velocity = direction.normalized * FOLLOW_SPEED;
+        }
+        if(velocity.sqrMagnitude > 0)
+        {
+            if(!moving)
+            {
+                animator.ChangeAnimation(movingAnim);
+            }
+            moving = true;
+        }
+        else
+        {
+            if (moving)
+            {
+                animator.ChangeAnimation(idleAnim);
+            }
+            moving = false;
         }
     }
 

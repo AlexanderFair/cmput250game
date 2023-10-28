@@ -139,11 +139,14 @@ MonoBehaviour:
   nextSceneName: RadioRoom
   playerStartPosition: {x: 254, y: 41, z: 0}
   lockedDialogs:
-  - "That crash jammed the doors! If only I had some tool to open it with\u2026"
-  - "This must lead to the rest of the ship.. I\u2019ll have to come back when I
-    can unjam this door."
-  - <i>Jiggling the doorknob proves futile, with a grunt you ram your shoulder into
-    the unforgiving door. Nothing</i>
+  - dialog: "That crash jammed the doors! If only I had some tool to open it with\u2026"
+    animation: 1
+  - dialog: "This must lead to the rest of the ship.. I\u2019ll have to come back
+      when I can unjam this door."
+    animation: 1
+  - dialog: <i>Jiggling the doorknob proves futile, with a grunt you ram your shoulder
+      into the unforgiving door. Nothing.</i>
+    animation: 2
   lockedEffects:
   - {fileID: 8300000, guid: 34c43efd992ae584ca2f890ef1230afe, type: 3}
   - {fileID: 8300000, guid: 65a7d6e4907b01f49bca1b6e11552460, type: 3}

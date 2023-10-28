@@ -57,7 +57,7 @@ public class Cutscene : UIObjectClass {
      */
     protected bool cacheCutscene() {
         if (_cutsceneMap.ContainsKey(cutsceneIdentifier) ) {
-            Debug.Log("WARNING: possible duplication for cutscene " + cutsceneIdentifier + ". Do your cutscene have a wrong identifier?");
+            Settings.DisplayWarning("WARNING: possible duplication for cutscene " + cutsceneIdentifier + ". Do your cutscene have a wrong identifier?", gameObject);
             DestroyImmediate(gameObject);
             return false;
         }
@@ -79,6 +79,7 @@ public class Cutscene : UIObjectClass {
         //     Debug.Log("Hiding Cutscene so it does not hide the title screen");
         // IT SHOULD NOT COVER UP THE TITLE SCREEN!
         // cutscenePlayer.enabled = false;
+
     }
     // overwrites
     protected override void AwakeUIObject() {
@@ -105,7 +106,7 @@ public class Cutscene : UIObjectClass {
                 case PlayPhase.LOADING:
                     if (attatchedCutscenePlayer.isPrepared) {
                         if (SHOULD_LOG_INFO)
-                            Debug.Log("Cutscene " + cutsceneIdentifier + " is prepared and ready to launch");
+                            Settings.DisplayWarning("Cutscene " + cutsceneIdentifier + " is prepared and ready to launch", gameObject);
                         _playingPhase = PlayPhase.PENDING_START;
                     }
                     break;
@@ -115,7 +116,7 @@ public class Cutscene : UIObjectClass {
                         attatchedCutscenePlayer.Play();
                         _playingPhase = PlayPhase.PLAYING;
                         if (SHOULD_LOG_INFO)
-                            Debug.Log("Attempting to start playing Cutscene " + cutsceneIdentifier);
+                            Settings.DisplayWarning("Attempting to start playing Cutscene " + cutsceneIdentifier, gameObject);
                     }
                     break;
                 // regularly check if the cutscene is finished playing
@@ -166,7 +167,8 @@ public class Cutscene : UIObjectClass {
         if (sceneOnFinish != "") {
             GameManager.Instance.StartSwitchScene(sceneOnFinish, posOnFinish);
         }
+        CutSceneBlackBackground.Instance?.DisableBackground();
         if (SHOULD_LOG_INFO)
-            Debug.Log("Cutscene " + cutsceneIdentifier + " was finished.");
+            Settings.DisplayWarning("Cutscene " + cutsceneIdentifier + " was finished.", gameObject);
     }
 }

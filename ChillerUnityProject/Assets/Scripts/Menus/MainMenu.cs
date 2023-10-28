@@ -16,7 +16,6 @@ public class MainMenu : GameMenuObject
         else if(obj.name == "play")
         {
             MenuController.Instance.ExitMenu();
-            Cutscene.getCutsceneByID(Cutscene.CutsceneID.INTRO).startPlayingCutscene();
         }
         else if (obj.name == "settings")
         {

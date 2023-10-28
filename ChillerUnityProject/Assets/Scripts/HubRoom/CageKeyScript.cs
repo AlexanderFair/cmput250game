@@ -21,7 +21,7 @@ public class CageKeyScript : SnapDragUIObject
     //The ui puzzle object
     public CagePuzzleScript puzzle;
     //The prompt to say if the key is not present in the room
-    public string keyNotPresentPrompt = "";
+    public DialogDisplay.DialogStruct keyNotPresentPrompt;
 
     protected override void AwakeUIObject()
     {
@@ -30,7 +30,7 @@ public class CageKeyScript : SnapDragUIObject
             clickedAnimation = new Sprite[] { keyNotPresentSprite };
             clickableAnimation = new Sprite[] { keyNotPresentSprite };
             spriteRenderer.sprite = keyNotPresentSprite;
-            DialogDisplay.NewDialog(keyNotPresentPrompt, AnimationSpriteClass.NULL_STRUCT);
+            DialogDisplay.NewDialog(keyNotPresentPrompt);
         }
         //call this before the bas.awke so that the sprite isnt overruled by clickable
         base.AwakeUIObject();
