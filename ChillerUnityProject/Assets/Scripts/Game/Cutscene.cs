@@ -23,6 +23,8 @@ public class Cutscene : UIObjectClass {
     [Header("Cutscene Basic Settings")]
     // this is assigned in the inspector
     public VideoPlayer attatchedCutscenePlayer;
+    // which file is going to be played?
+    public string nameFileToPlay = "";
     // what scene to switch to after finishing playing the Cutscene?
     public string sceneOnFinish = "";
     public Vector3 posOnFinish = Vector3.zero;
@@ -81,6 +83,9 @@ public class Cutscene : UIObjectClass {
     // overwrites
     protected override void AwakeUIObject() {
         if ( cacheCutscene() ) {
+            // generate url
+            attatchedCutscenePlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, nameFileToPlay);
+            // prepare
             attatchedCutscenePlayer.prepareCompleted += afterCompletion;
             attatchedCutscenePlayer.Prepare();
         }
