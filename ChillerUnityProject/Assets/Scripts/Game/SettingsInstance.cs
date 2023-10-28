@@ -23,7 +23,7 @@ public class SettingsInstance : MonoBehaviour
     // The set of KeyCode pairings
     public KeyCodeValue[] controlsValues =
     {
-        new KeyCodeValue { key = Controls.InteractWithRoom, value = KeyCode.F },
+        new KeyCodeValue { key = Controls.Interact, value = KeyCode.F },
         new KeyCodeValue { key = Controls.ExitMenu, value = KeyCode.Escape },
         new KeyCodeValue { key = Controls.Click, value = KeyCode.Mouse0 },
         new KeyCodeValue { key = Controls.RotatePipesLeft, value = KeyCode.Mouse0 },
@@ -45,7 +45,7 @@ public class SettingsInstance : MonoBehaviour
     {
         new FloatValue { key = FloatValues.DialogDisplayYLocation, value = -3.0f },
         new FloatValue { key = FloatValues.PlayerInteractDistance, value = 1.0f },
-        new FloatValue { key = FloatValues.DialogCharactersPerSecond, value = 32f },
+        new FloatValue { key = FloatValues.DialogueSpeed, value = 32f },
         new FloatValue { key = FloatValues.DialogCompletionWaitForCloseSeconds, value = 5f },
         new FloatValue { key = FloatValues.FPS, value = 32f },
         new FloatValue { key = FloatValues.AmbientVolume, value = 1f },
@@ -146,13 +146,13 @@ public static class Settings
     // Key Code controls
     public enum Controls
     {
-        InteractWithRoom, Click, ExitMenu, RotatePipesLeft, SkipDialog, Pause, MoveLeft, MoveRight, MoveUp, MoveDown, RotatePipesRight
+        Interact, Click, ExitMenu, RotatePipesLeft, SkipDialog, Pause, MoveLeft, MoveRight, MoveUp, MoveDown, RotatePipesRight
     }
 
     // Float values
     public enum FloatValues
     {
-        PlayerInteractDistance, DialogDisplayYLocation, DialogCharactersPerSecond, DialogCompletionWaitForCloseSeconds, FPS,
+        PlayerInteractDistance, DialogDisplayYLocation, DialogueSpeed, DialogCompletionWaitForCloseSeconds, FPS,
         AmbientVolume, SoundtrackVolume, SoundEffectVolume, MasterVolume
     }
 

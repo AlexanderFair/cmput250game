@@ -73,11 +73,11 @@ public class DialogDisplay : MonoBehaviour
     // Updates when Complete is false
     private void IncompleteUpdate()
     {
-        if (currentTime >= 1f / Settings.FloatValues.DialogCharactersPerSecond.Get())
+        if (currentTime >= 1f / Settings.FloatValues.DialogueSpeed.Get())
         {
             AddText();
             SetText();
-            currentTime -= 1f / Settings.FloatValues.DialogCharactersPerSecond.Get();
+            currentTime -= 1f / Settings.FloatValues.DialogueSpeed.Get();
 
             if (currentChar >= targetText.Length)
             {
