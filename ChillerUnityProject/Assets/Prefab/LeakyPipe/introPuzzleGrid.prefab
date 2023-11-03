@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 638449741
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 6817627303223988128, guid: 5319b10c5d341f34ca4824e49906e72f,
     type: 3}
@@ -103,7 +103,8 @@ MonoBehaviour:
   clickableAnimation: []
   clickedAnimation: []
   clickRechargeTime: 0
-  soundEffect: {fileID: 0}
+  soundEffect:
+  - {fileID: 0}
   clickControl: 1
 --- !u!61 &4049266295986590215
 BoxCollider2D:
@@ -141,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081697743187280478}
   m_Layer: 5
-  m_Name: tutorial_room
+  m_Name: introPuzzleGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +404,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 638449741
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a107ebef847ff724bad344b6a49d91a6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -604,12 +605,12 @@ PrefabInstance:
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -124.2
+      value: -114
       objectReference: {fileID: 0}
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 75
+      value: 91
       objectReference: {fileID: 0}
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}
@@ -1269,12 +1270,12 @@ PrefabInstance:
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 112.4
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -43.3
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 453524804463528505, guid: 4fdb2b4dc8d3ef84b97f6ab019f9f3e3,
         type: 3}

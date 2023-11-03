@@ -17,11 +17,10 @@ public class PipeInput : BasicPipe
     public PipeInput() {
         base.connectedDir = new bool[]{true, false, false, false};
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        // call the start function from parent class
-        base.Start();
+    
+    protected override void initStats() {
+        // call the initStats function from parent class
+        base.initStats();
         
         pipeTypeIndex = PIPE_TYPE_IDX;
     }
