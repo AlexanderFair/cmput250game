@@ -127,7 +127,7 @@ public class PipeGrid {
         // switch it to positive to prevent unexpected behaviour of modulo operation on negative numbers
         if (compRot < 0)
             compRot += 90 * Math.Ceiling(compRot / -90);
-        pipe.rotation = ((int) (4 - (compRot / 90) )) % 4;
+        pipe.rotation = ((int) Math.Round(4f - (compRot / 90f) )) % 4;
     }
 
     // is this puzzle solved? default that no leak is allowed; you can specify it though.
