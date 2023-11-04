@@ -45,7 +45,7 @@ public static class Util
     }
     /*
      * Returns the Vector2 position of the mouse in the world
-     */
+     */ 
     public static Vector2 GetMouseWorldPoint()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition); ;
