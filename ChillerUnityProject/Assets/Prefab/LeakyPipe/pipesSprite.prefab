@@ -47,6 +47,7 @@ MonoBehaviour:
     type: 3}
   inputConn: {fileID: 21300000, guid: a304b2696b7fb6d41ac900fcc1903c94, type: 3}
   outputConn: {fileID: 21300000, guid: 4c7234e7eb37ea442b5f59a2d61f95ab, type: 3}
+  blockerConn: {fileID: 21300000, guid: 316ee16cf463a97448a52cdddabaa0e2, type: 3}
   straightConn: {fileID: 21300000, guid: 5b7463018642ea14ab9a9144324add48, type: 3}
   bentConn: {fileID: 21300000, guid: 18f5681fe77c67d47bd10d010affd8db, type: 3}
   triangularConn: {fileID: 21300000, guid: c1900c99ce5f1354fb5da40fbd090bad, type: 3}
@@ -60,6 +61,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
   - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
   - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
+  blockerFrozen:
+  - {fileID: 21300000, guid: aebf436654667ac408020c8a2559d6fb, type: 3}
+  - {fileID: 21300000, guid: dcf8a30c80a53c1468dbf67016f1a707, type: 3}
+  - {fileID: 21300000, guid: 0a387fc033074194b97a1d6a11150de0, type: 3}
+  - {fileID: 21300000, guid: 0d5fad7496086e449a767bcbc88daf54, type: 3}
   straightFrozen:
   - {fileID: 21300000, guid: 709315b429004cc4c97b1936c5353a38, type: 3}
   - {fileID: 21300000, guid: 095ddf18192582c45ace829cdc91145f, type: 3}
