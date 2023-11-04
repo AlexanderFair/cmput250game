@@ -54,11 +54,19 @@ public static class Util
     // Retunrs a radnom item from the array
     public static T ChooseRandom<T>(T[] vals)
     {
+        if(vals.Length == 0)
+        {
+            return default;
+        }
         return vals[randomInstance.Next(vals.Length)];
     }
     // Retunrs a radnom item from the list
     public static T ChooseRandom<T>(List<T> vals)
     {
+        if (vals.Count == 0)
+        {
+            return default;
+        }
         return vals[randomInstance.Next(vals.Count)];
     }
 

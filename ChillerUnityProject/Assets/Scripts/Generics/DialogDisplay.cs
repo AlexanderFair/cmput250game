@@ -213,6 +213,24 @@ public class DialogDisplay : MonoBehaviour
         NewDialog(dialogStruct.dialog, dialogStruct.animation);
     }
 
+    //Chooses a random struct out of the array if the array has 1 or more elements
+    public static void NewDialog(DialogStruct[] dialogStructs)
+    {
+        if(dialogStructs.Length > 0)
+        {
+            NewDialog(Util.ChooseRandom(dialogStructs));
+        }
+    }
+
+    //Chooses a random struct out of the list if the list has 1 or more elements
+    public static void NewDialog(List<DialogStruct> dialogStructs)
+    {
+        if (dialogStructs.Count > 0)
+        {
+            NewDialog(Util.ChooseRandom(dialogStructs));
+        }
+    }
+
     [System.Serializable]
     public struct DialogStruct
     {

@@ -2,73 +2,121 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RadioPuzzle : DisplayUIRoomObject
+public class RadioPuzzle : UIObjectClass
 {
     [Header("Radio Puzzle")]
-    public string radioPromptSnap;
-    public string radioPromptCombo;
-    public string completionNoteSnap;
-    public string completionNoteCombo;
-    public string alreadyComplete;
-    public string allComplete;
-    public string tryAgain;
+    public RadioUIDialObject dialX;
+    public RadioUIDialObject dialY;
+    public RadioUISubmitBtn submitBtn;
+    
+    
+    private RadioRoomObject roomObj;
+    private int prevCompID = -1;
 
-    public Vector2Int snapValue;
-    public Vector2Int comboValue;
-
-    private bool snap = false, combo = false;
-
-    public void UpdatePuzzle(int xval, int yval)
+    public void SetUp(RadioRoomObject _roomObj, int previouslyCompletedComboID)
     {
-        if (xval == snapValue.x && yval == snapValue.y)
+        roomObj = _roomObj;
+        if (roomObj.IsAllComplete())
         {
-            if (snap)
-            {
-                DialogDisplay.NewDialog(alreadyComplete, AnimationSpriteClass.NULL_STRUCT);
-            }
-            else
-            {
-                snap = true;
-                DialogDisplay.NewDialog(completionNoteSnap + (combo ? "" : tryAgain), AnimationSpriteClass.NULL_STRUCT);
-            }
-        }
-
-        if (xval == comboValue.x && yval == comboValue.y)
-        {
-            if (combo)
-            {
-                DialogDisplay.NewDialog(alreadyComplete, AnimationSpriteClass.NULL_STRUCT);
-            }
-            else
-            {
-                combo = true;
-                DialogDisplay.NewDialog(completionNoteCombo + (snap ? "" : tryAgain), AnimationSpriteClass.NULL_STRUCT);
-            }
-        }
-
-        if(combo && snap)
-        {
-            GameCompletionManager.RadioRoomComplete = true;
-        }
-    }
-
-
-    protected override void DisplayedUI()
-    {
-        base.DisplayedUI();
-        if (!snap)
-        {
-            DialogDisplay.NewDialog(radioPromptSnap, AnimationSpriteClass.NULL_STRUCT);
-        }else if (!combo)
-        {
-            DialogDisplay.NewDialog(radioPromptCombo, AnimationSpriteClass.NULL_STRUCT);
+            //all combos are already complete
+            DialogDisplay.NewDialog(roomObj.alreadyCalledForHelp);
+            prevCompID = previouslyCompletedComboID;
         }
         else
         {
-            DialogDisplay.NewDialog(allComplete, AnimationSpriteClass.NULL_STRUCT);
+            roomObj.PromptNextCombo();
+        }
+    }
+
+    public void SubmitFrequency()
+    {
+        if(prevCompID >= 0)
+        {
+            PrevCompleteSubmitFrequency();
+            return;
         }
 
-        ui.GetComponent<RadioUI>().CreatedRadioUI(this);
+        for(int i=0; i < roomObj.combos.Length; i++)
+        {
+            Vector2Int combo = roomObj.combos[i];
+            if(dialX.Value == combo.x && dialY.Value == combo.y)
+            {
+                CompleteCombo(i);
+                return;
+            }
+        }
+
+        //not one of the completion combos
+
+        if (TestSpecialCombos())
+        {
+            //one of the special combos worked
+            return;
+        }
+
+        DialogDisplay.NewDialog(roomObj.badChoice);
+        AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.badChoiceEffects));
     }
+
+    private void PrevCompleteSubmitFrequency()
+    {
+        if(dialX.Value == roomObj.combos[prevCompID].x && dialX.Value == roomObj.combos[prevCompID].y)
+        {
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.alreadyCalledForHelpSubmitEffects));
+            DialogDisplay.NewDialog(roomObj.alreadyCalledForHelpSubmit);
+            return;
+        }
+        if (TestSpecialCombos())
+        {
+            //special Comobo worked
+            return;
+        }
+        AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.alreadyCalledForHelpSubmitEffects));
+        DialogDisplay.NewDialog(roomObj.alreadyCalledForHelpSubmit);
+    }
+
+    private bool TestSpecialCombos()
+    {
+        for (int i = 0; i < roomObj.specialCombos.Length; i++)
+        {
+            Vector2Int combo = roomObj.specialCombos[i];
+            if (dialX.Value == combo.x && dialY.Value == combo.y)
+            {
+                //TODO play lore
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private void CompleteCombo(int id)
+    {
+        if (roomObj.CompleteFrequency(id))
+        {
+            //it has been completed for the first time
+            if(roomObj.IsAllComplete())
+            {
+                //puzle is complete, let the room object take over
+                roomObj.CompletePuzzle(id);
+                prevCompID = id;
+                return;
+            }
+
+            //TODO prompt to do next combo
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.goodCodeEffects));
+            roomObj.PromptNextCombo(Util.ChooseRandom(roomObj.completeCodePrompts));
+        }
+        else
+        {
+            // we have already completed this code
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.badChoiceEffects));
+            DialogDisplay.NewDialog(roomObj.alredayChosen);
+        }
+    }
+    
+
+    
+
+
 
 }

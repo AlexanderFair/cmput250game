@@ -16,7 +16,7 @@ public class GameCompletionManager : RoomObjectClass
     public static bool RadioRoomComplete { get; set; } = false;
     // True if all puzzles in the boiler room is complete
     // Has to be explicitly set by the user
-    public static bool BoilerRoomComplete { get; set; } = false;
+    public static bool BoilerRoomComplete { get; set; } = true;
     // True if all puzzles in the hub room is complete
     // Has to be explicitly set by the user
     public static bool HubRoomComplete { get; set; } = true;
