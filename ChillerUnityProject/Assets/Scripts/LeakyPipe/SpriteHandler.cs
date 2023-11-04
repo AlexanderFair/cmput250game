@@ -8,15 +8,17 @@ public class SpriteHandler : MonoBehaviour
     // leak sprite
     public GameObject leakSpriteRendererPrefab;
     // connected sprites
-    public Sprite inputConn, outputConn, straightConn, bentConn, triangularConn;
+    public Sprite inputConn, outputConn, blockerConn, straightConn, bentConn, triangularConn;
     // frozen sprites
-    public Sprite[] inputFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS], 
-                    outputFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS], 
-                    straightFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS], 
-                    bentFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS], 
-                    triangularFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS];
+    public Sprite[] inputFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
+                    outputFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
+                    blockerFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
+                    straightFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
+                    bentFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
+                    triangularFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1];
     // registers the template and sprite for other pipes
-    void Start()
+    // void Start()
+    void Awake()
     {
         BasicPipe.LEAK_SPRITE_RENDERER_TEMPLATE = leakSpriteRendererPrefab;
         
@@ -26,6 +28,9 @@ public class SpriteHandler : MonoBehaviour
 
         BasicPipe.CONNECTED_SPRITE[PipeOutput.PIPE_TYPE_IDX] = outputConn;
         BasicPipe.FROZEN_SPRITES[PipeOutput.PIPE_TYPE_IDX] = outputFrozen;
+        
+        BasicPipe.CONNECTED_SPRITE[PipeBlocker.PIPE_TYPE_IDX] = blockerConn;
+        BasicPipe.FROZEN_SPRITES[PipeBlocker.PIPE_TYPE_IDX] = blockerFrozen;
         
         BasicPipe.CONNECTED_SPRITE[PipeStraight.PIPE_TYPE_IDX] = straightConn;
         BasicPipe.FROZEN_SPRITES[PipeStraight.PIPE_TYPE_IDX] = straightFrozen;

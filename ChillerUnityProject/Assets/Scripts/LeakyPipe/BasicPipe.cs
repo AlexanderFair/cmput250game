@@ -48,26 +48,9 @@ public class BasicPipe : UIObjectClass
     // BELOW: FUNCTIONS RELATED TO WATER/FROZEN CHECK
     //
 
-    // initilaizes stats on awake
-    public void initStats() {
-        SpriteRenderer attatchedSpriteRenderer = getAttatchedRenderer();
-        // generate rotation based on component rotation
-        double compRot = this.transform.rotation.eulerAngles.z;
-        if (compRot < 0)
-            compRot += 90 * Math.Ceiling(compRot / -90);
-        rotation = ((int) (4 - (compRot / 90) )) % 4;
-        // generate grid x and y based on coords
-        gridX = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.x) / (attatchedSpriteRenderer.bounds.size.x)) );
-        gridY = (int) Mathf.Round((float) ((attatchedSpriteRenderer.bounds.center.y) / (attatchedSpriteRenderer.bounds.size.y)) );
-        (int, int) coord = (gridX, gridY);
-        // load current pipe into pipe grid
-        // logs an error message when two pipes are at the same position
-        if (PipeGrid.getPuzzle().PIPE_MAP.ContainsKey(coord)) {
-            Debug.Log("Two pipes are at the same position? Coord: " + coord + "||" + this.transform.position);
-            Destroy(this);
-        }
-        else 
-            PipeGrid.getPuzzle().PIPE_MAP.Add(coord, this);
+    // initilaizes stats (including position and rotation) when needed
+    protected virtual void initStats() {
+        PipeGrid.getPuzzle().registerPipe(this);
     }
     // if this is buggy, try let the other function run initStats()
     public void Start() {

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeStraight : BasicPipe
+public class PipeBlocker : BasicPipe
 {
-    public static int PIPE_TYPE_IDX = 3;
+    public static int PIPE_TYPE_IDX = 6;
 
-    public PipeStraight() {
-        base.connectedDir = new bool[]{true, false, true, false};
+    public PipeBlocker() {
+        base.connectedDir = new bool[]{true, false, false, false};
     }
     
     protected override void initStats() {
