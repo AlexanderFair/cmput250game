@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PuzzleRoomObj : DisplayUIRoomObject
 {
-    public String levelName;
+    public PipeGrid.PipePuzzles levelName;
+    public int liquidAmount = 100;
     public bool isCompleted = false;
 
     // do not interact after this is finished
