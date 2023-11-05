@@ -14,6 +14,8 @@ public class SnapDragUIObject : DragableUIObject
     // the boolean representing if the object was placed that frame, otherwise the object is not updated by the manager.
     public bool ChangedThisFrame { get; set; } = false;
 
+    private bool enabledMovement = true;
+
     // Called when the object should snap to a location (this will happen every frame once the object is snapped)
     public virtual void Snap(Collider2D snap)
     {
@@ -30,6 +32,16 @@ public class SnapDragUIObject : DragableUIObject
     {
         base.MouseUp();
         ChangedThisFrame = true;
+    }
+
+    public override bool ClickableCondition()
+    {
+        return base.ClickableCondition() && enabledMovement;
+    }
+
+    public void EnableMovement(bool enable = true)
+    {
+        enabledMovement = enable;
     }
 
 
