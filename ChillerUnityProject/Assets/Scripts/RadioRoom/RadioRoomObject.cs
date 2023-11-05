@@ -35,6 +35,10 @@ public class RadioRoomObject : DisplayUIRoomObject
     public string[] completeCodePrompts;
     //Played when a good combo is selected for the first time but is not the final combo
     public AudioClip[] goodCodeEffects;
+    //Payed when a lore code is selected
+    public DialogDisplay.DialogStruct[] lore;
+    //Played when a lore code is selected
+    public AudioClip[] loreEffects;
 
     
     

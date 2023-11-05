@@ -82,7 +82,8 @@ public class RadioPuzzle : UIObjectClass
             Vector2Int combo = roomObj.specialCombos[i];
             if (dialX.Value == combo.x && dialY.Value == combo.y)
             {
-                //TODO play lore
+                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.loreEffects));
+                DialogDisplay.NewDialog(roomObj.lore[i]);
                 return true;
             }
         }

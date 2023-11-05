@@ -190,41 +190,59 @@ MonoBehaviour:
     dialog: Contacted Help
     animation: 0
     disableInput: 0
+    big: 0
   alreadyCalledForHelp:
   - dialog: Already Called For Help
     animation: 0
     disableInput: 0
+    big: 0
   alreadyCalledForHelpSubmit:
   - dialog: Already Called For Help Submit
     animation: 0
     disableInput: 0
+    big: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
   - dialog: wrong
     animation: 0
     disableInput: 0
+    big: 0
   badChoiceEffects: []
   alredayChosen:
   - dialog: Already Chosen
     animation: 0
     disableInput: 0
+    big: 0
   promptsForNext:
   - prompts:
     - dialog: Prompt Sticky Note
       animation: 0
       disableInput: 0
+      big: 0
   - prompts:
     - dialog: Prompt Checklist
       animation: 0
       disableInput: 0
+      big: 0
   - prompts:
     - dialog: Prompt Notebook
       animation: 0
       disableInput: 0
+      big: 0
   - prompts:
     - dialog: Prompt Drawer
       animation: 0
       disableInput: 0
+      big: 0
   completeCodePrompts:
   - 'Good Code. '
   goodCodeEffects: []
+  lore:
+  - dialog: Lore 1
+    animation: 0
+    disableInput: 1
+    big: 1
+  - dialog: Lore 2
+    animation: 0
+    disableInput: 1
+    big: 1

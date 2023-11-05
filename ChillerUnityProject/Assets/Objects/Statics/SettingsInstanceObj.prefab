@@ -71,8 +71,6 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: f13c55f7432e7da4f86a2cb34332c544, type: 3}
   floatValues:
-  - key: 1
-    value: -220
   - key: 0
     value: 60
   - key: 2
@@ -102,6 +100,8 @@ MonoBehaviour:
   prefabObjectValues:
   - key: 0
     value: {fileID: 6209451717563512970, guid: 14ca2edaac16ea348b5582ff3adfcc85, type: 3}
+  - key: 1
+    value: {fileID: 4951445264325114837, guid: fb7610f909cd85a428f7c085a4dd4406, type: 3}
   prefabMaterialValues:
   - key: 0
     value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}

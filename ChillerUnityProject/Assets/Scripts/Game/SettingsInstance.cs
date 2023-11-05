@@ -43,7 +43,6 @@ public class SettingsInstance : MonoBehaviour
     // The set of float value pairings
     public FloatValue[] floatValues =
     {
-        new FloatValue { key = FloatValues.DialogDisplayYLocation, value = -3.0f },
         new FloatValue { key = FloatValues.PlayerInteractDistance, value = 1.0f },
         new FloatValue { key = FloatValues.DialogueSpeed, value = 32f },
         new FloatValue { key = FloatValues.DialogCompletionWaitForCloseSeconds, value = 5f },
@@ -152,7 +151,7 @@ public static class Settings
     // Float values
     public enum FloatValues
     {
-        PlayerInteractDistance, DialogDisplayYLocation, DialogueSpeed, DialogCompletionWaitForCloseSeconds, FPS,
+        PlayerInteractDistance, DialogueSpeed, DialogCompletionWaitForCloseSeconds, FPS,
         AmbientVolume, SoundtrackVolume, SoundEffectVolume, MasterVolume
     }
 
@@ -164,7 +163,7 @@ public static class Settings
     // Prefab objects
     public enum PrefabObjects
     {
-        DialogDisplay
+        DialogDisplay, BigDialogDisplay
     }
 
     // Prefab Materials

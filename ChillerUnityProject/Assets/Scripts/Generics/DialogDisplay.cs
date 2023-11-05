@@ -207,7 +207,10 @@ public class DialogDisplay : MonoBehaviour
     }
 
     // Clears the current dialog display and displays the new dialog with the profilePic
-    public static void NewDialog(string _text, Sprite[] animationStruct, bool disableInput = false)
+    public static void NewDialog(string _text,
+                                 Sprite[] animationStruct,
+                                 bool disableInput = false,
+                                 bool big = false)
     {
         if (_text == null || _text.Length == 0)
         {
@@ -215,8 +218,8 @@ public class DialogDisplay : MonoBehaviour
             return;
         }
         StopCurrentDisplay();
-        
-        GameObject gobj = Instantiate(Settings.PrefabObjects.DialogDisplay.Get(), new Vector2(0,Settings.FloatValues.DialogDisplayYLocation.Get()), Quaternion.identity);
+
+        GameObject gobj = Instantiate(big ? Settings.PrefabObjects.BigDialogDisplay.Get() : Settings.PrefabObjects.DialogDisplay.Get());
         currentDisplay = gobj.GetComponent<DialogDisplay>();
 
         //Set the profile animation
@@ -297,14 +300,17 @@ public class DialogDisplay : MonoBehaviour
 
     }
 
-    public static void NewDialog(string _text, Settings.PrefabAnimations anim, bool disableInput = false)
+    public static void NewDialog(string _text,
+                                 Settings.PrefabAnimations anim,
+                                 bool disableInput = false,
+                                 bool big = false)
     {
-        NewDialog(_text, anim.Get(), disableInput);
+        NewDialog(_text, anim.Get(), disableInput, big);
     }
 
     public static void NewDialog(DialogStruct dialogStruct)
     {
-        NewDialog(dialogStruct.dialog, dialogStruct.animation, dialogStruct.disableInput);
+        NewDialog(dialogStruct.dialog, dialogStruct.animation, dialogStruct.disableInput, dialogStruct.big);
     }
 
     //Chooses a random struct out of the array if the array has 1 or more elements
@@ -331,5 +337,6 @@ public class DialogDisplay : MonoBehaviour
         public string dialog;
         public Settings.PrefabAnimations animation;
         public bool disableInput;
+        public bool big;
     }
 }
