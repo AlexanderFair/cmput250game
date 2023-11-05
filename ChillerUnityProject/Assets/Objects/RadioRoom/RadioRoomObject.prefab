@@ -186,27 +186,34 @@ MonoBehaviour:
   contactedHelp:
     dialog: Contacted Help
     animation: 0
+    disableInput: 0
   alreadyCalledForHelp:
   - dialog: Already Called For Help
     animation: 0
+    disableInput: 0
   alreadyCalledForHelpSubmit:
   - dialog: Already Called For Help Submit
     animation: 0
+    disableInput: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
-  - dialog: Bad Choice
+  - dialog: wrong
     animation: 0
+    disableInput: 0
   badChoiceEffects: []
   alredayChosen:
   - dialog: Already Chosen
     animation: 0
+    disableInput: 0
   promptsForNext:
   - prompts:
     - dialog: Prompt 123 456
       animation: 0
+      disableInput: 0
   - prompts:
     - dialog: Prompt 789 012
       animation: 0
+      disableInput: 0
   completeCodePrompts:
   - 'Good Code. '
   goodCodeEffects: []

@@ -10,7 +10,7 @@ public class UICloseButton : ClickableUIObject
     protected override void AwakeUIObject()
     {
         base.AwakeUIObject();
-        InstantiateUIElement(textHint).GetComponent<UICloseText>().Setup(this);
+        //InstantiateUIElement(textHint).GetComponent<UICloseText>().Setup(this);
     }
 
     protected override void Clicked()
