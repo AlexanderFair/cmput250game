@@ -73,17 +73,17 @@ MonoBehaviour:
   floatValues:
   - key: 0
     value: 60
+  - key: 1
+    value: 24
   - key: 2
-    value: 24
-  - key: 3
     value: 2
-  - key: 4
+  - key: 3
     value: 24
+  - key: 4
+    value: 0.5
   - key: 5
     value: 0.5
   - key: 6
-    value: 0.5
-  - key: 8
     value: 0.75
   - key: 7
     value: 0.5
