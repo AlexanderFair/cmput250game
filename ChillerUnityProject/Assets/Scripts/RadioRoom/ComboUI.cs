@@ -5,16 +5,17 @@ using UnityEngine;
 public class ComboUI : CombinationUIObject
 {
     private ComboPuzzle puzz;
+    [Header("ComoUI")]
+    public ComboUISubmitBtn submitBtn;
 
     public void Setup(ComboPuzzle puzz)
     {
         this.puzz = puzz;
     }
 
-    protected override void CodeUpdated()
+    public void SubmitCode()
     {
-        base.CodeUpdated();
         puzz.CodeUpdated(values);
-        
     }
+        
 }

@@ -62,9 +62,7 @@ public class SnapManagerUIObject : UIObjectClass
                     if (dragableTiles[i].snapCollider.Distance(snapColliders[j]).isOverlapped
                             && snapedTiles[j].Count < maxTilesPerCollider)
                     {
-                        snapedTiles[j].Add(i);
-                        snappedObjects[i] = j;
-                        dragableTiles[i].Snap(snapColliders[j]);
+                        ForceSnap(i, j);
                         goto nextElement;
                     }
                 }
@@ -72,7 +70,22 @@ public class SnapManagerUIObject : UIObjectClass
 
             nextElement:;
         }
-        if(changed) ItemsChanged();
+
+        if (changed)
+        {
+            ItemsChanged();
+        }
+    }
+
+    public void ForceSnap(int snap, int collider, bool disable = false)
+    {
+        snapedTiles[collider].Add(snap);
+        snappedObjects[snap] = collider;
+        dragableTiles[snap].Snap(snapColliders[collider]);
+        if (disable)
+        {
+            dragableTiles[snap].EnableMovement(false);
+        }
     }
 
     //called when one or more snaps have possibly changed location

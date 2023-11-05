@@ -5,13 +5,23 @@ using UnityEngine;
 public class ComboPuzzle : DisplayUIRoomObject
 {
     [Header("Combo Puzzle")]
+    //The solution to the puzzle based off of indexs of the combination elements in the UI
     public int[] solve;
-    public DialogDisplay.DialogStruct incompletePrompt;
+    //Played when the puzzle is open in the incomplete form
+    public DialogDisplay.DialogStruct[] incompletePrompt;
+    //Played when the puzzle is completed
     public DialogDisplay.DialogStruct completePrompt;
-    public AudioClip unlockAudio;
-    public GameObject noteUi;
+    //Played when the code is subitted and is incorrect
+    public DialogDisplay.DialogStruct[] wrongCodePrompt;
 
-    private bool complete = false;
+    //Played when the puzzle is completed
+    public AudioClip unlockAudio;
+    //Played when the wrong code is submitted
+    public AudioClip[] wrongComboEffect;
+    //Displayed when the puzzle is complete
+    public GameObject drawerUi;
+
+    private static bool complete = false;
 
     protected override void DisplayedUI()
     {
@@ -19,7 +29,7 @@ public class ComboPuzzle : DisplayUIRoomObject
         if (complete)
         {
             UIObjectClass.DestroyUIObject(ui);
-            UIObjectClass.InstantiateNewUIElement(noteUi);
+            UIObjectClass.InstantiateNewUIElement(drawerUi);
         }
         else
         {
@@ -37,11 +47,13 @@ public class ComboPuzzle : DisplayUIRoomObject
         }
         if (!yes)
         {
+            AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(wrongComboEffect));
+            DialogDisplay.NewDialog(wrongCodePrompt);
             return;
         }
         complete = true;
         AudioHandler.Instance.playSoundEffect(unlockAudio);
-        UIObjectClass.InstantiateNewUIElement(noteUi);
+        UIObjectClass.InstantiateNewUIElement(drawerUi);
         DialogDisplay.NewDialog(completePrompt);
     }
 

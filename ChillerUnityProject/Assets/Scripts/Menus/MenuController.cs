@@ -39,10 +39,10 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Settings.Controls.Pause.GetKeyDown()){
+        if (Settings.Controls.Pause.GetKeyDown(forceGetInput: true)){
             ChangeMenu(); // Changes to pause if no menu is active otherwise exits menu
         }
-        else if (Settings.Controls.ExitMenu.GetKeyDown())
+        else if (Settings.Controls.ExitMenu.GetKeyDown(forceGetInput: true))
         {
             if (MenuObjectClass.IsMenuActive())
             {

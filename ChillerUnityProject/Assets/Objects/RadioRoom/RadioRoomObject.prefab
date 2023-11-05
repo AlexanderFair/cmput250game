@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7158258418742771994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 74.6, z: 0}
+  m_LocalPosition: {x: 0, y: 74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1155655915249841414}
@@ -91,8 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1155655915249841414}
   - component: {fileID: 8359248881244581347}
-  - component: {fileID: 6252828174567694586}
   - component: {fileID: 6177142904461748348}
+  - component: {fileID: 6813006868894273789}
   m_Layer: 9
   m_Name: RadioRoomObject
   m_TagString: Untagged
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 74.6}
+  m_Offset: {x: 0, y: 74}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -141,38 +141,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 68, y: 68}
   m_EdgeRadius: 0
---- !u!114 &6252828174567694586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8955821922292304871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86af0f4d06f87464daf03914ac7b4b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteAnimators: []
-  interactableCollider: {fileID: 8359248881244581347}
-  interactionControl: 0
-  interactableRenderer: {fileID: 8567724044861255799}
-  interactSound: {fileID: 0}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation: []
-  dialog: 
-  uiPrefab: {fileID: 8039218377596480889, guid: 0509709439d67f84abe36d7e8330151a,
-    type: 3}
-  radioPromptSnap: Maybe if I looked in the notebook, I could find the best frequencies.
-  radioPromptCombo: I should try opening that safe incase there's some information
-    there.
-  completionNoteSnap: Nice, that frequency worked.
-  completionNoteCombo: Great, that frequency worked.
-  alreadyComplete: I've already tried that combination.
-  allComplete: I've already completed all the combinations. I can leave now.
-  tryAgain: ' But, I should try another code just in case.'
-  snapValue: {x: 61, y: 845}
-  comboValue: {x: 549, y: 968}
 --- !u!210 &6177142904461748348
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -184,3 +152,97 @@ SortingGroup:
   m_SortingLayerID: 1278940923
   m_SortingLayer: 2
   m_SortingOrder: 0
+--- !u!114 &6813006868894273789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955821922292304871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91233a12e557a834cb421e7412b92a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimators: []
+  interactableCollider: {fileID: 8359248881244581347}
+  interactionControl: 0
+  interactableRenderer: {fileID: 8567724044861255799}
+  interactSound: []
+  giveControlHint: 1
+  controlHintOffset: {x: 0, y: 49}
+  displayDialogOnInteract: 0
+  dialogProfileAnimation:
+  - {fileID: 0}
+  dialog: 
+  uiPrefab: {fileID: 8039218377596480889, guid: 0509709439d67f84abe36d7e8330151a,
+    type: 3}
+  combos:
+  - {x: 896, y: 364}
+  - {x: 82, y: 607}
+  - {x: 276, y: 951}
+  - {x: 194, y: 503}
+  bitComboStorageOffset: 0
+  specialCombos:
+  - {x: 747, y: 438}
+  - {x: 438, y: 747}
+  contactedHelp:
+    dialog: Contacted Help
+    animation: 0
+    disableInput: 0
+    big: 0
+  alreadyCalledForHelp:
+  - dialog: Already Called For Help
+    animation: 0
+    disableInput: 0
+    big: 0
+  alreadyCalledForHelpSubmit:
+  - dialog: Already Called For Help Submit
+    animation: 0
+    disableInput: 0
+    big: 0
+  alreadyCalledForHelpSubmitEffects: []
+  badChoice:
+  - dialog: wrong
+    animation: 0
+    disableInput: 0
+    big: 0
+  badChoiceEffects: []
+  alredayChosen:
+  - dialog: Already Chosen
+    animation: 0
+    disableInput: 0
+    big: 0
+  promptsForNext:
+  - prompts:
+    - dialog: Prompt Sticky Note
+      animation: 0
+      disableInput: 0
+      big: 0
+  - prompts:
+    - dialog: Prompt Checklist
+      animation: 0
+      disableInput: 0
+      big: 0
+  - prompts:
+    - dialog: Prompt Notebook
+      animation: 0
+      disableInput: 0
+      big: 0
+  - prompts:
+    - dialog: Prompt Drawer
+      animation: 0
+      disableInput: 0
+      big: 0
+  completeCodePrompts:
+  - 'Good Code. '
+  goodCodeEffects: []
+  lore:
+  - dialog: Lore 1
+    animation: 0
+    disableInput: 1
+    big: 1
+  - dialog: Lore 2
+    animation: 0
+    disableInput: 1
+    big: 1

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735577787485999415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -60, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4558931017342488373}
@@ -49,10 +49,8 @@ MonoBehaviour:
   clickableCollider: {fileID: 6223056820244246985}
   spriteClickableOutlineRenderer: {fileID: 6853704726277373030}
   animatorIndex: -1
-  clickableAnimation:
-  - {fileID: 21300000, guid: 075fdf8fc7eb97a4cbd055468d350061, type: 3}
-  clickedAnimation:
-  - {fileID: 21300000, guid: cf9453520ae77aa458af835132fe3579, type: 3}
+  clickableAnimation: []
+  clickedAnimation: []
   clickRechargeTime: 0.2
   soundEffect:
   - {fileID: 8300000, guid: 81a3f1b94b514df42a64eefa5b56427a, type: 3}
@@ -121,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -33.259605, y: -1.1185608}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 113, y: 116}
+  m_Size: {x: 67.73567, y: 51.115906}
   m_EdgeRadius: 0
 --- !u!1 &4449670943991648603
 GameObject:
@@ -193,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5164538300854888637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4558931017342488373}
@@ -215,10 +213,8 @@ MonoBehaviour:
   clickableCollider: {fileID: 5973687965957464925}
   spriteClickableOutlineRenderer: {fileID: 2284700772824780654}
   animatorIndex: -1
-  clickableAnimation:
-  - {fileID: 21300000, guid: af6bfd3292390ea4eb769ca98339c543, type: 3}
-  clickedAnimation:
-  - {fileID: 21300000, guid: f46d7956859e768498e5fe1306972825, type: 3}
+  clickableAnimation: []
+  clickedAnimation: []
   clickRechargeTime: 0.2
   soundEffect:
   - {fileID: 8300000, guid: 81a3f1b94b514df42a64eefa5b56427a, type: 3}
@@ -287,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 33.900654, y: -1.1185608}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -298,5 +294,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 113, y: 116}
+  m_Size: {x: 66.453575, y: 51.11591}
   m_EdgeRadius: 0

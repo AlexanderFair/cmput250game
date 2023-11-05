@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 638449741
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4177768872721955028, guid: 06692a05b95b770419e709df9369b44d,
     type: 3}
@@ -160,10 +160,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<color=red>5.49</color>
+  m_Text: '<color=red>1.94</color>
 
 
-    <color=green>9.68</color>'
+    <color=green>5.03</color>'
 --- !u!1 &5130815356713638632
 GameObject:
   m_ObjectHideFlags: 0
