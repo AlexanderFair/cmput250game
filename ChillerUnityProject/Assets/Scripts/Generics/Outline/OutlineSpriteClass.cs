@@ -92,7 +92,7 @@ public class OutlineSpriteClass : MonoBehaviour
             lightingTime = enableTime;
             On = true;
         }
-        material.SetFloat(ALPHA_FACTOR, lightingTime / enableTime);
+        material.SetFloat(ALPHA_FACTOR, Mathf.SmoothStep(0, 1, lightingTime / enableTime));
     }
 
     private void Darken()
@@ -102,8 +102,9 @@ public class OutlineSpriteClass : MonoBehaviour
         {
             lightingTime = 0;
             On = false;
+            runningTime = 0;
         }
-        material.SetFloat(ALPHA_FACTOR, lightingTime / enableTime);
+        material.SetFloat(ALPHA_FACTOR, Mathf.SmoothStep(0,1,lightingTime / enableTime));
     }
 
     private void Cycle()
@@ -117,13 +118,20 @@ public class OutlineSpriteClass : MonoBehaviour
     public void TurnOn()
     {
         if (SetOn) return; // Already on
+        if (On)
+        {//We were darkening
+            On = false; //To make sure we lighten up again
+        }
         SetOn = true;
-        runningTime = 0f;
     }
 
     public void TurnOff()
     {
         if (!SetOn) return; // Already off
+        if (!On)
+        {//We were lightening
+            On = true; //make sure we darken
+        }
         SetOn = false;
     }
 }
