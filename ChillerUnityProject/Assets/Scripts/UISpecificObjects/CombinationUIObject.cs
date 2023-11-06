@@ -24,9 +24,9 @@ public class CombinationUIObject : UIObjectClass
     //If the combination can be changed
     public bool CombinationActive { get; set; } = true;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         values = new int[inputSections.Length];
         displayObjects = new GameObject[inputSections.Length];
         for (int i = 0; i < inputSections.Length; i++)

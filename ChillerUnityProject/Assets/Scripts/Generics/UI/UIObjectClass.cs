@@ -51,10 +51,10 @@ public class UIObjectClass : MonoBehaviour
      * 
      * Having this method defined ensures that any UIObject is in the list of current UIObjects
      */
-    void Awake()
+    void Start()
     {
         AddGameObject(gameObject);
-        AwakeUIObject();
+        StartUIObject();
         foreach (var anim in spriteAnimators)
         {
             anim?.AwakeAnimation();
@@ -79,7 +79,7 @@ public class UIObjectClass : MonoBehaviour
     /* 
      * Called when the objcet is first created 
      */
-    protected virtual void AwakeUIObject() { }
+    protected virtual void StartUIObject() { }
 
     /* 
      * Called when the object is destroyed 

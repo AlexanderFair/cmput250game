@@ -7,9 +7,9 @@ public class UICloseButton : ClickableUIObject
     [Header("UI Close Button")]
     public GameObject textHint;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         //InstantiateUIElement(textHint).GetComponent<UICloseText>().Setup(this);
     }
 

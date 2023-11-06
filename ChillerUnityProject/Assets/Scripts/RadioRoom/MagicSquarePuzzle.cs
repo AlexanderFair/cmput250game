@@ -15,9 +15,9 @@ public class MagicSquarePuzzle : SnapManagerUIObject
 
     public static bool Complete = false;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         currentGrid = new int[3,3];
         if (Complete)
         {

@@ -56,7 +56,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
     public override void Start()
     {
         base.Start();
-        this.AwakeOutlinableSprite(interactableRenderer);
+        this.StartOutlinableSprite(interactableRenderer);
     }
 
     /*

@@ -82,7 +82,7 @@ public class Cutscene : UIObjectClass {
 
     }
     // overwrites
-    protected override void AwakeUIObject() {
+    protected override void StartUIObject() {
         if ( cacheCutscene() ) {
             // generate url
             attatchedCutscenePlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, nameFileToPlay);

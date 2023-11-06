@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -298,7 +298,7 @@ Transform:
   - {fileID: 973255904}
   - {fileID: 678648486}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &206276840
 GameObject:
@@ -390,7 +390,7 @@ RectTransform:
   m_Children:
   - {fileID: 1404006124}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -604,7 +604,7 @@ Transform:
   - {fileID: 1329892881}
   - {fileID: 2127386276}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &503478531 stripped
 MonoBehaviour:
@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 3491529473992223012, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3491529473992223012, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
@@ -690,6 +690,21 @@ PrefabInstance:
       propertyPath: settingsValueChangeWatchers.Array.data[0]
       value: 
       objectReference: {fileID: 1895510290}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
+      propertyPath: outlineValues.Array.data[3].maxIntensity.b
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
+      propertyPath: outlineValues.Array.data[3].maxIntensity.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
+      propertyPath: outlineValues.Array.data[3].minIntensity.b
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e808f96b39a8b004981622f6ff3650c3, type: 3}
 --- !u!1 &577756677
@@ -903,24 +918,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &756517653 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6886009229727363142, guid: 973e9c0ef1c515b44b3d710451728b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 6886009229677627065}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &756517654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756517653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71098440811744a4b8a56aaf3f78cdcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &802506845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,7 +1280,7 @@ PrefabInstance:
     - target: {fileID: 2473796976967510351, guid: 437817a2edd95eb45a89c9dd86d9235e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2473796976967510351, guid: 437817a2edd95eb45a89c9dd86d9235e,
         type: 3}
@@ -1415,7 +1412,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6886009229677627065}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756517653}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06c3dde3b9bc70247bb08b2d1575be7f, type: 3}
@@ -1621,7 +1618,7 @@ Transform:
   m_LocalScale: {x: 3.1, y: 0.27, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -206}
 --- !u!1 &1404006121
 GameObject:
@@ -2060,7 +2057,7 @@ PrefabInstance:
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
@@ -2268,7 +2265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127386275
 GameObject:
@@ -2511,7 +2508,7 @@ PrefabInstance:
     - target: {fileID: 2220141590137687151, guid: 7de123f3ce50c4345b1d14081e7a00f1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2220141590137687151, guid: 7de123f3ce50c4345b1d14081e7a00f1,
         type: 3}
@@ -3026,11 +3023,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6886009229727363512, guid: 973e9c0ef1c515b44b3d710451728b64,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 619c25ec12137df4895908b4c0960955, type: 2}
     - target: {fileID: 6886009229727363514, guid: 973e9c0ef1c515b44b3d710451728b64,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y

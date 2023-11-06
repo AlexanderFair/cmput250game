@@ -20,9 +20,9 @@ public class RandomNoteUIObject : UIObjectClass
 
     public Text textElement;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         string[][] words = new string[commaSeperatedWordLists.Length][];
 
         string noteCopy = note;

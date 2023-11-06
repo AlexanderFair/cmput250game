@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
  */
 public static class SpriteOutlineMethods
 {
-    public static void AwakeOutlinableSprite<T>(this T outlineableSprite, SpriteRenderer outlineableSpriteRenderer) where T : MonoBehaviour, IOutlineableSprite
+    public static void StartOutlinableSprite<T>(this T outlineableSprite, SpriteRenderer outlineableSpriteRenderer) where T : MonoBehaviour, IOutlineableSprite
     {
         if (outlineableSpriteRenderer == null)
         {

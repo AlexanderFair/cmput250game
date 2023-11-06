@@ -9,9 +9,9 @@ public class CrowbarDrawerScript : ClickableUIObject
     public DialogDisplay.DialogStruct retrievedPrompt;
     public DialogDisplay.DialogStruct presentPrompt;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         if (CrowbarRoomScript.HasCrowbar)
         {
             DialogDisplay.NewDialog(alreadyRetrievedPrompt);

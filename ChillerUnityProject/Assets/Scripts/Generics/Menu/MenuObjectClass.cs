@@ -51,10 +51,10 @@ public class MenuObjectClass : MonoBehaviour
      * 
      * Having this method defined ensures that any MenuObject is in the list of current MenuObjects
      */
-    void Awake()
+    void Start()
     {
         AddGameObject(gameObject);
-        AwakeMenuObject();
+        StartMenuObject();
         foreach (var anim in spriteAnimations)
         {
             anim?.AwakeAnimation();
@@ -80,7 +80,7 @@ public class MenuObjectClass : MonoBehaviour
     /* 
      * Called when the objcet is first created 
      */
-    protected virtual void AwakeMenuObject() { }
+    protected virtual void StartMenuObject() { }
 
     /* 
      * Called when the object is destroyed 

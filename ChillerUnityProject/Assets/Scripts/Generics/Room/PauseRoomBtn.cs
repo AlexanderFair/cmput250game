@@ -20,7 +20,7 @@ public class PauseRoomBtn : RoomObjectClass, IClickableSprite
     {
         base.Start();
         //Instantiate(textHint).GetComponent<PauseRoomBtnText>().Setup(this);
-        this.AwakeOutlinableSprite(clickableRenderer);
+        this.StartOutlinableSprite(clickableRenderer);
     }
 
     protected override void UpdateRoomObject()

@@ -27,7 +27,7 @@ public class OutlineSpriteClass : MonoBehaviour
     private float runningTime = 0f;
     private float lightingTime = 0f;
 
-    public void Awake()
+    public void Start()
     {
         if(runIsolated)
         {
@@ -38,7 +38,7 @@ public class OutlineSpriteClass : MonoBehaviour
 
     public void Update()
     {
-        if(runIsolated)
+        if (runIsolated)
         {
             UpdateOutliner();
         }
@@ -108,9 +108,10 @@ public class OutlineSpriteClass : MonoBehaviour
 
     private void Cycle()
     {
+        
         runningTime += Time.deltaTime;
-        float cycleAmount = Mathf.Abs(runningTime / (2f * cycleTime) - 1f);
-        material.SetFloat(INTENSITY_INTERPILATION_FACTOR, Mathf.SmoothStep(cycleAmount, 0, 1));
+        float cycleAmount = Mathf.Abs((runningTime % (cycleTime*4)) / (cycleTime*2) - 1f);
+        material.SetFloat(INTENSITY_INTERPILATION_FACTOR, Mathf.SmoothStep(0, 1, cycleAmount));
     }
 
     public void TurnOn()
