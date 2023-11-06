@@ -104,13 +104,13 @@ MonoBehaviour:
     value: {fileID: 4951445264325114837, guid: fb7610f909cd85a428f7c085a4dd4406, type: 3}
   prefabMaterialValues:
   - key: 0
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   - key: 1
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   - key: 2
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   - key: 3
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   canLogWarnings: 0
   canInput: 1
   hideControlHintsWhenOverlappingPlayer: 0

@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,15 +120,18 @@ MonoBehaviour:
       animal</i>
     animation: 2
     disableInput: 0
+    big: 0
   - dialog: <i>Cautious eyes observe your movement, a timid squabble escapes the
       animal</i>
     animation: 2
     disableInput: 0
+    big: 0
   unlockPrompt:
     dialog: <i>Wary quiet gives way to warm trust, the penguin assertively situates
       themself wedged between your feet</i>
     animation: 2
     disableInput: 1
+    big: 0
   noCrowbarEffects:
   - {fileID: 8300000, guid: 508587beae297b84c98ae87e6aeb8e98, type: 3}
   crowbarEffects: {fileID: 8300000, guid: 9f1f3915e517c3f4899b64f44ea75029, type: 3}
