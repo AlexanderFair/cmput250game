@@ -14,8 +14,6 @@ public class OutlineSpriteClass : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     private Material material;
-    private readonly float enableTime = 0.5f; //TODO make setting
-    private float cycleTime = 1f; //TODO make random
 
     //If the outline is visible
     public bool On { get; private set; } = false;
@@ -27,6 +25,8 @@ public class OutlineSpriteClass : MonoBehaviour
     public bool runIsolated = false;
     //Will draw the changes circularly according to the objects pivot
     public bool circular = false;
+    //The seconds per cycle of the intensity
+    public float cycleTime = 1f;
 
     private float runningTime = 0f;
     private float lightingTime = 0f;
@@ -35,7 +35,7 @@ public class OutlineSpriteClass : MonoBehaviour
     {
         if(runIsolated)
         {
-            SetupOutline(spriteRenderer, (spriteRenderer.material.GetColor(INTENSITY_MIN_COLOR), spriteRenderer.material.GetColor(INTENSITY_MAX_COLOR), circular));
+            SetupOutline(spriteRenderer, (spriteRenderer.material.GetColor(INTENSITY_MIN_COLOR), spriteRenderer.material.GetColor(INTENSITY_MAX_COLOR), circular), cycleTime);
             TurnOn();
         }
     }
@@ -48,9 +48,10 @@ public class OutlineSpriteClass : MonoBehaviour
         }
     }
 
-    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color, bool) colours)
+    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color, bool) colours, float _cycleTime)
     {
         spriteRenderer = _spriteRenderer;
+        cycleTime = _cycleTime;
         if(spriteRenderer == null)
         {
             Settings.DisplayError("sprite Renderer is null", gameObject);
@@ -95,6 +96,7 @@ public class OutlineSpriteClass : MonoBehaviour
 
     private void Lighten()
     {
+        float enableTime = Settings.FloatValues.OutlineIlluminateTime.Get();
         lightingTime += Time.deltaTime;
         if (lightingTime >= enableTime)
         {
@@ -113,7 +115,7 @@ public class OutlineSpriteClass : MonoBehaviour
             On = false;
             runningTime = 0;
         }
-        material.SetFloat(ALPHA_FACTOR, Mathf.SmoothStep(0,1,lightingTime / enableTime));
+        material.SetFloat(ALPHA_FACTOR, Mathf.SmoothStep(0,1,lightingTime / Settings.FloatValues.OutlineIlluminateTime.Get()));
     }
 
 

@@ -19,7 +19,7 @@ public static class SpriteOutlineMethods
         }
 
         OutlineSpriteClass outliner = outlineableSprite.gameObject.GetComponent<OutlineSpriteClass>() ?? outlineableSprite.gameObject.AddComponent<OutlineSpriteClass>();
-        outliner.SetupOutline(outlineableSpriteRenderer, outlineableSprite.OutlineType().Get());
+        outliner.SetupOutline(outlineableSpriteRenderer, outlineableSprite.OutlineType().Get(), Random.Range(Settings.FloatValues.SecondsPerOutlineCycleMin.Get(), Settings.FloatValues.SecondsPerOutlineCycleMax.Get()));
 
     }
     /*

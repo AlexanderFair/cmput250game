@@ -166,7 +166,8 @@ public static class Settings
     public enum FloatValues
     {
         PlayerInteractDistance, DialogueSpeed, DialogCompletionWaitForCloseSeconds, FPS,
-        AmbientVolume, SoundtrackVolume, SoundEffectVolume, MasterVolume
+        AmbientVolume, SoundtrackVolume, SoundEffectVolume, MasterVolume,
+        SecondsPerOutlineCycleMin, SecondsPerOutlineCycleMax, OutlineIlluminateTime
     }
 
     // Prefab animations

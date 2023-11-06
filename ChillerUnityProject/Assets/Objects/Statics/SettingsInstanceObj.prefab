@@ -87,6 +87,12 @@ MonoBehaviour:
     value: 0.75
   - key: 7
     value: 0.5
+  - key: 8
+    value: 2
+  - key: 9
+    value: 5
+  - key: 10
+    value: 1
   prefabAnimValues:
   - key: 0
     value:
@@ -111,18 +117,23 @@ MonoBehaviour:
   - key: 0
     minIntensity: {r: 0, g: 0, b: 0, a: 0}
     maxIntensity: {r: 0, g: 0, b: 0, a: 0}
+    circular: 0
   - key: 1
     minIntensity: {r: 2, g: 0, b: 0, a: 1}
     maxIntensity: {r: 16, g: 0, b: 0, a: 1}
+    circular: 0
   - key: 2
     minIntensity: {r: 0, g: 2, b: 0, a: 1}
     maxIntensity: {r: 0, g: 16, b: 0, a: 1}
+    circular: 0
   - key: 3
     minIntensity: {r: 0, g: 0, b: 2, a: 1}
     maxIntensity: {r: 0, g: 0, b: 64, a: 1}
+    circular: 1
   - key: 4
     minIntensity: {r: 0, g: 0, b: 0, a: 0}
     maxIntensity: {r: 0, g: 0, b: 0, a: 0}
+    circular: 0
   canLogWarnings: 1
   canInput: 1
   hideControlHintsWhenOverlappingPlayer: 0

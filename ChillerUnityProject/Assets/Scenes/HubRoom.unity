@@ -1213,40 +1213,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437817a2edd95eb45a89c9dd86d9235e, type: 3}
---- !u!1 &1068630960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6886009229727363142, guid: 973e9c0ef1c515b44b3d710451728b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 6886009229677627065}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1068630962 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6886009229727363512, guid: 973e9c0ef1c515b44b3d710451728b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 6886009229677627065}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1068630967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068630960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71098440811744a4b8a56aaf3f78cdcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1068630962}
-  runIsolated: 1
-  circular: 1
 --- !u!114 &1087587426 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6886009229727363513, guid: 973e9c0ef1c515b44b3d710451728b64,
     type: 3}
   m_PrefabInstance: {fileID: 6886009229677627065}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068630960}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06c3dde3b9bc70247bb08b2d1575be7f, type: 3}
@@ -2764,11 +2737,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6886009229727363512, guid: 973e9c0ef1c515b44b3d710451728b64,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 619c25ec12137df4895908b4c0960955, type: 2}
     - target: {fileID: 6886009229727363514, guid: 973e9c0ef1c515b44b3d710451728b64,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
