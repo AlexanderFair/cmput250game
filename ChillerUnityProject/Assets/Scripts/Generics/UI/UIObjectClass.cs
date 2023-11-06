@@ -32,7 +32,7 @@ public class UIObjectClass : MonoBehaviour
     public List<AnimationSpriteClass> spriteAnimators = new List<AnimationSpriteClass>();
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
@@ -51,7 +51,7 @@ public class UIObjectClass : MonoBehaviour
      * 
      * Having this method defined ensures that any UIObject is in the list of current UIObjects
      */
-    void Start()
+    public void Start()
     {
         AddGameObject(gameObject);
         StartUIObject();

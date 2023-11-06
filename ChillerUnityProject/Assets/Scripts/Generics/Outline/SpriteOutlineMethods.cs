@@ -30,7 +30,6 @@ public static class SpriteOutlineMethods
         OutlineSpriteClass outliner = outlineableSprite.gameObject.GetComponent<OutlineSpriteClass>();
         if(outliner == null)
         {
-            Settings.DisplayWarning("Outliner is null", outlineableSprite.gameObject);
             return;
         }
         if (outlineableSprite.OutlineCondition())

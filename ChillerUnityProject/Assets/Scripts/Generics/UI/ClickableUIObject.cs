@@ -46,6 +46,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
         {
             clickedAnimation = new Sprite[] { clickableAnimation[0] };
         }
+        
         ChangeAnim();
         this.StartOutlinableSprite(spriteClickableOutlineRenderer);
     }

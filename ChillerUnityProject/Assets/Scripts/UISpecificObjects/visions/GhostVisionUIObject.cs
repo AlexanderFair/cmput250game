@@ -23,7 +23,7 @@ public class GhostVisionUIObject : UIObjectClass
 
 
     // Update is called once per frame
-    void Update()
+    public new void Update()
     {
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {

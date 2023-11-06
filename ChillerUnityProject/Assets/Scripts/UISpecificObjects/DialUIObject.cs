@@ -26,8 +26,9 @@ public class DialUIObject : DragToRotateUIObject
 
     private float rot=0;
 
-    public void Start()
+    protected override void StartUIObject()
     {
+        base.StartUIObject();
         rot = startRelativeRot;
         transform.rotation = Quaternion.Euler(0, 0, -startPhysicalRot);
     }

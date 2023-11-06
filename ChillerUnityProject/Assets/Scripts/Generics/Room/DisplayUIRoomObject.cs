@@ -17,7 +17,7 @@ public class DisplayUIRoomObject : InteractableRoomObject
     public override void Start()
     {
         base.Start();
-        if (ui == null)
+        if (uiPrefab == null)
         {
             Settings.DisplayWarning("UI is null", gameObject);
         }

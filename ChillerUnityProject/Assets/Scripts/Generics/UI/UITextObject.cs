@@ -14,13 +14,15 @@ public class UITextObject : UIObjectClass
     private string currentText = "";
     private string nextText = "";
 
-    public void Start()
+    protected override void StartUIObject()
     {
+        base.StartUIObject();
         SetText(defaultValue, true);
     }
 
     protected override void UpdateUIObject()
     {
+        base.UpdateUIObject();
         SetCurrentText();
     }
 
