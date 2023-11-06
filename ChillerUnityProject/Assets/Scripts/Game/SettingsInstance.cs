@@ -135,7 +135,8 @@ public class SettingsInstance : MonoBehaviour
         [ColorUsage(true, hdr: true)]
         public Color minIntensity;
         [ColorUsage(true, hdr: true)]
-        public Color maxIntensity; 
+        public Color maxIntensity;
+        public bool circular;
     }
 
     public void UpdateSettingWatchers(object e)
@@ -305,11 +306,11 @@ public static class Settings
     }
 
     //Returns the color associated with the color
-    public static (Color, Color) Get(this Outlines outline)
+    public static (Color, Color, bool) Get(this Outlines outline)
     {
         RequireSettingsInstance();
         SettingsInstance.OutlineValue val = SettingsInstance.Instance.outlinePairings[outline];
-        return (val.minIntensity, val.maxIntensity);
+        return (val.minIntensity, val.maxIntensity, val.circular);
     }
 
     private static void RequireSettingsInstance()

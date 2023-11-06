@@ -8,7 +8,9 @@ public class OutlineSpriteClass : MonoBehaviour
         INTENSITY_MIN_COLOR = "_IntensityMinColor",
         INTENSITY_MAX_COLOR = "_IntensityMaxColor",
         INTENSITY_INTERPILATION_FACTOR = "_IntensityInterpFactor",
-        ALPHA_FACTOR = "_AlphaFactor";
+        ALPHA_FACTOR = "_AlphaFactor",
+        CIRCULAR = "_Circular",
+        BOUNDING_RECT = "_TextureBoundingRect";
 
     public SpriteRenderer spriteRenderer;
     private Material material;
@@ -23,6 +25,8 @@ public class OutlineSpriteClass : MonoBehaviour
     //Runs the code as an isolated system
     //This will cause the code to setup on Awake and update on Update
     public bool runIsolated = false;
+    //Will draw the changes circularly according to the objects pivot
+    public bool circular = false;
 
     private float runningTime = 0f;
     private float lightingTime = 0f;
@@ -31,7 +35,7 @@ public class OutlineSpriteClass : MonoBehaviour
     {
         if(runIsolated)
         {
-            SetupOutline(spriteRenderer, (spriteRenderer.material.GetColor(INTENSITY_MIN_COLOR), spriteRenderer.material.GetColor(INTENSITY_MAX_COLOR)));
+            SetupOutline(spriteRenderer, (spriteRenderer.material.GetColor(INTENSITY_MIN_COLOR), spriteRenderer.material.GetColor(INTENSITY_MAX_COLOR), circular));
             TurnOn();
         }
     }
@@ -44,7 +48,7 @@ public class OutlineSpriteClass : MonoBehaviour
         }
     }
 
-    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color) colours)
+    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color, bool) colours)
     {
         spriteRenderer = _spriteRenderer;
         if(spriteRenderer == null)
@@ -61,11 +65,13 @@ public class OutlineSpriteClass : MonoBehaviour
             DestroyImmediate(gameObject);
             return;
         }
+        circular = colours.Item3;
         spriteRenderer.material = material;
         material.SetColor(INTENSITY_MIN_COLOR, colours.Item1);
         material.SetColor(INTENSITY_MAX_COLOR, colours.Item2);
         material.SetFloat(INTENSITY_INTERPILATION_FACTOR, 0f);
         material.SetFloat(ALPHA_FACTOR, 0f);
+        material.SetInt(CIRCULAR, circular ? 1 : 0); 
     }
 
     public void UpdateOutliner()
@@ -81,6 +87,9 @@ public class OutlineSpriteClass : MonoBehaviour
         {
             if (On) Darken(); else Lighten();
         }
+
+        Rect r = spriteRenderer.sprite.textureRect;
+        material.SetVector(BOUNDING_RECT, new Vector4(r.x, r.y, r.width, r.height));
         
     }
 
@@ -107,12 +116,21 @@ public class OutlineSpriteClass : MonoBehaviour
         material.SetFloat(ALPHA_FACTOR, Mathf.SmoothStep(0,1,lightingTime / enableTime));
     }
 
+
     private void Cycle()
     {
-        
         runningTime += Time.deltaTime;
-        float cycleAmount = Mathf.Abs((runningTime % (cycleTime*4)) / (cycleTime*2) - 1f);
-        material.SetFloat(INTENSITY_INTERPILATION_FACTOR, Mathf.SmoothStep(0, 1, cycleAmount));
+        float cycleAmount;
+        if (circular)
+        {
+            cycleAmount = (runningTime % cycleTime) / cycleTime;
+        }
+        else
+        {
+            cycleAmount = Mathf.Abs((runningTime % (cycleTime * 4)) / (cycleTime * 2) - 1f);
+            cycleAmount = Mathf.SmoothStep(0, 1, cycleAmount);
+        }
+        material.SetFloat(INTENSITY_INTERPILATION_FACTOR, cycleAmount);
     }
 
     public void TurnOn()
