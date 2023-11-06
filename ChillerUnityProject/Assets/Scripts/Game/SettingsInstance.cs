@@ -67,6 +67,10 @@ public class SettingsInstance : MonoBehaviour
     //The set of prefab material pairings
     public PrefabMaterialValue[] prefabMaterialValues = { };
 
+    [Header("Outlines")]
+    //The set of outline pairings
+    public OutlineValue[] outlineValues = { };
+
     [Header("Other")]
     public bool canLogWarnings = false;
     public bool canInput = true;
@@ -82,6 +86,7 @@ public class SettingsInstance : MonoBehaviour
     public Dictionary<PrefabAnimations, PrefabAnimationValue> animPairings = new Dictionary<PrefabAnimations, PrefabAnimationValue>();
     public Dictionary<PrefabObjects, PrefabObjectValue> objectPairings = new Dictionary<PrefabObjects, PrefabObjectValue>();
     public Dictionary<PrefabMaterials, PrefabMaterialValue> materialPairings = new Dictionary<PrefabMaterials, PrefabMaterialValue>();
+    public Dictionary<Outlines, OutlineValue> outlinePairings = new Dictionary<Outlines, OutlineValue>();
     //the set of last frame uses for each key
     public Dictionary<Controls, int> controlsLastUsedFrame = new Dictionary<Controls, int>();
     public Dictionary<Controls, List<AudioClip>> controlSoundEffectsDict = new Dictionary<Controls, List<AudioClip>>();
@@ -104,6 +109,7 @@ public class SettingsInstance : MonoBehaviour
         foreach (PrefabAnimationValue v in prefabAnimValues) { animPairings[v.key] = v; }
         foreach (PrefabObjectValue v in prefabObjectValues) { objectPairings[v.key] = v; }
         foreach (PrefabMaterialValue v in prefabMaterialValues) { materialPairings[v.key] = v; }
+        foreach (OutlineValue v in outlineValues) { outlinePairings[v.key] = v; }
 
         foreach (Controls c in Enum.GetValues(typeof(Controls)))
         {
@@ -124,6 +130,13 @@ public class SettingsInstance : MonoBehaviour
     [System.Serializable] public struct PrefabAnimationValue { public PrefabAnimations key; public Sprite[] value; }
     [System.Serializable] public struct PrefabObjectValue { public PrefabObjects key; public GameObject value; }
     [System.Serializable] public struct PrefabMaterialValue { public PrefabMaterials key; public Material value; }
+    [System.Serializable] public struct OutlineValue { 
+        public Outlines key;
+        [ColorUsage(true, hdr: true)]
+        public Color minIntensity;
+        [ColorUsage(true, hdr: true)]
+        public Color maxIntensity; 
+    }
 
     public void UpdateSettingWatchers(object e)
     {
@@ -169,7 +182,12 @@ public static class Settings
     // Prefab Materials
     public enum PrefabMaterials
     {
-        Null, Clickable, Dragable, Interactable
+        Null, Outline
+    }
+
+    public enum Outlines
+    {
+        Null, Click, Drag, Interact, Collision
     }
 
     //Returns the KeyCode associated with the Control
@@ -284,6 +302,14 @@ public static class Settings
     {
         RequireSettingsInstance();
         return SettingsInstance.Instance.animPairings[obj].value;
+    }
+
+    //Returns the color associated with the color
+    public static (Color, Color) Get(this Outlines outline)
+    {
+        RequireSettingsInstance();
+        SettingsInstance.OutlineValue val = SettingsInstance.Instance.outlinePairings[outline];
+        return (val.minIntensity, val.maxIntensity);
     }
 
     private static void RequireSettingsInstance()

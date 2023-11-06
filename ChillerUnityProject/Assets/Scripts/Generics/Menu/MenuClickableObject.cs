@@ -18,9 +18,14 @@ public class MenuClickableObject : MenuObjectClass, IClickableSprite
     // The sprite renderer which should obtain an outline when the sprite is clickable
     public SpriteRenderer clickableRenderer;
 
+    protected override void AwakeMenuObject()
+    {
+        base.AwakeMenuObject();
+        this.AwakeOutlinableSprite(clickableRenderer);
+    }
     protected override void UpdateMenuObject()
     {
-        this.UpdateOutlinableSprite(clickableRenderer);
+        this.UpdateOutlinableSprite();
 
         if (Util.GetKeyDownWithMouseOverObject(clickKey, clickCollider, true) && ClickableCondition())
         {

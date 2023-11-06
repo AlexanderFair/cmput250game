@@ -47,10 +47,11 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
             clickedAnimation = new Sprite[] { clickableAnimation[0] };
         }
         ChangeAnim();
+        this.AwakeOutlinableSprite(spriteClickableOutlineRenderer);
     }
     protected override void UpdateUIObject()
     {
-        this.UpdateOutlinableSprite(spriteClickableOutlineRenderer);
+        this.UpdateOutlinableSprite();
         bool shouldChange = false;
         if(Util.GetKeyDownWithMouseOverObject(clickControl, clickableCollider) 
             && ClickableCondition())

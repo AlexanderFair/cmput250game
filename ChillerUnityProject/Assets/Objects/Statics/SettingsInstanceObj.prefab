@@ -106,11 +106,23 @@ MonoBehaviour:
   - key: 0
     value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   - key: 1
-    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    value: {fileID: 2100000, guid: 619c25ec12137df4895908b4c0960955, type: 2}
+  outlineValues:
+  - key: 0
+    minIntensity: {r: 0, g: 0, b: 0, a: 0}
+    maxIntensity: {r: 0, g: 0, b: 0, a: 0}
+  - key: 1
+    minIntensity: {r: 2, g: 0, b: 0, a: 1}
+    maxIntensity: {r: 16, g: 0, b: 0, a: 1}
   - key: 2
-    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    minIntensity: {r: 0, g: 2, b: 0, a: 1}
+    maxIntensity: {r: 0, g: 16, b: 0, a: 1}
   - key: 3
-    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    minIntensity: {r: 0, g: 0, b: 2, a: 1}
+    maxIntensity: {r: 0, g: 0, b: 16, a: 1}
+  - key: 4
+    minIntensity: {r: 0, g: 0, b: 0, a: 0}
+    maxIntensity: {r: 0, g: 0, b: 0, a: 0}
   canLogWarnings: 0
   canInput: 1
   hideControlHintsWhenOverlappingPlayer: 0
