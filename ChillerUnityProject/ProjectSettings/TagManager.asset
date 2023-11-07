@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bottom
+    uniqueID: 1108279437
+    locked: 0
   - name: Room - Background - All
     uniqueID: 4158826025
     locked: 0
@@ -70,4 +73,7 @@ TagManager:
     locked: 0
   - name: Menu
     uniqueID: 1169289055
+    locked: 0
+  - name: Top
+    uniqueID: 2082719077
     locked: 0

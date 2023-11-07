@@ -501,6 +501,7 @@ MonoBehaviour:
   cutoffDistance: 465
   fadeAlongYAxis: 1
   smoothStep: 1
+  useOuterAngleForCalc: 0
   spriteRenderer: {fileID: 236019028}
 --- !u!1 &293099244
 GameObject:
@@ -1944,6 +1945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219213753245605190, guid: 03b57dcbaffea2d4799ac7134c6a90bc,
+        type: 3}
+      propertyPath: initColor.b
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b57dcbaffea2d4799ac7134c6a90bc, type: 3}
