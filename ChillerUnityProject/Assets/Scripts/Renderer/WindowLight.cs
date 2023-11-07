@@ -18,7 +18,9 @@ public class WindowLight : RoomObjectClass
         FADING_DIST = "_MinCutoffDistance",
         FADE_Y_AXIS = "_CutoffUsingY",
         DIST_NORMAL = "_FocalNormalVector",
-        OUTSIDE_RAD = "_OuterWindowRadius";
+        OUTSIDE_RAD = "_OuterWindowRadius",
+        INSIDE_RAD = "_InnerWindowRadius",
+        SMOOTH_STEP = "_SmoothStep";
 
     [ColorUsage(true, hdr: true)]
     public Color color;
@@ -29,6 +31,8 @@ public class WindowLight : RoomObjectClass
     public float windowRadius;
     public float cutoffDistance;
     public bool fadeAlongYAxis;
+    public bool smoothStep;
+    public bool useOuterAngleForCalc;
 
     public SpriteRenderer spriteRenderer;
 
@@ -52,7 +56,7 @@ public class WindowLight : RoomObjectClass
 
     public override void Update()
     {
-        
+        UpdateShader();
     }
 
     public void UpdateColor()
@@ -62,13 +66,16 @@ public class WindowLight : RoomObjectClass
 
     public void UpdateFocal()
     {
-        float delta = 1f / Mathf.Sin(innerAngle * Mathf.PI * 2) * windowRadius;
+        float angle = useOuterAngleForCalc ? outerAngle : innerAngle;
+
+        float delta = 1f / Mathf.Sin(angle * Mathf.PI * 2) * windowRadius;
         Vector2 focalOffset = new Vector2(delta * Mathf.Sin(pitchAngle*Mathf.PI*2), -delta * Mathf.Cos(pitchAngle*Mathf.PI*2));
         focal = windowCentre + focalOffset;
         float fadingDist = delta + windowRadius;
 
         Vector2 distNormal = new Vector2(-focalOffset.y, focalOffset.x).normalized;
-        float outsideRad = delta * Mathf.Tan(outerAngle * Mathf.PI * 2) - delta * Mathf.Tan(innerAngle * Mathf.PI * 2);
+        float outsideRad = delta * Mathf.Tan(outerAngle * Mathf.PI * 2);
+        float insideRad = delta * Mathf.Tan(innerAngle * Mathf.PI * 2);
         /*
         Debug.DrawRay(focal, new Vector2(-Mathf.Sin((outerAngle + pitchAngle) * Mathf.PI * 2), Mathf.Cos((outerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.red);
         Debug.DrawRay(focal, new Vector2(-Mathf.Sin((-outerAngle + pitchAngle) * Mathf.PI * 2), Mathf.Cos((-outerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.red);
@@ -85,11 +92,13 @@ public class WindowLight : RoomObjectClass
         mat.SetFloat(FADING_DIST, fadingDist);
         mat.SetVector(DIST_NORMAL, distNormal);
         mat.SetFloat(OUTSIDE_RAD, outsideRad);
+        mat.SetFloat(INSIDE_RAD, insideRad);
     }
 
     public void UpdateCutoff()
     {
         mat.SetFloat(CUTOFF_DIST, cutoffDistance);
         mat.SetInt(FADE_Y_AXIS, fadeAlongYAxis ? 1 : 0);
+        mat.SetInt(SMOOTH_STEP, smoothStep ? 1 : 0);
     }
 }

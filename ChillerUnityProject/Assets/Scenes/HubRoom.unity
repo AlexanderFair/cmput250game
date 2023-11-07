@@ -500,6 +500,7 @@ MonoBehaviour:
   windowRadius: 12
   cutoffDistance: 465
   fadeAlongYAxis: 1
+  smoothStep: 1
   spriteRenderer: {fileID: 236019028}
 --- !u!1 &293099244
 GameObject:
