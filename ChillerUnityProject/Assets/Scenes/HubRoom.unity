@@ -503,6 +503,9 @@ MonoBehaviour:
   smoothStep: 1
   useOuterAngleForCalc: 0
   spriteRenderer: {fileID: 236019028}
+  sway: 1
+  swayAngleRange: {x: 0.001, y: 0.05}
+  swayTimeRange: {x: 5, y: 20}
 --- !u!1 &293099244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +1971,7 @@ PrefabInstance:
     - target: {fileID: 911976830603709729, guid: ff4cd6e4733331d4486aab815a9e7c14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2760904
+      value: 1.276
       objectReference: {fileID: 0}
     - target: {fileID: 911976830603709729, guid: ff4cd6e4733331d4486aab815a9e7c14,
         type: 3}

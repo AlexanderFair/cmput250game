@@ -36,6 +36,11 @@ public class WindowLight : RoomObjectClass
 
     public SpriteRenderer spriteRenderer;
 
+    [Header("Movement")]
+    public bool sway = false;
+    public Vector2 swayAngleRange;
+    public Vector2 swayTimeRange;
+
     private Material mat;
     private Vector2 focal;
 
@@ -54,9 +59,42 @@ public class WindowLight : RoomObjectClass
         UpdateColor();
     }
 
+    private float currentSwayTime = 0f;
+    private float currentSwayAngle = 0f;
+    private float lastTargetSwayAngle = 0f;
+    private float targetSwayTime = 0f;
+    private float targetSwayAngle = 0f;
+
     public override void Update()
     {
+        if (!sway) return;
+
+        currentSwayTime += Time.deltaTime;
+
+        if(currentSwayTime >= targetSwayTime)
+        {
+            ChooseNewSway();
+        }
+        SwayStep();
+
         UpdateShader();
+    }
+
+    private void ChooseNewSway()
+    {
+        currentSwayTime = 0f;
+        targetSwayTime = Random.Range(swayTimeRange.x, swayTimeRange.y);
+        lastTargetSwayAngle = targetSwayAngle;
+        targetSwayAngle = (lastTargetSwayAngle == 0 ? 1 : -1 * Mathf.Sign(lastTargetSwayAngle)) * Random.Range(swayAngleRange.x, swayAngleRange.y);
+    }
+
+    private void SwayStep()
+    {
+        float lambda = currentSwayTime / targetSwayTime;
+        float thisAngle = Mathf.Lerp(lastTargetSwayAngle, targetSwayAngle, Mathf.SmoothStep(0,1,lambda));
+        float diff = thisAngle - currentSwayAngle;
+        currentSwayAngle = thisAngle;
+        pitchAngle += diff;
     }
 
     public void UpdateColor()
