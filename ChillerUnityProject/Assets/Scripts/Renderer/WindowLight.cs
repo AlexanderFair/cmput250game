@@ -16,7 +16,9 @@ public class WindowLight : RoomObjectClass
         PITCH_ANGLE = "_PitchAngle",
         CUTOFF_DIST = "_CutoffDistance",
         FADING_DIST = "_MinCutoffDistance",
-        FADE_Y_AXIS = "_CutoffUsingY";
+        FADE_Y_AXIS = "_CutoffUsingY",
+        DIST_NORMAL = "_FocalNormalVector",
+        OUTSIDE_RAD = "_OuterWindowRadius";
 
     [ColorUsage(true, hdr: true)]
     public Color color;
@@ -50,7 +52,7 @@ public class WindowLight : RoomObjectClass
 
     public override void Update()
     {
-        UpdateShader();
+        
     }
 
     public void UpdateColor()
@@ -60,12 +62,20 @@ public class WindowLight : RoomObjectClass
 
     public void UpdateFocal()
     {
-        float delta = Mathf.Sqrt(2) * 0.5f * windowRadius * (1 + 1f / Mathf.Tan(innerAngle*Mathf.PI*2));
+        float delta = 1f / Mathf.Sin(innerAngle * Mathf.PI * 2) * windowRadius;
         Vector2 focalOffset = new Vector2(delta * Mathf.Sin(pitchAngle*Mathf.PI*2), -delta * Mathf.Cos(pitchAngle*Mathf.PI*2));
         focal = windowCentre + focalOffset;
         float fadingDist = delta + windowRadius;
 
-        mat.SetFloat(CENTRE_DIST, (windowCentre-focal).magnitude);
+        Vector2 distNormal = new Vector2(-focalOffset.y, focalOffset.x).normalized;
+        float outsideRad = delta * Mathf.Tan(outerAngle * Mathf.PI * 2) - delta * Mathf.Tan(innerAngle * Mathf.PI * 2);
+        /*
+        Debug.DrawRay(focal, new Vector2(-Mathf.Sin((outerAngle + pitchAngle) * Mathf.PI * 2), Mathf.Cos((outerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.red);
+        Debug.DrawRay(focal, new Vector2(-Mathf.Sin((-outerAngle + pitchAngle) * Mathf.PI * 2), Mathf.Cos((-outerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.red);
+        Debug.DrawRay(focal, new Vector2(-Mathf.Sin((innerAngle + pitchAngle) * Mathf.PI * 2), Mathf.Cos((innerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.green);
+        Debug.DrawRay(focal, new Vector2(-Mathf.Sin((-innerAngle+pitchAngle) * Mathf.PI * 2), Mathf.Cos((-innerAngle + pitchAngle) * Mathf.PI * 2)) * 200, Color.green);
+        */
+        mat.SetFloat(CENTRE_DIST, delta);
         mat.SetVector(CIRC_CENTRE, windowCentre);
         mat.SetFloat(CIRC_RADIUS, windowRadius);
         mat.SetVector(FOCAL_POINT, focal);
@@ -73,6 +83,8 @@ public class WindowLight : RoomObjectClass
         mat.SetFloat(OUTER_ANGLE, outerAngle);
         mat.SetFloat(PITCH_ANGLE, pitchAngle);
         mat.SetFloat(FADING_DIST, fadingDist);
+        mat.SetVector(DIST_NORMAL, distNormal);
+        mat.SetFloat(OUTSIDE_RAD, outsideRad);
     }
 
     public void UpdateCutoff()
