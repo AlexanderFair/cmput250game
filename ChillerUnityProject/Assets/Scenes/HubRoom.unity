@@ -1946,10 +1946,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9219213753245605190, guid: 03b57dcbaffea2d4799ac7134c6a90bc,
+    - target: {fileID: 1377087947776529731, guid: 03b57dcbaffea2d4799ac7134c6a90bc,
         type: 3}
-      propertyPath: initColor.b
-      value: 4
+      propertyPath: m_SortingLayer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b57dcbaffea2d4799ac7134c6a90bc, type: 3}

@@ -6,19 +6,13 @@ public class Clicker : MonoBehaviour
 {
     private static readonly string
         LOCATION = "_Location",
-        INTERP_FACTOR = "_InterpFactor",
-        INIT_COLOR = "_InitColor",
-        END_COLOR = "_EndColor";
+        INTERP_FACTOR = "_InterpFactor";
 
     public float totalTime = 1f;
 
     private float timer;
 
     public SpriteRenderer spriteRenderer;
-    [ColorUsage(true, hdr: true)]
-    public Color initColor;
-    [ColorUsage(true, hdr: true)]
-    public Color endColor;
     private Material mat;
 
     public void Setup(Vector2 location)
@@ -30,8 +24,6 @@ public class Clicker : MonoBehaviour
     {
         mat = spriteRenderer.material;
         mat.SetFloat(INTERP_FACTOR, 0f);
-        mat.SetColor(INIT_COLOR, initColor);
-        mat.SetColor(END_COLOR, endColor);
     }
 
     // Update is called once per frame

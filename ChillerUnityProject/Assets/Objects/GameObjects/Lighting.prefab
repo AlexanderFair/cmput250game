@@ -97,8 +97,6 @@ MonoBehaviour:
   totalTime: 1
   speed: 10
   spriteRenderer: {fileID: 1377087947776529731}
-  initColor: {r: 0, g: 0, b: 1.9999998, a: 0.39215687}
-  endColor: {r: 0, g: 0, b: 1, a: 0}
 --- !u!1 &610037569688674389
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickObject: {fileID: 5907853456446311958, guid: 928bd6cfe9a528e4ba6abe4b89e0cdcc,
     type: 3}
+  dragObject: {fileID: 2606071799896244946, guid: bbba957cb5f6b5f42bbfab1e6cb696e6,
+    type: 3}
+  waitForDragTime: 0.4
+  dragIntervalTimeMoving: 0.2
+  dragIntervalTimeWaiting: 0.4
+  stillThreshold: 0.18
 --- !u!1 &610037570318264648
 GameObject:
   m_ObjectHideFlags: 0
