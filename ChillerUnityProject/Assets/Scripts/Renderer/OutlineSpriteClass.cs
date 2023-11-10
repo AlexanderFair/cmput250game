@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OutlineSpriteClass : MonoBehaviour
 {
-    private static readonly string
+    protected static readonly string
         INTENSITY_MIN_COLOR = "_IntensityMinColor",
         INTENSITY_MAX_COLOR = "_IntensityMaxColor",
         INTENSITY_INTERPILATION_FACTOR = "_IntensityInterpFactor",
@@ -13,7 +13,7 @@ public class OutlineSpriteClass : MonoBehaviour
         BOUNDING_RECT = "_TextureBoundingRect";
 
     public SpriteRenderer spriteRenderer;
-    private Material material;
+    protected Material material;
 
     //If the outline is visible
     public bool On { get; private set; } = false;
@@ -28,14 +28,17 @@ public class OutlineSpriteClass : MonoBehaviour
     //The seconds per cycle of the intensity
     public float cycleTime = 1f;
 
-    private float runningTime = 0f;
-    private float lightingTime = 0f;
+    public bool useDefaultOutlineMat = true;
+
+    protected float runningTime = 0f;
+    protected float lightingTime = 0f;
 
     public void Start()
     {
         if(runIsolated)
         {
-            SetupOutline(spriteRenderer, (spriteRenderer.material.GetColor(INTENSITY_MIN_COLOR), spriteRenderer.material.GetColor(INTENSITY_MAX_COLOR), circular), cycleTime);
+            Material m = spriteRenderer.material;
+            SetupOutline(spriteRenderer, (m.GetColor(INTENSITY_MIN_COLOR), m.GetColor(INTENSITY_MAX_COLOR), circular), cycleTime, useDefaultOutlineMat ? Settings.PrefabMaterials.Outline.Get() : m);
             TurnOn();
         }
     }
@@ -48,7 +51,7 @@ public class OutlineSpriteClass : MonoBehaviour
         }
     }
 
-    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color, bool) colours, float _cycleTime)
+    public void SetupOutline(SpriteRenderer _spriteRenderer, (Color, Color, bool) colours, float _cycleTime, Material copyMat)
     {
         spriteRenderer = _spriteRenderer;
         cycleTime = _cycleTime;
@@ -59,7 +62,7 @@ public class OutlineSpriteClass : MonoBehaviour
             return;
         }
 
-        material = new Material(Settings.PrefabMaterials.Outline.Get());
+        material = new Material(copyMat);
         if(material == null)
         {
             Settings.DisplayError("material is null", gameObject);

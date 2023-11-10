@@ -37,7 +37,7 @@ Material:
     - _OuterAngle: 0.04
     - _OuterWindowRadius: 19.69563
     - _PitchAngle: 0.43
-    - _SmoothStep: 0
+    - _SmoothStep: 1
     - _WindowRadius: 12
     m_Colors:
     - _FocalNormalVector: {r: -0.90482, g: 0.42577, b: 0, a: 0}

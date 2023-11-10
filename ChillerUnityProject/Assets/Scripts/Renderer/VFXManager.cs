@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
-    public GameObject clickObject;
-    public GameObject dragObject;
-
+    
     // Update is called once per frame
+    [Header("Click Settings")]
+    public GameObject clickObject;
 
+    [Header("Interact Settings")]
+    public GameObject interactObject;
+
+    [Header("Drag Settings")]
+    public GameObject dragObject;
     public float waitForDragTime;
     public float dragIntervalTimeMoving;
     public float dragIntervalTimeWaiting;
@@ -23,6 +28,11 @@ public class VFXManager : MonoBehaviour
         if(Settings.Controls.Click.GetKeyDown(true, false))
         {
             Instantiate(clickObject).GetComponent<Clicker>().Setup(Util.GetMouseWorldPoint());
+        }
+
+        if(Settings.Controls.Interact.GetKeyDown(false, false))
+        {
+            Instantiate(interactObject);
         }
 
         if(Settings.Controls.Click.GetKey(false, false))
