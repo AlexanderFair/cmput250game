@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6236203237040562882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.4, z: 0}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6886009229727363515}
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 1278940923
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5585634709303466902, guid: 14eace3c9eb36a543902ae2082753d0a,
+  m_Sprite: {fileID: 1383246137123432180, guid: 69a395811572803419db1b0457307043,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,17 +240,28 @@ MonoBehaviour:
   spriteAnimators:
   - {fileID: 2514792258579614632}
   speedDecayMultiplierPerSecond: 1
-  movingAnim:
-  - {fileID: 2587464781975507773, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: 5190027489443216358, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -129597701146169197, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -63918751508186627, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -6635706879756159099, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -141095385077695317, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -1596241101718204973, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  - {fileID: -6791385821909487688, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
-  idleAnim:
-  - {fileID: -5585634709303466902, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
+  rightAnim:
+  - {fileID: 6874310723845923434, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 2126024587783988100, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 790667720042024123, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 2250499501935375761, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: -298555616700482569, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: -2181619390292711029, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 8541185126158625836, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: -5183176318223817745, guid: 69a395811572803419db1b0457307043, type: 3}
+  rightIdleAnim:
+  - {fileID: 7297974860276931405, guid: 69a395811572803419db1b0457307043, type: 3}
+  leftAnim:
+  - {fileID: 11359758070379261, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: -7991921889131070846, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 616774908628944836, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: -7115571724896475262, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 6415789315579610420, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 957894843925887936, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 3830694803683057142, guid: 69a395811572803419db1b0457307043, type: 3}
+  - {fileID: 680604874740592710, guid: 69a395811572803419db1b0457307043, type: 3}
+  leftIdleAnim:
+  - {fileID: 1383246137123432180, guid: 69a395811572803419db1b0457307043, type: 3}
   animator: {fileID: 2514792258579614632}
   FOLLOW_RADIUS: 12
   FOLLOW_SPEED: 30
@@ -292,7 +303,7 @@ BoxCollider2D:
   m_Offset: {x: 0.45425415, y: 10.57045}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.25}
+    pivot: {x: 0.5, y: 0.23}
     oldSize: {x: 120, y: 120}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
@@ -315,6 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStruct:
-  - {fileID: -5585634709303466902, guid: 14eace3c9eb36a543902ae2082753d0a, type: 3}
+  - {fileID: 1383246137123432180, guid: 69a395811572803419db1b0457307043, type: 3}
   spriteRenderer: {fileID: 6886009229727363512}
   repetitionFactor: 2
