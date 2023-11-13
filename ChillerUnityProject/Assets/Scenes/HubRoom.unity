@@ -1253,6 +1253,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &989869112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3918440538824712159, guid: 5a6c796ac6559814cabc740447f62e6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3918440538637947754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1023087014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2419,6 +2431,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: saturateTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: desaturateTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: postPrecessingVolume
+      value: 
+      objectReference: {fileID: 989869112}
+    - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: postPrecessingProfile
+      value: 
+      objectReference: {fileID: 989869112}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122e9d902fb05e146bf4672978d89f38, type: 3}
 --- !u!1001 &3326047490314297084

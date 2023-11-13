@@ -53,11 +53,13 @@ public class Insanity : MonoBehaviour
         isDefined = true;
         _instance = this;
         DontDestroyOnLoad(gameObject);
+        StartAddEffect();
     }
     //Called each frame
     void Update()
     {
-        if(insanityStat < insanityThreshold || MenuObjectClass.IsMenuActive())
+        AddEffectUpdate();
+        if (insanityStat < insanityThreshold || MenuObjectClass.IsMenuActive())
         {
             return;
         }
@@ -69,7 +71,6 @@ public class Insanity : MonoBehaviour
             Tic();
             ticTimer %= ticker;
         }
-
     }
     //Called each tic
     private void Tic()
@@ -96,6 +97,7 @@ public class Insanity : MonoBehaviour
             throw new System.Exception("added insanity must be a positive amount");
         } 
         insanityStat += add;
+        AddedInsanity(add);
     }
 
     public bool IsHigh()
@@ -123,5 +125,98 @@ public class Insanity : MonoBehaviour
     public float getInsanity()
     {
         return insanityStat;
+    }
+
+
+
+    //--add effect
+
+    [Header("Add Effect")]
+    //changes to min sat when min insanity or less is added
+    [Range(-100, 0)]
+    public float minSaturation;
+    [Range(0, 100)]
+    public float minInsanity;
+    //changes to max sat when max insanity or more is added
+    [Range(-100, 0)]
+    public float maxSaturation;
+    [Range(0, 100)]
+    public float maxInsanity;
+    //Takes desaturateTime to reach the full desaturation
+    public float desaturateTime;
+    //Takes saturation time to go back to normal after desaturating
+    public float saturateTime;
+    //Random Audio clip is played when insanity is added
+    public AudioClip[] addEffects;
+
+
+    private float targetDesat = 0f;
+    private float desatTime = 0f;
+    private float satTime = 0f;
+
+    private bool sat = false;
+    private bool desat = false;
+    private float currentVal = 0f;
+
+    private void StartAddEffect()
+    {
+        UpdateShader();
+    }
+
+    private void AddEffectUpdate()
+    {
+
+        float val = 0f;
+        if (desat)
+        {
+            desatTime += Time.deltaTime;
+            if (desatTime >= desaturateTime)
+            {
+                val = targetDesat;
+                desatTime = 0f;
+                desat = false;
+                sat = true;
+            }
+            else
+            {
+                val = Mathf.Lerp(0f, targetDesat, Mathf.SmoothStep(0, 1, desatTime / desaturateTime));
+            }
+        }
+        else if (sat)
+        {
+            satTime += Time.deltaTime;
+            if (satTime >= saturateTime)
+            {
+                val = 0f;
+                sat = false;
+                satTime = 0f;
+            }
+            else
+            {
+                val = Mathf.Lerp(targetDesat, 0f, Mathf.SmoothStep(0, 1, satTime / saturateTime));
+            }
+        }
+
+        if (val != currentVal)
+        {
+            currentVal = val;
+            UpdateShader();
+        }
+
+    }
+
+    private void UpdateShader()
+    {
+        ColorAdjustmentPostProcessing.Instance?.ChangeSaturation(currentVal);
+    }
+
+    private void AddedInsanity(float amount)
+    {
+        float interp = Mathf.Clamp01((amount - minInsanity) / (maxInsanity - minInsanity));
+        targetDesat = Mathf.Lerp(minSaturation, maxSaturation, interp);
+        desatTime = 0f;
+        satTime = 0f;
+        desat = true;
+        AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(addEffects));
     }
 }
