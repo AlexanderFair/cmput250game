@@ -9,7 +9,7 @@ public class LiquidRemainingText : UIObjectClass
     void Start() {
         UpdateUIObject();
     }
-    protected override void AwakeUIObject() {
+    protected override void StartUIObject() {
     }
     protected override void OnDestroyUIObject() {
     }

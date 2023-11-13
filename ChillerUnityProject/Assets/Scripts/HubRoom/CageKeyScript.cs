@@ -23,7 +23,7 @@ public class CageKeyScript : SnapDragUIObject
     //The prompt to say if the key is not present in the room
     public DialogDisplay.DialogStruct keyNotPresentPrompt;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
         if (!CrowbarRoomScript.Complete)
         {
@@ -33,7 +33,7 @@ public class CageKeyScript : SnapDragUIObject
             DialogDisplay.NewDialog(keyNotPresentPrompt);
         }
         //call this before the bas.awke so that the sprite isnt overruled by clickable
-        base.AwakeUIObject();
+        base.StartUIObject();
     }
 
     public override void Snap(Collider2D snap)

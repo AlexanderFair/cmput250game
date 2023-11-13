@@ -82,7 +82,7 @@ public class Cutscene : UIObjectClass {
 
     }
     // overwrites
-    protected override void AwakeUIObject() {
+    protected override void StartUIObject() {
         if ( cacheCutscene() ) {
             // generate url
             attatchedCutscenePlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, nameFileToPlay);
@@ -98,7 +98,8 @@ public class Cutscene : UIObjectClass {
     }
 
     // Update is called once per frame
-    void Update() {
+    public new void Update() {
+        base.Update();
         // play when the menu is not open
         if(!MenuObjectClass.IsMenuActive()) {
             switch (_playingPhase) {

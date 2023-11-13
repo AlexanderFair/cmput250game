@@ -123,6 +123,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   lowInsanityMax: 40
   medInsanityMax: 70
+  minSaturation: -10
+  minInsanity: 1
+  maxSaturation: -100
+  maxInsanity: 10
+  desaturateTime: 0.5
+  saturateTime: 1
+  addEffects: []
 --- !u!114 &3058162355218563545
 MonoBehaviour:
   m_ObjectHideFlags: 0

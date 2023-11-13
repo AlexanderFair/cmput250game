@@ -23,7 +23,7 @@ public class GhostVisionUIObject : UIObjectClass
 
 
     // Update is called once per frame
-    void Update()
+    public new void Update()
     {
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
@@ -42,7 +42,7 @@ public class GhostVisionUIObject : UIObjectClass
     /*
      * currently here as a placeholder to prevent possible error due to no override
      */
-    protected override void AwakeUIObject() {
+    protected override void StartUIObject() {
         transform.position += new Vector3(Random.Range(-350f, 350f), Random.Range(-175f, 175f), 0f);
         spriteAnimators[0].ChangeAnimation(appearAnim, false);
     }

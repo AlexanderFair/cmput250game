@@ -23,9 +23,9 @@ public class SnapManagerUIObject : UIObjectClass
     //snap index to collider inex
     protected Dictionary<int, int?> snappedObjects = new Dictionary<int, int?>();
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         snapedTiles = new List<int>[snapColliders.Length];
         for(int i=0;  i<snapColliders.Length; i++)
         {

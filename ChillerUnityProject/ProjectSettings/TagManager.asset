@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bottom
+    uniqueID: 1108279437
+    locked: 0
+  - name: Room - Background - All
+    uniqueID: 4158826025
+    locked: 0
+  - name: Room - Background - Floor
+    uniqueID: 3258508985
+    locked: 0
+  - name: Room - Background - Wall
+    uniqueID: 3411770759
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -50,6 +62,9 @@ TagManager:
   - name: Room - Above Player
     uniqueID: 4293358049
     locked: 0
+  - name: Room - UI
+    uniqueID: 2890837575
+    locked: 0
   - name: UI
     uniqueID: 638449741
     locked: 0
@@ -58,4 +73,7 @@ TagManager:
     locked: 0
   - name: Menu
     uniqueID: 1169289055
+    locked: 0
+  - name: Top
+    uniqueID: 2082719077
     locked: 0

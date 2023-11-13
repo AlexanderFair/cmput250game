@@ -33,7 +33,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
 
     protected override void UpdateRoomObject()
     {
-        this.UpdateOutlinableSprite(interactableRenderer);
+        this.UpdateOutlinableSprite();
 
         if(couldInteract && !InteractableCondition() && giveControlHint)
         {
@@ -51,6 +51,12 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
         {
             Interact();
         }
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        this.StartOutlinableSprite(interactableRenderer);
     }
 
     /*

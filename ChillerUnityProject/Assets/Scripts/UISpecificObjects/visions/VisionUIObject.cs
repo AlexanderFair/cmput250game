@@ -9,9 +9,9 @@ public class VisionUIObject : UIObjectClass
 
     private bool changedFrom0Frame = false;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         if(spriteAnimators.Count == 0 || mainAnimationIndex >= spriteAnimators.Count)
         {
             throw new System.IndexOutOfRangeException("The mainAnimationIndex is greater than the count of sprite anaimations for " + name);

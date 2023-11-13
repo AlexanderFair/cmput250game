@@ -7,9 +7,9 @@ using UnityEngine;
 //If when awaoken the object is unlocked, makes the key start snapped
 public class CageLockedScript : SnapManagerUIObject
 {
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         if (CageRoomScript.unlocked)
         {
             dragableTiles[0].Snap(snapColliders[0]);

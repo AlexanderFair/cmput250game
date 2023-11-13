@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:ChillerUnityProject/Assets/Objects/RadioRoom/ChecklistRoomObject.prefab.meta
 guid: 9ed7fe3ce66b7cf41a5b261cde1d5155
+========
+guid: a4e6f464f9ef7da4da176bdcbb792494
+>>>>>>>> master:ChillerUnityProject/Assets/Objects/RadioRoom/ChecklistUI.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

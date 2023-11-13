@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,14 +136,22 @@ MonoBehaviour:
   radioIncompletePrompts:
   - dialog: "I\u2019m stranded out here, I should try to contact help."
     animation: 1
+    disableInput: 0
+    big: 0
   - dialog: I have no way of getting to safety by myself...
     animation: 1
+    disableInput: 0
+    big: 0
   boilerIncompletePrompts:
   - dialog: "<i>You can feel your body gradually succumbing to the cold\u2019s frigid
       numbness.. </i>"
     animation: 2
+    disableInput: 0
+    big: 0
   - dialog: "I won\u2019t last long unless I find a way to warm up."
     animation: 1
+    disableInput: 0
+    big: 0
   bothIncompletePrompts: []
   addRadioAndBoilerIncompleteToBoth: 1
   hubIncompletePrompts: []

@@ -32,7 +32,7 @@ public class UIObjectClass : MonoBehaviour
     public List<AnimationSpriteClass> spriteAnimators = new List<AnimationSpriteClass>();
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(IsUIActive() && !MenuObjectClass.IsMenuActive())
         {
@@ -51,10 +51,10 @@ public class UIObjectClass : MonoBehaviour
      * 
      * Having this method defined ensures that any UIObject is in the list of current UIObjects
      */
-    void Awake()
+    public void Start()
     {
         AddGameObject(gameObject);
-        AwakeUIObject();
+        StartUIObject();
         foreach (var anim in spriteAnimators)
         {
             anim?.AwakeAnimation();
@@ -79,7 +79,7 @@ public class UIObjectClass : MonoBehaviour
     /* 
      * Called when the objcet is first created 
      */
-    protected virtual void AwakeUIObject() { }
+    protected virtual void StartUIObject() { }
 
     /* 
      * Called when the object is destroyed 

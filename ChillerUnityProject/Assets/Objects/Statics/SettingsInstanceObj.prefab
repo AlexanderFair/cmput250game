@@ -47,7 +47,7 @@ MonoBehaviour:
   - key: 0
     value: 102
   - key: 2
-    value: 27
+    value: 113
   - key: 1
     value: 323
   - key: 3
@@ -87,6 +87,12 @@ MonoBehaviour:
     value: 0.75
   - key: 7
     value: 0.5
+  - key: 8
+    value: 3
+  - key: 9
+    value: 6
+  - key: 10
+    value: 1
   prefabAnimValues:
   - key: 0
     value:
@@ -104,14 +110,33 @@ MonoBehaviour:
     value: {fileID: 4951445264325114837, guid: fb7610f909cd85a428f7c085a4dd4406, type: 3}
   prefabMaterialValues:
   - key: 0
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   - key: 1
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: 619c25ec12137df4895908b4c0960955, type: 2}
   - key: 2
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    value: {fileID: 2100000, guid: ef0eff3ea1f29d6408c5a96444d09d4f, type: 2}
+  outlineValues:
+  - key: 0
+    minIntensity: {r: 0, g: 0, b: 0, a: 0}
+    maxIntensity: {r: 0, g: 0, b: 0, a: 0}
+    circular: 0
+  - key: 1
+    minIntensity: {r: 2, g: 0, b: 0, a: 1}
+    maxIntensity: {r: 16, g: 0, b: 0, a: 1}
+    circular: 0
+  - key: 2
+    minIntensity: {r: 0, g: 2, b: 0, a: 1}
+    maxIntensity: {r: 0, g: 16, b: 0, a: 1}
+    circular: 0
   - key: 3
-    value: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  canLogWarnings: 0
+    minIntensity: {r: 0, g: 0, b: 2, a: 1}
+    maxIntensity: {r: 0, g: 0, b: 64, a: 1}
+    circular: 1
+  - key: 4
+    minIntensity: {r: 0, g: 0, b: 0, a: 0}
+    maxIntensity: {r: 0, g: 0, b: 0, a: 0}
+    circular: 0
+  canLogWarnings: 1
   canInput: 1
   hideControlHintsWhenOverlappingPlayer: 0
   audioClips:

@@ -23,9 +23,9 @@ public class SettingsSlider : MenuClickCaller
 
     private bool clicked = false;
 
-    protected override void AwakeMenuObject()
+    protected override void StartMenuObject()
     {
-        base.AwakeMenuObject();
+        base.StartMenuObject();
         if(slider == null)
         {
             Settings.DisplayError("Slider is null", gameObject);

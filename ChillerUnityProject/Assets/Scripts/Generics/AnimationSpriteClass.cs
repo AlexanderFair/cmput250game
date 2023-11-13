@@ -18,7 +18,7 @@ public class AnimationSpriteClass : MonoBehaviour
     public static readonly Sprite[] NULL_STRUCT = { null };
     [Header("Animation Sprite Settings")]
     // The animation struct to be rendered
-    public Sprite[] animationStruct = NULL_STRUCT;
+    public Sprite[] animationStruct;
     public SpriteRenderer spriteRenderer;
     // The amount of frames that each give frame should represet
     // if this is 2 then each frame will be shown twice consecutively.

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:ChillerUnityProject/Assets/Scripts/RadioRoom/ComboUISubmitBtn.cs.meta
 guid: b6e971d0e67e10049bfe48bdab102737
+========
+guid: 5ba68390c2c514540b44fcc024189450
+>>>>>>>> master:ChillerUnityProject/Assets/Scripts/RadioRoom/MagicSquarePuzzle.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

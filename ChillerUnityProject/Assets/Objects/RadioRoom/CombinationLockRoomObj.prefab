@@ -49,7 +49,7 @@ MonoBehaviour:
   spriteAnimators: []
   interactableCollider: {fileID: -4133170392961326414}
   interactionControl: 0
-  interactableRenderer: {fileID: 0}
+  interactableRenderer: {fileID: 9027086144592237052}
   interactSound:
   - {fileID: 0}
   giveControlHint: 1
@@ -65,14 +65,17 @@ MonoBehaviour:
   - dialog: Incomplete
     animation: 0
     disableInput: 0
+    big: 0
   completePrompt:
     dialog: Complete
     animation: 0
     disableInput: 0
+    big: 0
   wrongCodePrompt:
   - dialog: Wrong
     animation: 0
     disableInput: 0
+    big: 0
   unlockAudio: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   wrongComboEffect: []
   drawerUi: {fileID: 8553704103994718, guid: 38da002658b27e847a9df82e335011a9, type: 3}

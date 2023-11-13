@@ -21,8 +21,9 @@ public class SettingControlsChanger : MenuClickCaller
     private bool clickedThisFrame = false;
     private bool foundThisFrame = false;
 
-    void Start()
+    protected override void StartMenuObject()
     {
+        base.StartMenuObject();
         key.text = Regex.Replace(control.ToString(), "(\\B[A-Z])", " $1");
         UpdateText(); 
     }
@@ -39,6 +40,7 @@ public class SettingControlsChanger : MenuClickCaller
 
     protected override void UpdateMenuObject()
     {
+        base.UpdateMenuObject();
         foundThisFrame = false;
         if (clicked && !clickedThisFrame)
         {

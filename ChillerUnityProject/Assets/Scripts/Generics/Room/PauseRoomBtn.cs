@@ -20,12 +20,13 @@ public class PauseRoomBtn : RoomObjectClass, IClickableSprite
     {
         base.Start();
         //Instantiate(textHint).GetComponent<PauseRoomBtnText>().Setup(this);
+        this.StartOutlinableSprite(clickableRenderer);
     }
 
     protected override void UpdateRoomObject()
     {
         base.UpdateRoomObject();
-        this.UpdateOutlinableSprite(clickableRenderer);
+        this.UpdateOutlinableSprite();
         if (Util.GetKeyDownWithMouseOverObject(clickControl, clickCollider) && ClickableCondition())
         {
             Click();

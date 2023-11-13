@@ -12,8 +12,10 @@ using UnityEngine;
 public class Penguin : Entity {
 
     [Header("Penguin Add")]
-    public Sprite[] movingAnim;
-    public Sprite[] idleAnim;
+    public Sprite[] rightAnim;
+    public Sprite[] rightIdleAnim;
+    public Sprite[] leftAnim;
+    public Sprite[] leftIdleAnim;
     public AnimationSpriteClass animator;
     // True if the penguin is locked in the cage
     public bool Locked { get; private set; }
@@ -44,7 +46,15 @@ public class Penguin : Entity {
         _instanceDefined = true;
         wasLocked = Locked;
     }
+
+    public override void Start()
+    {
+        base.Start();
+        animator.ChangeAnimation(rightIdleAnim);
+    }
+
     private bool moving = false;
+    private bool lookLeft = false;
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
         if (Locked)
@@ -77,11 +87,25 @@ public class Penguin : Entity {
             Vector3 direction = ply.transform.position - this.transform.position;
             this.velocity = direction.normalized * FOLLOW_SPEED;
         }
-        if(velocity.sqrMagnitude > 0)
+
+        bool switchAnim = false;
+
+        if (velocity.x < 0)
+        {
+            if (!lookLeft) switchAnim = true;
+            lookLeft = true;
+        }
+        else if(velocity.x > 0)
+        {
+            if (lookLeft) switchAnim = true;
+            lookLeft = false;
+        }
+
+        if (velocity.sqrMagnitude > 0)
         {
             if(!moving)
             {
-                animator.ChangeAnimation(movingAnim);
+                switchAnim = true;
             }
             moving = true;
         }
@@ -89,10 +113,20 @@ public class Penguin : Entity {
         {
             if (moving)
             {
-                animator.ChangeAnimation(idleAnim);
+                switchAnim = true;
             }
             moving = false;
         }
+
+        if (switchAnim)
+        {
+            SwitchAnimation();
+        }
+    }
+
+    private void SwitchAnimation()
+    {
+        animator.ChangeAnimation(lookLeft ? (moving ? leftAnim : leftIdleAnim) : (moving ? rightAnim : rightIdleAnim));
     }
 
     /*

@@ -95,6 +95,9 @@ public class RadioRoomObject : DisplayUIRoomObject
     {
         base.DisplayedUI();
         ui.GetComponent<RadioPuzzle>().SetUp(this, completionIds[bitComboStorageOffset]);
+
+        Insanity.Add(10f);
+        Debug.Log("Remove this");
     }
 
 

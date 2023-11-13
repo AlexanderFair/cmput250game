@@ -30,9 +30,9 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     private bool clicked = false;
     private float timer = 0;
 
-    protected override void AwakeUIObject()
+    protected override void StartUIObject()
     {
-        base.AwakeUIObject();
+        base.StartUIObject();
         if (spriteClickableOutlineRenderer == null && animatorIndex < 0)
         {
             Settings.DisplayError("Both the renderer and animator are blank", gameObject);
@@ -46,11 +46,13 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
         {
             clickedAnimation = new Sprite[] { clickableAnimation[0] };
         }
+        
         ChangeAnim();
+        this.StartOutlinableSprite(spriteClickableOutlineRenderer);
     }
     protected override void UpdateUIObject()
     {
-        this.UpdateOutlinableSprite(spriteClickableOutlineRenderer);
+        this.UpdateOutlinableSprite();
         bool shouldChange = false;
         if(Util.GetKeyDownWithMouseOverObject(clickControl, clickableCollider) 
             && ClickableCondition())
