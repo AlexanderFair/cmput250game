@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  hint: Use [<keyn>,<keyw>,<keys>,<keyl>] to move \n [<keyp>] to pause
+  hint: Use [<keyn>,<keyw>,<keys>,<keyl>] to move; [<keyq>] to exit menus
   text: {fileID: 1404006122}
 --- !u!114 &206276843
 MonoBehaviour:
@@ -1515,9 +1515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Use [W,A,S,D] to move
-
-    [P] to pause'
+  m_Text: Use [W,A,S,D] to move; [Q] to exit menus
 --- !u!222 &1404006123
 CanvasRenderer:
   m_ObjectHideFlags: 0
