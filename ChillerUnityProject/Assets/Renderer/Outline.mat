@@ -26,8 +26,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaFactor: 1
-    - _AlphaThreshold: 0.05
+    - _AlphaThreshold: 0.3
     - _Circular: 1
+    - _DrawOnlyOutline: 0
     - _IntensityInterpFactor: 1
     - _Scale: 1
     m_Colors:

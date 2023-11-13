@@ -30,12 +30,12 @@ public class VFXManager : MonoBehaviour
             Instantiate(clickObject).GetComponent<Clicker>().Setup(Util.GetMouseWorldPoint());
         }
 
-        if(Settings.Controls.Interact.GetKeyDown(false, false))
+        if(Settings.Controls.Interact.GetKeyDown(false, false) && false)
         {
             Instantiate(interactObject);
         }
 
-        if(Settings.Controls.Click.GetKey(false, false))
+        if(Settings.Controls.Click.GetKey(false, false) && false)
         {
             Vector2 p = Util.GetMouseWorldPoint();
             if(p == prevPos)

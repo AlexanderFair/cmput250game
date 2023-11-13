@@ -88,9 +88,9 @@ MonoBehaviour:
   - key: 7
     value: 0.5
   - key: 8
-    value: 2
+    value: 3
   - key: 9
-    value: 5
+    value: 6
   - key: 10
     value: 1
   prefabAnimValues:

@@ -24,14 +24,6 @@ public class DialogKeyHint : RoomObjectClass
     }
     protected override void UpdateRoomObject()
     {
-        base.UpdateRoomObject();
-        if (Settings.Controls.MoveUp.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveDown.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveRight.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveLeft.GetKey(ignoreIfUsed: false))
-        {
-            Destroy(gameObject); return;
-        }
     }
 
     public void UpdateText()
