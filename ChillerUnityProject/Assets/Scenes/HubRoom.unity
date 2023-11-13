@@ -308,8 +308,10 @@ Transform:
   - {fileID: 4320276499988503132}
   - {fileID: 1307770015484719171}
   - {fileID: 2071604704}
+  - {fileID: 520568109}
+  - {fileID: 206276845}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &206276840
 GameObject:
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  hint: Use [<keyn>,<keyw>,<keys>,<keyl>] to move
+  hint: Use [<keyn>,<keyw>,<keys>,<keyl>] to move \n [<keyp>] to pause
   text: {fileID: 1404006122}
 --- !u!114 &206276843
 MonoBehaviour:
@@ -395,13 +397,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206276840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1404006124}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 125853273}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -550,7 +552,7 @@ Transform:
   - {fileID: 1443406959}
   - {fileID: 397902750}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293099244
 GameObject:
@@ -1008,9 +1010,8 @@ Transform:
   - {fileID: 236019029}
   - {fileID: 613894136}
   - {fileID: 1280849667}
-  - {fileID: 520568109}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &802506845
 PrefabInstance:
@@ -1514,7 +1515,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Use [W,A,S,D] to move
+  m_Text: 'Use [W,A,S,D] to move
+
+    [P] to pause'
 --- !u!222 &1404006123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1898,7 +1901,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 759792862}
+    m_TransformParent: {fileID: 125853273}
     m_Modifications:
     - target: {fileID: 6823989758133868468, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
@@ -1913,22 +1916,22 @@ PrefabInstance:
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.794424
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -96.36163
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 311.5494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7596030542328412895, guid: 1ede7814cafb24a4ebc9645563ede4df,
         type: 3}

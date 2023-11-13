@@ -44,7 +44,8 @@ public class RoomMoveTextInstructObject : RoomObjectClass
         string h = hint.Replace("<keyn>", Settings.Controls.MoveUp.GetKeyCode().ToString())
                        .Replace("<keyw>", Settings.Controls.MoveLeft.GetKeyCode().ToString())
                        .Replace("<keys>", Settings.Controls.MoveDown.GetKeyCode().ToString())
-                       .Replace("<keyl>", Settings.Controls.MoveRight.GetKeyCode().ToString());
+                       .Replace("<keyl>", Settings.Controls.MoveRight.GetKeyCode().ToString())
+                       .Replace("<keyp>", Settings.Controls.Pause.GetKeyCode().ToString());
         text.text = h;
     }
 }
