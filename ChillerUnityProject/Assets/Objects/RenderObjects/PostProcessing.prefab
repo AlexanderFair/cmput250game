@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3918440538824712156}
   - component: {fileID: 3918440538824712159}
-  - component: {fileID: 416742806657527197}
+  - component: {fileID: 3673611593229455425}
   m_Layer: 0
   m_Name: PostProcessing
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 2dec1b68661b5444cbef7eeede26dc87, type: 2}
---- !u!114 &416742806657527197
+--- !u!114 &3673611593229455425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

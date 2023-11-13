@@ -160,7 +160,7 @@ public class Insanity : MonoBehaviour
 
     private void StartAddEffect()
     {
-        UpdateShader();
+        //UpdateShader();
     }
 
     private void AddEffectUpdate()
