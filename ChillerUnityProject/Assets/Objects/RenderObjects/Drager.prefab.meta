@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:ChillerUnityProject/Assets/Objects/RenderObjects/Interacter.prefab.meta
+guid: 4355db91cc59edd41931446258de3a22
+========
 guid: bbba957cb5f6b5f42bbfab1e6cb696e6
+>>>>>>>> master:ChillerUnityProject/Assets/Objects/RenderObjects/Drager.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

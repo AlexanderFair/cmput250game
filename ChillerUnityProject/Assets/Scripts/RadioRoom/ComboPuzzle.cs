@@ -21,8 +21,16 @@ public class ComboPuzzle : DisplayUIRoomObject
     //Displayed when the puzzle is complete
     public GameObject drawerUi;
 
+    public Sprite unlockedSprite;
+    public Sprite lockedSprite;
+
     private static bool complete = false;
 
+    public override void Start()
+    {
+        base.Start();
+        interactableRenderer.sprite = complete ? unlockedSprite : lockedSprite;
+    }
     protected override void DisplayedUI()
     {
         base.DisplayedUI();
@@ -52,6 +60,7 @@ public class ComboPuzzle : DisplayUIRoomObject
             return;
         }
         complete = true;
+        interactableRenderer.sprite = unlockedSprite;
         AudioHandler.Instance.playSoundEffect(unlockAudio);
         UIObjectClass.InstantiateNewUIElement(drawerUi);
         DialogDisplay.NewDialog(completePrompt);

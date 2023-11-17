@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 /*
@@ -26,6 +27,10 @@ public class Penguin : Entity {
     private bool wasLocked = false;
     private float lockTime = 0;
     public float lockMovementTime = 1f;
+    public Vector2 unlockVelocity;
+    public float sortOrderTimer = 0.5f;
+    private float sortTime = 0f;
+    public SpriteRenderer cageForegroundSprite;
 
     private static Penguin _instance;
     private static bool _instanceDefined = false;
@@ -57,6 +62,7 @@ public class Penguin : Entity {
     private bool lookLeft = false;
     // override the AI function: it should try to follow player when far away
     protected override void AI() {
+        bool calcVel = false;
         if (Locked)
         {
             velocity = Vector3.zero;
@@ -68,6 +74,14 @@ public class Penguin : Entity {
             if(lockTime < lockMovementTime)
             {
                 lockTime += Time.deltaTime;
+                velocity = unlockVelocity;
+                calcVel = true;
+
+                if(sortTime +Time.deltaTime >= sortOrderTimer && sortTime < sortOrderTimer) {
+                    cageForegroundSprite.sortingOrder = 0;
+                }
+
+                sortTime += Time.deltaTime;
             }
             else
             {
@@ -76,17 +90,23 @@ public class Penguin : Entity {
                 GetComponent<SpriteRenderer>().sortingOrder = 0;
             }
         }
-        // get the distance and direction to follow
-        Player ply = Player.Instance;
-        float dist = getCollider().Distance(Player.Instance.getCollider()).distance;
-        // follow if not close enough; otherwise, stop movement
-        if (dist < FOLLOW_RADIUS) {
-            this.velocity = Vector3.zero;
+        if (!calcVel)
+        {
+            // get the distance and direction to follow
+            Player ply = Player.Instance;
+            float dist = getCollider().Distance(Player.Instance.getCollider()).distance;
+            // follow if not close enough; otherwise, stop movement
+            if (dist < FOLLOW_RADIUS)
+            {
+                this.velocity = Vector3.zero;
+            }
+            else
+            {
+                Vector3 direction = ply.transform.position - this.transform.position;
+                this.velocity = direction.normalized * FOLLOW_SPEED;
+            }
         }
-        else {
-            Vector3 direction = ply.transform.position - this.transform.position;
-            this.velocity = direction.normalized * FOLLOW_SPEED;
-        }
+        
 
         bool switchAnim = false;
 
@@ -142,7 +162,7 @@ public class Penguin : Entity {
         else
         {
             gameObject.layer = LayerMask.NameToLayer("Room Physics - Penguin");
-            GetComponent<SpriteRenderer>().sortingOrder = 0;
+            cageForegroundSprite.sortingOrder = -1;
         }
         Locked = isLocked;
     }

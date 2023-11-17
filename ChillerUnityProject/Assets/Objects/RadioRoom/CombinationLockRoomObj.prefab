@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2914526505831978819}
   - component: {fileID: -4133170392961326414}
   - component: {fileID: 7959872738755881210}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: CombinationLockRoomObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3115731437023353293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -243, y: 49.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3644389770680132969}
@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  interactableCollider: {fileID: -4133170392961326414}
+  interactableCollider: {fileID: 2095500196704144654}
   interactionControl: 0
   interactableRenderer: {fileID: 9027086144592237052}
   interactSound:
   - {fileID: 0}
   giveControlHint: 1
-  controlHintOffset: {x: 0, y: 0}
+  controlHintOffset: {x: 0, y: 90}
   displayDialogOnInteract: 0
   dialogProfileAnimation:
   - {fileID: 0}
@@ -79,6 +79,10 @@ MonoBehaviour:
   unlockAudio: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   wrongComboEffect: []
   drawerUi: {fileID: 8553704103994718, guid: 38da002658b27e847a9df82e335011a9, type: 3}
+  unlockedSprite: {fileID: 1365144469800530810, guid: 7bc97ac5ae2a3a8448bbaf84f2a0d1d9,
+    type: 3}
+  lockedSprite: {fileID: -2526594704253976804, guid: 7bc97ac5ae2a3a8448bbaf84f2a0d1d9,
+    type: 3}
 --- !u!61 &-4133170392961326414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 30}
+  m_Offset: {x: 0, y: 13.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -103,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25, y: 25}
+  m_Size: {x: 111.90479, y: 26.773819}
   m_EdgeRadius: 0
 --- !u!210 &7959872738755881210
 SortingGroup:
@@ -126,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3644389770680132969}
   - component: {fileID: 9027086144592237052}
+  - component: {fileID: 2095500196704144654}
   m_Layer: 9
   m_Name: blank_keypad_wide
   m_TagString: Untagged
@@ -141,8 +146,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8097671030957642267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449730317551820599}
   m_RootOrder: 0
@@ -165,7 +170,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +191,8 @@ SpriteRenderer:
   m_SortingLayerID: 1278940923
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db70d1bac587f5645af0cc9e7489c6a7, type: 3}
+  m_Sprite: {fileID: -2526594704253976804, guid: 7bc97ac5ae2a3a8448bbaf84f2a0d1d9,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -196,4 +202,30 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!61 &2095500196704144654
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097671030957642267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0052547455, y: 31.684074}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.51, y: 0.305}
+    oldSize: {x: 200, y: 200}
+    newSize: {x: 0.635, y: 0.556}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 40.821217, y: 43.48256}
+  m_EdgeRadius: 0

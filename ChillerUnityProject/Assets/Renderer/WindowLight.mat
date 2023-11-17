@@ -25,22 +25,22 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _CentreToFocalDistance: 76.70943
+    - _CentreToFocalDistance: 152
     - _CutoffDistance: 465
     - _CutoffUsingX: 0
     - _CutoffUsingY: 1
     - _CutoffXDistance: 400
     - _IlluminateAngle: 0.1
     - _InnerAngle: 0.025
-    - _InnerWindowRadius: 12.14958
+    - _InnerWindowRadius: 12
     - _MinCutoffDistance: 88.70943
     - _OuterAngle: 0.04
-    - _OuterWindowRadius: 19.69563
+    - _OuterWindowRadius: 20
     - _PitchAngle: 0.43
     - _SmoothStep: 1
     - _WindowRadius: 12
     m_Colors:
     - _FocalNormalVector: {r: -0.90482, g: 0.42577, b: 0, a: 0}
     - _FocalPoint: {r: 33.66128, g: 267.4088, b: 0, a: 0}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 0.6862745}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 0.39215687}
     - _WindowCentre: {r: 1, g: 198, b: 0, a: 0}

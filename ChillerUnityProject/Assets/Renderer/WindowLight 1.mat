@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WindowLight 1
+  m_Shader: {fileID: -6465566751694194690, guid: 0b757651e43e474428028573ec3d1c7c,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CentreToFocalDistance: 127.8491
+    - _CutoffDistance: 465
+    - _CutoffUsingX: 0
+    - _CutoffUsingY: 1
+    - _CutoffXDistance: 400
+    - _IlluminateAngle: 0.1
+    - _InnerAngle: 0.025
+    - _InnerWindowRadius: 20.2493
+    - _MinCutoffDistance: 147.8491
+    - _OuterAngle: 0.04
+    - _OuterWindowRadius: 32.82606
+    - _PitchAngle: 0.462582
+    - _SmoothStep: 1
+    - _WindowRadius: 20
+    m_Colors:
+    - _FocalNormalVector: {r: -0.97186, g: 0.23553, b: 0, a: 0}
+    - _FocalPoint: {r: 183.112, g: 322.2522, b: 0, a: 0}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    - _WindowCentre: {r: 153, g: 198, b: 0, a: 0}

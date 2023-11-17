@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:ChillerUnityProject/Assets/Objects/RenderObjects/Clicker.prefab.meta
+guid: 928bd6cfe9a528e4ba6abe4b89e0cdcc
+========
 guid: 96ded3ad179285b4fa96034d5e0022cd
+>>>>>>>> master:ChillerUnityProject/Assets/Objects/Hub/ExitDoor/MainDesk.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

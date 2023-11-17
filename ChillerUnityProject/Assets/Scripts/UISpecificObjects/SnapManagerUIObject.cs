@@ -59,7 +59,7 @@ public class SnapManagerUIObject : UIObjectClass
             {
                 for (int j = 0; j<snapColliders.Length; j++)
                 {
-                    if (dragableTiles[i].snapCollider.Distance(snapColliders[j]).isOverlapped
+                    if (dragableTiles[i].snapCollider.OverlapPoint(snapColliders[j].transform.position)
                             && snapedTiles[j].Count < maxTilesPerCollider)
                     {
                         ForceSnap(i, j);

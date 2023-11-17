@@ -266,6 +266,8 @@ MonoBehaviour:
   FOLLOW_RADIUS: 12
   FOLLOW_SPEED: 30
   lockMovementTime: 2
+  unlockVelocity: {x: 0, y: -40}
+  sortOrderTimer: 0.5
 --- !u!50 &6886009229727363517
 Rigidbody2D:
   serializedVersion: 4
