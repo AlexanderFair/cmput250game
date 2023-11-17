@@ -53,7 +53,7 @@ MonoBehaviour:
   interactSound:
   - {fileID: 0}
   giveControlHint: 1
-  controlHintOffset: {x: 0, y: 0}
+  controlHintOffset: {x: 0, y: 40}
   displayDialogOnInteract: 0
   dialogProfileAnimation:
   - {fileID: 0}
