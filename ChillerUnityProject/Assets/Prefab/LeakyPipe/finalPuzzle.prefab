@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8379568840493700253}
   - component: {fileID: 8379568840493700250}
   m_Layer: 9
-  m_Name: puzzleIntro
+  m_Name: finalPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  uiPrefab: {fileID: 5378682738892436246, guid: 09eb11539fa0d4b43b10d6debe2d634f,
+  uiPrefab: {fileID: 5378682738892436246, guid: 723b601392482e6419dcd04723866ae1,
     type: 3}
-  levelName: 1
-  liquidAmount: 20
+  levelName: 2
+  liquidAmount: 50
   isCompleted: 0

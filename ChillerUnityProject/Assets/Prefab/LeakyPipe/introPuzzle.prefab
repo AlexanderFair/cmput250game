@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8379568840493700253}
   - component: {fileID: 8379568840493700250}
   m_Layer: 9
-  m_Name: boilerIntroPuzzle
+  m_Name: introPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  uiPrefab: {fileID: 5378682738892436246, guid: f71aa2d19718e8b458b20ba3ef1d1a0d,
+  uiPrefab: {fileID: 5378682738892436246, guid: df2e9cc3558a4ec4fb4b9660295b268d,
     type: 3}
   levelName: 0
-  liquidAmount: 50
+  liquidAmount: 20
   isCompleted: 0
