@@ -16,7 +16,7 @@ using UnityEngine.SceneManagement;
 public class PipeGrid {
     // the enumeration of all levels
     public enum PipePuzzles {
-        INTRO, BEGINNER, MEDIUM, HARD
+        INTRO, MEDIUM, HARD
     }
     // pseudo "enum" class for direction declarition
     public static class Directions {
