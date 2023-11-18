@@ -62,20 +62,17 @@ MonoBehaviour:
     type: 3}
   solve: 010000000300000004000000000000000500000002000000
   incompletePrompt:
-  - dialog: Incomplete
-    animation: 0
-    disableInput: 0
+  - dialog: "I remeber these shapes near the other frequencies, maybe if I match
+      them up \u2026"
+    animation: 1
+    disableInput: 1
     big: 0
   completePrompt:
-    dialog: Complete
+    dialog: 
     animation: 0
     disableInput: 0
     big: 0
-  wrongCodePrompt:
-  - dialog: Wrong
-    animation: 0
-    disableInput: 0
-    big: 0
+  wrongCodePrompt: []
   unlockAudio: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   wrongComboEffect: []
   drawerUi: {fileID: 8553704103994718, guid: 38da002658b27e847a9df82e335011a9, type: 3}

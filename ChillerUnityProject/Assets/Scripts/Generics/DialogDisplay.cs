@@ -15,6 +15,7 @@ public class DialogDisplay : MonoBehaviour
 
     // The profile animation
     public AnimationSpriteClass profileAnimator;
+    public GameObject skipInstruct;
     // The text object
     private Text textObject = null;
 
@@ -30,6 +31,13 @@ public class DialogDisplay : MonoBehaviour
     //The list of current html structs that are in use
     private List<string> html = new List<string>();
 
+    public void Start()
+    {
+        if(!disableInput)
+        {
+            DestroyImmediate(skipInstruct);
+        }
+    }
 
     // Update is called once per frame when the menu is not active
     void Update()

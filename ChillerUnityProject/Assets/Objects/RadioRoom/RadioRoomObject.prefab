@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7158258418742771994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 63, z: 0}
+  m_LocalPosition: {x: 0, y: 65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1155655915249841414}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 441991147
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: f557f1881fd7b6044ad6cb922f57d460, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ed5cbf5c79a6a34b83065c07c5afbb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,63 +186,95 @@ MonoBehaviour:
   specialCombos:
   - {x: 747, y: 438}
   - {x: 438, y: 747}
-  contactedHelp:
-    dialog: Contacted Help
-    animation: 0
-    disableInput: 0
+  contactedHelpBoilerNotComplete:
+    dialog: "<i>The voice that answers is still dripping in sleep</i> This is Davis
+      South Research Facility, what\u2019s the purpose of this call? <i>You explain
+      your situation</i> oh! um, one second ma'am <i>You can hear bits of conversation
+      just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
+      disappearing act</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
+      out for you try to keep warm while you wait. "
+    animation: 2
+    disableInput: 1
+    big: 0
+  contactedHelpBoilerComplete:
+    dialog: "<i>The voice that answers is still dripping in sleep</i> This is Davis
+      South Research Facility, what\u2019s the purpose of this call? <i>You explain
+      your situation</i> oh! um, one second ma'am <i>You can hear bits of conversation
+      just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
+      disappearing act</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
+      out for you hold tight, we\u2019re on our way\u2026"
+    animation: 2
+    disableInput: 1
     big: 0
   alreadyCalledForHelp:
   - dialog: Already Called For Help
-    animation: 0
+    animation: 1
     disableInput: 0
     big: 0
   alreadyCalledForHelpSubmit:
-  - dialog: Already Called For Help Submit
+  - dialog: We've already called for help. No point in calling again
     animation: 0
     disableInput: 0
     big: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
-  - dialog: wrong
-    animation: 0
+  - dialog: It seems like that frequencie doesn't work. I should try a different
+      one
+    animation: 1
+    disableInput: 0
+    big: 0
+  - dialog: Dang it! That one doesn't work. Maybe another one will
+    animation: 1
     disableInput: 0
     big: 0
   badChoiceEffects: []
   alredayChosen:
-  - dialog: Already Chosen
-    animation: 0
+  - dialog: "I've already tried this one, no one was there\u2026"
+    animation: 1
     disableInput: 0
     big: 0
   promptsForNext:
   - prompts:
-    - dialog: Prompt Sticky Note
-      animation: 0
+    - dialog: I should try the frequency on that sticky note
+      animation: 1
       disableInput: 0
       big: 0
   - prompts:
-    - dialog: Prompt Checklist
-      animation: 0
+    - dialog: "There must be some standard procedure for emergencies around here
+        somewhere\u2026 "
+      animation: 1
       disableInput: 0
       big: 0
   - prompts:
-    - dialog: Prompt Notebook
-      animation: 0
+    - dialog: "Morgan must\u2019ve tinkered with the radio, maybe he left some clues
+        in his notebook that could help me."
+      animation: 1
       disableInput: 0
       big: 0
   - prompts:
-    - dialog: Prompt Drawer
-      animation: 0
+    - dialog: "There might be another frequency in that locked drawer I saw\u2026"
+      animation: 1
       disableInput: 0
       big: 0
   completeCodePrompts:
-  - 'Good Code. '
+  - "Only static\u2026 Maybe no one's there\u2026 I should try a different one. "
   goodCodeEffects: []
   lore:
-  - dialog: Lore 1
+  - dialog: "<i>A mechanical voice drones out a monotone reading of the current date
+      and time. This is a prerecorded message, you realize, from nearly a year prior.</i>
+      Listen Morgan, <i>a pause, a heavy sigh</i>, we can\u2019t keep chasing your
+      whims around. We\u2019re out here freezing our asses off on government subsidy
+      to get some data on penguins, Morgan. Penguins. You\u2019ve gotta work with
+      us here. Just get the survey numbers, and report back"
     animation: 0
     disableInput: 1
     big: 1
-  - dialog: Lore 2
+  - dialog: "<i>A mechanical voice drones out a monotone reading of the current date
+      and time. This is a prerecorded message, you realize, from nearly a year prior.</i>
+      Listen Morgan, <i>a pause, a heavy sigh</i>, we can\u2019t keep chasing your
+      whims around. We\u2019re out here freezing our asses off on government subsidy
+      to get some data on penguins, Morgan. Penguins. You\u2019ve gotta work with
+      us here. Just get the survey numbers, and report back"
     animation: 0
     disableInput: 1
     big: 1

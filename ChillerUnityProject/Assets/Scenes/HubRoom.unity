@@ -828,104 +828,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
-      propertyPath: outlineValues.Array.data[3].circular
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
       propertyPath: settingsValueChangeWatchers.Array.data[0]
       value: 
       objectReference: {fileID: 1895510290}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[1].maxIntensity.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[1].maxIntensity.r
-      value: 2.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[1].minIntensity.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[1].minIntensity.r
-      value: 2.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].maxIntensity.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].maxIntensity.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].maxIntensity.r
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].minIntensity.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].minIntensity.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[2].minIntensity.r
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].maxIntensity.a
-      value: 0.7176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].maxIntensity.b
-      value: 0.15686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].maxIntensity.g
-      value: 2.5882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].maxIntensity.r
-      value: 2.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].minIntensity.a
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].minIntensity.b
-      value: 0.15686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].minIntensity.g
-      value: 2.5882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
-      propertyPath: outlineValues.Array.data[3].minIntensity.r
-      value: 2.9960785
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e808f96b39a8b004981622f6ff3650c3, type: 3}
 --- !u!1 &577756677
@@ -3276,7 +3181,7 @@ MonoBehaviour:
   disabledAnimatorIndex: -1
   disableInteractionMethod: 0
   nextSceneName: BoilerRoom
-  playerStartPosition: {x: -400, y: -126, z: 0}
+  playerStartPosition: {x: -400, y: -100, z: 0}
   lockedDialogs:
   - dialog: "That crash jammed the doors! If only I had some tool to open it with\u2026"
     animation: 1

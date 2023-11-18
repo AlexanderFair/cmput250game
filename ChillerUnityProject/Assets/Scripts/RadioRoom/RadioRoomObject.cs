@@ -13,7 +13,9 @@ public class RadioRoomObject : DisplayUIRoomObject
 
     [Header("Radio Puzzle Prompts")]
     // Played when the puzzle is completed
-    public DialogDisplay.DialogStruct contactedHelp;
+    public DialogDisplay.DialogStruct contactedHelpBoilerNotComplete;
+    // Played when the puzzle is completed
+    public DialogDisplay.DialogStruct contactedHelpBoilerComplete;
     // Played when the radio is open after help has already been called
     public DialogDisplay.DialogStruct[] alreadyCalledForHelp;
     //Played when the player tries to submit a code when help is already called
@@ -85,7 +87,8 @@ public class RadioRoomObject : DisplayUIRoomObject
         //called when the puzzle was completed with the id
         completionIds[bitComboStorageOffset] = id;
         UIObjectClass.ClearUI();
-        DialogDisplay.NewDialog(contactedHelp);
+
+        DialogDisplay.NewDialog(GameCompletionManager.BoilerRoomComplete ? contactedHelpBoilerComplete : contactedHelpBoilerNotComplete);
         GameCompletionManager.RadioRoomComplete = true;
     }
 
@@ -95,9 +98,6 @@ public class RadioRoomObject : DisplayUIRoomObject
     {
         base.DisplayedUI();
         ui.GetComponent<RadioPuzzle>().SetUp(this, completionIds[bitComboStorageOffset]);
-
-        Insanity.Add(10f);
-        Debug.Log("Remove this");
     }
 
 

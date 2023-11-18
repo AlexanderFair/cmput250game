@@ -31,6 +31,7 @@ public class Cutscene : UIObjectClass {
     [Header("Cutscene Identifier")]
     public CutsceneID cutsceneIdentifier;
 
+    public DialogDisplay.DialogStruct dialogOnComplete;
 
 
     // internal variables
@@ -171,5 +172,6 @@ public class Cutscene : UIObjectClass {
         CutSceneBlackBackground.Instance?.DisableBackground();
         if (SHOULD_LOG_INFO)
             Settings.DisplayWarning("Cutscene " + cutsceneIdentifier + " was finished.", gameObject);
+        DialogDisplay.NewDialog(dialogOnComplete);
     }
 }

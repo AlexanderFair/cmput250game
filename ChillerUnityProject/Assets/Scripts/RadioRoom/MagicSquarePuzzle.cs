@@ -10,6 +10,9 @@ public class MagicSquarePuzzle : SnapManagerUIObject
     public Text[] texts;
     public GameObject completeDisplayObject;
     public AudioClip completeAudioClip;
+    public DialogDisplay.DialogStruct[] incompletePrompt;
+    public DialogDisplay.DialogStruct completePrompt;
+    public DialogDisplay.DialogStruct[] alreadyCompletedPrompt;
 
     private int[,] currentGrid;
 
@@ -45,7 +48,7 @@ public class MagicSquarePuzzle : SnapManagerUIObject
         SumIt();
     }
 
-    private void SetupSolved()
+    private void SetupSolved(bool onBegin = true)
     {
         ForceSnap(0, 5, true);
         ForceSnap(1, 0, true);
@@ -56,6 +59,8 @@ public class MagicSquarePuzzle : SnapManagerUIObject
         ForceSnap(6, 1, true);
         ForceSnap(7, 8, true);
         ForceSnap(8, 3, true);
+        if (onBegin) DialogDisplay.NewDialog(alreadyCompletedPrompt);
+        else DialogDisplay.NewDialog(completePrompt);
     }
 
     private void SetupUnsolved()
@@ -63,6 +68,7 @@ public class MagicSquarePuzzle : SnapManagerUIObject
         ForceSnap(3, 6, true);
         ForceSnap(4, 4, true);
         ForceSnap(5, 2, true);
+        DialogDisplay.NewDialog(incompletePrompt);
     }
 
     private void SumIt()
@@ -100,7 +106,7 @@ public class MagicSquarePuzzle : SnapManagerUIObject
 
         if (complete)
         {
-            SetupSolved();
+            SetupSolved(false);
             InstantiateUIElement(completeDisplayObject);
             AudioHandler.Instance.playSoundEffect(completeAudioClip);
         }

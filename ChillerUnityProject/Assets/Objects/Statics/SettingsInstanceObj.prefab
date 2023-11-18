@@ -121,22 +121,22 @@ MonoBehaviour:
     maxIntensity: {r: 0, g: 0, b: 0, a: 0}
     circular: 0
   - key: 1
-    minIntensity: {r: 2, g: 0, b: 0, a: 1}
-    maxIntensity: {r: 16, g: 0, b: 0, a: 1}
+    minIntensity: {r: 2.9960785, g: 0, b: 0, a: 0.7058824}
+    maxIntensity: {r: 2.9960785, g: 0, b: 0, a: 0.7058824}
     circular: 0
   - key: 2
-    minIntensity: {r: 0, g: 2, b: 0, a: 1}
-    maxIntensity: {r: 0, g: 16, b: 0, a: 1}
+    minIntensity: {r: 4, g: 0, b: 0, a: 0.7058824}
+    maxIntensity: {r: 4, g: 0, b: 0, a: 0.7058824}
     circular: 0
   - key: 3
-    minIntensity: {r: 0, g: 0, b: 2, a: 1}
-    maxIntensity: {r: 0, g: 0, b: 64, a: 1}
+    minIntensity: {r: 2.9960785, g: 2.5882354, b: 0.15686275, a: 0.72156864}
+    maxIntensity: {r: 2.9960785, g: 2.5882354, b: 0.15686275, a: 0.7176471}
     circular: 1
   - key: 4
     minIntensity: {r: 0, g: 0, b: 0, a: 0}
     maxIntensity: {r: 0, g: 0, b: 0, a: 0}
     circular: 0
-  canLogWarnings: 1
+  canLogWarnings: 0
   canInput: 1
   hideControlHintsWhenOverlappingPlayer: 0
   audioClips:
