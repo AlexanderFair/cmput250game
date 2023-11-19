@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// An inline struct to contain cinematic steps
+/// </summary>
+[System.Serializable]
+public struct RoomSoundtracks {
+    public string sceneName;
+    public AudioClip low;
+    public AudioClip medium;
+    public AudioClip high;
+
+}
 /**
  * Class that handles audio, both sound effects and sountrack (soundtrack yet to be implemented)
  * 
@@ -26,11 +38,8 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     private AudioSource soundtrackAudioSource;
 
     /* The soundtracks for the game */
-    public AudioClip[] tracks;
-    
-    /* The insanity scores for each track. These determine which tracks play at
-     * which tim */
-    public float[] trackInsanityScores;
+    public List<RoomSoundtracks> tracks;
+    public AudioClip insaneSoundEffect;
     
     /* The volume for the soundtrack */
     //public float soundTrackVolume = 1f;
@@ -78,10 +87,6 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
             return;
         } else {
             _instance = this;
-        }
-
-        if (tracks.Length != trackInsanityScores.Length){
-            throw new System.Exception("Each track must have a corresponding trackInsanityScore in the AudioHandler");
         }
 
         this.soundtrackAudioSource = gameObject.AddComponent<AudioSource>();
@@ -141,6 +146,23 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     public bool doplay = false;
     /* Chooses a track based off of insanity/game progress */
     private AudioClip chooseSoundtrack(){
+        string scene = GameManager.Instance.getCurrentSceneName();
+        // foreach (RoomSoundtracks room in tracks) { 
+        //     if (room.sceneName == scene) {
+        //         if (Insanity.Instance.IsLow()){
+        //             return room.low;
+        //         } else if (Insanity.Instance.IsMedium()){
+        //             return room.medium;
+        //         } else if (Insanity.Instance.IsHigh()){
+        //             return room.high;
+        //         }
+        //     }
+        // }
+        //Debug.Log(scene);
+        
+        
+        return null;
+    /*
         if (!doplay){
             return null;
         }
@@ -163,6 +185,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
         }
         Debug.Log("please let xander know if you saw this thanks (choose soundtrack)");
         return tracks[0];
+        */
     }
     /* Plays a sound effect. 
     * @param AudioClip soundEffect The sound effect to be played
@@ -208,6 +231,10 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     }
     public void unpauseSoundtrack(){
         soundtrackPause--;
+    }
+
+    public void playInsaneSoundEffect(){
+        this.playSoundEffect(insaneSoundEffect);
     }
 
 }

@@ -217,6 +217,6 @@ public class Insanity : MonoBehaviour
         desatTime = 0f;
         satTime = 0f;
         desat = true;
-        AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(addEffects));
+        AudioHandler.Instance.playInsaneSoundEffect();
     }
 }

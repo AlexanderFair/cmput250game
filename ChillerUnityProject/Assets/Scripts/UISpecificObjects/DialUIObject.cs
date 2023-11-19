@@ -23,8 +23,14 @@ public class DialUIObject : DragToRotateUIObject
     public string valueFormat = "0.00";
     //How much the rotation difference is scaled by, should be 1 (for counterclock) or -1 (for clock)
     public float rotDifferenceScalar = 1;
-
+    // what sound effect should be played when the rotate this
+    public AudioClip spinSoundEffect;
     private float rot=0;
+    private float lastDisplayed = 0;
+    // if uncapped, trying to play that many sound effects crashes the audio system for a bit lol
+    private float howLongBetweenEachSoundEffect = 0.05f;
+    private float timeSinceLastSoundEffect = 0f;
+    public float distanceBetweenClicks = 0.1f;
 
     protected override void StartUIObject()
     {
@@ -35,7 +41,7 @@ public class DialUIObject : DragToRotateUIObject
 
     protected override void UpdateUIObject()
     {
-
+        timeSinceLastSoundEffect += Time.deltaTime;
         float prevRot = transform.rotation.eulerAngles.z;
         base.UpdateUIObject();
         float afterRot = transform.rotation.eulerAngles.z;
@@ -56,7 +62,16 @@ public class DialUIObject : DragToRotateUIObject
             rot = rotationRange;
             transform.rotation = Quaternion.Euler(0, 0, rotationRange - startPhysicalRot - startRelativeRot);
         }
-        DisplayDialOutputValue(CalcDialOutputValue(rot));
+
+        float v = CalcDialOutputValue(rot);
+        if ((int)(lastDisplayed * 10) % 10 != (int)(v * 10) % 10){
+            if (timeSinceLastSoundEffect >= howLongBetweenEachSoundEffect){
+                AudioHandler.Instance.playSoundEffect(spinSoundEffect);
+                timeSinceLastSoundEffect = 0f;
+            }
+        }
+        lastDisplayed = v;
+        DisplayDialOutputValue(v);
 
     }
     // Returns the value that should be associated with the relative rotation

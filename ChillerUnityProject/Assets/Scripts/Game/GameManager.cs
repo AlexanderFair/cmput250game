@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private bool switching = false;
     private bool complete = false;
     private Vector3 targetPos = Vector3.zero;
+    private String currentSceneName = "HubRoom";
 
     public static GameManager Instance {
         get {
@@ -130,6 +131,15 @@ public class GameManager : MonoBehaviour
     private void FinishSwitchScene(String sceneName) {
         // TODO: remove the loading screen
         // teleport player and penguin to new position
+        currentSceneName = sceneName;
         complete = true;
+    }
+
+    /* Get what scene the player is currently looking at */
+    public String getCurrentSceneName(){
+        if (currentSceneName == null){
+            throw new System.Exception("Scene name is null. Probably called too early?");
+        }
+        return currentSceneName;
     }
 }

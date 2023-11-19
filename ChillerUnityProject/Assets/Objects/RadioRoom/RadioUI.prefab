@@ -129,6 +129,7 @@ MonoBehaviour:
   rotationRange: 675
   valueFormat: 0.00
   rotDifferenceScalar: -1
+  spinSoundEffect: {fileID: 8300000, guid: e0fe8b06ccb40654cb714e56aeafa52b, type: 3}
 --- !u!1 &997659924043799261
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +430,7 @@ MonoBehaviour:
   clickedAnimation: []
   clickRechargeTime: 0
   soundEffect:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e0fe8b06ccb40654cb714e56aeafa52b, type: 3}
   clickControl: 1
   textDisplay: {fileID: 8494093767740607520}
   max: 9.99
@@ -439,6 +440,7 @@ MonoBehaviour:
   rotationRange: 675
   valueFormat: 0.00
   rotDifferenceScalar: 1
+  spinSoundEffect: {fileID: 8300000, guid: e0fe8b06ccb40654cb714e56aeafa52b, type: 3}
 --- !u!1 &4502726087041973642
 GameObject:
   m_ObjectHideFlags: 0

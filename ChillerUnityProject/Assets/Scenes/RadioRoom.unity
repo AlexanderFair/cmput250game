@@ -1705,6 +1705,31 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2973827808258338174, guid: 92e2f543e227c3243879abe264de3309,
+        type: 3}
+      propertyPath: interactSound.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973827808258338174, guid: 92e2f543e227c3243879abe264de3309,
+        type: 3}
+      propertyPath: interactSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cb6949580b1fd44f8f1be03b3e0aca0, type: 3}
+    - target: {fileID: 2973827808258338174, guid: 92e2f543e227c3243879abe264de3309,
+        type: 3}
+      propertyPath: interactSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bec9d9f218037c4690cb8b95df43eb8, type: 3}
+    - target: {fileID: 2973827808258338174, guid: 92e2f543e227c3243879abe264de3309,
+        type: 3}
+      propertyPath: interactSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
+    - target: {fileID: 2973827808258338174, guid: 92e2f543e227c3243879abe264de3309,
+        type: 3}
+      propertyPath: interactSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
     - target: {fileID: 4767769307786029180, guid: 92e2f543e227c3243879abe264de3309,
         type: 3}
       propertyPath: m_SortingLayer
@@ -1917,6 +1942,31 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8786039475235333767, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155,
+        type: 3}
+      propertyPath: interactSound.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786039475235333767, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155,
+        type: 3}
+      propertyPath: interactSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cb6949580b1fd44f8f1be03b3e0aca0, type: 3}
+    - target: {fileID: 8786039475235333767, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155,
+        type: 3}
+      propertyPath: interactSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bec9d9f218037c4690cb8b95df43eb8, type: 3}
+    - target: {fileID: 8786039475235333767, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155,
+        type: 3}
+      propertyPath: interactSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
+    - target: {fileID: 8786039475235333767, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155,
+        type: 3}
+      propertyPath: interactSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed7fe3ce66b7cf41a5b261cde1d5155, type: 3}
 --- !u!4 &6030802953065013048 stripped
