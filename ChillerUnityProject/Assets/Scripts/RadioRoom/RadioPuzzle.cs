@@ -56,6 +56,7 @@ public class RadioPuzzle : UIObjectClass
 
         DialogDisplay.NewDialog(roomObj.badChoice);
         AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.badChoiceEffects));
+        roomObj.badInsanityAdd.Add();
     }
 
     private void PrevCompleteSubmitFrequency()
@@ -84,6 +85,7 @@ public class RadioPuzzle : UIObjectClass
             {
                 AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.loreEffects));
                 DialogDisplay.NewDialog(roomObj.lore[i]);
+                roomObj.loreInsanityAdd.Add();
                 return true;
             }
         }

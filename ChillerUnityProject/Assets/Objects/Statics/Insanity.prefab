@@ -51,15 +51,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.042214394
       value: 0.17083359
-      inSlope: 0.001464909
-      outSlope: 0.001464909
+      inSlope: 0.006134061
+      outSlope: 0.006134061
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 25.329418
-      value: 0.20787704
+      time: 44.613354
+      value: 0.44423568
       inSlope: 0.016794505
       outSlope: 0.016794505
       tangentMode: 0
@@ -92,31 +92,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.09943271
-      value: 19.923674
-      inSlope: 0.0019985326
-      outSlope: 0.0019985326
+      time: 55.247993
+      value: 9.999643
+      inSlope: 0.0009938071
+      outSlope: 0.0009938071
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 63.002857
-      value: 20.049786
-      inSlope: 0.18790568
-      outSlope: 0.18790568
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.06711302
-      outWeight: 0.08847114
-    - serializedVersion: 3
-      time: 100.03916
-      value: 10.00128
-      inSlope: -0.006664295
-      outSlope: -0.006664295
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.124023676
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -126,7 +108,7 @@ MonoBehaviour:
   minSaturation: -10
   minInsanity: 1
   maxSaturation: -100
-  maxInsanity: 10
+  maxInsanity: 20
   desaturateTime: 0.5
   saturateTime: 1
   addEffects: []

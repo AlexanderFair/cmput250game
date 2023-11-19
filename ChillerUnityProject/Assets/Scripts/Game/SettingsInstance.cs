@@ -73,7 +73,7 @@ public class SettingsInstance : MonoBehaviour
 
     [Header("Other")]
     public bool canLogWarnings = false;
-    public bool canInput = true;
+    public int disabledInputCount = 0;
     public bool hideControlHintsWhenOverlappingPlayer = false;
     public AudioClip[] audioClips;
 
@@ -360,18 +360,18 @@ public static class Settings
     // Disables the ability for input to return true through settings methods
     public static void DisableInput()
     {
-        SettingsInstance.Instance.canInput = false;
+        SettingsInstance.Instance.disabledInputCount++;
     }
 
     // Enables the ability for input to return true through settings methods
     public static void EnableInput()
     {
-        SettingsInstance.Instance.canInput = true;
+        SettingsInstance.Instance.disabledInputCount = SettingsInstance.Instance.disabledInputCount <= 1 ? 0 : SettingsInstance.Instance.disabledInputCount - 1;
     }
 
     public static bool IsInputEnabled()
     {
-        return SettingsInstance.Instance.canInput;
+        return SettingsInstance.Instance.disabledInputCount <= 0;
     }
 
 

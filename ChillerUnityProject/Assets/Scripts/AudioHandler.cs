@@ -146,7 +146,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     public bool doplay = false;
     /* Chooses a track based off of insanity/game progress */
     private AudioClip chooseSoundtrack(){
-        Debug.Log("choosing soundtrack!");
+        Settings.DisplayWarning("choosing soundtrack!", gameObject);
         string scene = GameManager.Instance.getCurrentSceneName();
         foreach (RoomSoundtracks room in tracks) { 
             if (room.sceneName == scene) {

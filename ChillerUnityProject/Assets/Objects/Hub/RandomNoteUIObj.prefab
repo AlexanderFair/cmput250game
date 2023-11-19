@@ -153,7 +153,14 @@ MonoBehaviour:
   - reddish, a faint blue, perplexed, silver
   - Two, Three, Many, Decaying, Shimmering
   - horns, tusks, appendages, dorsal fins
-  insanityAdd: 3
+  firstOpenedInsanityAdd:
+    amount: 20
+    firstTimeActivate: 1
+    lastTimeActivate: 1
+  insanityAdd:
+    amount: 1
+    firstTimeActivate: 2
+    lastTimeActivate: 100
   textElement: {fileID: 7476134834926047502}
 --- !u!1 &7586281396866533243
 GameObject:
@@ -302,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 638449741
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4177768872721955028, guid: 06692a05b95b770419e709df9369b44d,
     type: 3}

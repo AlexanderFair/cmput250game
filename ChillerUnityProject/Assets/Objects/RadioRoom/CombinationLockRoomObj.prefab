@@ -73,6 +73,10 @@ MonoBehaviour:
     disableInput: 0
     big: 0
   wrongCodePrompt: []
+  wrongCodeInsanity:
+    amount: 2
+    firstTimeActivate: 2
+    lastTimeActivate: 10
   unlockAudio: {fileID: 8300000, guid: e866dddbb6429d340acc16ecfd08b8a5, type: 3}
   wrongComboEffect: []
   drawerUi: {fileID: 8553704103994718, guid: 38da002658b27e847a9df82e335011a9, type: 3}

@@ -15,8 +15,9 @@ public class RandomNoteUIObject : UIObjectClass
     //array of comma sperated words
     //Each i-th element of the array will correspond with <wordi>
     public string[] commaSeperatedWordLists;
+    public Insanity.AddAmount firstOpenedInsanityAdd;
     //The amount that will be added to insanity each time the note is opened
-    public float insanityAdd;
+    public Insanity.AddAmount insanityAdd;
 
     public Text textElement;
 
@@ -37,6 +38,7 @@ public class RandomNoteUIObject : UIObjectClass
 
         textElement.text = noteCopy;
         Insanity.Add(insanityAdd);
+        firstOpenedInsanityAdd.Add();
         
     }
 

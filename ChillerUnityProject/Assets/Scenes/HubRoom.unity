@@ -517,7 +517,7 @@ MonoBehaviour:
   useOuterAngleForCalc: 0
   spriteRenderer: {fileID: 236019028}
   sway: 1
-  swayAngleRange: {x: 0.001, y: 0.05}
+  swayAngleRange: {x: 0.001, y: 0.01}
   swayTimeRange: {x: 20, y: 30}
 --- !u!1 &247012307
 GameObject:

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /*
  * The class which deals with the insanity metre
@@ -89,16 +90,6 @@ public class Insanity : MonoBehaviour
         }
     }
 
-    
-    // Adds the amount to the insanity level
-    public void AddInsanity(float add)
-    {
-        if (add <= 0) {
-            throw new System.Exception("added insanity must be a positive amount");
-        } 
-        insanityStat += add;
-        AddedInsanity(add);
-    }
 
     public bool IsHigh()
     {
@@ -115,19 +106,16 @@ public class Insanity : MonoBehaviour
         return insanityStat <= lowInsanityMax;
     }
 
-    // Adds the amount to the insanity level
-    public static void Add(float add)
-    {
-        Instance.AddInsanity(add);
-    }
-
-
     public float getInsanity()
     {
         return insanityStat;
     }
 
-
+    // Adds the amount to the insanity level
+    public static void Add(AddAmount add)
+    {
+        Instance.AddInsanity(add);
+    }
 
     //--add effect
 
@@ -210,8 +198,33 @@ public class Insanity : MonoBehaviour
         ColorAdjustmentPostProcessing.Instance?.ChangeSaturation(currentVal);
     }
 
-    private void AddedInsanity(float amount)
+    private Dictionary<AddAmount, int> adds = new Dictionary<AddAmount, int>();
+
+    // Adds the amount to the insanity level
+    public void AddInsanity(AddAmount add)
     {
+        if (adds.ContainsKey(add))
+        {
+            adds[add]++;
+        }
+        else
+        {
+            adds[add] = 1;
+        }
+
+        if (adds[add] >= add.firstTimeActivate && adds[add] <= add.lastTimeActivate)
+        {
+            AddInsanityDirect(add.amount);
+        }
+    }
+
+    public void AddInsanityDirect(float amount)
+    {
+        if (amount <= 0)
+        {
+            throw new System.Exception("added insanity must be a positive amount");
+        }
+        insanityStat += amount;
         float interp = Mathf.Clamp01((amount - minInsanity) / (maxInsanity - minInsanity));
         targetDesat = Mathf.Lerp(minSaturation, maxSaturation, interp);
         desatTime = 0f;
@@ -219,4 +232,24 @@ public class Insanity : MonoBehaviour
         desat = true;
         AudioHandler.Instance.playInsaneSoundEffect();
     }
+
+    [System.Serializable]
+    public struct AddAmount
+    {
+        [Range(0,100)]
+        public float amount;
+        //Inclusive, 1 means that the first time it is added, the amount will be added
+        [Range(1,100)]
+        public int firstTimeActivate;
+        //Inclusive, x means that the x+1 time it is added, the amount will not be added
+        [Range(1,100)]
+        public int lastTimeActivate;
+
+        public void Add()
+        {
+            Instance.AddInsanity(this);
+        }
+    }
 }
+
+

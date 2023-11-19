@@ -26,6 +26,8 @@ public class RadioRoomObject : DisplayUIRoomObject
     public DialogDisplay.DialogStruct[] badChoice;
     //Played whenever the submit button and the combo is wrong
     public AudioClip[] badChoiceEffects;
+
+    public Insanity.AddAmount badInsanityAdd;
     //Played when the frequency has already been called
     public DialogDisplay.DialogStruct[] alredayChosen;
     //Played to hint at the next combo
@@ -41,7 +43,7 @@ public class RadioRoomObject : DisplayUIRoomObject
     public DialogDisplay.DialogStruct[] lore;
     //Played when a lore code is selected
     public AudioClip[] loreEffects;
-
+    public Insanity.AddAmount loreInsanityAdd;
     
     
 

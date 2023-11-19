@@ -224,7 +224,10 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: f9604144424c14b4481e3fa4ea643a40, type: 3}
   - {fileID: 8300000, guid: 68fc213e34f0d5f448f85a0ab9134f38, type: 3}
-  addToInsanityOnInteract: 2
+  addToInsanityOnInteract:
+    amount: 3
+    firstTimeActivate: 1
+    lastTimeActivate: 10
 --- !u!114 &6886009229727363513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +271,7 @@ MonoBehaviour:
   lockMovementTime: 2
   unlockVelocity: {x: 0, y: -40}
   sortOrderTimer: 0.5
+  cageForegroundSprite: {fileID: 0}
 --- !u!50 &6886009229727363517
 Rigidbody2D:
   serializedVersion: 4

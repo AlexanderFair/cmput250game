@@ -13,6 +13,7 @@ public class ComboPuzzle : DisplayUIRoomObject
     public DialogDisplay.DialogStruct completePrompt;
     //Played when the code is subitted and is incorrect
     public DialogDisplay.DialogStruct[] wrongCodePrompt;
+    public Insanity.AddAmount wrongCodeInsanity;
 
     //Played when the puzzle is completed
     public AudioClip unlockAudio;
@@ -57,6 +58,7 @@ public class ComboPuzzle : DisplayUIRoomObject
         {
             AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(wrongComboEffect));
             DialogDisplay.NewDialog(wrongCodePrompt);
+            wrongCodeInsanity.Add();
             return;
         }
         complete = true;

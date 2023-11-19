@@ -18,6 +18,8 @@ public class CrowbarUIScript : CombinationUIObject
     //Spawns the object if false;
     public GameObject wrongObject;
 
+    public Insanity.AddAmount wrongInsanityAdd;
+
     private CrowbarRoomScript room;
 
     //Called by a button wanting to submit the code
@@ -33,6 +35,7 @@ public class CrowbarUIScript : CombinationUIObject
         else
         {
             AudioHandler.Instance.playSoundEffect(wrongSound);
+            wrongInsanityAdd.Add();
             if (wrongObject != null) { InstantiateUIElement(wrongObject); }
         }
     }

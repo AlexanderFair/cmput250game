@@ -20,7 +20,7 @@ public class PenguinInteractable : RoomObjectClass
     public DialogDisplay.DialogStruct[] highPrompts;
     public AudioClip[] sounds;
 
-    public float addToInsanityOnInteract = 0f;
+    public Insanity.AddAmount addToInsanityOnInteract;
 
     private bool interacting = false;
     private int lastFrame = 0;
