@@ -19,7 +19,7 @@ public class RadioPuzzle : UIObjectClass
         if (roomObj.IsAllComplete())
         {
             //all combos are already complete
-            DialogDisplay.NewDialog(roomObj.alreadyCalledForHelp);
+            DialogDisplay.NewDialog(GameCompletionManager.BoilerRoomComplete ? roomObj.alreadyCalledForHelpBoilerComplete : roomObj.alreadyCalledForHelpBoilerNotComplete);
             prevCompID = previouslyCompletedComboID;
         }
         else

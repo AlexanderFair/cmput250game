@@ -304,8 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6867e0ed2302f94298bcc8f103352de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterLength: 50
+  characterLength: 62
   profileAnimator: {fileID: 6716175388101138907}
+  skipInstruct: {fileID: 0}
 --- !u!1 &5931604005377946699
 GameObject:
   m_ObjectHideFlags: 0

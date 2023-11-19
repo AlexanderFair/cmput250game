@@ -1817,6 +1817,23 @@ MonoBehaviour:
     animation: 1
     disableInput: 1
     big: 0
+  incompletePrompt:
+  - dialog: "I can call for help using that radio! There\u2019s just the issue of
+      what frequency to dial\u2026"
+    animation: 1
+    disableInput: 1
+    big: 0
+  completebincompletePrompt:
+  - dialog: I've already called out! I should try and get warm now.
+    animation: 1
+    disableInput: 0
+    big: 0
+  completebcompletePrompt:
+  - dialog: I already got the message out. I should probably go outside and see if
+      they're here.
+    animation: 1
+    disableInput: 0
+    big: 0
   nextScene: HubRoom
   nextLocation: {x: -400, y: -126, z: 0}
 --- !u!1001 &5974874956549861253

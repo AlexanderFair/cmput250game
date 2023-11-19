@@ -6,6 +6,9 @@ public class RadioRoomEntrance : InteractableRoomObject
 {
     [Header("Entrance Settings")]
     public DialogDisplay.DialogStruct entrancePrompt;
+    public DialogDisplay.DialogStruct[] incompletePrompt;
+    public DialogDisplay.DialogStruct[] completebincompletePrompt;
+    public DialogDisplay.DialogStruct[] completebcompletePrompt;
     public string nextScene;
     public Vector3 nextLocation;
 

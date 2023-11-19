@@ -195,7 +195,7 @@ MonoBehaviour:
       out for you try to keep warm while you wait. "
     animation: 2
     disableInput: 1
-    big: 0
+    big: 1
   contactedHelpBoilerComplete:
     dialog: "<i>The voice that answers is still dripping in sleep</i> This is Davis
       South Research Facility, what\u2019s the purpose of this call? <i>You explain
@@ -205,9 +205,14 @@ MonoBehaviour:
       out for you hold tight, we\u2019re on our way\u2026"
     animation: 2
     disableInput: 1
+    big: 1
+  alreadyCalledForHelpBoilerNotComplete:
+  - dialog: I already got the message out. I should try to get warm now.
+    animation: 1
+    disableInput: 0
     big: 0
-  alreadyCalledForHelp:
-  - dialog: Already Called For Help
+  alreadyCalledForHelpBoilerComplete:
+  - dialog: They should be here by now. I should probably go outside.
     animation: 1
     disableInput: 0
     big: 0
@@ -218,8 +223,7 @@ MonoBehaviour:
     big: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
-  - dialog: It seems like that frequencie doesn't work. I should try a different
-      one
+  - dialog: It seems like that frequency doesn't work. I should try a different one
     animation: 1
     disableInput: 0
     big: 0
