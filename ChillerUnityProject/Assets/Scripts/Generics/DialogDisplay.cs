@@ -78,7 +78,7 @@ public class DialogDisplay : MonoBehaviour
     // Updates when Complete is true
     private void CompleteUpdate()
     {
-        if(currentTime >= Settings.FloatValues.DialogCompletionWaitForCloseSeconds.Get())
+        if(currentTime >= Settings.FloatValues.DialogCompletionWaitForCloseSeconds.Get() && !disableInput)
         {
             KillDialog();
         }

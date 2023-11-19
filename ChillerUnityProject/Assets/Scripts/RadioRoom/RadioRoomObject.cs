@@ -17,7 +17,8 @@ public class RadioRoomObject : DisplayUIRoomObject
     // Played when the puzzle is completed
     public DialogDisplay.DialogStruct contactedHelpBoilerComplete;
     // Played when the radio is open after help has already been called
-    public DialogDisplay.DialogStruct[] alreadyCalledForHelp;
+    public DialogDisplay.DialogStruct[] alreadyCalledForHelpBoilerNotComplete;
+    public DialogDisplay.DialogStruct[] alreadyCalledForHelpBoilerComplete;
     //Played when the player tries to submit a code when help is already called
     public DialogDisplay.DialogStruct[] alreadyCalledForHelpSubmit;
     //Played whenever the submit button is clicked when the puzzle has already been completed unless the codes match a specialCombo

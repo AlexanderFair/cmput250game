@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /*
@@ -7,6 +8,10 @@ using UnityEngine;
  */
 public class Insanity : MonoBehaviour
 {
+    [Flags]
+    public enum Level {
+        BELOW_THRESHOLD = 1, LOW = 2, MED = 4, HIGH = 8
+    }
 
     [Header("Insanity settings")]
     // The Min value before insanity starts kicking in
@@ -29,6 +34,7 @@ public class Insanity : MonoBehaviour
     private float ticTimer = 0;
     private int ticsWithoutVision = 0;
 
+    private Level currentLevel = Level.BELOW_THRESHOLD;
 
     private static Insanity _instance;
     private static bool isDefined = false;
@@ -60,7 +66,7 @@ public class Insanity : MonoBehaviour
     void Update()
     {
         AddEffectUpdate();
-        if (insanityStat < insanityThreshold || MenuObjectClass.IsMenuActive())
+        if (IsBelowThreshold() || MenuObjectClass.IsMenuActive())
         {
             return;
         }
@@ -78,7 +84,7 @@ public class Insanity : MonoBehaviour
     {
         int ticCallPerVision = Mathf.RoundToInt(insanityToMaxTicBeforeVisionGraph.Evaluate(insanityStat));
         int ticProb = ticCallPerVision - ticsWithoutVision;
-        float call = Random.Range(0.0f, 1.0f);
+        float call = UnityEngine.Random.Range(0.0f, 1.0f);
         if (ticProb <= 0 || call < 1f / ticProb)
         {
             ticsWithoutVision = 0;
@@ -103,7 +109,17 @@ public class Insanity : MonoBehaviour
 
     public bool IsLow()
     {
-        return insanityStat <= lowInsanityMax;
+        return insanityStat <= lowInsanityMax && insanityStat >= insanityThreshold ;
+    }
+
+    public bool IsBelowThreshold()
+    {
+        return insanityStat < insanityThreshold;
+    }
+
+    public static Level GetInsanityLevel()
+    {
+        return Instance.currentLevel;
     }
 
     public float getInsanity()
@@ -231,6 +247,8 @@ public class Insanity : MonoBehaviour
         satTime = 0f;
         desat = true;
         AudioHandler.Instance.playInsaneSoundEffect();
+
+        currentLevel = IsHigh() ? Level.HIGH : (IsMedium() ? Level.MED : (IsLow() ? Level.LOW : Level.BELOW_THRESHOLD));
     }
 
     [System.Serializable]

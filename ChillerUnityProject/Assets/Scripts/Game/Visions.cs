@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -13,11 +15,7 @@ using UnityEngine.Rendering.Universal;
  */
 public class Visions : MonoBehaviour
 {
-
-    public GameObject[] visions;
-    public AudioClip[] sounds;
-
-    private System.Random random = new System.Random();
+    public List<VisionStruct> visionsList;
 
     private static Visions _instance;
     private static bool isDefined = false;
@@ -48,26 +46,23 @@ public class Visions : MonoBehaviour
 
     public void HaveVision()
     {
-        if (UIObjectClass.IsUIActive())
-        {
-            UIVision();
-        }
-        else
-        {
-            AudioVision();
-        }
+        VisionPredicate predicate = (UIObjectClass.IsUIActive() ? VisionPredicate.PLAY_ON_UI : 0) | 
+                                    (RoomObjectClass.CanUpdate() ? VisionPredicate.PLAY_ON_ROOM : 0);
+        IEnumerable<VisionStruct> visions = visionsList.Where(x => (x.insanityLevel & Insanity.GetInsanityLevel()) != 0 && (x.predicate & predicate) != 0);
+
+        Instantiate(Util.ChooseRandom(visions).vision);
     }
 
-    private void UIVision()
+    [System.Serializable]
+    public struct VisionStruct
     {
-        UIObjectClass.InstantiateUIElement(visions[random.Next(visions.Length)]);
+        public GameObject vision;
+        public Insanity.Level insanityLevel;
+        public VisionPredicate predicate;
     }
 
-    private void AudioVision()
-    {
-        AudioHandler.Instance.playSoundEffect(sounds[random.Next(sounds.Length)]);
-    }
-
-
+    [Flags]
+    public enum VisionPredicate { PLAY_ON_UI = 1, PLAY_ON_ROOM = 2 }
 
 }
+

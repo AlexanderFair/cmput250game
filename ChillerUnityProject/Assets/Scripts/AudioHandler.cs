@@ -150,7 +150,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
         string scene = GameManager.Instance.getCurrentSceneName();
         foreach (RoomSoundtracks room in tracks) { 
             if (room.sceneName == scene) {
-                if (Insanity.Instance.IsLow()){
+                if (Insanity.Instance.IsLow() || Insanity.Instance.IsBelowThreshold()){
                     return room.low;
                 } else if (Insanity.Instance.IsMedium()){
                     return room.medium;

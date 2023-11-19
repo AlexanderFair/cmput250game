@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  note: "Observation of Rhea:  The creature has a <word0> complexion, with <word1>
+  note: "Observation of her:  The creature has a <word0> complexion, with <word1>
     coloration.   <word2> <word3> protrude the animal\u2019s face.   An intimately
     human-like eye peers back at its beholder.  "
   commaSeperatedWordLists:

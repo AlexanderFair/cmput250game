@@ -115,7 +115,8 @@ MonoBehaviour:
   completionUI: {fileID: 4791594978018382449, guid: 6acec73f21a0c384e85140b36b12169f,
     type: 3}
   lockedPrompts:
-  - dialog: There might be a tool to help unjam the doors in here.
+  - dialog: There might be a tool to help unjam the doors in here. Maybe I can find
+      the combo in one of those notes.
     animation: 1
     disableInput: 0
     big: 0

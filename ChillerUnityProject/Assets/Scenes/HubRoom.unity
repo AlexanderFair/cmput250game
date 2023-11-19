@@ -2660,6 +2660,28 @@ PrefabInstance:
       propertyPath: m_TargetCameraAlpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
+      propertyPath: dialogOnComplete.dialog
+      value: "*<i>Off balance from the floor\u2019s ever increasing lilt, and ears
+        ringing from that dreadful metal shrieking of a crash</i>* I need to get
+        out of here!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
+      propertyPath: dialogOnComplete.animation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
+      propertyPath: dialogOnComplete.disableInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
+      propertyPath: dialogOnComplete.forceUserInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2512273927240955422, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}
       propertyPath: m_Name
@@ -3056,16 +3078,19 @@ MonoBehaviour:
     animation: 1
     disableInput: 0
     big: 0
+    forceUserInput: 0
   - dialog: "This must lead to the rest of the ship.. I\u2019ll have to come back
       when I can unjam this door."
     animation: 1
     disableInput: 0
     big: 0
+    forceUserInput: 0
   - dialog: <i>Jiggling the doorknob proves futile, with a grunt you ram your shoulder
       into the unforgiving door. Nothing.</i>
     animation: 2
     disableInput: 0
     big: 0
+    forceUserInput: 0
   lockedEffects:
   - {fileID: 8300000, guid: 34c43efd992ae584ca2f890ef1230afe, type: 3}
   - {fileID: 8300000, guid: 65a7d6e4907b01f49bca1b6e11552460, type: 3}
@@ -3252,16 +3277,19 @@ MonoBehaviour:
     animation: 1
     disableInput: 0
     big: 0
+    forceUserInput: 0
   - dialog: "This must lead to the rest of the ship.. I\u2019ll have to come back
       when I can unjam this door."
     animation: 1
     disableInput: 0
     big: 0
+    forceUserInput: 0
   - dialog: <i>Jiggling the doorknob proves futile, with a grunt you ram your shoulder
       into the unforgiving door. Nothing.</i>
     animation: 2
     disableInput: 0
     big: 0
+    forceUserInput: 0
   lockedEffects:
   - {fileID: 8300000, guid: 34c43efd992ae584ca2f890ef1230afe, type: 3}
   - {fileID: 8300000, guid: 65a7d6e4907b01f49bca1b6e11552460, type: 3}

@@ -49,40 +49,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.042214394
-      value: 0.17083359
-      inSlope: 0.006134061
-      outSlope: 0.006134061
-      tangentMode: 34
+      time: 0.19265705
+      value: 0.00014239177
+      inSlope: 0.00022088733
+      outSlope: 0.00022088733
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.04141651
     - serializedVersion: 3
-      time: 44.613354
-      value: 0.44423568
-      inSlope: 0.016794505
-      outSlope: 0.016794505
+      time: 99.99368
+      value: 0.40337446
+      inSlope: 0.013630134
+      outSlope: 0.013630134
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.061556544
-      outWeight: 0.29274213
-    - serializedVersion: 3
-      time: 72.78107
-      value: 0.52768946
-      inSlope: 0.011853689
-      outSlope: 0.011853689
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.040490277
-      outWeight: 0.04959951
-    - serializedVersion: 3
-      time: 100.07399
-      value: 1.5487355
-      inSlope: 0.032509718
-      outSlope: 0.032509718
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.047815535
+      inWeight: 0.025929814
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -131,3 +113,12 @@ MonoBehaviour:
   - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
   sounds:
   - {fileID: 8300000, guid: e770c370ba50629488ac78ada566bbcd, type: 3}
+  visionsList:
+  - vision: {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653,
+      type: 3}
+    insanityLevel: 12
+    predicate: -1
+  - vision: {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d,
+      type: 3}
+    insanityLevel: 2
+    predicate: -1

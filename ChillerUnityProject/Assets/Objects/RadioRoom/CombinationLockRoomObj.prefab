@@ -63,7 +63,7 @@ MonoBehaviour:
   solve: 010000000300000004000000000000000500000002000000
   incompletePrompt:
   - dialog: "I remeber these shapes near the other frequencies, maybe if I match
-      them up \u2026"
+      them up\u2026"
     animation: 1
     disableInput: 1
     big: 0
