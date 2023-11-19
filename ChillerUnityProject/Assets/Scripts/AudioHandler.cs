@@ -119,17 +119,17 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
         if(soundtrackAudioSource.isPlaying && soundtrackPause > 0){
             soundtrackAudioSource.Pause();
         }
-        else if (!soundtrackAudioSource.isPlaying && soundtrackPause == 0){
+        else if (!soundtrackAudioSource.isPlaying && soundtrackPause <= 0){
             soundtrackAudioSource.UnPause();
         }
 
         if (ambientSource.isPlaying && ambientPause > 0){
             ambientSource.Pause();
-        } else if (!ambientSource.isPlaying && ambientPause == 0){
+        } else if (!ambientSource.isPlaying && ambientPause <= 0){
             ambientSource.UnPause();
         }
-
-        if (!soundtrackAudioSource.isPlaying && soundtrackPause == 0){
+        // Debug.Log($"{cooldownTimer} {soundtrackPause} {soundtrackAudioSource.isPlaying}");
+        if (!soundtrackAudioSource.isPlaying && soundtrackPause <= 0){
             cooldownTimer += Time.deltaTime;
             if (cooldownTimer > cooldown){
                 AudioClip nextTrack = chooseSoundtrack();
@@ -146,19 +146,20 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     public bool doplay = false;
     /* Chooses a track based off of insanity/game progress */
     private AudioClip chooseSoundtrack(){
+        Debug.Log("choosing soundtrack!");
         string scene = GameManager.Instance.getCurrentSceneName();
-        // foreach (RoomSoundtracks room in tracks) { 
-        //     if (room.sceneName == scene) {
-        //         if (Insanity.Instance.IsLow()){
-        //             return room.low;
-        //         } else if (Insanity.Instance.IsMedium()){
-        //             return room.medium;
-        //         } else if (Insanity.Instance.IsHigh()){
-        //             return room.high;
-        //         }
-        //     }
-        // }
-        //Debug.Log(scene);
+        foreach (RoomSoundtracks room in tracks) { 
+            if (room.sceneName == scene) {
+                if (Insanity.Instance.IsLow()){
+                    return room.low;
+                } else if (Insanity.Instance.IsMedium()){
+                    return room.medium;
+                } else if (Insanity.Instance.IsHigh()){
+                    return room.high;
+                }
+            }
+        }
+        Debug.Log(scene);
         
         
         return null;

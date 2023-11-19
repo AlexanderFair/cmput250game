@@ -730,6 +730,51 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: e001d6c1b02ceb947b7bce6013533863, type: 3}
     - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
         type: 3}
+      propertyPath: tracks.Array.data[0].low
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f25f99498e3e944d91d11abbd5f223d, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[1].low
+      value: 
+      objectReference: {fileID: 8300000, guid: 68553ddd2f208194bbd79586c1a87fca, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[2].low
+      value: 
+      objectReference: {fileID: 8300000, guid: 13bbe44c8a1a8d04a90dd6bff1e1ab28, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[0].high
+      value: 
+      objectReference: {fileID: 8300000, guid: 552c5f54527aae944af8da6138b1a600, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[1].high
+      value: 
+      objectReference: {fileID: 8300000, guid: 72e01022e58fce441badc77cec60ae5d, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[2].high
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b74eab16f6a4fe4595d53cdcce0de02, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[0].medium
+      value: 
+      objectReference: {fileID: 8300000, guid: f3f50eb56b6af7e4ca614437f87edfce, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[1].medium
+      value: 
+      objectReference: {fileID: 8300000, guid: 72e01022e58fce441badc77cec60ae5d, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
+      propertyPath: tracks.Array.data[2].medium
+      value: 
+      objectReference: {fileID: 8300000, guid: fd45dff31d5b4b44e896ba55b120b1ed, type: 3}
+    - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
+        type: 3}
       propertyPath: tracks.Array.data[0].sceneName
       value: HubRoom
       objectReference: {fileID: 0}
