@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -712,7 +712,7 @@ PrefabInstance:
         type: 3}
       propertyPath: insaneSoundEffect
       value: 
-      objectReference: {fileID: 8300000, guid: de1405f8c4b3eba4d83e91a44e6a0292, type: 3}
+      objectReference: {fileID: 8300000, guid: dd9a0597fdd71034b87505b736dfb1be, type: 3}
     - target: {fileID: 6734534347545793397, guid: 10a19c0e716e47b43b5081743d698624,
         type: 3}
       propertyPath: tracks.Array.data[0]

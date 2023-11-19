@@ -13,6 +13,7 @@ public class SnapDragUIObject : DragableUIObject
     public Collider2D snapCollider;
     // the boolean representing if the object was placed that frame, otherwise the object is not updated by the manager.
     public bool ChangedThisFrame { get; set; } = false;
+    public AudioClip putDownSound;
 
     private bool enabledMovement = true;
 
@@ -32,6 +33,7 @@ public class SnapDragUIObject : DragableUIObject
     {
         base.MouseUp();
         ChangedThisFrame = true;
+        AudioHandler.Instance.playSoundEffect(putDownSound);
     }
 
     public override bool ClickableCondition()
