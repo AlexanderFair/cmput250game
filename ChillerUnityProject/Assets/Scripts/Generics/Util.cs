@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
@@ -60,14 +61,15 @@ public static class Util
         }
         return vals[randomInstance.Next(vals.Length)];
     }
+    
     // Retunrs a radnom item from the list
-    public static T ChooseRandom<T>(List<T> vals)
+    public static T ChooseRandom<T>(IEnumerable<T> vals)
     {
-        if (vals.Count == 0)
+        if(vals.Count() == 0)
         {
             return default;
         }
-        return vals[randomInstance.Next(vals.Count)];
+        return vals.ElementAt(randomInstance.Next(vals.Count()));
     }
 
 }
