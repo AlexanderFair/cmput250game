@@ -56,7 +56,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
   - {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
   giveControlHint: 1
-  controlHintOffset: {x: 0, y: 40}
+  controlHintOffset: {x: 0, y: 30}
   displayDialogOnInteract: 0
   dialogProfileAnimation: []
   dialog: 
@@ -98,7 +98,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 1278940923
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!1 &8368487871235056498
 GameObject:
   m_ObjectHideFlags: 0

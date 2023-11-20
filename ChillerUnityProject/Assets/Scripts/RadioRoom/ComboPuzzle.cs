@@ -25,6 +25,8 @@ public class ComboPuzzle : DisplayUIRoomObject
     public Sprite unlockedSprite;
     public Sprite lockedSprite;
 
+    private int[] lastUpdatedCode = null;
+
     private static bool complete = false;
 
     public override void Start()
@@ -42,13 +44,14 @@ public class ComboPuzzle : DisplayUIRoomObject
         }
         else
         {
-            ui.GetComponent<ComboUI>().Setup(this);
+            ui.GetComponent<ComboUI>().Setup(this, lastUpdatedCode);
             DialogDisplay.NewDialog(incompletePrompt);
         }
     }
 
     public void CodeUpdated(int[] code)
     {
+        lastUpdatedCode = (int[])code.Clone();
         bool yes = true;
         for(int i=0; i<solve.Length; i++)
         {

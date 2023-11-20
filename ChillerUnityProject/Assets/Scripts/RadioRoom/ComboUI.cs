@@ -8,9 +8,10 @@ public class ComboUI : CombinationUIObject
     [Header("ComoUI")]
     public ComboUISubmitBtn submitBtn;
 
-    public void Setup(ComboPuzzle puzz)
+    public void Setup(ComboPuzzle puzz, int[] code)
     {
         this.puzz = puzz;
+        defaultValues = code;
     }
 
     public void SubmitCode()
