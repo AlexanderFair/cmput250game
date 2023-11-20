@@ -65,7 +65,7 @@ MonoBehaviour:
   - dialog: "I remeber these shapes near the other frequencies, maybe if I match
       them up\u2026"
     animation: 1
-    disableInput: 1
+    disableInput: 0
     big: 0
   completePrompt:
     dialog: 

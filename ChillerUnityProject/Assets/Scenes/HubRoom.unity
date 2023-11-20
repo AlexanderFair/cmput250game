@@ -2413,7 +2413,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 55}
+  m_Offset: {x: 0, y: 14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.12}
@@ -2424,7 +2424,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 32, y: 150}
+  m_Size: {x: 32, y: 50}
   m_EdgeRadius: 0
 --- !u!4 &1307770015484719171
 Transform:
@@ -3042,7 +3042,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 55}
+  m_Offset: {x: 0, y: 14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.12}
@@ -3053,7 +3053,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 32, y: 150}
+  m_Size: {x: 32, y: 50}
   m_EdgeRadius: 0
 --- !u!114 &4638178499829102662
 MonoBehaviour:
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   disabledAnimatorIndex: -1
   disableInteractionMethod: 0
   nextSceneName: BoilerRoom
-  playerStartPosition: {x: -400, y: -100, z: 0}
+  playerStartPosition: {x: -400, y: -126, z: 0}
   lockedDialogs:
   - dialog: "That crash jammed the doors! If only I had some tool to open it with\u2026"
     animation: 1

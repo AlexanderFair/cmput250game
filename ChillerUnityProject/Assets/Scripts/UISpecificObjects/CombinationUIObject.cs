@@ -21,6 +21,7 @@ public class CombinationUIObject : UIObjectClass
 
     private GameObject[] displayObjects;
     protected int[] values;
+    protected int[] defaultValues = null;
     //If the combination can be changed
     public bool CombinationActive { get; set; } = true;
 
@@ -33,11 +34,11 @@ public class CombinationUIObject : UIObjectClass
         {
             inputSections[i].changeUpButton?.Setup(i, true);
             inputSections[i].changeDownButton?.Setup(i, false);
-            values[i] = inputSections[i].defaultValue;
+            values[i] = defaultValues == null ? inputSections[i].defaultValue : defaultValues[i];
             UpdateOptions(i, false);
-        }
+        };
 
-    }
+    }  
 
     // Should be called by the selection buttons to notify the lock that the selection has changed
     public void ClickCall(CombinationInputButtonUIObject comboBtn)

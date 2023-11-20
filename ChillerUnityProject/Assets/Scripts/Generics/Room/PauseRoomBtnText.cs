@@ -35,7 +35,7 @@ public class PauseRoomBtnText : RoomObjectClass, Settings.ISettingsUpdateWatcher
 
     private void UpdateText()
     {
-        string s = hint.Replace("<key>", Settings.Controls.ExitMenu.GetKeyCode().ToString());
+        string s = hint.Replace("<key>", Settings.Controls.Pause.GetKeyCode().ToString());
         text.text = s;
     }
 
