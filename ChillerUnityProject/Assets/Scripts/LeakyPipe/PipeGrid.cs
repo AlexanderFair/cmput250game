@@ -89,13 +89,16 @@ public class PipeGrid {
         currUI = UI;
         initPuzzle(puzzleName, roomObj.liquidAmount);
     }
-    // gets the current puzzle
-    public static PipeGrid getPuzzle() {
-        PipePuzzles puzzleIndex = currentPuzzle;
+    // gets the requested puzzle
+    public static PipeGrid getPuzzle(PipePuzzles puzzleIndex) {
         if (! (ALL_PUZZLES.ContainsKey(puzzleIndex)) ) {
             initPuzzle(puzzleIndex, 0);
         }
         return ALL_PUZZLES[puzzleIndex];
+    }
+    // gets the current puzzle
+    public static PipeGrid getPuzzle() {
+        return getPuzzle(currentPuzzle);
     }
     // calculate and save rotation & the coordinate position of a pipe, registering it to the current pipe grid
     public void registerPipe(BasicPipe pipe) {
