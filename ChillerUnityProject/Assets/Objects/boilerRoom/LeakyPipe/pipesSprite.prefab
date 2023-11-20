@@ -45,39 +45,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leakSpriteRendererPrefab: {fileID: 6131075759391054770, guid: 628d82b9dce9644468e875830cb19ef5,
     type: 3}
-  inputConn: {fileID: 21300000, guid: a304b2696b7fb6d41ac900fcc1903c94, type: 3}
-  outputConn: {fileID: 21300000, guid: 4c7234e7eb37ea442b5f59a2d61f95ab, type: 3}
-  blockerConn: {fileID: 21300000, guid: 316ee16cf463a97448a52cdddabaa0e2, type: 3}
-  straightConn: {fileID: 21300000, guid: 5b7463018642ea14ab9a9144324add48, type: 3}
-  bentConn: {fileID: 21300000, guid: 18f5681fe77c67d47bd10d010affd8db, type: 3}
-  triangularConn: {fileID: 21300000, guid: c1900c99ce5f1354fb5da40fbd090bad, type: 3}
+  inputConn: {fileID: 21300000, guid: ae2dc533a2b7f5e46957392065cb49fb, type: 3}
+  outputConn: {fileID: 21300000, guid: 1e6ccc6585102414b9d5d8eb22b20e14, type: 3}
+  blockerConn: {fileID: 21300000, guid: 23415744ab43b0849a2e8f82added92b, type: 3}
+  straightConn: {fileID: 21300000, guid: 0cc9f0b45954deb47a85a2e87d82677a, type: 3}
+  bentConn: {fileID: 21300000, guid: cdddcd73fc920b2448f76f11ca4963a7, type: 3}
+  triangularConn: {fileID: 21300000, guid: c2f0b46124e9493458771045e4c6c60e, type: 3}
   inputFrozen:
-  - {fileID: 21300000, guid: afbcb32d21ec7554aa28a52237353777, type: 3}
-  - {fileID: 21300000, guid: afbcb32d21ec7554aa28a52237353777, type: 3}
-  - {fileID: 21300000, guid: afbcb32d21ec7554aa28a52237353777, type: 3}
-  - {fileID: 21300000, guid: afbcb32d21ec7554aa28a52237353777, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
   outputFrozen:
-  - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
-  - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
-  - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
-  - {fileID: 21300000, guid: 1d96fea8280bee44493d22a45e69cd74, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
   blockerFrozen:
-  - {fileID: 21300000, guid: aebf436654667ac408020c8a2559d6fb, type: 3}
-  - {fileID: 21300000, guid: dcf8a30c80a53c1468dbf67016f1a707, type: 3}
-  - {fileID: 21300000, guid: 0a387fc033074194b97a1d6a11150de0, type: 3}
-  - {fileID: 21300000, guid: 0d5fad7496086e449a767bcbc88daf54, type: 3}
+  - {fileID: 21300000, guid: 5b8fb2abac2fee74f8fa8f8c36e0cb22, type: 3}
+  - {fileID: 21300000, guid: 3a5db6939bee62a4f831da90696345c0, type: 3}
+  - {fileID: 21300000, guid: 28d0f0e5b3f5d3b4db9f7962dd41f68c, type: 3}
+  - {fileID: 21300000, guid: e54e511378904214ea86d70874b8afc0, type: 3}
   straightFrozen:
   - {fileID: 21300000, guid: 709315b429004cc4c97b1936c5353a38, type: 3}
-  - {fileID: 21300000, guid: 095ddf18192582c45ace829cdc91145f, type: 3}
-  - {fileID: 21300000, guid: 15907b1009d092247843fa188849317a, type: 3}
-  - {fileID: 21300000, guid: 9e8534919fb75a04e9a2cfa40bb77696, type: 3}
+  - {fileID: 21300000, guid: dd9dda5bd3015e44dac7f0054602c7fc, type: 3}
+  - {fileID: 21300000, guid: 126cad20b9f7598448574b1c4ea7fe99, type: 3}
+  - {fileID: 21300000, guid: ebfbbfd6a34daa949b033265feeef8ba, type: 3}
   bentFrozen:
-  - {fileID: 21300000, guid: 968fd299c7f275a458afb675ec836a7c, type: 3}
-  - {fileID: 21300000, guid: 086b838f9d08e124f90a93aaf5bbddc9, type: 3}
-  - {fileID: 21300000, guid: 4d518f456f50e7441aedc01262b9d2e8, type: 3}
-  - {fileID: 21300000, guid: 2e8886a88a6fe1e46a2dbd59200efa1a, type: 3}
+  - {fileID: 21300000, guid: 58852b771819f064cac1beeb4768c4a8, type: 3}
+  - {fileID: 21300000, guid: 216bf32dc19cf99428c7851896e04c47, type: 3}
+  - {fileID: 21300000, guid: 9727398afb2d6c74eb891fc11f45c45a, type: 3}
+  - {fileID: 21300000, guid: 8c5dda72767bfcd4c804c76377a03fa6, type: 3}
   triangularFrozen:
-  - {fileID: 21300000, guid: ec3406f55cd183247b4c1252952c14ad, type: 3}
-  - {fileID: 21300000, guid: ac66792ad631e7d4186a408fc26784b2, type: 3}
-  - {fileID: 21300000, guid: 07c256fb1ed36e448aa36c8381eee056, type: 3}
-  - {fileID: 21300000, guid: 6502ef836ff472b4dbfcf3f29f53e43f, type: 3}
+  - {fileID: 21300000, guid: acc2233963ca95644bdb3c67ad5d585f, type: 3}
+  - {fileID: 21300000, guid: 34ca58601d175924483eb436e3a1d433, type: 3}
+  - {fileID: 21300000, guid: b720367d5f6bf684082721cd5895f570, type: 3}
+  - {fileID: 21300000, guid: 68280f083c2aace4480936b4e8590139, type: 3}
