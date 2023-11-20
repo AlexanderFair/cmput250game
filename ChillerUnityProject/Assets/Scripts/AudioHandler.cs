@@ -70,7 +70,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
     // only play if this is zero, things will ask it to pause by incrementing this counter
     private int soundtrackPause = 0;
 
-    void Awake(){
+    void Start(){
         bool shouldDestroy = true;
         try {
             if ((object)Instance != null && Instance != this) {

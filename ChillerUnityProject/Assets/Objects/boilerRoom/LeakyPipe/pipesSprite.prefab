@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8611698423726398831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8611698423726398826}
+  - component: {fileID: 8611698423726398828}
+  m_Layer: 5
+  m_Name: pipesSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8611698423726398826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611698423726398831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8611698423726398828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611698423726398831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8a2b3bb14526542844b06690597de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leakSpriteRendererPrefab: {fileID: 6131075759391054770, guid: 628d82b9dce9644468e875830cb19ef5,
+    type: 3}
+  inputConn: {fileID: 21300000, guid: ae2dc533a2b7f5e46957392065cb49fb, type: 3}
+  outputConn: {fileID: 21300000, guid: 1e6ccc6585102414b9d5d8eb22b20e14, type: 3}
+  blockerConn: {fileID: 21300000, guid: 23415744ab43b0849a2e8f82added92b, type: 3}
+  straightConn: {fileID: 21300000, guid: 0cc9f0b45954deb47a85a2e87d82677a, type: 3}
+  bentConn: {fileID: 21300000, guid: cdddcd73fc920b2448f76f11ca4963a7, type: 3}
+  triangularConn: {fileID: 21300000, guid: c2f0b46124e9493458771045e4c6c60e, type: 3}
+  inputFrozen:
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  - {fileID: 21300000, guid: 0f8261fce9199344e9cf3e0dea7ac23d, type: 3}
+  outputFrozen:
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  - {fileID: 21300000, guid: 51c9f8cedbb00cf4886179ecc1f7446a, type: 3}
+  blockerFrozen:
+  - {fileID: 21300000, guid: 5b8fb2abac2fee74f8fa8f8c36e0cb22, type: 3}
+  - {fileID: 21300000, guid: 3a5db6939bee62a4f831da90696345c0, type: 3}
+  - {fileID: 21300000, guid: 28d0f0e5b3f5d3b4db9f7962dd41f68c, type: 3}
+  - {fileID: 21300000, guid: e54e511378904214ea86d70874b8afc0, type: 3}
+  straightFrozen:
+  - {fileID: 21300000, guid: 709315b429004cc4c97b1936c5353a38, type: 3}
+  - {fileID: 21300000, guid: dd9dda5bd3015e44dac7f0054602c7fc, type: 3}
+  - {fileID: 21300000, guid: 126cad20b9f7598448574b1c4ea7fe99, type: 3}
+  - {fileID: 21300000, guid: ebfbbfd6a34daa949b033265feeef8ba, type: 3}
+  bentFrozen:
+  - {fileID: 21300000, guid: 58852b771819f064cac1beeb4768c4a8, type: 3}
+  - {fileID: 21300000, guid: 216bf32dc19cf99428c7851896e04c47, type: 3}
+  - {fileID: 21300000, guid: 9727398afb2d6c74eb891fc11f45c45a, type: 3}
+  - {fileID: 21300000, guid: 8c5dda72767bfcd4c804c76377a03fa6, type: 3}
+  triangularFrozen:
+  - {fileID: 21300000, guid: acc2233963ca95644bdb3c67ad5d585f, type: 3}
+  - {fileID: 21300000, guid: 34ca58601d175924483eb436e3a1d433, type: 3}
+  - {fileID: 21300000, guid: b720367d5f6bf684082721cd5895f570, type: 3}
+  - {fileID: 21300000, guid: 68280f083c2aace4480936b4e8590139, type: 3}

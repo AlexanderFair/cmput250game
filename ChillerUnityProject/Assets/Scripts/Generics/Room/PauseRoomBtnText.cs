@@ -16,6 +16,7 @@ public class PauseRoomBtnText : RoomObjectClass, Settings.ISettingsUpdateWatcher
     {
         btn = b;
         this.AwakeSettingsWatcher();
+        UpdateText();
     }
 
     public void ControlsUpdated(Settings.Controls control)
