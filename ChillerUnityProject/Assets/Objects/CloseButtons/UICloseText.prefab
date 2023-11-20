@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteAnimators: []
   text: {fileID: 2433327266893335150}
-  hint: <i><<key>></i>
+  hint: '[<key>] to Close'
 --- !u!1 &2433327266893335144
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6b786b48d74f65a4eb20cd189ec35271, type: 3}
-    m_FontSize: 25
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -174,4 +174,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: <i><Escape></i>
+  m_Text: '[Q] to Exit'

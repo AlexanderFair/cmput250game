@@ -65,9 +65,9 @@ public class MagicSquarePuzzle : SnapManagerUIObject
 
     private void SetupUnsolved()
     {
-        ForceSnap(3, 6, true);
-        ForceSnap(4, 4, true);
+        ForceSnap(0, 5, true);
         ForceSnap(5, 2, true);
+        ForceSnap(7, 8, true);
         DialogDisplay.NewDialog(incompletePrompt);
     }
 
@@ -106,6 +106,7 @@ public class MagicSquarePuzzle : SnapManagerUIObject
 
         if (complete)
         {
+            Complete = true;
             SetupSolved(false);
             InstantiateUIElement(completeDisplayObject);
             AudioHandler.Instance.playSoundEffect(completeAudioClip);

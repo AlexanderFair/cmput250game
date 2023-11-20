@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '[Return] to skip'
+  m_Text: '[Return] to close'
 --- !u!1 &4364207887619789490
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  hint: '[<key>] to skip'
+  hint: '[<key>] to close'
   text: {fileID: 365968834126292785}
 --- !u!1 &5988921000285530079
 GameObject:

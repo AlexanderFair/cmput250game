@@ -87,7 +87,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   lowInsanityMax: 40
   medInsanityMax: 70
-  minSaturation: -10
+  minSaturation: -25
   minInsanity: 1
   maxSaturation: -100
   maxInsanity: 20
@@ -106,13 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd69d9d38f2369d43bf5ce4dca903cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visions:
-  - {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d, type: 3}
-  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
-  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
-  - {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653, type: 3}
-  sounds:
-  - {fileID: 8300000, guid: e770c370ba50629488ac78ada566bbcd, type: 3}
   visionsList:
   - vision: {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653,
       type: 3}
