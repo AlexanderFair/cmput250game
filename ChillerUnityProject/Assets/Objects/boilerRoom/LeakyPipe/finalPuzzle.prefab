@@ -126,7 +126,10 @@ MonoBehaviour:
   interactionControl: 0
   interactableRenderer: {fileID: 8379568840493700255}
   interactSound:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 0cb6949580b1fd44f8f1be03b3e0aca0, type: 3}
+  - {fileID: 8300000, guid: 5bec9d9f218037c4690cb8b95df43eb8, type: 3}
+  - {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
+  - {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 0}
   displayDialogOnInteract: 1
