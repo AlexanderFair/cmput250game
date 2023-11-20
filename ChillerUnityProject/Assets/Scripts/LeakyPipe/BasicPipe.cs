@@ -38,6 +38,7 @@ public class BasicPipe : UIObjectClass
     // targetRotationDir: 0 is for not rotating, 1 is for CW, -1 for CCW
     public int gridX, gridY, rotation, targetRotationDir = 0;
     public float rotationProgress = 0;
+    public AudioClip pipeRotateSound;
 
 
     //
@@ -170,13 +171,13 @@ public class BasicPipe : UIObjectClass
         float spriteX = this.transform.position.x, spriteY = this.transform.position.y;
         // should have used switch, but this is not an enum so if-else statement is utilized
         if (direction == PipeGrid.Directions.RIGHT)
-            spriteX += (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
+            spriteX += 120;//(createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.DOWN)
-            spriteY -= (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
+            spriteY -= 120;//(createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
         else if (direction == PipeGrid.Directions.LEFT)
-            spriteX -= (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
+            spriteX -= 120;//(createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.UP)
-            spriteY += (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
+            spriteY += 120;//(createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
         else {
             Debug.Log("BasicPipe.getRelativePipe error: unknown direction " + direction);
             return;
@@ -263,6 +264,7 @@ public class BasicPipe : UIObjectClass
             if (isAttemptingToRotate) {
                 PipeGrid.getPuzzle().isRotating = true;
                 rotationProgress = 0;
+                AudioHandler.Instance.playSoundEffect(pipeRotateSound);
             }
         }
     }
