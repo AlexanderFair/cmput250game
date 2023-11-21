@@ -171,13 +171,17 @@ public class BasicPipe : UIObjectClass
         float spriteX = this.transform.position.x, spriteY = this.transform.position.y;
         // should have used switch, but this is not an enum so if-else statement is utilized
         if (direction == PipeGrid.Directions.RIGHT)
-            spriteX += 120;//(createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
+            spriteX += (createdLeakDisplay.sprite.rect.size.x + attatchedRenderer.sprite.rect.size.x)
+             * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.DOWN)
-            spriteY -= 120;//(createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
+            spriteY -= (createdLeakDisplay.sprite.rect.size.y + attatchedRenderer.sprite.rect.size.y)
+             * attatchedRenderer.transform.localScale.y / 2;
         else if (direction == PipeGrid.Directions.LEFT)
-            spriteX -= 120;//(createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
+            spriteX -= (createdLeakDisplay.sprite.rect.size.x + attatchedRenderer.sprite.rect.size.x)
+             * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.UP)
-            spriteY += 120;//(createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
+            spriteY += (createdLeakDisplay.sprite.rect.size.y + attatchedRenderer.sprite.rect.size.y)
+             * attatchedRenderer.transform.localScale.y / 2;
         else {
             Debug.Log("BasicPipe.getRelativePipe error: unknown direction " + direction);
             return;
@@ -242,6 +246,9 @@ public class BasicPipe : UIObjectClass
     public void OnMouseOver() {
         // only if no grid is currently rotating
         if (PipeGrid.getPuzzle().isRotating)
+            return;
+        // should not rotate when the puzzle is finished
+        if (PipeGrid.getPuzzle().isSolved())
             return;
         // if the pipe is frozen, play some frozen sound or verbal hint
         if (frozenState > MAX_MOBILE_FROZEN_LAYER) {
