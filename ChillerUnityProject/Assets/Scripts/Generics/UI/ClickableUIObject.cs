@@ -27,6 +27,8 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
 
     public Settings.Controls clickControl = Settings.Controls.Click;
 
+    public bool outline = true;
+
     private bool clicked = false;
     private float timer = 0;
 
@@ -52,7 +54,7 @@ public abstract class ClickableUIObject : UIObjectClass, IClickableSprite
     }
     protected override void UpdateUIObject()
     {
-        this.UpdateOutlinableSprite();
+        if(outline)this.UpdateOutlinableSprite();
         bool shouldChange = false;
         if(Util.GetKeyDownWithMouseOverObject(clickControl, clickableCollider) 
             && ClickableCondition())

@@ -5,7 +5,6 @@ using UnityEngine;
 public class RadioRoomEntrance : InteractableRoomObject
 {
     [Header("Entrance Settings")]
-    public DialogDisplay.DialogStruct entrancePrompt;
     public DialogDisplay.DialogStruct[] incompletePrompt;
     public DialogDisplay.DialogStruct[] completebincompletePrompt;
     public DialogDisplay.DialogStruct[] completebcompletePrompt;
@@ -15,7 +14,14 @@ public class RadioRoomEntrance : InteractableRoomObject
     public override void Start()
     {
         base.Start();
-        DialogDisplay.NewDialog(entrancePrompt);
+        if (GameCompletionManager.RadioRoomComplete)
+        {
+            DialogDisplay.NewDialog(GameCompletionManager.BoilerRoomComplete? completebcompletePrompt : completebincompletePrompt);
+        }
+        else
+        {
+            DialogDisplay.NewDialog(incompletePrompt);
+        }
 
     }
 

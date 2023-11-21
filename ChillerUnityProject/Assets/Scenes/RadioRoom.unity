@@ -1237,6 +1237,7 @@ Transform:
   - {fileID: 830829858}
   - {fileID: 419033705}
   - {fileID: 2108510651}
+  - {fileID: 1741617909}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1263,15 +1264,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741617908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1327380885}
   - {fileID: 2133405116}
   - {fileID: 474532703}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1615586722}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1898414132
 GameObject:
@@ -1811,29 +1812,13 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  entrancePrompt:
-    dialog: "I can call for help using that radio! There\u2019s just the issue of
-      what frequency to dial\u2026"
-    animation: 1
-    disableInput: 1
-    big: 0
   incompletePrompt:
-  - dialog: "I can call for help using that radio! There\u2019s just the issue of
-      what frequency to dial\u2026"
-    animation: 1
-    disableInput: 1
-    big: 0
-  completebincompletePrompt:
-  - dialog: I've already called out! I should try and get warm now.
-    animation: 1
+  - dialog: <i>The soft purr of radio static beckons you</i>
+    animation: 2
     disableInput: 0
     big: 0
-  completebcompletePrompt:
-  - dialog: I already got the message out. I should probably go outside and see if
-      they're here.
-    animation: 1
-    disableInput: 0
-    big: 0
+  completebincompletePrompt: []
+  completebcompletePrompt: []
   nextScene: HubRoom
   nextLocation: {x: -400, y: -126, z: 0}
 --- !u!1001 &5974874956549861253
