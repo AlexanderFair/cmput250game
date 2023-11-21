@@ -153,9 +153,6 @@ public class PipeGrid {
             if (pipe is PipeOutput && ! (pipe.isConnected))
                 return false;
         }
-        // yay!
-        GameCompletionManager.BoilerRoomComplete = true;//CHANGE
-        Debug.Log("Complete B");
         return true;
     }
 

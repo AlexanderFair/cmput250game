@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424810659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 270, y: 57, z: 0}
+  m_LocalPosition: {x: 270, y: 53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1841096905}
@@ -467,11 +467,6 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  entrancePrompt:
-    dialog: 
-    animation: 1
-    disableInput: 1
-    big: 0
   incompletePrompt: []
   completebincompletePrompt: []
   completebcompletePrompt: []
@@ -1207,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 3253824832891022335, guid: 35fd143d373caf2419a151bbd5e9d661,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3253824832891022335, guid: 35fd143d373caf2419a151bbd5e9d661,
         type: 3}
@@ -1253,6 +1248,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RandomNoteRoomObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198096504345444549, guid: 35fd143d373caf2419a151bbd5e9d661,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 25.475418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198096504345444549, guid: 35fd143d373caf2419a151bbd5e9d661,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 68.084785
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35fd143d373caf2419a151bbd5e9d661, type: 3}
