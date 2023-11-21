@@ -89,7 +89,7 @@ public class PipeGrid {
         currUI = UI;
         initPuzzle(puzzleName, roomObj.liquidAmount);
     }
-    // gets the requested puzzle
+    // gets the specified puzzle
     public static PipeGrid getPuzzle(PipePuzzles puzzleIndex) {
         if (! (ALL_PUZZLES.ContainsKey(puzzleIndex)) ) {
             initPuzzle(puzzleIndex, 0);

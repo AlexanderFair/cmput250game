@@ -12,6 +12,9 @@ using UnityEngine;
  */
 public class PipeInput : BasicPipe
 {
+    // the sound to play once completed
+    public AudioClip COMPLETION_SOUND;
+
     public static int PIPE_TYPE_IDX = 1;
 
     public PipeInput() {
@@ -59,6 +62,9 @@ public class PipeInput : BasicPipe
                 pipe.postOperationTick();
             }
 
+            // play a finished sound if puzzle is solved
+            if (PipeGrid.getPuzzle().isSolved())
+                AudioHandler.Instance.playSoundEffect(COMPLETION_SOUND);
             // record flow update as completed
             PipeGrid.getPuzzle().pendingFlowUpdate = false;
         }
