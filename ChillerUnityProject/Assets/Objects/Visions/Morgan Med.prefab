@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8058444539180236835}
   - component: {fileID: 894795001281358410}
   m_Layer: 5
-  m_Name: VisionGhost
+  m_Name: Morgan Med
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7645731523287964139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -430, y: -74, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -430, y: 74, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,8 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 6
-  m_Sprite: {fileID: 8646871480977884344, guid: 289d8dd9fa700444a9465c5f9de44a37,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05e63e084766ba448959d0ed29676938, type: 3}
   m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +99,11 @@ MonoBehaviour:
   - {fileID: 894795001281358410}
   mainAnimationIndex: 0
   clipOnCreation:
-  - {fileID: 8300000, guid: dca815bb78bdd464e87e2dce39e17057, type: 3}
-  - {fileID: 8300000, guid: 6c250f90310902c4692431098e034432, type: 3}
+  - {fileID: 8300000, guid: 62778550f2ad7d64399305c007335997, type: 3}
+  - {fileID: 8300000, guid: 0e7f19b4fc8472f42b2da6266b0581d0, type: 3}
+  - {fileID: 8300000, guid: 920070dec1098e347a41a547dea83f65, type: 3}
+  - {fileID: 8300000, guid: cc12284511826f241984724a96a7670e, type: 3}
+  - {fileID: 8300000, guid: 12a768c1ceb1b53499eaaefc4a4b0601, type: 3}
   pauseAtUI: 0
   destroyOnMenuOpen: 1
 --- !u!114 &894795001281358410
@@ -117,13 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStruct:
-  - {fileID: 8646871480977884344, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: 8702634603011099530, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: -3127791068277983004, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: -8464538346963755674, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: 8633414726556517105, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: 8733025021206700872, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: 1146914515087089353, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
-  - {fileID: -8682988498110472981, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: 21300000, guid: 05e63e084766ba448959d0ed29676938, type: 3}
+  - {fileID: 21300000, guid: 05e63e084766ba448959d0ed29676938, type: 3}
   spriteRenderer: {fileID: 8943921214195164188}
-  repetitionFactor: 1
+  repetitionFactor: 2

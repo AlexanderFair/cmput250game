@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8553704103994718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3063626741648985204}
   - {fileID: 6930565956358919673}
@@ -72,8 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4177768872721955028, guid: 06692a05b95b770419e709df9369b44d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1cb514ef24989d4f85b59f51f4eadde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +118,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.96, y: 0.01}
-  m_SizeDelta: {x: 15, y: 10}
+  m_SizeDelta: {x: 900, y: 660}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6557551271516535765
 CanvasRenderer:
@@ -149,12 +148,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 4
+    m_Font: {fileID: 12800000, guid: 3901a0b9603835f4e93648ec17ef7665, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -191,18 +190,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130815356713638632}
-  m_LocalRotation: {x: 0, y: 0, z: 0.13035314, w: 0.99146765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2139925020979951455}
   m_Father: {fileID: 3613044123608854195}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.98}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.1229, y: 0.018}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 960, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3283977139080505630
 Canvas:
@@ -238,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 200
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -246,7 +245,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 200
+  m_DynamicPixelsPerUnit: 1
 --- !u!114 &1028663046628098505
 MonoBehaviour:
   m_ObjectHideFlags: 0

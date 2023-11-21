@@ -58,13 +58,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.04141651
     - serializedVersion: 3
-      time: 99.99368
-      value: 0.40337446
-      inSlope: 0.013630134
-      outSlope: 0.013630134
+      time: 100.051796
+      value: 0.2531269
+      inSlope: 0.0066940207
+      outSlope: 0.0066940207
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.025929814
+      inWeight: 0.025626168
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -107,11 +107,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionsList:
-  - vision: {fileID: 6930095614828549535, guid: 1f1b987ecb592c94588b2cf0ce77e653,
-      type: 3}
-    insanityLevel: 12
-    predicate: -1
-  - vision: {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d,
+  - vision: {fileID: 7645731523287964139, guid: c9dbd12ba96a2024e954d2bfb24d2293,
       type: 3}
     insanityLevel: 2
     predicate: -1
+  - vision: {fileID: 7645731523287964139, guid: fba7648611dce884184215e1305ecb1b,
+      type: 3}
+    insanityLevel: 8
+    predicate: -1
+  - vision: {fileID: 7645731523287964139, guid: d3aa30e9d4b40ce40a4cc574063f2c77,
+      type: 3}
+    insanityLevel: 4
+    predicate: -1
+  - vision: {fileID: 7645731523287964139, guid: 263454a0df7de264da6e33940d8de32d,
+      type: 3}
+    insanityLevel: 6
+    predicate: 1
