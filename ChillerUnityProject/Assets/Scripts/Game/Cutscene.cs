@@ -9,7 +9,7 @@ using UnityEngine.Video;
  * The management of a cutscene is done by such class
  */
 public class Cutscene : UIObjectClass {
-    private const bool SHOULD_LOG_INFO = true; 
+    private const bool SHOULD_LOG_INFO = false; 
     // identifier for a cutscene
     public enum CutsceneID {
         INTRO
@@ -51,6 +51,7 @@ public class Cutscene : UIObjectClass {
     // internal dictionary that stores cutscenes
     private static Dictionary<CutsceneID, Cutscene> _cutsceneMap = new Dictionary<CutsceneID, Cutscene>();
 
+    private bool destroyImmediate = false;
 
     /*
      * internal use: caches THIS CURRENT cutscene based on its identifier; recommended to have a single call on awake. 
@@ -59,6 +60,7 @@ public class Cutscene : UIObjectClass {
     protected bool cacheCutscene() {
         if (_cutsceneMap.ContainsKey(cutsceneIdentifier) ) {
             Settings.DisplayWarning("WARNING: possible duplication for cutscene " + cutsceneIdentifier + ". Do your cutscene have a wrong identifier?", gameObject);
+            destroyImmediate = true;
             DestroyImmediate(gameObject);
             return false;
         }
@@ -172,6 +174,10 @@ public class Cutscene : UIObjectClass {
         CutSceneBlackBackground.Instance?.DisableBackground();
         if (SHOULD_LOG_INFO)
             Settings.DisplayWarning("Cutscene " + cutsceneIdentifier + " was finished.", gameObject);
-        DialogDisplay.NewDialog(dialogOnComplete);
+
+        if (!destroyImmediate)
+        {
+            DialogDisplay.NewDialog(dialogOnComplete);
+        }
     }
 }

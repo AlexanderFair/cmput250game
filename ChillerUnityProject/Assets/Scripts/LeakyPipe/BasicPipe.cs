@@ -38,6 +38,7 @@ public class BasicPipe : UIObjectClass
     // targetRotationDir: 0 is for not rotating, 1 is for CW, -1 for CCW
     public int gridX, gridY, rotation, targetRotationDir = 0;
     public float rotationProgress = 0;
+    public AudioClip pipeRotateSound;
 
 
     //
@@ -270,6 +271,7 @@ public class BasicPipe : UIObjectClass
             if (isAttemptingToRotate) {
                 PipeGrid.getPuzzle().isRotating = true;
                 rotationProgress = 0;
+                AudioHandler.Instance.playSoundEffect(pipeRotateSound);
             }
         }
     }
