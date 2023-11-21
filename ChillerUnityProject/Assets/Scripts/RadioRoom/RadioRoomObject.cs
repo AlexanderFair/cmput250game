@@ -45,8 +45,10 @@ public class RadioRoomObject : DisplayUIRoomObject
     //Played when a lore code is selected
     public AudioClip[] loreEffects;
     public Insanity.AddAmount loreInsanityAdd;
-    
-    
+
+
+    public static int completedFreqs = -1;
+
 
 
     //Id is set to 1 if that id was completed
@@ -76,6 +78,7 @@ public class RadioRoomObject : DisplayUIRoomObject
     {
         bool b = IsFrequencyComplete(id);
         combosComplete |= (1ul << (id + bitComboStorageOffset));
+        if (!b) completedFreqs++;
         return !b;
     }
 
