@@ -170,15 +170,6 @@ public class BasicPipe : UIObjectClass
         float spriteX = this.transform.position.x, spriteY = this.transform.position.y;
         // should have used switch, but this is not an enum so if-else statement is utilized
         if (direction == PipeGrid.Directions.RIGHT)
-<<<<<<< Updated upstream
-            spriteX += (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
-        else if (direction == PipeGrid.Directions.DOWN)
-            spriteY -= (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
-        else if (direction == PipeGrid.Directions.LEFT)
-            spriteX -= (createdLeakDisplay.size.x + attatchedRenderer.size.x) * attatchedRenderer.transform.localScale.x / 2;
-        else if (direction == PipeGrid.Directions.UP)
-            spriteY += (createdLeakDisplay.size.y + attatchedRenderer.size.y) * attatchedRenderer.transform.localScale.y / 2;
-=======
             spriteX += (createdLeakDisplay.sprite.rect.size.x + attatchedRenderer.sprite.rect.size.x)
              * attatchedRenderer.transform.localScale.x / 2;
         else if (direction == PipeGrid.Directions.DOWN)
@@ -190,7 +181,6 @@ public class BasicPipe : UIObjectClass
         else if (direction == PipeGrid.Directions.UP)
             spriteY += (createdLeakDisplay.sprite.rect.size.y + attatchedRenderer.sprite.rect.size.y)
              * attatchedRenderer.transform.localScale.y / 2;
->>>>>>> Stashed changes
         else {
             Debug.Log("BasicPipe.getRelativePipe error: unknown direction " + direction);
             return;
