@@ -273,6 +273,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 0}
   clickControl: 1
+  outline: 1
   ui: {fileID: 8659671074246463320}
 --- !u!61 &1381933866064925900
 BoxCollider2D:
