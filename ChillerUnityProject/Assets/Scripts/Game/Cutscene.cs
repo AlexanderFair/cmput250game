@@ -12,7 +12,7 @@ public class Cutscene : UIObjectClass {
     private const bool SHOULD_LOG_INFO = false; 
     // identifier for a cutscene
     public enum CutsceneID {
-        INTRO
+        INTRO, SANE_NO_PENGUIN, SANE, INSANE_NO_PENGUIN, INSANE
     }
     // the enum that stores current cutscene state
     public enum PlayPhase {
@@ -50,8 +50,9 @@ public class Cutscene : UIObjectClass {
     }
     // internal dictionary that stores cutscenes
     private static Dictionary<CutsceneID, Cutscene> _cutsceneMap = new Dictionary<CutsceneID, Cutscene>();
-
+    public bool playOnStart = false;
     private bool destroyImmediate = false;
+    public CutsceneConclusion doOnEnd = null;
 
     /*
      * internal use: caches THIS CURRENT cutscene based on its identifier; recommended to have a single call on awake. 
@@ -92,6 +93,10 @@ public class Cutscene : UIObjectClass {
             // prepare
             attatchedCutscenePlayer.prepareCompleted += afterCompletion;
             attatchedCutscenePlayer.Prepare();
+        }
+        if (playOnStart)
+        {
+            startPlayingCutscene();
         }
     }
     protected override void OnDestroyUIObject() {
@@ -178,6 +183,12 @@ public class Cutscene : UIObjectClass {
         if (!destroyImmediate)
         {
             DialogDisplay.NewDialog(dialogOnComplete);
+            doOnEnd?.OnCutsceneEnd();
         }
     }
+}
+
+public abstract class CutsceneConclusion : MonoBehaviour
+{
+    public abstract void OnCutsceneEnd();
 }

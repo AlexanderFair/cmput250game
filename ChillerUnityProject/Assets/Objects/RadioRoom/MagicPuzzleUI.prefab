@@ -350,6 +350,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 8353159097478658508}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &8353159097478658508
@@ -593,6 +594,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 2980079231031637449}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &2980079231031637449
@@ -945,6 +947,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 5795051342679253489}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &5795051342679253489
@@ -1207,6 +1210,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 870720318657934115}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &870720318657934115
@@ -2118,6 +2122,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 4907579535237429416}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &4907579535237429416
@@ -2596,6 +2601,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 3229799661074443202}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &3229799661074443202
@@ -2945,6 +2951,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 5180710420426560593}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &5180710420426560593
@@ -3297,6 +3304,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 1050080487111909253}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &1050080487111909253
@@ -4210,12 +4218,12 @@ MonoBehaviour:
   - dialog: Dr. Morgan always liked puzzles, Maybe if I solve this one, it'll reveal
       a frequency
     animation: 1
-    disableInput: 1
+    disableInput: 0
     big: 0
   completePrompt:
     dialog: That must be it! I should go try this frequency
     animation: 1
-    disableInput: 1
+    disableInput: 0
     big: 0
   alreadyCompletedPrompt: []
 --- !u!1 &7187375880280255556
@@ -4408,6 +4416,7 @@ MonoBehaviour:
   soundEffect:
   - {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
   clickControl: 1
+  outline: 1
   snapCollider: {fileID: 7889504892704575638}
   putDownSound: {fileID: 8300000, guid: 256921063e9c30c48a89ae4c91affeb4, type: 3}
 --- !u!61 &7889504892704575638

@@ -2667,6 +2667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}
+      propertyPath: cutsceneIdentifier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
       propertyPath: dialogOnComplete.dialog
       value: "<i>*Off balance from the floor\u2019s ever increasing lilt, and ears
         ringing from that dreadful metal shrieking of a crash*</i> I need to get

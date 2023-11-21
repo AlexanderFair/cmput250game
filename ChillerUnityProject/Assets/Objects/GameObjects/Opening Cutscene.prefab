@@ -84,4 +84,11 @@ MonoBehaviour:
   nameFileToPlay: opening_cutscene.mp4
   sceneOnFinish: 
   posOnFinish: {x: 0, y: 0, z: 0}
-  cutsceneIdentifier: 0
+  cutsceneIdentifier: 1
+  dialogOnComplete:
+    dialog: 
+    animation: 0
+    disableInput: 0
+    big: 0
+  playOnStart: 0
+  doOnEnd: {fileID: 0}
