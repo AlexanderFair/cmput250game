@@ -2703,6 +2703,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 590878255213113379, guid: e04ba70dc7ea4d244832da18c79e63ee,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 27277f0c4c290984a90ea946744227c3,
+        type: 3}
+    - target: {fileID: 590878255213113379, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
