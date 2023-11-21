@@ -19,6 +19,6 @@ public class LiquidRemainingText : UIObjectClass
         Text attatchedObj = this.gameObject.GetComponent<Text>();
         int liquidDecrement = PipeGrid.getPuzzle().liquidDecrement;
         attatchedObj.text = "Amount of Water Remaining: " + PipeGrid.getPuzzle().liquidRemaining + 
-                        (liquidDecrement > 0 ? " (Water depletion: " + liquidDecrement + "/turn)" : "");
+                        (liquidDecrement > 0 ? "\nWater depletion: " + liquidDecrement + "/turn" : "");
     }
 }

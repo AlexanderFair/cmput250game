@@ -63,8 +63,11 @@ public class PipeInput : BasicPipe
             }
 
             // play a finished sound if puzzle is solved
-            if (PipeGrid.getPuzzle().isSolved())
+            if (PipeGrid.getPuzzle().isSolved()) {
                 AudioHandler.Instance.playSoundEffect(COMPLETION_SOUND);
+                PipeGrid.triggeredRoomObj.isCompleted = true;
+            }
+
             // record flow update as completed
             PipeGrid.getPuzzle().pendingFlowUpdate = false;
         }
