@@ -223,11 +223,13 @@ MonoBehaviour:
     big: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
-  - dialog: It seems like that frequency doesn't work. I should try a different one
-    animation: 1
+  - dialog: <i>Failing to grasp at any lines of communication for you, the radio
+      meekly sputters an apologetic static crackling before returning to its usual
+      hum.</i>
+    animation: 2
     disableInput: 0
     big: 0
-  - dialog: Dang it! That one doesn't work. Maybe another one will
+  - dialog: "That frequency didn\u2019t work\u2026"
     animation: 1
     disableInput: 0
     big: 0
@@ -243,7 +245,8 @@ MonoBehaviour:
     big: 0
   promptsForNext:
   - prompts:
-    - dialog: I should try the frequency on that sticky note
+    - dialog: "I can call for help using that radio! There\u2019s just the issue
+        of what frequency to dial\u2026"
       animation: 1
       disableInput: 0
       big: 0
@@ -265,7 +268,11 @@ MonoBehaviour:
       disableInput: 0
       big: 0
   completeCodePrompts:
-  - "Only static\u2026 Maybe no one's there\u2026 I should try a different one. "
+  - "The radio\u2019s more broken than I\u2019d realized.. Looks like I\u2019ll need
+    to input all four of the frequency codes to connect the radio."
+  - "<i>The radio sputters a static crackling, you\u2019re one step closer.</i>"
+  - <i>A brief interjection of clear audio claws through the wall of static whir.
+    The radio can nearly make contact.</i>
   goodCodeEffects: []
   lore:
   - dialog: "<i>A mechanical voice drones out a monotone reading of the current date

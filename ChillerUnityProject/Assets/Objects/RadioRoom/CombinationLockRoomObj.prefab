@@ -62,9 +62,9 @@ MonoBehaviour:
     type: 3}
   solve: 010000000300000004000000000000000500000002000000
   incompletePrompt:
-  - dialog: "I remeber these shapes near the other frequencies, maybe if I match
-      them up\u2026"
-    animation: 1
+  - dialog: "<i>A sense of deja vu tickles at the back of your brain, you\u2019ve
+      seen these symbols before.</i>"
+    animation: 2
     disableInput: 0
     big: 0
   completePrompt:
