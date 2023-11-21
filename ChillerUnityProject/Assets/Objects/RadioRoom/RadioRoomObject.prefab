@@ -233,7 +233,8 @@ MonoBehaviour:
     animation: 1
     disableInput: 0
     big: 0
-  badChoiceEffects: []
+  badChoiceEffects:
+  - {fileID: 8300000, guid: 35f06ffc6a9459c4589996f960ae8a82, type: 3}
   badInsanityAdd:
     amount: 2
     firstTimeActivate: 2
