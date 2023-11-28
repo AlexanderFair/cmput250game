@@ -86,7 +86,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   lowInsanityMax: 40
-  medInsanityMax: 70
+  medInsanityMax: 71
   minSaturation: -25
   minInsanity: 1
   maxSaturation: -100

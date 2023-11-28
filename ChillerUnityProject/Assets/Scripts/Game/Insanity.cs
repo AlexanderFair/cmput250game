@@ -128,9 +128,9 @@ public class Insanity : MonoBehaviour
     }
 
     // Adds the amount to the insanity level
-    public static int Add(AddAmount add)
+    public static void Add(AddAmount add)
     {
-        return Instance.AddInsanity(add);
+        Instance.AddInsanity(add);
     }
 
     //--add effect
@@ -219,12 +219,18 @@ public class Insanity : MonoBehaviour
     // Adds the amount to the insanity level
     public void AddInsanity(AddAmount add)
     {
-        //add.count+=1;
 
-        //if (add.count >= add.firstTimeActivate && add.count <= add.lastTimeActivate)
-        if(true){
+        if (adds.ContainsKey(add))
+        {
+            adds[add]++;
+        }
+        else
+        {
+            adds[add] = 1;
+        }
 
-            Debug.Log("add " + add.amount);
+        if (adds[add] >= add.firstTimeActivate && adds[add] <= add.lastTimeActivate)
+        {
             AddInsanityDirect(add.amount);
         }
     }
@@ -258,12 +264,14 @@ public class Insanity : MonoBehaviour
         [Range(1,100)]
         public int lastTimeActivate;
 
+        public string idString;
 
         public void Add()
         {
             Insanity.Add(this);
         }
     }
+
 }
 
 

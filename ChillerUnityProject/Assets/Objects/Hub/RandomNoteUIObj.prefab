@@ -157,10 +157,12 @@ MonoBehaviour:
     amount: 20
     firstTimeActivate: 1
     lastTimeActivate: 1
+    idString: hubRandNote1
   insanityAdd:
     amount: 1
     firstTimeActivate: 2
     lastTimeActivate: 100
+    idString: hubRandNote2
   textElement: {fileID: 7476134834926047502}
 --- !u!1 &7586281396866533243
 GameObject:

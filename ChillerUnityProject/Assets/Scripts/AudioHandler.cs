@@ -107,7 +107,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
 
     }
 
-    private void SetVolumes()
+    public void SetVolumes()
     {
         soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get() * Settings.FloatValues.MasterVolume.Get() * trackVolume;
         ambientSource.volume = Settings.FloatValues.AmbientVolume.Get() * Settings.FloatValues.MasterVolume.Get() * ambientVolume;
