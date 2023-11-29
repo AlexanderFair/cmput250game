@@ -33,6 +33,8 @@ public class Cutscene : UIObjectClass {
 
     public DialogDisplay.DialogStruct dialogOnComplete;
 
+    
+
 
     // internal variables
     // this flag is here because the file might not be loaded when start is requested
@@ -89,7 +91,8 @@ public class Cutscene : UIObjectClass {
     protected override void StartUIObject() {
         if ( cacheCutscene() ) {
             // generate url
-            attatchedCutscenePlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, nameFileToPlay);
+            string name = nameFileToPlay + ".mp4"; //(Application.isEditor ? ".mp4" : ".webm");
+            attatchedCutscenePlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, name);
             // prepare
             attatchedCutscenePlayer.prepareCompleted += afterCompletion;
             attatchedCutscenePlayer.Prepare();

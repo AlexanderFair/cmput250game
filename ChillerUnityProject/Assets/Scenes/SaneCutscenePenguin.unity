@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}
       propertyPath: nameFileToPlay
-      value: SaneEndingPenguin.mp4
+      value: SaneEndingPenguin
       objectReference: {fileID: 0}
     - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}

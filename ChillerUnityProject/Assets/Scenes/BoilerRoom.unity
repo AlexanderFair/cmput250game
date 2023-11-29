@@ -345,7 +345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583864101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53234e015f18c4549ad01110c736ba9d, type: 3}
+  m_Script: {fileID: 11500000, guid: b74c5b1f095a8884ca2dd99478c1d073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
@@ -467,9 +467,12 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  incompletePrompt: []
-  completebincompletePrompt: []
-  completebcompletePrompt: []
+  incompletePrompt:
+  - dialog: "It would be really nice if I could fix this boiler\u2026 I could start
+      by fixing the pipes\u2026"
+    animation: 1
+    disableInput: 0
+    big: 0
   nextScene: HubRoom
   nextLocation: {x: 400, y: -126, z: 0}
 --- !u!61 &583864104
@@ -534,9 +537,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2fc9c13f44560c748b1a81d20cbd6f65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

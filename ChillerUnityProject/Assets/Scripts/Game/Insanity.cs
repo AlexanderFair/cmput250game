@@ -219,6 +219,7 @@ public class Insanity : MonoBehaviour
     // Adds the amount to the insanity level
     public void AddInsanity(AddAmount add)
     {
+
         if (adds.ContainsKey(add))
         {
             adds[add]++;
@@ -250,10 +251,10 @@ public class Insanity : MonoBehaviour
 
         currentLevel = IsHigh() ? Level.HIGH : (IsMedium() ? Level.MED : (IsLow() ? Level.LOW : Level.BELOW_THRESHOLD));
     }
-
     [System.Serializable]
     public struct AddAmount
     {
+
         [Range(0,100)]
         public float amount;
         //Inclusive, 1 means that the first time it is added, the amount will be added
@@ -263,11 +264,14 @@ public class Insanity : MonoBehaviour
         [Range(1,100)]
         public int lastTimeActivate;
 
+        public string idString;
+
         public void Add()
         {
-            Instance.AddInsanity(this);
+            Insanity.Add(this);
         }
     }
+
 }
 
 

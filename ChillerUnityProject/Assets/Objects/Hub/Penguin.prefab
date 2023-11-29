@@ -228,6 +228,7 @@ MonoBehaviour:
     amount: 3
     firstTimeActivate: 1
     lastTimeActivate: 10
+    idString: penguin
 --- !u!114 &6886009229727363513
 MonoBehaviour:
   m_ObjectHideFlags: 0
