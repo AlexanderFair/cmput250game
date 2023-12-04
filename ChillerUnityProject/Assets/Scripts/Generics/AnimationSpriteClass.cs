@@ -23,7 +23,7 @@ public class AnimationSpriteClass : MonoBehaviour
     // The amount of frames that each give frame should represet
     // if this is 2 then each frame will be shown twice consecutively.
     // i.e. it is now AABBCC instead of ABC
-    public int repetitionFactor = 1;
+    public float repetitionFactor = 1;
 
     protected float currentTime = 0;
     protected int currentFrame = 0;
