@@ -9,6 +9,10 @@ public class PuzzleRoomObj : DisplayUIRoomObject
     public int liquidAmount = 100;
     public bool isCompleted = false;
 
+    public void Awake() {
+        isCompleted = PipeGrid.getPuzzle(levelName).isSolved();
+    }
+
     public override bool InteractableCondition() {
         // the final challenge has prerequisites!
         if (levelName == PipeGrid.PipePuzzles.HARD) {
