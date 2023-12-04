@@ -23,6 +23,6 @@ public class PipeOutput : BasicPipe
         Debug.Log("SOLVED!");
     }
     // sadly, such pipe can not be rotated :(
-    public void OnMouseOver() {
+    public override void handleRotationAttempt() {
     }
 }

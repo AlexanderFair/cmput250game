@@ -247,6 +247,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
+      propertyPath: MOVE_SPEED
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: speedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: speedDecayMultiplierPerSecond
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
       propertyPath: spriteAnimations.Array.data[0]
       value: 
       objectReference: {fileID: 503478531}

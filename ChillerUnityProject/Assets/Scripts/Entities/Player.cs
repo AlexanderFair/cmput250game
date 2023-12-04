@@ -26,7 +26,7 @@ public class Player : Entity {
     // the movement is continuous: a movement direction is specified, then the player moves
     // for MOVE_DURATION_SEC amont of time, move according to the moving direction with speed MOVE_SPEED.
     // this system is mainly implemented to prevent funny sprite twitch when the player quickly alternates between A and D 
-    public float MOVE_DURATION_SEC = 0.1f, MOVE_SPEED = 1;
+    public float MOVE_DURATION_SEC = 0.1f, MOVE_SPEED = 250;
     public float movement_progress = 0f;
     public float speedMultiplier = 1f;
     public Vector3 moveDir = Vector3.zero;
@@ -60,7 +60,6 @@ public class Player : Entity {
     }
     
     protected override void AI() {
-        Debug.Log(velocity + ":::" + speedDecayMultiplierPerSecond + ", " + Time.deltaTime);
         // move speed should align with sprite update speed
         // so the player does not appear to be "drifting" on ground
         spriteAnimators[0].repetitionFactor = 1 / speedMultiplier;
