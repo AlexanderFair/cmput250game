@@ -1108,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 2033715799513107440, guid: 02d6f41d01664f740bc47553bb8a0813,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 256.17557
+      value: 256.1756
       objectReference: {fileID: 0}
     - target: {fileID: 2033715799513107440, guid: 02d6f41d01664f740bc47553bb8a0813,
         type: 3}
@@ -2491,9 +2491,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e46fc7b17591c340b7941fae5ca1df6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2677,6 +2677,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}
+      propertyPath: nameFileToPlay
+      value: ChillerOpeningCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
+      propertyPath: cutsceneIdentifier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
+        type: 3}
       propertyPath: dialogOnComplete.dialog
       value: "<i>*Off balance from the floor\u2019s ever increasing lilt, and ears
         ringing from that dreadful metal shrieking of a crash*</i> I need to get
@@ -2711,6 +2721,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 247012308}
     m_Modifications:
+    - target: {fileID: 590878255213113379, guid: e04ba70dc7ea4d244832da18c79e63ee,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 27277f0c4c290984a90ea946744227c3,
+        type: 3}
     - target: {fileID: 590878255213113379, guid: e04ba70dc7ea4d244832da18c79e63ee,
         type: 3}
       propertyPath: m_SortingLayer
@@ -2870,6 +2886,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563543, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: a.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
         type: 3}
       propertyPath: saturateTime
@@ -3016,9 +3037,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21ff587b6a1976649bd3764cea38ae2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

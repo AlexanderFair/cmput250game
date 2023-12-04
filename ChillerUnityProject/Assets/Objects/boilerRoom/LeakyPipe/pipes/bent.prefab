@@ -106,7 +106,7 @@ MonoBehaviour:
   rotation: 0
   targetRotationDir: 0
   rotationProgress: 0
-  pipeRotateSound: {fileID: 8300000, guid: 985ecd94fafa2ee41aa11aab365d2391, type: 3}
+  pipeRotateSound: {fileID: 8300000, guid: 2e4055c74cb02f4419a483cbb7280f7a, type: 3}
 --- !u!61 &1913363899163224220
 BoxCollider2D:
   m_ObjectHideFlags: 0

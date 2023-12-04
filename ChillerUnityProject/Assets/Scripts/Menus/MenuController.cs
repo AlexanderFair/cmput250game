@@ -20,7 +20,9 @@ public class MenuController : MonoBehaviour
 
     private GameObject currentMenuPrefab = null;
     private GameMenuObject currentMenuObject = null;
-    private GameObject previousMenuPrefab = null; 
+    private GameObject previousMenuPrefab = null;
+
+    public bool inCutscene = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,10 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inCutscene)
+        {
+            return;
+        }
         if (Settings.Controls.Pause.GetKeyDown(forceGetInput: true)){
             ChangeMenu(); // Changes to pause if no menu is active otherwise exits menu
         }

@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/SaneCutsceneNoPenguin.unity
+    guid: 1bf8ee961860f564eb6fa22a5646db15
+  - enabled: 1
+    path: Assets/Scenes/InsaneCutscene.unity
+    guid: 78898983cd9e003439b60aa3f5641d2e
+  - enabled: 1
+    path: Assets/Scenes/SaneCutscenePenguin.unity
+    guid: 9077ff81d7ce9bd42b9954818e583795
   m_configObjects: {}

@@ -223,19 +223,23 @@ MonoBehaviour:
     big: 0
   alreadyCalledForHelpSubmitEffects: []
   badChoice:
-  - dialog: It seems like that frequency doesn't work. I should try a different one
+  - dialog: <i>Failing to grasp at any lines of communication for you, the radio
+      meekly sputters an apologetic static crackling before returning to its usual
+      hum.</i>
+    animation: 2
+    disableInput: 0
+    big: 0
+  - dialog: "That frequency didn\u2019t work\u2026"
     animation: 1
     disableInput: 0
     big: 0
-  - dialog: Dang it! That one doesn't work. Maybe another one will
-    animation: 1
-    disableInput: 0
-    big: 0
-  badChoiceEffects: []
+  badChoiceEffects:
+  - {fileID: 8300000, guid: 35f06ffc6a9459c4589996f960ae8a82, type: 3}
   badInsanityAdd:
     amount: 2
     firstTimeActivate: 2
     lastTimeActivate: 10
+    idString: radioBadChoice
   alredayChosen:
   - dialog: "I've already tried this one, no one was there\u2026"
     animation: 1
@@ -243,7 +247,8 @@ MonoBehaviour:
     big: 0
   promptsForNext:
   - prompts:
-    - dialog: I should try the frequency on that sticky note
+    - dialog: "I can call for help using that radio! There\u2019s just the issue
+        of what frequency to dial\u2026"
       animation: 1
       disableInput: 0
       big: 0
@@ -265,7 +270,11 @@ MonoBehaviour:
       disableInput: 0
       big: 0
   completeCodePrompts:
-  - "Only static\u2026 Maybe no one's there\u2026 I should try a different one. "
+  - "The radio\u2019s more broken than I\u2019d realized.. Looks like I\u2019ll need
+    to input all four of the frequency codes to connect the radio."
+  - "<i>The radio sputters a static crackling, you\u2019re one step closer.</i>"
+  - <i>A brief interjection of clear audio claws through the wall of static whir.
+    The radio can nearly make contact.</i>
   goodCodeEffects: []
   lore:
   - dialog: "<i>A mechanical voice drones out a monotone reading of the current date
@@ -288,6 +297,7 @@ MonoBehaviour:
     big: 1
   loreEffects: []
   loreInsanityAdd:
-    amount: 20
+    amount: 30
     firstTimeActivate: 1
     lastTimeActivate: 1
+    idString: radLore

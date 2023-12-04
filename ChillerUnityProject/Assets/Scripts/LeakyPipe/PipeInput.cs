@@ -12,6 +12,7 @@ using UnityEngine;
  */
 public class PipeInput : BasicPipe
 {
+    public DialogDisplay.DialogStruct completedHard;
     // the sound to play once completed
     public AudioClip COMPLETION_SOUND;
 
@@ -63,8 +64,15 @@ public class PipeInput : BasicPipe
             }
 
             // play a finished sound if puzzle is solved
-            if (PipeGrid.getPuzzle().isSolved())
+            if (PipeGrid.getPuzzle().isSolved()) {
                 AudioHandler.Instance.playSoundEffect(COMPLETION_SOUND);
+                PipeGrid.triggeredRoomObj.isCompleted = true;
+                if (GameCompletionManager.BoilerRoomComplete)
+                {
+                    DialogDisplay.NewDialog(completedHard);
+                }
+            }
+
             // record flow update as completed
             PipeGrid.getPuzzle().pendingFlowUpdate = false;
         }

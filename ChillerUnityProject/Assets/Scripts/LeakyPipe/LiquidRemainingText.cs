@@ -18,7 +18,7 @@ public class LiquidRemainingText : UIObjectClass
     protected override void UpdateUIObject() {
         Text attatchedObj = this.gameObject.GetComponent<Text>();
         int liquidDecrement = PipeGrid.getPuzzle().liquidDecrement;
-        attatchedObj.text = "Units of Liquid Remaining: " + PipeGrid.getPuzzle().liquidRemaining + 
-                        (liquidDecrement > 0 ? " (liquid depletion rate: " + liquidDecrement + "/operation)" : "");
+        attatchedObj.text = "Amount of Water Remaining: " + PipeGrid.getPuzzle().liquidRemaining + 
+                        (liquidDecrement > 0 ? "\nWater depletion: " + liquidDecrement + "/turn" : "");
     }
 }
