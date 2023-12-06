@@ -270,7 +270,7 @@ MonoBehaviour:
   FOLLOW_RADIUS: 12
   FOLLOW_SPEED: 30
   lockMovementTime: 2
-  unlockVelocity: {x: 0, y: -40}
+  unlockVelocity: {x: -40, y: 0}
   sortOrderTimer: 0.5
   cageForegroundSprite: {fileID: 0}
 --- !u!50 &6886009229727363517
