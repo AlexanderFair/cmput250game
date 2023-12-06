@@ -107,7 +107,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
 
     }
 
-    private void SetVolumes()
+    public void SetVolumes()
     {
         soundtrackAudioSource.volume = Settings.FloatValues.SoundtrackVolume.Get() * Settings.FloatValues.MasterVolume.Get() * trackVolume;
         ambientSource.volume = Settings.FloatValues.AmbientVolume.Get() * Settings.FloatValues.MasterVolume.Get() * ambientVolume;
@@ -142,51 +142,30 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
             }
         }
     }
-    //TEMP THING
-    public bool doplay = false;
+
+    private bool playLowerInsteadOfHigher = true;
     /* Chooses a track based off of insanity/game progress */
     private AudioClip chooseSoundtrack(){
         Settings.DisplayWarning("choosing soundtrack!", gameObject);
         string scene = GameManager.Instance.getCurrentSceneName();
         foreach (RoomSoundtracks room in tracks) { 
             if (room.sceneName == scene) {
-                if (Insanity.Instance.IsLow() || Insanity.Instance.IsBelowThreshold()){
+                if(Insanity.Instance.IsBelowThreshold()){
                     return room.low;
+                } else if (Insanity.Instance.IsLow() || Insanity.Instance.IsBelowThreshold()){
+                    playLowerInsteadOfHigher ^= true;
+                    return playLowerInsteadOfHigher ? room.low : room.medium; 
                 } else if (Insanity.Instance.IsMedium()){
-                    return room.medium;
+                    playLowerInsteadOfHigher ^= true;
+                    return playLowerInsteadOfHigher ? room.medium : room.high; 
                 } else if (Insanity.Instance.IsHigh()){
                     return room.high;
                 }
             }
         }
-        Debug.Log(scene);
-        
+        Debug.Log("Could not choose a soundtrack! in $scene");
         
         return null;
-    /*
-        if (!doplay){
-            return null;
-        }
-        // find number of 
-        int countOfPlayableTracks = 0;
-        foreach (float score in trackInsanityScores){
-            if (score <= Insanity.Instance.getInsanity()){
-                countOfPlayableTracks++;
-            }
-        }
-        int choice = Random.Range(0, countOfPlayableTracks+1);
-        int count = 0;
-        for (int i = 0; i < trackInsanityScores.Length; i++){
-            if (trackInsanityScores[i] <= Insanity.Instance.getInsanity()) {
-                count++;
-                if (count >= choice){
-                    return tracks[i];
-                }
-            }
-        }
-        Debug.Log("please let xander know if you saw this thanks (choose soundtrack)");
-        return tracks[0];
-        */
     }
     /* Plays a sound effect. 
     * @param AudioClip soundEffect The sound effect to be played

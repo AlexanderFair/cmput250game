@@ -724,7 +724,8 @@ MonoBehaviour:
   clickedAnimation:
   - {fileID: 21300000, guid: 7c4cd688288dc764a96be541f0c5e641, type: 3}
   clickRechargeTime: 0.5
-  soundEffect: []
+  soundEffect:
+  - {fileID: 8300000, guid: 81a3f1b94b514df42a64eefa5b56427a, type: 3}
   clickControl: 1
   outline: 1
   puzzle: {fileID: 4709724229192949080}

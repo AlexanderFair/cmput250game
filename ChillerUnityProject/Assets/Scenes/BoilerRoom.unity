@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424810659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 270, y: 57, z: 0}
+  m_LocalPosition: {x: 270, y: 53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1841096905}
@@ -345,7 +345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583864101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53234e015f18c4549ad01110c736ba9d, type: 3}
+  m_Script: {fileID: 11500000, guid: b74c5b1f095a8884ca2dd99478c1d073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
@@ -467,14 +467,12 @@ MonoBehaviour:
   dialogProfileAnimation:
   - {fileID: 0}
   dialog: 
-  entrancePrompt:
-    dialog: 
+  incompletePrompt:
+  - dialog: "It would be really nice if I could fix this boiler\u2026 I could start
+      by fixing the pipes\u2026"
     animation: 1
-    disableInput: 1
+    disableInput: 0
     big: 0
-  incompletePrompt: []
-  completebincompletePrompt: []
-  completebcompletePrompt: []
   nextScene: HubRoom
   nextLocation: {x: 400, y: -126, z: 0}
 --- !u!61 &583864104
@@ -539,9 +537,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441991147
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayerID: 1278940923
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2fc9c13f44560c748b1a81d20cbd6f65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1207,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 3253824832891022335, guid: 35fd143d373caf2419a151bbd5e9d661,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3253824832891022335, guid: 35fd143d373caf2419a151bbd5e9d661,
         type: 3}
@@ -1253,6 +1251,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RandomNoteRoomObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198096504345444549, guid: 35fd143d373caf2419a151bbd5e9d661,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 25.475418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198096504345444549, guid: 35fd143d373caf2419a151bbd5e9d661,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 68.084785
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35fd143d373caf2419a151bbd5e9d661, type: 3}

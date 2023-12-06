@@ -12,6 +12,7 @@ using UnityEngine;
  */
 public class PipeInput : BasicPipe
 {
+    public DialogDisplay.DialogStruct completedHard;
     // the sound to play once completed
     public AudioClip COMPLETION_SOUND;
 
@@ -66,6 +67,10 @@ public class PipeInput : BasicPipe
             if (PipeGrid.getPuzzle().isSolved()) {
                 AudioHandler.Instance.playSoundEffect(COMPLETION_SOUND);
                 PipeGrid.triggeredRoomObj.isCompleted = true;
+                if (GameCompletionManager.BoilerRoomComplete)
+                {
+                    DialogDisplay.NewDialog(completedHard);
+                }
             }
 
             // record flow update as completed
@@ -73,6 +78,6 @@ public class PipeInput : BasicPipe
         }
     }
     // sadly, such pipe can not be rotated :(
-    public void OnMouseOver() {
+    public override void handleRotationAttempt() {
     }
 }

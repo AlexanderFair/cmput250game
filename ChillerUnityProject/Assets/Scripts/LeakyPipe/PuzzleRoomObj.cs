@@ -9,6 +9,11 @@ public class PuzzleRoomObj : DisplayUIRoomObject
     public int liquidAmount = 100;
     public bool isCompleted = false;
 
+    // when re-entering the room, synchronize the puzzle solve state
+    public void Awake() {
+        isCompleted = PipeGrid.getPuzzle(levelName).isSolved();
+    }
+
     public override bool InteractableCondition() {
         // the final challenge has prerequisites!
         if (levelName == PipeGrid.PipePuzzles.HARD) {
@@ -22,6 +27,14 @@ public class PuzzleRoomObj : DisplayUIRoomObject
 
         // do not interact after this is finished
         return base.InteractableCondition() && !isCompleted;
+    }
+    // call this to re-open UI
+    public void ReopenUI()
+    {
+        // close the UI 
+        UIObjectClass.ClearUI();
+        // re-open
+        Interact();
     }
     // called after the UI is displayed
     protected override void DisplayedUI()

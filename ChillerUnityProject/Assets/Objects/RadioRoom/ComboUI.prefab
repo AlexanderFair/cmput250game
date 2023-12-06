@@ -498,8 +498,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8537f7af9f12d324da593f92c2bae6d6, type: 3}
   clickRechargeTime: 0.5
   soundEffect:
-  - {fileID: 8300000, guid: 81a3f1b94b514df42a64eefa5b56427a, type: 3}
+  - {fileID: 8300000, guid: d82afbfee9c9c5441a91605d01357629, type: 3}
   clickControl: 1
+  outline: 1
   puzzle: {fileID: 3264617179738186004}
 --- !u!61 &6959716471633412396
 BoxCollider2D:

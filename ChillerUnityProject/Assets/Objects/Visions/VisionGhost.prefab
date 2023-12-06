@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8943921214195164188}
   - component: {fileID: 8058444539180236835}
   - component: {fileID: 894795001281358410}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: VisionGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7645731523287964139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -430, y: -74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,12 +69,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 638449741
-  m_SortingLayer: 4
-  m_SortingOrder: 6
-  m_Sprite: {fileID: 4448715427215634006, guid: 005d1627d0e03f3409b4854b6bae823c,
+  m_SortingLayerID: 441991147
+  m_SortingLayer: 1
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 8646871480977884344, guid: 289d8dd9fa700444a9465c5f9de44a37,
     type: 3}
-  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,6 +99,11 @@ MonoBehaviour:
   spriteAnimators:
   - {fileID: 894795001281358410}
   mainAnimationIndex: 0
+  clipOnCreation:
+  - {fileID: 8300000, guid: dca815bb78bdd464e87e2dce39e17057, type: 3}
+  - {fileID: 8300000, guid: 6c250f90310902c4692431098e034432, type: 3}
+  pauseAtUI: 0
+  destroyOnMenuOpen: 1
 --- !u!114 &894795001281358410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,20 +117,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStruct:
-  - {fileID: 4448715427215634006, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -5371487250077298216, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: 3804052344441610512, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -1547119588211550254, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -3115759949177479005, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: 6877805946922726449, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -8058635044977053328, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: 1353279457525499693, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -2192938834016724446, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -9150901423627980349, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: 599085326982099810, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -3730394470417345242, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -1538078622612745231, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -5141128511496197232, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
-  - {fileID: -7924325515865952776, guid: 005d1627d0e03f3409b4854b6bae823c, type: 3}
+  - {fileID: 8646871480977884344, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: 8702634603011099530, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: -3127791068277983004, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: -8464538346963755674, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: 8633414726556517105, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: 8733025021206700872, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: 1146914515087089353, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
+  - {fileID: -8682988498110472981, guid: 289d8dd9fa700444a9465c5f9de44a37, type: 3}
   spriteRenderer: {fileID: 8943921214195164188}
   repetitionFactor: 1

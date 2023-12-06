@@ -224,8 +224,10 @@ public class BasicPipe : UIObjectClass
             }
         }
     }
-    // tick rotation
+    // tick rotation and rotation attempt
     protected override void UpdateUIObject() {
+        // handle possible rotation attempt
+        handleRotationAttempt();
         // if the pipe is currently rotating
         if (targetRotationDir != 0) {
             rotationProgress += 10 * Time.deltaTime;
@@ -243,7 +245,10 @@ public class BasicPipe : UIObjectClass
         }
     }
     // attempt to initialize rotating attempt when clicked
-    public void OnMouseOver() {
+    public virtual void handleRotationAttempt() {
+        // do nothing if mouse is not over it
+        if (! Util.IsMouseOverObject(getAttatchedCollider() ))
+            return;
         // only if no grid is currently rotating
         if (PipeGrid.getPuzzle().isRotating)
             return;

@@ -16,12 +16,11 @@ public abstract class Entity : RoomObjectClass
     protected Vector3 velocity = Vector3.zero;
     public float speedDecayMultiplierPerSecond = 0.02f;
 
-    private bool aiUpdatedSinceLastMovementUpdate = false;
 
     /* Called when the object is updated and the UI and Menu is not active */
     protected override void UpdateRoomObject() {
         AI();
-        aiUpdatedSinceLastMovementUpdate = true;
+        movement();
     }
 
     /*
@@ -65,14 +64,6 @@ public abstract class Entity : RoomObjectClass
         }
     }
 
-    public void FixedUpdate()
-    {
-        if (aiUpdatedSinceLastMovementUpdate)
-        {
-            aiUpdatedSinceLastMovementUpdate = false;
-            movement();
-        }
-    }
 
     /*
      * player movement, penguin follow etc.
