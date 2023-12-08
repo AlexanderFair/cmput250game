@@ -480,9 +480,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1404129721
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: -1609247
+  m_SortingLayer: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1325c5c0370a1414492b353e49af8441, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1328,6 +1328,16 @@ MonoBehaviour:
     animation: 0
     disableInput: 0
     big: 0
+  lowInsanityAdd:
+    amount: 0
+    firstTimeActivate: 0
+    lastTimeActivate: 0
+    idString: destroyedDoorLow
+  highInsanityAdd:
+    amount: 0
+    firstTimeActivate: 0
+    lastTimeActivate: 1
+    idString: destroyedDoorHigh
 --- !u!1 &925225858
 GameObject:
   m_ObjectHideFlags: 0

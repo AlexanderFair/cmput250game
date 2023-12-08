@@ -76,7 +76,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
         {
             AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(interactSound));
         }
-        DialogDisplay.NewDialog(dialogs);
+        if(dialogs != null) DialogDisplay.NewDialog(dialogs);
         interactionControl.UseControl();
     }
 
