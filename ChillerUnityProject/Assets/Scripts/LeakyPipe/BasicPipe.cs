@@ -18,6 +18,7 @@ public class BasicPipe : UIObjectClass
     public int pipeTypeIndex;
     public static Dictionary<int, Sprite> CONNECTED_SPRITE = new Dictionary<int, Sprite>();
     public static Dictionary<int, Sprite[]> FROZEN_SPRITES = new Dictionary<int, Sprite[]>();
+    public static DialogDisplay.DialogStruct[] FROZEN_DIALOGUE;
 
     // Direction: starts with right (index of 0, see PipeGrid.class)
     // each rotation will be clockwise, similar to direction index
@@ -255,29 +256,32 @@ public class BasicPipe : UIObjectClass
         // should not rotate when the puzzle is finished
         if (PipeGrid.getPuzzle().isSolved())
             return;
-        // if the pipe is frozen, play some frozen sound or verbal hint
+        bool isRightClick = Settings.Controls.RotatePipesRight.GetKeyDown();
+        bool isLeftClick = Settings.Controls.RotatePipesLeft.GetKeyDown();
+        // if the pipe is frozen, play some verbal hint
         if (frozenState > MAX_MOBILE_FROZEN_LAYER) {
+            if (isLeftClick || isRightClick)
+                DialogDisplay.NewDialog(FROZEN_DIALOGUE);
+            return;
         }
         // handle rotation
-        else {
-            // initialize rotation direction
-            bool isAttemptingToRotate = false;
-            // left click, rotate clockwise
-            if (Settings.Controls.RotatePipesRight.GetKeyDown()) {
-                targetRotationDir = 1;
-                isAttemptingToRotate = true;
-            }
-            // right click, rotate counter clockwise
-            else if (Settings.Controls.RotatePipesLeft.GetKeyDown()) {
-                targetRotationDir = -1;
-                isAttemptingToRotate = true;
-            }
-            // if a left/right click is made, further setup rotation variables
-            if (isAttemptingToRotate) {
-                PipeGrid.getPuzzle().isRotating = true;
-                rotationProgress = 0;
-                AudioHandler.Instance.playSoundEffect(pipeRotateSound);
-            }
+        // initialize rotation direction
+        bool isAttemptingToRotate = false;
+        // left click, rotate clockwise
+        if (isLeftClick) {
+            targetRotationDir = -1;
+            isAttemptingToRotate = true;
+        }
+        // right click, rotate counter clockwise
+        else if (isRightClick) {
+            targetRotationDir = 1;
+            isAttemptingToRotate = true;
+        }
+        // if a left/right click is made, further setup rotation variables
+        if (isAttemptingToRotate) {
+            PipeGrid.getPuzzle().isRotating = true;
+            rotationProgress = 0;
+            AudioHandler.Instance.playSoundEffect(pipeRotateSound);
         }
     }
     
