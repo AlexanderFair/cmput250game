@@ -6,7 +6,8 @@ using UnityEngine;
  * Player : Entity
  * 
  * This class is the player entity.
- * Such entity should move when WASD is pressed. Furthermore, there should be only one player in the entire game.
+ * Such entity should move when WASD is pressed. 
+ * Furthermore, there should be only one player in the entire game.
  *
  */
 public class Player : Entity {
@@ -40,9 +41,10 @@ public class Player : Entity {
 
     [Header("Sound Effects")]
     public AudioClip[] walkingEffects;
-    public float timeBetweenWalkingEffect = 1;
-
-    private float soundEffectTimer = 0f;
+    // at the start of which frame(s) should a step sound be played?
+    public int[] walkSoundFrames;
+    // internal variable
+    private bool lastWalkSoundPlayed = true;
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
@@ -65,15 +67,6 @@ public class Player : Entity {
         spriteAnimators[0].repetitionFactor = 1 / speedMultiplier;
         // update velocity (otherwise, the player seems to slide after movement ends)
         this.velocity = moveDir;
-        if( moveDir.sqrMagnitude > 1e-5 )
-        {
-            soundEffectTimer += Time.deltaTime;
-            if(soundEffectTimer >= timeBetweenWalkingEffect)
-            {
-                soundEffectTimer %= timeBetweenWalkingEffect;
-                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(walkingEffects));
-            }
-        }
         // update movement direction if idle
         if (movement_progress == 0f) {
             // positive: right & up
@@ -117,6 +110,29 @@ public class Player : Entity {
             // idle
             else
                 spriteAnimators[0].ChangeAnimation(idleAnim);
+        }
+        // step sound
+        // this section should be placed right here!
+        // otherwise, other movement check will generate bugs
+        if( moveDir.sqrMagnitude > 1e-5 )
+        {
+            Debug.Log("animIdx(" + spriteAnimators[0].CurrentFrame + "), dt(" + Time.deltaTime + "), FPS(" + Settings.FloatValues.FPS.Get() + ")");
+            bool currAnimHasSound = false;
+            foreach (int soundFrame in walkSoundFrames) {
+                if (soundFrame == spriteAnimators[0].CurrentFrame) {
+                    currAnimHasSound = true;
+                    break;
+                }
+            }
+            if (currAnimHasSound && !lastWalkSoundPlayed)
+            {
+                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(walkingEffects));
+            }
+            lastWalkSoundPlayed = currAnimHasSound;
+        }
+        // if not moving, the next move step must also have a sound effect
+        else {
+            lastWalkSoundPlayed = false;
         }
         // move until timeout, then wait for next action
         if (movement_progress > 0f) {

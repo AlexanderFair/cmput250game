@@ -16,6 +16,8 @@ public class SpriteHandler : MonoBehaviour
                     straightFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
                     bentFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1], 
                     triangularFrozen = new Sprite[BasicPipe.MAX_FROZEN_LAYERS + 1];
+    // dialogue display when clicking a frozen pipe
+    public DialogDisplay.DialogStruct[] dialogueOnClickFrozen;
     // registers the template and sprite for other pipes
     // void Start()
     void Awake()
@@ -40,5 +42,8 @@ public class SpriteHandler : MonoBehaviour
         
         BasicPipe.CONNECTED_SPRITE[PipeTriangular.PIPE_TYPE_IDX] = triangularConn;
         BasicPipe.FROZEN_SPRITES[PipeTriangular.PIPE_TYPE_IDX] = triangularFrozen;
+        
+        // set frozen dialogue
+        BasicPipe.FROZEN_DIALOGUE = dialogueOnClickFrozen;
     }
 }
