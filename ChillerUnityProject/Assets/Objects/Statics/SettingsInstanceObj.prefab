@@ -115,6 +115,8 @@ MonoBehaviour:
     value: {fileID: 2100000, guid: 619c25ec12137df4895908b4c0960955, type: 2}
   - key: 2
     value: {fileID: 2100000, guid: ef0eff3ea1f29d6408c5a96444d09d4f, type: 2}
+  - key: 3
+    value: {fileID: 2100000, guid: c852afeb5969cd74e9012a285a7fb43c, type: 2}
   outlineValues:
   - key: 0
     minIntensity: {r: 0, g: 0, b: 0, a: 0}
@@ -137,7 +139,7 @@ MonoBehaviour:
     maxIntensity: {r: 0, g: 0, b: 0, a: 0}
     circular: 0
   canLogWarnings: 0
-  canInput: 1
+  disabledInputCount: 0
   hideControlHintsWhenOverlappingPlayer: 0
   audioClips:
   - {fileID: 8300000, guid: 73f25514693166c43a7aece47f2a3a5e, type: 3}

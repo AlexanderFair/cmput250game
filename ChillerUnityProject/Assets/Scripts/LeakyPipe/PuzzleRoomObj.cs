@@ -9,24 +9,39 @@ public class PuzzleRoomObj : DisplayUIRoomObject
     public int liquidAmount = 100;
     public bool isCompleted = false;
 
+    public DialogDisplay.DialogStruct[] lockedPrompt;
+    public DialogDisplay.DialogStruct[] unlockedPrompt;
+
     // when re-entering the room, synchronize the puzzle solve state
     public void Awake() {
         isCompleted = PipeGrid.getPuzzle(levelName).isSolved();
     }
 
     public override bool InteractableCondition() {
-        // the final challenge has prerequisites!
-        if (levelName == PipeGrid.PipePuzzles.HARD) {
-            if ( !(PipeGrid.getPuzzle(PipeGrid.PipePuzzles.INTRO).isSolved() && 
-                    PipeGrid.getPuzzle(PipeGrid.PipePuzzles.MEDIUM).isSolved()) ) {
-                        dialog = "You trace the path of the snaking pipes throughout the room, ultimately finding yourself staring up at the metallic heart of the heating system. However, the boiler is cold to the touch: the machine has been cut off from its supply of hot water.";
-                        return false;
-                    }
-            dialog = "I’m so close to getting the heat working.. Just this one last thing to fix.";
-        }
-
         // do not interact after this is finished
         return base.InteractableCondition() && !isCompleted;
+    }
+
+    protected override void Interact()
+    {
+        bool locked = false;
+
+        if (levelName == PipeGrid.PipePuzzles.HARD)
+        {
+            if (!(PipeGrid.getPuzzle(PipeGrid.PipePuzzles.INTRO).isSolved() &&
+                    PipeGrid.getPuzzle(PipeGrid.PipePuzzles.MEDIUM).isSolved()))
+            {
+                locked = true;
+            }
+        }
+
+        DialogDisplay.NewDialog(locked? lockedPrompt : unlockedPrompt);
+
+        if (!locked)
+        {
+            base.Interact();
+        }
+
     }
     // call this to re-open UI
     public void ReopenUI()
