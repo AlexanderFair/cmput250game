@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8379568840493700254
+--- !u!1 &353386512652811069
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8379568840493700252}
-  - component: {fileID: 8379568840493700255}
-  - component: {fileID: 8379568840493700253}
-  - component: {fileID: 8379568840493700250}
-  m_Layer: 10
-  m_Name: introPuzzle
+  - component: {fileID: 220541410850705030}
+  - component: {fileID: 8754957625186866432}
+  - component: {fileID: 1417994566384129913}
+  - component: {fileID: 2031657116415853054}
+  m_Layer: 5
+  m_Name: PuzzleResetBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8379568840493700252
+--- !u!4 &220541410850705030
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379568840493700254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 339, y: -162, z: 0}
+  m_GameObject: {fileID: 353386512652811069}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -415, y: 160, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8379568840493700255
+--- !u!212 &8754957625186866432
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379568840493700254}
+  m_GameObject: {fileID: 353386512652811069}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -69,10 +69,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1278940923
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec3d573d720fe214eb4a5946bd95bc9c, type: 3}
+  m_SortingLayerID: 638449741
+  m_SortingLayer: 5
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5791564586948818803, guid: 5319b10c5d341f34ca4824e49906e72f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,61 +83,51 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
---- !u!61 &8379568840493700253
+  m_SpriteSortPoint: 0
+--- !u!61 &1417994566384129913
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379568840493700254}
+  m_GameObject: {fileID: 353386512652811069}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 30.284668}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4901961, y: 0.20588236}
-    oldSize: {x: 204, y: 204}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 64, y: 64}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200, y: 67.430664}
+  m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
---- !u!114 &8379568840493700250
+--- !u!114 &2031657116415853054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379568840493700254}
+  m_GameObject: {fileID: 353386512652811069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a0caad2a50538a49ae418bf65b2327d, type: 3}
+  m_Script: {fileID: 11500000, guid: 740ce8582defd0c4786d5525b5bc2810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  interactableCollider: {fileID: 8379568840493700253}
-  interactionControl: 0
-  interactableRenderer: {fileID: 8379568840493700255}
-  interactSound:
-  - {fileID: 8300000, guid: 0cb6949580b1fd44f8f1be03b3e0aca0, type: 3}
-  - {fileID: 8300000, guid: 5bec9d9f218037c4690cb8b95df43eb8, type: 3}
-  - {fileID: 8300000, guid: ef65de42a17ccee4889c69d86f4267a6, type: 3}
-  - {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
-  giveControlHint: 1
-  controlHintOffset: {x: 40, y: 130}
-  dialogs: []
-  uiPrefab: {fileID: 5378682738892436246, guid: df2e9cc3558a4ec4fb4b9660295b268d,
-    type: 3}
-  levelName: 0
-  liquidAmount: 6
-  isCompleted: 0
-  lockedPrompt: []
-  unlockedPrompt: []
+  clickableCollider: {fileID: 1417994566384129913}
+  spriteClickableOutlineRenderer: {fileID: 8754957625186866432}
+  animatorIndex: -1
+  clickableAnimation: []
+  clickedAnimation: []
+  clickRechargeTime: 0
+  soundEffect: []
+  clickControl: 1

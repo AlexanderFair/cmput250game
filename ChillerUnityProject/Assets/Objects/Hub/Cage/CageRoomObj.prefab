@@ -187,16 +187,13 @@ MonoBehaviour:
   - {fileID: 0}
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 110}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation:
-  - {fileID: 0}
-  dialog: 
+  dialogs: []
   disabledAnimation:
   - {fileID: -3852782487656736975, guid: 62ebeee8f520c9c4a8a5ecd3fbbd3bec, type: 3}
   disabledAnimatorIndex: -1
   disableInteractionMethod: 1
   penguin: {fileID: 0}
-  penguinPositionOnLock: {x: -251, y: 76, z: 0}
+  penguinPositionOnLock: {x: 380, y: -256, z: 0}
   penguinPositionOnUnlock: {x: 5, y: -104, z: 0}
   notUnlockedPrompts:
   - dialog: <i>Cautious eyes observe your movement, a timid squabble escapes the

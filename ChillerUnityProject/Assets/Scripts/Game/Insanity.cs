@@ -28,6 +28,7 @@ public class Insanity : MonoBehaviour
     // The insanity is high if it is above medInsanityMax
     public float medInsanityMax;
 
+    public Vignette vignette;
 
     private float insanityStat = 0;
 
@@ -122,7 +123,7 @@ public class Insanity : MonoBehaviour
         return Instance.currentLevel;
     }
 
-    public float getInsanity()
+    public float GetInsanity()
     {
         return insanityStat;
     }
@@ -248,7 +249,7 @@ public class Insanity : MonoBehaviour
         satTime = 0f;
         desat = true;
         AudioHandler.Instance.playInsaneSoundEffect();
-
+        vignette.Add();
         currentLevel = IsHigh() ? Level.HIGH : (IsMedium() ? Level.MED : (IsLow() ? Level.LOW : Level.BELOW_THRESHOLD));
     }
     [System.Serializable]
