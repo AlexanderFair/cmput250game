@@ -24,6 +24,9 @@ public class AnimationSpriteClass : MonoBehaviour
     // if this is 2 then each frame will be shown twice consecutively.
     // i.e. it is now AABBCC instead of ABC
     public float repetitionFactor = 1;
+    private bool hasSoundsOnAnimation = false;
+    private bool[] playSoundOnThisFrame = {false};
+    private AudioClip[] sounds = new AudioClip[0];
 
     protected float currentTime = 0;
     protected int currentFrame = 0;
@@ -55,6 +58,9 @@ public class AnimationSpriteClass : MonoBehaviour
             currentFrame++;
             currentFrame %= animationStruct.Length;
             currentTime -= 1f / Settings.FloatValues.FPS.Get();
+            if (hasSoundsOnAnimation && playSoundOnThisFrame[currentFrame]){
+                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(sounds));
+            }
         }
 
         SetRender(animationStruct[currentFrame]);
@@ -107,8 +113,22 @@ public class AnimationSpriteClass : MonoBehaviour
      * Otherwise, the animation will start (or be paused) at the same time/frame 
      * as the previous animation was last at
      */
-    public void ChangeAnimation(Sprite[] newAnimation, bool restart = true)
+    public void ChangeAnimation(Sprite[] newAnimation, bool restart = true, bool[] newPlaySoundPerFrame = null, AudioClip[] newSounds = null)
     {
+        if (newSounds == null && newPlaySoundPerFrame == null){
+            sounds = new AudioClip[0];
+            playSoundOnThisFrame = new bool[0];
+            hasSoundsOnAnimation = false;
+        } else if (newSounds != null && newPlaySoundPerFrame != null) {
+            if (newPlaySoundPerFrame.Length != newAnimation.Length)
+                throw new System.Exception("Number of frames and number of playSoundPerFrame doesn't match!");
+            sounds = newSounds;
+            hasSoundsOnAnimation = true;
+            playSoundOnThisFrame = newPlaySoundPerFrame;
+        } else {
+            throw new System.Exception("Exactly one of newPlaySoundPerFrame and newSounds were null which is not allowed!");
+        }
+        
         animationStruct = newAnimation;
         if(restart)
         {

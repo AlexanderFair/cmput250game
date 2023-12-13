@@ -37,12 +37,16 @@ public class Player : Entity {
     public Sprite[] walkWestAnim;
     public Sprite[] walkSouthAnim;
     public Sprite[] walkNorthAnim;
+    public bool[] walkEastplaySoundPerFrame;
+    public bool[] walkWestplaySoundPerFrame;
+    public bool[] walkSouthplaySoundPerFrame;
+    public bool[] walkNorthplaySoundPerFrame;
 
     [Header("Sound Effects")]
-    public AudioClip[] walkingEffects;
+    public AudioClip[] radioRoomEffects;
+    public AudioClip[] boilerRoomEffects;
+    public AudioClip[] hubRoomEffects;
     public float timeBetweenWalkingEffect = 1;
-
-    private float soundEffectTimer = 0f;
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
@@ -65,15 +69,6 @@ public class Player : Entity {
         spriteAnimators[0].repetitionFactor = 1 / speedMultiplier;
         // update velocity (otherwise, the player seems to slide after movement ends)
         this.velocity = moveDir;
-        if( moveDir.sqrMagnitude > 1e-5 )
-        {
-            soundEffectTimer += Time.deltaTime;
-            if(soundEffectTimer >= timeBetweenWalkingEffect)
-            {
-                soundEffectTimer %= timeBetweenWalkingEffect;
-                AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(walkingEffects));
-            }
-        }
         // update movement direction if idle
         if (movement_progress == 0f) {
             // positive: right & up
@@ -102,18 +97,27 @@ public class Player : Entity {
         }
         // update sprite animation
         {
+            AudioClip[] footstepSounds = null;
+            if (GameManager.Instance.getCurrentSceneName() == "RadioRoom"){
+                footstepSounds = radioRoomEffects;
+            } else if (GameManager.Instance.getCurrentSceneName() == "BoilerRoom"){
+                footstepSounds = boilerRoomEffects;
+            } else if (GameManager.Instance.getCurrentSceneName() == "HubRoom"){
+                footstepSounds = hubRoomEffects;
+            }
+            
             // north
             if (moveDir.y > 1e-5)
-                spriteAnimators[0].ChangeAnimation(walkNorthAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkNorthAnim, false, walkNorthplaySoundPerFrame, footstepSounds);
             // south
             else if (moveDir.y < -1e-5)
-                spriteAnimators[0].ChangeAnimation(walkSouthAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkSouthAnim, false, walkSouthplaySoundPerFrame, footstepSounds);
             // east
             else if (moveDir.x > 1e-5)
-                spriteAnimators[0].ChangeAnimation(walkEastAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkEastAnim, false, walkEastplaySoundPerFrame, footstepSounds);
             // west 
             else if (moveDir.x < -1e-5)
-                spriteAnimators[0].ChangeAnimation(walkWestAnim, false);
+                spriteAnimators[0].ChangeAnimation(walkWestAnim, false, walkWestplaySoundPerFrame, footstepSounds);
             // idle
             else
                 spriteAnimators[0].ChangeAnimation(idleAnim);

@@ -39,7 +39,10 @@ public class BasicPipe : UIObjectClass
     public int gridX, gridY, rotation, targetRotationDir = 0;
     public float rotationProgress = 0;
     public AudioClip pipeRotateSound;
-
+    public AudioClip frozenPipeSound;
+    private bool isJiggling = false;
+    private float jiggleTimer = 0;
+    private int jiggleStage = 0;
 
     //
     // FUNCTIONS
@@ -243,6 +246,24 @@ public class BasicPipe : UIObjectClass
             // update rotation
             handleSpriteRotation(this.transform, rotation, targetRotationDir, rotationProgress);
         }
+
+        if (isJiggling) {
+            jiggleTimer += Time.deltaTime;
+            if (jiggleTimer >= 0.1f && jiggleStage == 0) {
+                this.transform.position += new Vector3(-12f,0f,0f);
+                jiggleTimer = 0;
+                jiggleStage = 1;
+            }
+            if (jiggleTimer >= 0.1f && jiggleStage == 1){
+                this.transform.position += new Vector3(10f,0f,0f);
+                jiggleTimer = 0;
+                jiggleStage = 2;
+            }
+            if (jiggleTimer >= 0.1f && jiggleStage == 2){
+                this.transform.position += new Vector3(-4f,0f,0f);
+                isJiggling = false;
+            }
+        }
     }
     // attempt to initialize rotating attempt when clicked
     public virtual void handleRotationAttempt() {
@@ -257,6 +278,17 @@ public class BasicPipe : UIObjectClass
             return;
         // if the pipe is frozen, play some frozen sound or verbal hint
         if (frozenState > MAX_MOBILE_FROZEN_LAYER) {
+            // if trying to click a frozen pipe
+            if (Settings.Controls.RotatePipesRight.GetKeyDown() || Settings.Controls.RotatePipesLeft.GetKeyDown()) {
+                AudioHandler.Instance.playSoundEffect(frozenPipeSound);
+                if (!isJiggling){
+                    isJiggling = true;
+                    jiggleTimer = 0;
+                    jiggleStage = 0;
+                    this.transform.position += new Vector3(6f,0f,0f);
+                }
+            }
+            // dirty hack to shake it 
         }
         // handle rotation
         else {

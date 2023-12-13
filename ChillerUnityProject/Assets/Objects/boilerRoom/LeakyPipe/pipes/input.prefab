@@ -107,6 +107,7 @@ MonoBehaviour:
   targetRotationDir: 0
   rotationProgress: 0
   pipeRotateSound: {fileID: 8300000, guid: 2e4055c74cb02f4419a483cbb7280f7a, type: 3}
+  frozenPipeSound: {fileID: 8300000, guid: a4124895292d1cf4e940783f805bae56, type: 3}
   completedHard:
     dialog: Nice! I can already feel it getting warmer. Now time to get out of here.
     animation: 1

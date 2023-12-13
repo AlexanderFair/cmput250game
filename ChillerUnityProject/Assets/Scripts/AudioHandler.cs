@@ -159,11 +159,12 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
                     playLowerInsteadOfHigher ^= true;
                     return playLowerInsteadOfHigher ? room.medium : room.high; 
                 } else if (Insanity.Instance.IsHigh()){
-                    return room.high;
+                    playLowerInsteadOfHigher ^= true;
+                    return playLowerInsteadOfHigher ? room.medium : room.high; 
                 }
             }
         }
-        Debug.Log("Could not choose a soundtrack! in $scene");
+        Debug.Log($"Could not choose a soundtrack! in $scene");
         
         return null;
     }
