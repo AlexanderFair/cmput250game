@@ -116,7 +116,7 @@ public class Player : Entity {
         // otherwise, other movement check will generate bugs
         if( moveDir.sqrMagnitude > 1e-5 )
         {
-            Debug.Log("animIdx(" + spriteAnimators[0].CurrentFrame + "), dt(" + Time.deltaTime + "), FPS(" + Settings.FloatValues.FPS.Get() + ")");
+            //Debug.Log("animIdx(" + spriteAnimators[0].CurrentFrame + "), dt(" + Time.deltaTime + "), FPS(" + Settings.FloatValues.FPS.Get() + ")");
             bool currAnimHasSound = false;
             foreach (int soundFrame in walkSoundFrames) {
                 if (soundFrame == spriteAnimators[0].CurrentFrame) {
@@ -136,7 +136,7 @@ public class Player : Entity {
         }
         // move until timeout, then wait for next action
         if (movement_progress > 0f) {
-            movement_progress += Time.deltaTime;
+            movement_progress += Time.fixedDeltaTime;
             // timeout
             if (movement_progress >= MOVE_DURATION_SEC) {
                 movement_progress = 0f;

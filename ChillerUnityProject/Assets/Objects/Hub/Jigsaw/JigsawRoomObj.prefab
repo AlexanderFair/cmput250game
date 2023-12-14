@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 1278940923
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d31054a324c4f1d47a2b11ec25966b48, type: 3}
+  m_Sprite: {fileID: -2297235000759188257, guid: 20e9da5cd33b01f46b6ad9dd5c47668c,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,10 +165,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a7e319f48cadb0448526531d5ef5b05, type: 3}
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 50}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation: []
-  dialog: 
+  dialogs: []
   uiPrefab: {fileID: 6816583050486508122, guid: af90f5453e80a8e48b113026d6e5a366,
+    type: 3}
+  incompleteSprite: {fileID: -2297235000759188257, guid: 20e9da5cd33b01f46b6ad9dd5c47668c,
+    type: 3}
+  completeSprite: {fileID: -6024248695205551492, guid: 20e9da5cd33b01f46b6ad9dd5c47668c,
     type: 3}
 --- !u!210 &1537249525567687605
 SortingGroup:

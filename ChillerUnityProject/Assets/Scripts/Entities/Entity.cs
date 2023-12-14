@@ -18,7 +18,7 @@ public abstract class Entity : RoomObjectClass
 
 
     /* Called when the object is updated and the UI and Menu is not active */
-    protected override void UpdateRoomObject() {
+    protected void FixedUpdate() {
         AI();
         movement();
     }
@@ -76,12 +76,12 @@ public abstract class Entity : RoomObjectClass
     protected void movement() {
         // move
 
-        getRigidBody().MovePosition(getRigidBody().position + (Vector2)velocity * Time.deltaTime);
+        getRigidBody().MovePosition(getRigidBody().position + (Vector2)velocity * Time.fixedDeltaTime);
         //getRigidBody().velocity = velocity;
 
         // speed decay
         // a^x = speed multiplier per sec, where x = amount slows triggered within 1 sec = 1/deltatime, a = actual speed multi
         // a = speed multi per sec ^ 1/x = speed multi per sec ^ deltatime
-        velocity *= Mathf.Pow(speedDecayMultiplierPerSecond, Time.deltaTime); 
+        velocity *= Mathf.Pow(speedDecayMultiplierPerSecond, Time.fixedDeltaTime); 
     }
 }

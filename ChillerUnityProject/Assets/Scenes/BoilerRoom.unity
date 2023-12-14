@@ -460,7 +460,8 @@ MonoBehaviour:
   interactableCollider: {fileID: 583864104}
   interactionControl: 0
   interactableRenderer: {fileID: 583864105}
-  interactSound: []
+  interactSound:
+  - {fileID: 8300000, guid: 73f25514693166c43a7aece47f2a3a5e, type: 3}
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 140}
   dialogs: []
@@ -1037,6 +1038,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8379568840493700253, guid: 66cec47f981f32e43a99aeb928dc59a9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379568840493700253, guid: 66cec47f981f32e43a99aeb928dc59a9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.2058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379568840493700253, guid: 66cec47f981f32e43a99aeb928dc59a9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379568840493700253, guid: 66cec47f981f32e43a99aeb928dc59a9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 210
+      objectReference: {fileID: 0}
     - target: {fileID: 8379568840493700254, guid: 66cec47f981f32e43a99aeb928dc59a9,
         type: 3}
       propertyPath: m_Name
@@ -1200,7 +1221,7 @@ SpriteRenderer:
   m_SortingLayerID: -1036458311
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13fe4207882cdee45855a85632aff2aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 974b4b2118777db47aab926623797f9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
