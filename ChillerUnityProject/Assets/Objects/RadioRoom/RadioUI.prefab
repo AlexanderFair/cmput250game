@@ -832,10 +832,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<color=red>8.96</color>
+  m_Text: '<color=red>896</color>
 
 
-    <color=green>3.64</color>'
+    <color=green>364</color>'
 --- !u!1 &6964915401096808392
 GameObject:
   m_ObjectHideFlags: 0

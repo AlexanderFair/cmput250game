@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,13 +32,10 @@ public class RadioRoomObject : DisplayUIRoomObject
     public Insanity.AddAmount badInsanityAdd;
     //Played when the frequency has already been called
     public DialogDisplay.DialogStruct[] alredayChosen;
-    //Played to hint at the next combo
-    //Played when the radio is first opened and not already complete or when a combo is selected and theres a next one
-    //The hint is choosen randomly from the lowest ids which has not been completed
-    public Prompts[] promptsForNext;
+    public DialogDisplay.DialogStruct[] initialPrompt;
     //Added to the beginning of the next combo hint
     //Played when a good combo is submited which is not the last combo
-    public string[] completeCodePrompts;
+    public DialogDisplay.DialogStruct[] completeCodePrompts;
     //The index of the code that completes the puzzle
     public int completionCodeIndex;
     //Played when a good combo is selected for the first time but is not the final combo
@@ -50,6 +48,9 @@ public class RadioRoomObject : DisplayUIRoomObject
 
 
     public static int completedFreqs = -1;
+
+    [NonSerialized]
+    public bool opened = false;
 
 
 
@@ -83,7 +84,7 @@ public class RadioRoomObject : DisplayUIRoomObject
         bool b = IsFrequencyComplete(id);
         combosComplete |= (1ul << (id + bitComboStorageOffset));
         if (!b) completedFreqs++;
-        return !b;
+        return true;
     }
 
     //Returns true if all combos are complete
@@ -111,30 +112,10 @@ public class RadioRoomObject : DisplayUIRoomObject
         ui.GetComponent<RadioPuzzle>().SetUp(this, completionIds[bitComboStorageOffset]);
     }
 
-
-    [System.Serializable]
-    public struct Prompts
-    {
-        public DialogDisplay.DialogStruct[] prompts;
-    }
-
     //Chooses a random prompt from the union of lists of prompts of ids whihc have not been completed
-    public void PromptNextCombo(string addedTextToFront = "", bool chooseFromLowest = true)
+    public void PromptNextCombo()
     {
-        List<DialogDisplay.DialogStruct[]> canPrompt = new List<DialogDisplay.DialogStruct[]>();
-        for(int i=0; i < promptsForNext.Length; i++)
-        {
-            if (!IsFrequencyComplete(i))
-            {
-                canPrompt.Add(promptsForNext[i].prompts);
-                if (chooseFromLowest)
-                {
-                    break;
-                }
-            }
-        }
-        DialogDisplay.DialogStruct p = Util.ChooseRandom(Util.ChooseRandom(canPrompt));
-        DialogDisplay.NewDialog(addedTextToFront + p.dialog, p.animation);
+        DialogDisplay.NewDialog(completeCodePrompts);
     }
 
 }

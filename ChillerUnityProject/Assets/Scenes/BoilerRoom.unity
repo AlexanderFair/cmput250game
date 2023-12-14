@@ -859,84 +859,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 300980821}
     m_Modifications:
+    - target: {fileID: 2697762009106681246, guid: cb80c6c1c567d3f488087444e79936c2,
+        type: 3}
+      propertyPath: incompleteAnimation.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
         type: 3}
       propertyPath: displayDialogOnInteract
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: lockedPrompt.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: unlockedPrompt.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: lockedPrompt.Array.data[0].dialog
-      value: '<i>You trace the path of the snaking pipes throughout the room, ultimately
-        finding yourself staring up at the metallic heart of the heating system.
-        However, the boiler is cold to the touch: the machine has been cut off from
-        its supply of hot water.</i>'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: unlockedPrompt.Array.data[0].dialog
-      value: "I\u2019m so close to getting the heat working.. Just this one last
-        thing to fix."
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: lockedPrompt.Array.data[0].animation
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700250, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: unlockedPrompt.Array.data[0].animation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -187
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8379568840493700252, guid: cb80c6c1c567d3f488087444e79936c2,
         type: 3}
@@ -962,11 +898,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379568840493700255, guid: cb80c6c1c567d3f488087444e79936c2,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb80c6c1c567d3f488087444e79936c2, type: 3}

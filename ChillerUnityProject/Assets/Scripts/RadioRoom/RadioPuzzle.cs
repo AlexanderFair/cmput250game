@@ -24,7 +24,8 @@ public class RadioPuzzle : UIObjectClass
         }
         else
         {
-            roomObj.PromptNextCombo();
+            if(!roomObj.opened) DialogDisplay.NewDialog(roomObj.initialPrompt);
+            roomObj.opened = true;
         }
     }
 
@@ -106,7 +107,7 @@ public class RadioPuzzle : UIObjectClass
             }
 
             AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.goodCodeEffects));
-            roomObj.PromptNextCombo(roomObj.completeCodePrompts[RadioRoomObject.completedFreqs]);
+            roomObj.PromptNextCombo();
         }
         else
         {
