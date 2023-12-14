@@ -126,6 +126,10 @@ MonoBehaviour:
       type: 3}
     insanityLevel: 6
     predicate: 1
+  - vision: {fileID: 7645731523287964139, guid: 394907b6b673fc340ad87a5e858d48db,
+      type: 3}
+    insanityLevel: 8
+    predicate: -1
 --- !u!114 &9087173638644664104
 MonoBehaviour:
   m_ObjectHideFlags: 0
