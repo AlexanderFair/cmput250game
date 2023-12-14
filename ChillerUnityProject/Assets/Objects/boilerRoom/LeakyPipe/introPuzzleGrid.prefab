@@ -197,8 +197,6 @@ Transform:
   - {fileID: 3862806693741737311}
   - {fileID: 5378682738973636865}
   - {fileID: 5378682740114750061}
-  - {fileID: 4049266295986590216}
-  - {fileID: 7107144099690154879}
   - {fileID: 8230693067532633641}
   - {fileID: 7107144099690154879}
   - {fileID: 599890036561696623}
@@ -936,12 +934,12 @@ PrefabInstance:
     - target: {fileID: 220541410850705030, guid: a99e688e03bbea149886838036385126,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -415
+      value: -275
       objectReference: {fileID: 0}
     - target: {fileID: 220541410850705030, guid: a99e688e03bbea149886838036385126,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 160
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 220541410850705030, guid: a99e688e03bbea149886838036385126,
         type: 3}
@@ -988,6 +986,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleResetBtn
       objectReference: {fileID: 0}
+    - target: {fileID: 1417994566384129913, guid: a99e688e03bbea149886838036385126,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417994566384129913, guid: a99e688e03bbea149886838036385126,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754957625186866432, guid: a99e688e03bbea149886838036385126,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6b06dc03b5c90941ac2029cf5610f5d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99e688e03bbea149886838036385126, type: 3}
 --- !u!4 &7107144099690154879 stripped
@@ -1297,7 +1311,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 12abb9631fa3424428f1351ad4573f9f, type: 3}
 --- !u!4 &1547833236585528828 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 220541410850705030, guid: a99e688e03bbea149886838036385126,
+  m_CorrespondingSourceObject: {fileID: 7968491231664998820, guid: 12abb9631fa3424428f1351ad4573f9f,
     type: 3}
   m_PrefabInstance: {fileID: 8930293565323228248}
   m_PrefabAsset: {fileID: 0}
