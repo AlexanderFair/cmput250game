@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 19
-  m_Sprite: {fileID: 4367732871754573918, guid: 74fcecb270fd4164a81e53a5c076776d,
+  m_Sprite: {fileID: 1189779305756619486, guid: 74fcecb270fd4164a81e53a5c076776d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1499,7 +1499,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 9
-  m_Sprite: {fileID: 5731562298934000515, guid: 74fcecb270fd4164a81e53a5c076776d,
+  m_Sprite: {fileID: -6603193462306882315, guid: 74fcecb270fd4164a81e53a5c076776d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1623,8 +1623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 112}
-  m_SizeDelta: {x: 293, y: 169}
+  m_AnchoredPosition: {x: -168, y: 75}
+  m_SizeDelta: {x: 300, y: 254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7232262297795353927
 CanvasRenderer:
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1655,7 +1655,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6b786b48d74f65a4eb20cd189ec35271, type: 3}
-    m_FontSize: 32
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1666,8 +1666,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Weather can become frigid cold in dark,  late evenings, even for the magestic
-    penguin.
+  m_Text: "xx/xx/xx\r\nHow curious. While surveying penguins this morning I stumbled
+    upon some strange etchings in a rock formation. Naturally, I copied the markings
+    down in my journal. Parts of the message had been lost to time, but with a bit
+    of effort I was able to salvage these lines:\r\n\r\nHer as<b><color=red>c</color></b>ent
+    fr<b><color=red>o</color></b>m the waves sha<b><color=red>l</color></b>l be brief\r\nFrom
+    her ha<b><color=green>da</color></b>l home she will <b><color=green>b</color></b>e
+    surfaced\r\nYou must obe<b><color=blue>y</color></b> the ocean matriarch\u2019<b><color=blue>s</color></b>
+    call<b><color=blue>s</color></b>"
 --- !u!1 &2691834469567293269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3651,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 13
-  m_Sprite: {fileID: -4031619653288768660, guid: 74fcecb270fd4164a81e53a5c076776d,
+  m_Sprite: {fileID: 7565877224362775616, guid: 74fcecb270fd4164a81e53a5c076776d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3809,7 +3815,8 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 11
-  m_Sprite: {fileID: 442113960596436644, guid: 74fcecb270fd4164a81e53a5c076776d, type: 3}
+  m_Sprite: {fileID: 7729768860333772239, guid: 74fcecb270fd4164a81e53a5c076776d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4216,12 +4223,12 @@ MonoBehaviour:
   completeAudioClip: {fileID: 0}
   incompletePrompt:
   - dialog: Dr. Morgan always liked puzzles, Maybe if I solve this one, it'll reveal
-      a frequency
+      a code
     animation: 1
     disableInput: 0
     big: 0
   completePrompt:
-    dialog: That must be it! I should go try this frequency
+    dialog: 
     animation: 1
     disableInput: 0
     big: 0
@@ -4541,8 +4548,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 7
-  m_Sprite: {fileID: -919312135990662955, guid: 74fcecb270fd4164a81e53a5c076776d,
-    type: 3}
+  m_Sprite: {fileID: 939489211220940695, guid: 74fcecb270fd4164a81e53a5c076776d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4731,8 +4737,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 17
-  m_Sprite: {fileID: -1975635887328401948, guid: 74fcecb270fd4164a81e53a5c076776d,
-    type: 3}
+  m_Sprite: {fileID: 939489211220940695, guid: 74fcecb270fd4164a81e53a5c076776d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4921,8 +4926,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 15
-  m_Sprite: {fileID: 7729768860333772239, guid: 74fcecb270fd4164a81e53a5c076776d,
-    type: 3}
+  m_Sprite: {fileID: 442113960596436644, guid: 74fcecb270fd4164a81e53a5c076776d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5003,7 +5007,7 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2860487071760280893, guid: 74fcecb270fd4164a81e53a5c076776d,
+  m_Sprite: {fileID: -3102994270238535240, guid: 74fcecb270fd4164a81e53a5c076776d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
