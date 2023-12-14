@@ -29,6 +29,7 @@ public class JigsawPuzzleScript : SnapManagerUIObject
             {
                 dragableTiles[sol.elementIndex].Snap(snapColliders[sol.colliderIndex]);
             }
+            InstantiateUIElement(completeObject);
         }
     }
 

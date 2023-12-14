@@ -164,7 +164,7 @@ public class AudioHandler : MonoBehaviour, Settings.ISettingsUpdateWatcher
                 }
             }
         }
-        Debug.Log($"Could not choose a soundtrack! in $scene");
+        Settings.DisplayWarning($"Could not choose a soundtrack! in $scene", gameObject);
         
         return null;
     }

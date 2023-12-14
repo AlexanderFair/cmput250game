@@ -29,7 +29,6 @@ public class Player : Entity {
     // this system is mainly implemented to prevent funny sprite twitch when the player quickly alternates between A and D 
     public float MOVE_DURATION_SEC = 0.1f, MOVE_SPEED = 250;
     public float movement_progress = 0f;
-    public float speedMultiplier = 1f;
     public Vector3 moveDir = Vector3.zero;
     [Header("Animations")]
     // animation sprite lists
@@ -65,13 +64,10 @@ public class Player : Entity {
     }
     
     protected override void AI() {
-        // move speed should align with sprite update speed
-        // so the player does not appear to be "drifting" on ground
-        spriteAnimators[0].repetitionFactor = 1 / speedMultiplier;
         // update velocity (otherwise, the player seems to slide after movement ends)
         this.velocity = moveDir;
         // update movement direction if idle
-        if (movement_progress == 0f) {
+        if (movement_progress == 0f && RoomObjectClass.CanUpdate()) {
             // positive: right & up
             float horMoveDir = 0, verMoveDir = 0;
 
@@ -91,7 +87,7 @@ public class Player : Entity {
             
             moveDir = new Vector3(horMoveDir, verMoveDir, 0);
             moveDir.Normalize();
-            moveDir *= MOVE_SPEED * speedMultiplier;
+            moveDir *= MOVE_SPEED;
             // start movement if velocity is non-zero
             if (moveDir.sqrMagnitude > 1e-5)
                 movement_progress = 1e-9f;

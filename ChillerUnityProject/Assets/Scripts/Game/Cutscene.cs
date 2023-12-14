@@ -12,7 +12,7 @@ public class Cutscene : UIObjectClass {
     private const bool SHOULD_LOG_INFO = false; 
     // identifier for a cutscene
     public enum CutsceneID {
-        INTRO, SANE_NO_PENGUIN, SANE, INSANE_NO_PENGUIN, INSANE
+        INTRO, SANE_NO_PENGUIN, SANE, INSANE_NO_PENGUIN, INSANE, CREDITS
     }
     // the enum that stores current cutscene state
     public enum PlayPhase {

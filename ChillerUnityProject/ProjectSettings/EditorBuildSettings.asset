@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SaneCutscenePenguin.unity
     guid: 9077ff81d7ce9bd42b9954818e583795
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: e9fa0515c522af04b96261e558a7b42e
   m_configObjects: {}

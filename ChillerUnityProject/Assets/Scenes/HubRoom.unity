@@ -247,16 +247,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
-      propertyPath: MOVE_SPEED
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: speedMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
       propertyPath: hubRoomEffects.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -315,11 +305,6 @@ PrefabInstance:
       propertyPath: hubRoomEffects.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: 30db52b1a235a234facec5386cac481e, type: 3}
-    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
-        type: 3}
-      propertyPath: speedDecayMultiplierPerSecond
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[0]
