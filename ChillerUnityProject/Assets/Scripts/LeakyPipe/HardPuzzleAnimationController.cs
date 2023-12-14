@@ -27,7 +27,6 @@ public class HardPuzzleAnimationController : MonoBehaviour
         {
             if (!complete)
             {
-                Debug.Log("change");
                 animator.ChangeAnimation(completeAnimation);
             }
             complete = true;
@@ -36,7 +35,6 @@ public class HardPuzzleAnimationController : MonoBehaviour
         {
             if (complete)
             {
-                Debug.Log("change");
                 animator.ChangeAnimation(incompleteAnimation);
             }
             complete = false;

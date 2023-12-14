@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3305645908755041584}
   - component: {fileID: 300814108994336976}
-  - component: {fileID: -2792509887236308773}
+  - component: {fileID: 8486345056397705599}
   m_Layer: 5
   m_Name: JigsawComplete
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4319022951255713106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -198, z: 0}
+  m_LocalPosition: {x: 50, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 619600e1d736a6e45a24f3d06ffc07df, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
+  m_Sprite: {fileID: 21300000, guid: 58ff5715a5178ea438c1270f553c6748, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2792509887236308773
+--- !u!114 &8486345056397705599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,8 +91,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4319022951255713106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640d154e82ac2f545ba516774bd8ff28, type: 3}
+  m_Script: {fileID: 11500000, guid: b0d23d8cee952ec438f622dc773e9955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimators: []
-  aliveTime: 0.5
+  fadeTime: 0.5
+  render: {fileID: 300814108994336976}
