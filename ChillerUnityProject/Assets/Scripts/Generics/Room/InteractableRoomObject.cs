@@ -31,6 +31,7 @@ public abstract class InteractableRoomObject : RoomObjectClass, IInteractableSpr
 
     protected override void UpdateRoomObject()
     {
+        base.UpdateRoomObject();
         this.UpdateOutlinableSprite();
 
         if(couldInteract && !InteractableCondition() && giveControlHint)

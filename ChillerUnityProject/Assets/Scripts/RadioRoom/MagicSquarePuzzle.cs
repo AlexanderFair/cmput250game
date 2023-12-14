@@ -14,14 +14,14 @@ public class MagicSquarePuzzle : SnapManagerUIObject
     public DialogDisplay.DialogStruct completePrompt;
     public DialogDisplay.DialogStruct[] alreadyCompletedPrompt;
 
-    private int[,] currentGrid;
+    private static int[,] currentGrid = new int[3, 3];
+    private static bool opened = false;
 
     public static bool Complete = false;
 
     protected override void StartUIObject()
     {
         base.StartUIObject();
-        currentGrid = new int[3,3];
         if (Complete)
         {
             SetupSolved();
@@ -31,6 +31,7 @@ public class MagicSquarePuzzle : SnapManagerUIObject
             SetupUnsolved();
         }
         ItemsChanged();
+        opened = true;
     }
 
     protected override void ItemsChanged()
@@ -65,10 +66,18 @@ public class MagicSquarePuzzle : SnapManagerUIObject
 
     private void SetupUnsolved()
     {
-        ForceSnap(0, 5, true);
-        ForceSnap(5, 2, true);
-        ForceSnap(7, 8, true);
-        DialogDisplay.NewDialog(incompletePrompt);
+        //ForceSnap(0, 5, true);
+        //ForceSnap(5, 2, true);
+        //ForceSnap(7, 8, true);
+        for (int i = 0; i < snapColliders.Length; i++)
+        {
+            int t = currentGrid[i / 3, i % 3]-1;
+            if(t >= 0)
+            {
+                ForceSnap(t, i, false);
+            }
+        }
+        if(!opened)DialogDisplay.NewDialog(incompletePrompt);
     }
 
     private void SumIt()

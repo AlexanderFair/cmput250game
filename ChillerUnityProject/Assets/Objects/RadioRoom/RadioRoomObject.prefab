@@ -242,38 +242,31 @@ MonoBehaviour:
     animation: 1
     disableInput: 0
     big: 0
-  promptsForNext:
-  - prompts:
-    - dialog: "I can call for help using that radio! There\u2019s just the issue
-        of what frequency to dial\u2026"
-      animation: 1
-      disableInput: 0
-      big: 0
-  - prompts:
-    - dialog: "There must be some standard procedure for emergencies around here
-        somewhere\u2026 "
-      animation: 1
-      disableInput: 0
-      big: 0
-  - prompts:
-    - dialog: "Morgan must\u2019ve tinkered with the radio, maybe he left some clues
-        in his notebook that could help me."
-      animation: 1
-      disableInput: 0
-      big: 0
-  - prompts:
-    - dialog: "There might be another frequency in that locked drawer I saw\u2026"
-      animation: 1
-      disableInput: 0
-      big: 0
+  initialPrompt:
+  - dialog: "I can call for help using that radio! There\u2019s just the issue of
+      what frequency to dial\u2026"
+    animation: 1
+    disableInput: 0
+    big: 0
   completeCodePrompts:
-  - "The radio\u2019s more broken than I\u2019d realized.. Looks like I\u2019ll need
-    to input all four of the frequency codes to connect the radio."
-  - "<i>The radio sputters a static crackling, you\u2019re one step closer.</i>"
-  - <i>A brief interjection of clear audio claws through the wall of static whir.
-    The radio can nearly make contact.</i>
+  - dialog: "<i>The radio sputters a static crackling, this code doesn\u2019t go
+      here.</i>"
+    animation: 2
+    disableInput: 0
+    big: 0
+  - dialog: "<i>The frequency fails to break through the wall of static whir, but
+      something about these numbers feel\u2026 right. They might be useful elsewhere.</i>"
+    animation: 2
+    disableInput: 0
+    big: 0
+  - dialog: "The frequency isn\u2019t connecting, maybe I can use these numbers somewhere
+      else\u2026"
+    animation: 1
+    disableInput: 0
+    big: 0
   completionCodeIndex: 3
-  goodCodeEffects: []
+  goodCodeEffects:
+  - {fileID: 8300000, guid: 35f06ffc6a9459c4589996f960ae8a82, type: 3}
   lore:
   - dialog: "<i>A mechanical voice drones out a monotone reading of the current date
       and time. This is a prerecorded message, you realize, from nearly a year prior.</i>
