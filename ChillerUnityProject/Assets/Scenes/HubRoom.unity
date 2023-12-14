@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
@@ -324,47 +324,52 @@ PrefabInstance:
         type: 3}
       propertyPath: radioRoomEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: dc4b3029b026e654fa5685b89630ddde, type: 3}
+      objectReference: {fileID: 8300000, guid: 9c7237b4755f81145887887c935c25a6, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 91f73165a8bf437449d358c46306a14a, type: 3}
+      objectReference: {fileID: 8300000, guid: af9ee0603c4da17478173609b5689ad0, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: c4e166a38ade81b43ab3717698f1518b, type: 3}
+      objectReference: {fileID: 8300000, guid: 931bb391e2d49a743b611e6fed065146, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: 7e1c4d5d788e85640a05dbd9cc0d0ce6, type: 3}
+      objectReference: {fileID: 8300000, guid: b8b1d2b724d016144bcbeec05c61679f, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: 8d3a5ef8a5381a64791d8d2e6a66ad57, type: 3}
+      objectReference: {fileID: 8300000, guid: 2a358cb8013edf14a991042e272e8b25, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: ea21d2948b958674f951c8b64df7c68c, type: 3}
+      objectReference: {fileID: 8300000, guid: 14819a4d9d03efd4e853206de757d31f, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: 8ed39f4309c29f047bd2600367d844d6, type: 3}
+      objectReference: {fileID: 8300000, guid: 15d97ba509cf53644b74c82dacbb715a, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[7]
       value: 
-      objectReference: {fileID: 8300000, guid: c8cc02e72731fa24e961b4ee5f2d41c6, type: 3}
+      objectReference: {fileID: 8300000, guid: e92170130b571894f8402138f014f3d8, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: radioRoomEffects.Array.data[8]
       value: 
-      objectReference: {fileID: 8300000, guid: 9ba30995c100de04c8107b8ee4ec5313, type: 3}
+      objectReference: {fileID: 8300000, guid: 72e29e01ff8a2ae4d9f413def0f87097, type: 3}
+    - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
+        type: 3}
+      propertyPath: radioRoomEffects.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: a98a8422d26136a41bc1de28558ec570, type: 3}
     - target: {fileID: 6329014479189841158, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: spriteAnimations.Array.data[0]
