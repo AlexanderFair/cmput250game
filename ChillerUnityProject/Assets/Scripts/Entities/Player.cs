@@ -6,7 +6,8 @@ using UnityEngine;
  * Player : Entity
  * 
  * This class is the player entity.
- * Such entity should move when WASD is pressed. Furthermore, there should be only one player in the entire game.
+ * Such entity should move when WASD is pressed. 
+ * Furthermore, there should be only one player in the entire game.
  *
  */
 public class Player : Entity {
@@ -46,7 +47,7 @@ public class Player : Entity {
     public AudioClip[] radioRoomEffects;
     public AudioClip[] boilerRoomEffects;
     public AudioClip[] hubRoomEffects;
-    public float timeBetweenWalkingEffect = 1;
+
 
     // this should not be destroyed when the scenes switch around.
     public void Awake()
@@ -122,9 +123,10 @@ public class Player : Entity {
             else
                 spriteAnimators[0].ChangeAnimation(idleAnim);
         }
+        
         // move until timeout, then wait for next action
         if (movement_progress > 0f) {
-            movement_progress += Time.deltaTime;
+            movement_progress += Time.fixedDeltaTime;
             // timeout
             if (movement_progress >= MOVE_DURATION_SEC) {
                 movement_progress = 0f;

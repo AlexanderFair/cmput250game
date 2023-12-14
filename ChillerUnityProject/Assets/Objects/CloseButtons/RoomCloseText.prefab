@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5576147796497556425}
   - component: {fileID: 5576147796497556427}
   - component: {fileID: 5576147796497556424}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5576147797315942867}
   - component: {fileID: 5576147797315942864}
   - component: {fileID: 6680168206618436133}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: RoomCloseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,8 +135,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1609247
-  m_SortingOrder: 0
+  m_SortingLayerID: 638449741
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &5576147797315942864
 MonoBehaviour:

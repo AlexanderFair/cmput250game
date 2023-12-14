@@ -16,7 +16,13 @@ public class ComboUI : CombinationUIObject
 
     public void SubmitCode()
     {
+        puzz.CodeSubmitted(values);
+    }
+
+    protected override void CodeUpdated()
+    {
+        base.CodeUpdated();
         puzz.CodeUpdated(values);
     }
-        
+
 }

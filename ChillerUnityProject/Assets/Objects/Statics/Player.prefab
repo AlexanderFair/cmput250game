@@ -182,12 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteAnimators:
   - {fileID: 7587812791696855156}
-  speedDecayMultiplierPerSecond: 0.02
+  speedDecayMultiplierPerSecond: 1
   MOVE_ACCELERATION_PER_SECOND: 7.5
   MOVE_DURATION_SEC: 0.1
-  MOVE_SPEED: 250
+  MOVE_SPEED: 500
   movement_progress: 0
-  speedMultiplier: 1
+  speedMultiplier: 0.65
   moveDir: {x: 0, y: 0, z: 0}
   idleAnim:
   - {fileID: 1483511420877705252, guid: db0fe8902f9d96d40b8e15d871149af3, type: 3}
@@ -237,7 +237,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e1cae25eb14a08148b8570b515a1cd8a, type: 3}
   - {fileID: 8300000, guid: 58346a25e36b4b84280e29758845f814, type: 3}
   - {fileID: 8300000, guid: 30db52b1a235a234facec5386cac481e, type: 3}
-  timeBetweenWalkingEffect: 0.4
+  walkSoundFrames: 0000000004000000
 --- !u!50 &6329014479189841156
 Rigidbody2D:
   serializedVersion: 4

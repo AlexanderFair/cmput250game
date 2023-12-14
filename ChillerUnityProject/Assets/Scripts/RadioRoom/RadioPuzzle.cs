@@ -105,7 +105,6 @@ public class RadioPuzzle : UIObjectClass
                 return;
             }
 
-            //TODO prompt to do next combo
             AudioHandler.Instance.playSoundEffect(Util.ChooseRandom(roomObj.goodCodeEffects));
             roomObj.PromptNextCombo(roomObj.completeCodePrompts[RadioRoomObject.completedFreqs]);
         }

@@ -184,7 +184,7 @@ public static class Settings
     // Prefab Materials
     public enum PrefabMaterials
     {
-        Null, Outline, WindowLight
+        Null, Outline, WindowLight, Vignette
     }
 
     public enum Outlines

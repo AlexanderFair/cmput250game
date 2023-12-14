@@ -48,10 +48,15 @@ public class ComboPuzzle : DisplayUIRoomObject
             DialogDisplay.NewDialog(incompletePrompt);
         }
     }
-
+    
     public void CodeUpdated(int[] code)
     {
         lastUpdatedCode = (int[])code.Clone();
+    }
+
+    public void CodeSubmitted(int[] code)
+    {
+        CodeUpdated(code);
         bool yes = true;
         for(int i=0; i<solve.Length; i++)
         {
