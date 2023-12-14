@@ -38,6 +38,8 @@ public class RadioRoomObject : DisplayUIRoomObject
     //Added to the beginning of the next combo hint
     //Played when a good combo is submited which is not the last combo
     public string[] completeCodePrompts;
+    //The index of the code that completes the puzzle
+    public int completionCodeIndex;
     //Played when a good combo is selected for the first time but is not the final combo
     public AudioClip[] goodCodeEffects;
     //Payed when a lore code is selected
@@ -58,10 +60,12 @@ public class RadioRoomObject : DisplayUIRoomObject
     public static Dictionary<int, int> completionIds = new Dictionary<int, int>();
 
     private ulong comboMask;
+    private ulong completionMask;
     public override void Start()
     {
         base.Start();
         comboMask = ((1ul << combos.Length) - 1) <<  bitComboStorageOffset;
+        completionMask = (1ul << completionCodeIndex) << bitComboStorageOffset;
         if(!completionIds.ContainsKey(bitComboStorageOffset)) 
         {
             completionIds[bitComboStorageOffset] = -1;
@@ -85,7 +89,8 @@ public class RadioRoomObject : DisplayUIRoomObject
     //Returns true if all combos are complete
     public bool IsAllComplete()
     {
-        return (combosComplete & comboMask) == comboMask;
+        //return (combosComplete & comboMask) == comboMask;
+        return (combosComplete & completionMask) > 0;
     }
 
     public void CompletePuzzle(int id)

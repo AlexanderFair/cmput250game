@@ -182,12 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteAnimators:
   - {fileID: 7587812791696855156}
-  speedDecayMultiplierPerSecond: 0.02
+  speedDecayMultiplierPerSecond: 1
   MOVE_ACCELERATION_PER_SECOND: 7.5
   MOVE_DURATION_SEC: 0.1
   MOVE_SPEED: 500
   movement_progress: 0
-  speedMultiplier: 0.5
+  speedMultiplier: 0.65
   moveDir: {x: 0, y: 0, z: 0}
   idleAnim:
   - {fileID: 1483511420877705252, guid: db0fe8902f9d96d40b8e15d871149af3, type: 3}

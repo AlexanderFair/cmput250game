@@ -171,10 +171,7 @@ MonoBehaviour:
   interactSound: []
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 60}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation:
-  - {fileID: 0}
-  dialog: 
+  dialogs: []
   uiPrefab: {fileID: 8039218377596480889, guid: 0509709439d67f84abe36d7e8330151a,
     type: 3}
   combos:
@@ -275,6 +272,7 @@ MonoBehaviour:
   - "<i>The radio sputters a static crackling, you\u2019re one step closer.</i>"
   - <i>A brief interjection of clear audio claws through the wall of static whir.
     The radio can nearly make contact.</i>
+  completionCodeIndex: 3
   goodCodeEffects: []
   lore:
   - dialog: "<i>A mechanical voice drones out a monotone reading of the current date
