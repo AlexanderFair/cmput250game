@@ -465,7 +465,8 @@ SpriteRenderer:
   m_SortingLayerID: 638449741
   m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 061eec6316f465e409db51221877782a, type: 3}
+  m_Sprite: {fileID: 6760107248644050821, guid: 9ac3dce23902cdf478e39e69097d3fe4,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -493,9 +494,9 @@ MonoBehaviour:
   spriteClickableOutlineRenderer: {fileID: 6330701873612102656}
   animatorIndex: -1
   clickableAnimation:
-  - {fileID: 21300000, guid: 061eec6316f465e409db51221877782a, type: 3}
+  - {fileID: 6760107248644050821, guid: 9ac3dce23902cdf478e39e69097d3fe4, type: 3}
   clickedAnimation:
-  - {fileID: 21300000, guid: 8537f7af9f12d324da593f92c2bae6d6, type: 3}
+  - {fileID: -4432381401437561306, guid: 9ac3dce23902cdf478e39e69097d3fe4, type: 3}
   clickRechargeTime: 0.5
   soundEffect:
   - {fileID: 8300000, guid: d82afbfee9c9c5441a91605d01357629, type: 3}
@@ -519,7 +520,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 113, y: 116}
+    oldSize: {x: 100, y: 100}
     newSize: {x: 113, y: 116}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
