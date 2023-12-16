@@ -187,7 +187,7 @@ MonoBehaviour:
     dialog: "<i>The voice that answers is still dripping in sleep.</i> This is Davis
       South Research Facility, what\u2019s the purpose of this call? <i>You explain
       your situation.</i> Oh! um, one second ma'am. <i>You can hear bits of conversation
-      just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
+      just out of the radio\u2019s reach, mumbles of the captain\u2019s infamous
       disappearing act.</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
       out for you; try to keep warm while you wait."
     animation: 2
@@ -197,7 +197,7 @@ MonoBehaviour:
     dialog: "<i>The voice that answers is still dripping in sleep.</i> This is Davis
       South Research Facility, what\u2019s the purpose of this call? <i>You explain
       your situation.</i> Oh! um, one second ma'am. <i>You can hear bits of conversation
-      just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
+      just out of the radio\u2019s reach, mumbles of the captain\u2019s infamous
       disappearing act.</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
       out for you; hold tight, we\u2019re on our way\u2026"
     animation: 2
@@ -273,7 +273,7 @@ MonoBehaviour:
       Listen Morgan, <i>a pause, a heavy sigh</i>, we can\u2019t keep chasing your
       whims around. We\u2019re out here freezing our asses off on government subsidy
       to get some data on penguins, Morgan. Penguins. You\u2019ve gotta work with
-      us here. Just get the survey numbers, and report back"
+      us here. Just get the survey numbers, and report back."
     animation: 0
     disableInput: 1
     big: 1
@@ -282,7 +282,7 @@ MonoBehaviour:
       Listen Morgan, <i>a pause, a heavy sigh</i>, we can\u2019t keep chasing your
       whims around. We\u2019re out here freezing our asses off on government subsidy
       to get some data on penguins, Morgan. Penguins. You\u2019ve gotta work with
-      us here. Just get the survey numbers, and report back"
+      us here. Just get the survey numbers, and report back."
     animation: 0
     disableInput: 1
     big: 1

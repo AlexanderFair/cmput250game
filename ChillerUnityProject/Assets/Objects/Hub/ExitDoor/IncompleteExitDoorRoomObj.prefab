@@ -129,10 +129,7 @@ MonoBehaviour:
   interactSound: []
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 160}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation:
-  - {fileID: 0}
-  dialog: 
+  dialogs: []
   radioIncompletePrompts:
   - dialog: "I\u2019m stranded out here, I should try to contact help."
     animation: 1
@@ -144,7 +141,7 @@ MonoBehaviour:
     big: 0
   boilerIncompletePrompts:
   - dialog: "<i>You can feel your body gradually succumbing to the cold\u2019s frigid
-      numbness.. </i>"
+      numbness\u2026</i>"
     animation: 2
     disableInput: 0
     big: 0

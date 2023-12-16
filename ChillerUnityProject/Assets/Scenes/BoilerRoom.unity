@@ -466,9 +466,8 @@ MonoBehaviour:
   controlHintOffset: {x: 0, y: 140}
   dialogs: []
   incompletePrompt:
-  - dialog: "<i>The air is thick with humidity. It isn\u2019t until your socks gain
-      an uncomfortable dampness that you realize you\u2019re standing in a puddle
-      of leaked pipe water.</i>"
+  - dialog: <i>The humid air in this room chills your skin. The boiler sits inactive;
+      broken pipes awaiting repairs.</i>
     animation: 2
     disableInput: 0
     big: 0

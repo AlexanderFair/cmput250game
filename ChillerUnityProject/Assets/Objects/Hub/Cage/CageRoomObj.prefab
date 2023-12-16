@@ -208,7 +208,7 @@ MonoBehaviour:
     big: 0
   unlockPrompt:
     dialog: <i>Wary quiet gives way to warm trust, the penguin assertively situates
-      themself wedged between your feet</i>
+      themself wedged between your feet.</i>
     animation: 2
     disableInput: 1
     big: 0

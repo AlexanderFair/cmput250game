@@ -188,7 +188,7 @@ MonoBehaviour:
   penguin: {fileID: 6886009229727363513}
   lowPrompts:
   - dialog: <i>The playful wobble of your penguin friend relieves you, if only for
-      a moment, of your dire mission</i>
+      a moment, of your dire mission.</i>
     animation: 2
     disableInput: 0
     big: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
     disableInput: 0
     big: 0
   - dialog: "<i>Suddenly the penguin freezes, you trace their line of sight to the
-      boat\u2019s window.. </i>"
+      boat\u2019s window\u2026</i>"
     animation: 2
     disableInput: 0
     big: 0

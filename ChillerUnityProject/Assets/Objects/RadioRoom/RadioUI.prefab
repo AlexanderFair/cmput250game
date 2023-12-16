@@ -126,8 +126,8 @@ MonoBehaviour:
   max: 9.99
   min: 0
   startPhysicalRot: 0
-  startRelativeRot: -675
-  rotationRange: 675
+  startRelativeRot: -1350
+  rotationRange: 1350
   valueFormat: 0.00
   rotDifferenceScalar: -1
   spinSoundEffect: {fileID: 8300000, guid: e0fe8b06ccb40654cb714e56aeafa52b, type: 3}
@@ -439,8 +439,8 @@ MonoBehaviour:
   max: 9.99
   min: 0
   startPhysicalRot: 0
-  startRelativeRot: -675
-  rotationRange: 675
+  startRelativeRot: -1350
+  rotationRange: 1350
   valueFormat: 0.00
   rotDifferenceScalar: -1
   spinSoundEffect: {fileID: 8300000, guid: e0fe8b06ccb40654cb714e56aeafa52b, type: 3}

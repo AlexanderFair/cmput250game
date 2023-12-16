@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   controlHintOffset: {x: 0, y: 140}
   dialogs: []
   incompletePrompt:
-  - dialog: <i>The soft purr of radio static beckons you</i>
+  - dialog: <i>The soft purr of radio static beckons you.</i>
     animation: 2
     disableInput: 0
     big: 0

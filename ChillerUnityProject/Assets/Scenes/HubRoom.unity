@@ -1528,7 +1528,7 @@ MonoBehaviour:
     disableInput: 0
     big: 0
   - dialog: <i>You try to listen for any sound of life behind the blockage. The responding
-      silence is disquieting</i>
+      silence is disquieting.</i>
     animation: 2
     disableInput: 0
     big: 0
