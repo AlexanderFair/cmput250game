@@ -56,7 +56,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0.75
   m_Url: file://C:/Users/19029/Documents/GitHub/cmput250game/ChillerUnityProject/Assets/Resources/CutScenes/Opening/Opening
     Cutscene.webm
   m_EnabledAudioTracks: 01

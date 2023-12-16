@@ -54,16 +54,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb0c0868aeb74f641a179513583cee13, type: 3}
   giveControlHint: 1
   controlHintOffset: {x: 0, y: 90}
-  displayDialogOnInteract: 0
-  dialogProfileAnimation:
-  - {fileID: 0}
-  dialog: 
+  dialogs: []
   uiPrefab: {fileID: 8462790704883619187, guid: deddaa4adfab67744897fa7e9b987e64,
     type: 3}
   solve: 010000000300000004000000000000000500000002000000
   incompletePrompt:
-  - dialog: "<i>A sense of deja vu tickles at the back of your brain, you\u2019ve
-      seen these symbols before.</i>"
+  - dialog: <i>Your eye is drawn to the distinct set of symbols engraved on the lock.</i>
     animation: 2
     disableInput: 0
     big: 0

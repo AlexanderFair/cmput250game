@@ -50,6 +50,9 @@ public class Visions : MonoBehaviour
                                     (RoomObjectClass.CanUpdate() ? VisionPredicate.PLAY_ON_ROOM : 0);
         IEnumerable<VisionStruct> visions = visionsList.Where(x => (x.insanityLevel & Insanity.GetInsanityLevel()) != 0 && (x.predicate & predicate) != 0);
 
+        VisionStruct vis = Util.ChooseRandom(visions);
+        Debug.Log(vis.vision.gameObject.name + " " + visions.Count());
+        DialogDisplay.NewDialog(vis.dialogs);
         Instantiate(Util.ChooseRandom(visions).vision);
     }
 
@@ -59,6 +62,7 @@ public class Visions : MonoBehaviour
         public GameObject vision;
         public Insanity.Level insanityLevel;
         public VisionPredicate predicate;
+        public DialogDisplay.DialogStruct[] dialogs;
     }
 
     [Flags]

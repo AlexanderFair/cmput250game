@@ -1129,11 +1129,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
-      propertyPath: floatValues.Array.data[1].value
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
-        type: 3}
       propertyPath: settingsValueChangeWatchers.Array.data[0]
       value: 
       objectReference: {fileID: 1895510290}
@@ -1519,7 +1514,7 @@ MonoBehaviour:
   controlHintOffset: {x: 0, y: 0}
   dialogs: []
   lowInsanity:
-  - dialog: "The stairwell is completely blocked by ice, there\u2019s no way up."
+  - dialog: "The stairwell is completely blocked by crates, there\u2019s no way up."
     animation: 1
     disableInput: 0
     big: 0
@@ -3349,6 +3344,16 @@ PrefabInstance:
         type: 3}
       propertyPath: a.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563543, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: insanityToMaxTicBeforeVisionGraph.m_Curve.Array.data[0].time
+      value: 55.38929
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058162355218563543, guid: 122e9d902fb05e146bf4672978d89f38,
+        type: 3}
+      propertyPath: insanityToMaxTicBeforeVisionGraph.m_Curve.Array.data[0].value
+      value: 20.004465
       objectReference: {fileID: 0}
     - target: {fileID: 3058162355218563545, guid: 122e9d902fb05e146bf4672978d89f38,
         type: 3}
