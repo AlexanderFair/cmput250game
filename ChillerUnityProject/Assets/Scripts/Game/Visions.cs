@@ -52,7 +52,9 @@ public class Visions : MonoBehaviour
 
         VisionStruct vis = Util.ChooseRandom(visions);
         Debug.Log(vis.vision.gameObject.name + " " + visions.Count());
-        DialogDisplay.NewDialog(vis.dialogs);
+        if (RoomObjectClass.CanUpdate()) {
+            DialogDisplay.NewDialog(vis.dialogs);
+        }
         Instantiate(Util.ChooseRandom(visions).vision);
     }
 
