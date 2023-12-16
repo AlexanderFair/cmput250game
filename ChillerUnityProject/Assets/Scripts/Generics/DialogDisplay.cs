@@ -49,7 +49,7 @@ public class DialogDisplay : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        bool skip = Settings.Controls.SkipDialog.GetKeyDown(forceGetInput: true);
+        bool skip = Settings.Controls.SkipDialogue.GetKeyDown(forceGetInput: true);
         if(skip && Complete )
         {
             KillDialog();

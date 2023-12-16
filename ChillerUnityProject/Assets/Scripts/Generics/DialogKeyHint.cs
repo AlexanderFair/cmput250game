@@ -28,7 +28,7 @@ public class DialogKeyHint : RoomObjectClass
 
     public void UpdateText()
     {
-        string h = hint.Replace("<key>", Settings.Controls.SkipDialog.GetKeyCode().ToString());
+        string h = hint.Replace("<key>", Settings.Controls.SkipDialogue.GetKeyCode().ToString());
         text.text = h;
     }
 }
@@ -47,7 +47,7 @@ public class DialogTextSettingsWatcher : Settings.ISettingsUpdateWatcher
     {
         switch (control)
         {
-            case Settings.Controls.SkipDialog:
+            case Settings.Controls.SkipDialogue:
                 move.UpdateText();
                 break;
             default:

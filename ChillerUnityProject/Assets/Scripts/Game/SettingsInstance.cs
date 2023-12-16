@@ -27,7 +27,7 @@ public class SettingsInstance : MonoBehaviour
         new KeyCodeValue { key = Controls.ExitMenu, value = KeyCode.Escape },
         new KeyCodeValue { key = Controls.Click, value = KeyCode.Mouse0 },
         new KeyCodeValue { key = Controls.RotatePipesLeft, value = KeyCode.Mouse0 },
-        new KeyCodeValue { key = Controls.SkipDialog, value = KeyCode.Return },
+        new KeyCodeValue { key = Controls.SkipDialogue, value = KeyCode.Return },
         new KeyCodeValue { key = Controls.Pause, value = KeyCode.P },
         new KeyCodeValue { key = Controls.MoveUp, value = KeyCode.W },
         new KeyCodeValue { key = Controls.MoveDown, value = KeyCode.S },
@@ -159,7 +159,7 @@ public static class Settings
     // Key Code controls
     public enum Controls
     {
-        Interact, Click, ExitMenu, RotatePipesLeft, SkipDialog, Pause, MoveLeft, MoveRight, MoveUp, MoveDown, RotatePipesRight
+        Interact, Click, ExitMenu, RotatePipesLeft, SkipDialogue, Pause, MoveLeft, MoveRight, MoveUp, MoveDown, RotatePipesRight
     }
 
     // Float values

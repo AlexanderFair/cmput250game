@@ -48,7 +48,7 @@ public class SettingsSlider : MenuClickCaller
             return;
         }
 
-        if (slider.clickKey.GetKeyUp())
+        if (slider.clickKey.GetKeyUp(forceGetInput: true, ignoreIfUsed: false))
         {
             clicked = false;
         }
