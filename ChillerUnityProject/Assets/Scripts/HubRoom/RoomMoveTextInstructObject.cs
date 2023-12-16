@@ -8,7 +8,10 @@ public class RoomMoveTextInstructObject : RoomObjectClass
     [Header("Room move text info")]
     public string hint;
     public Text text;
+    public int hideCount;
     private RoomMoveTextSettingsWatcher controlChangeWatcher;
+
+    private int count = 0;
 
     public override void Start()
     {
@@ -30,10 +33,15 @@ public class RoomMoveTextInstructObject : RoomObjectClass
     protected override void UpdateRoomObject()
     {
         base.UpdateRoomObject();
-        if(Settings.Controls.MoveUp.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveDown.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveRight.GetKey(ignoreIfUsed: false) ||
-           Settings.Controls.MoveLeft.GetKey(ignoreIfUsed: false))
+        if(Settings.Controls.MoveUp.GetKeyDown(ignoreIfUsed: false) ||
+           Settings.Controls.MoveDown.GetKeyDown(ignoreIfUsed: false) ||
+           Settings.Controls.MoveRight.GetKeyDown(ignoreIfUsed: false) ||
+           Settings.Controls.MoveLeft.GetKeyDown(ignoreIfUsed: false))
+        {
+            count++;
+        }
+
+        if(count >= hideCount)
         {
             Destroy(gameObject); return;
         }

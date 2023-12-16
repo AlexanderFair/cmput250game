@@ -208,12 +208,12 @@ PrefabInstance:
     - target: {fileID: 6329014479189841153, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841153, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 6329014479189841153, guid: 42b8dd245f3fdc34193359afec3c244e,
         type: 3}
@@ -583,6 +583,7 @@ MonoBehaviour:
   spriteAnimators: []
   hint: Use [<keyn>,<keyw>,<keys>,<keyl>] to move
   text: {fileID: 1404006122}
+  hideCount: 5
 --- !u!114 &206276843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2958,7 +2959,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &1307770015484719173
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,7 +3515,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &4320276499988503132
 Transform:
   m_ObjectHideFlags: 0
