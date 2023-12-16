@@ -501,7 +501,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "<i>Problem</i>\n\t<color=red>665</color>  -  Injured\n\t<color=red>138</color> 
-    -  Theif\n\t<color=red>082</color>  -  Crashed \n"
+    -  Theft\n\t<color=red>082</color>  -  Crashed \n"
 --- !u!1 &8115018020532078051
 GameObject:
   m_ObjectHideFlags: 0

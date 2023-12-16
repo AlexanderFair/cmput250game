@@ -13,4 +13,9 @@ public class PipePuzzleReset : ClickableUIObject
         // use the original Room Obj that opened this puzzle to reopen UI
         PipeGrid.triggeredRoomObj.ReopenUI();
     }
+
+    public override bool ClickableCondition()
+    {
+        return !PipeGrid.getPuzzle().isSolved();
+    }
 }

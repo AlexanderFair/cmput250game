@@ -4225,7 +4225,7 @@ MonoBehaviour:
   - dialog: Dr. Morgan always liked puzzles, Maybe if I solve this one, it'll reveal
       a code
     animation: 1
-    disableInput: 0
+    disableInput: 1
     big: 0
   completePrompt:
     dialog: 

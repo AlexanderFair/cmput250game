@@ -265,4 +265,8 @@ MonoBehaviour:
   liquidAmount: 35
   isCompleted: 0
   lockedPrompt: []
-  unlockedPrompt: []
+  unlockedPrompt:
+  - dialog: "More broken pipes! No wonder the heat isn\u2019t working."
+    animation: 1
+    disableInput: 0
+    big: 0

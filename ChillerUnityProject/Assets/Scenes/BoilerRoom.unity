@@ -466,9 +466,10 @@ MonoBehaviour:
   controlHintOffset: {x: 0, y: 140}
   dialogs: []
   incompletePrompt:
-  - dialog: "It would be really nice if I could fix this boiler\u2026 I could start
-      by fixing the pipes\u2026"
-    animation: 1
+  - dialog: "<i>The air is thick with humidity. It isn\u2019t until your socks gain
+      an uncomfortable dampness that you realize you\u2019re standing in a puddle
+      of leaked pipe water.</i>"
+    animation: 2
     disableInput: 0
     big: 0
   nextScene: HubRoom

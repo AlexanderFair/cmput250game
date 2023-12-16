@@ -85,5 +85,5 @@ MonoBehaviour:
   - dialog: This pipe is frozen, I can not move it until hot water run through this
       pipe and melt the ice.
     animation: 1
-    disableInput: 1
+    disableInput: 0
     big: 0

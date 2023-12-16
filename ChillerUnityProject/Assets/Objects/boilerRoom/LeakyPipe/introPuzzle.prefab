@@ -265,4 +265,8 @@ MonoBehaviour:
   liquidAmount: 6
   isCompleted: 0
   lockedPrompt: []
-  unlockedPrompt: []
+  unlockedPrompt:
+  - dialog: Oh god, all the hot water is leaking! I need to fix these pipes.
+    animation: 1
+    disableInput: 0
+    big: 0
