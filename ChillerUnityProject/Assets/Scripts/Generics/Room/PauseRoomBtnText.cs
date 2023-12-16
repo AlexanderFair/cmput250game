@@ -21,7 +21,7 @@ public class PauseRoomBtnText : RoomObjectClass, Settings.ISettingsUpdateWatcher
 
     public void ControlsUpdated(Settings.Controls control)
     {
-        if (control == Settings.Controls.ExitMenu)
+        if (control == Settings.Controls.Pause)
         {
             UpdateText();
         }
