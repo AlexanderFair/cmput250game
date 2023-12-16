@@ -18,7 +18,6 @@ public class BasicPipe : UIObjectClass
     public int pipeTypeIndex;
     public static Dictionary<int, Sprite> CONNECTED_SPRITE = new Dictionary<int, Sprite>();
     public static Dictionary<int, Sprite[]> FROZEN_SPRITES = new Dictionary<int, Sprite[]>();
-    public static DialogDisplay.DialogStruct[] FROZEN_DIALOGUE;
 
     // Direction: starts with right (index of 0, see PipeGrid.class)
     // each rotation will be clockwise, similar to direction index
@@ -44,6 +43,13 @@ public class BasicPipe : UIObjectClass
     private bool isJiggling = false;
     private float jiggleTimer = 0;
     private int jiggleStage = 0;
+
+
+
+    public static DialogDisplay.DialogStruct[] FROZEN_DIALOGUE;
+    public static int frozenDefaultProp = 10;
+    public static int frozenProb = 1;
+
 
     //
     // FUNCTIONS
@@ -290,7 +296,15 @@ public class BasicPipe : UIObjectClass
                     jiggleStage = 0;
                     this.transform.position += new Vector3(6f,0f,0f);
                 }
-                DialogDisplay.NewDialog(FROZEN_DIALOGUE);
+                if(Util.randomInstance.NextDouble() < 1f / frozenProb)
+                {
+                    DialogDisplay.NewDialog(FROZEN_DIALOGUE);
+                    frozenProb = frozenDefaultProp;
+                }
+                else
+                {
+                    frozenProb--;
+                }
                 return;
             }
         }

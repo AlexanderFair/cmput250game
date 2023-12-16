@@ -184,22 +184,22 @@ MonoBehaviour:
   - {x: 747, y: 438}
   - {x: 438, y: 747}
   contactedHelpBoilerNotComplete:
-    dialog: "<i>The voice that answers is still dripping in sleep</i> This is Davis
+    dialog: "<i>The voice that answers is still dripping in sleep.</i> This is Davis
       South Research Facility, what\u2019s the purpose of this call? <i>You explain
-      your situation</i> oh! um, one second ma'am <i>You can hear bits of conversation
+      your situation.</i> Oh! um, one second ma'am. <i>You can hear bits of conversation
       just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
-      disappearing act</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
-      out for you try to keep warm while you wait. "
+      disappearing act.</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
+      out for you; try to keep warm while you wait."
     animation: 2
     disableInput: 1
     big: 1
   contactedHelpBoilerComplete:
-    dialog: "<i>The voice that answers is still dripping in sleep</i> This is Davis
+    dialog: "<i>The voice that answers is still dripping in sleep.</i> This is Davis
       South Research Facility, what\u2019s the purpose of this call? <i>You explain
-      your situation</i> oh! um, one second ma'am <i>You can hear bits of conversation
+      your situation.</i> Oh! um, one second ma'am. <i>You can hear bits of conversation
       just out of the radio\u2019s reach, mumbles of the captain\u2019s  infamous
-      disappearing act</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
-      out for you hold tight, we\u2019re on our way\u2026"
+      disappearing act.</i> Okay ma\u2019am - Dr.Harmon - we can send a helicopter
+      out for you; hold tight, we\u2019re on our way\u2026"
     animation: 2
     disableInput: 1
     big: 1

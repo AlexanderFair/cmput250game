@@ -1129,6 +1129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
         type: 3}
+      propertyPath: floatValues.Array.data[1].value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491529473992223013, guid: e808f96b39a8b004981622f6ff3650c3,
+        type: 3}
       propertyPath: settingsValueChangeWatchers.Array.data[0]
       value: 
       objectReference: {fileID: 1895510290}
@@ -3142,7 +3147,7 @@ PrefabInstance:
     - target: {fileID: 2512273927240955421, guid: 40b1ca0262fcc3f4782d9770068c8733,
         type: 3}
       propertyPath: dialogOnComplete.dialog
-      value: "<i>Off balance from the floor\u2019s ever increasing lilt, and ears
+      value: "<i>Off balance from the floor\u2019s ever increasing tilt, and ears
         ringing from that dreadful metal shrieking of a crash.</i> I need to get
         out of here!"
       objectReference: {fileID: 0}
