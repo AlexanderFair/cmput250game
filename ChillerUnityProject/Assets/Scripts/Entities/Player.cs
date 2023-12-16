@@ -95,12 +95,13 @@ public class Player : Entity {
         // update sprite animation
         {
             AudioClip[] footstepSounds = null;
-            if (GameManager.Instance.getCurrentSceneName() == "RadioRoom"){
-                footstepSounds = radioRoomEffects;
-            } else if (GameManager.Instance.getCurrentSceneName() == "BoilerRoom"){
+            if (GameManager.Instance.getCurrentSceneName() == "BoilerRoom"){
                 footstepSounds = boilerRoomEffects;
             } else if (GameManager.Instance.getCurrentSceneName() == "HubRoom"){
                 footstepSounds = hubRoomEffects;
+            } else {
+                // radio room, or the edge cases
+                footstepSounds = radioRoomEffects;
             }
             
             // north

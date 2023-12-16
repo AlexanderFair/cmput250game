@@ -1545,7 +1545,7 @@ MonoBehaviour:
     animation: 2
     disableInput: 0
     big: 0
-  - dialog: Matriarch of the ocean, grant us with your presence
+  - dialog: Matriarch of the ocean, grant us with your presence.
     animation: 0
     disableInput: 0
     big: 0
@@ -4008,6 +4008,16 @@ PrefabInstance:
         type: 3}
       propertyPath: penguinPositionOnLock.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089529271155720131, guid: 8c084be4d03f374499fd9b7b31f69aca,
+        type: 3}
+      propertyPath: notUnlockedPrompts.Array.data[0].dialog
+      value: <i>Cautious eyes observe your movement, a timid squall escapes the animal.</i>
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089529271155720131, guid: 8c084be4d03f374499fd9b7b31f69aca,
+        type: 3}
+      propertyPath: notUnlockedPrompts.Array.data[1].dialog
+      value: <i>Cautious eyes observe your movement, a timid squall escapes the animal.</i>
       objectReference: {fileID: 0}
     - target: {fileID: 9089529271155720132, guid: 8c084be4d03f374499fd9b7b31f69aca,
         type: 3}
