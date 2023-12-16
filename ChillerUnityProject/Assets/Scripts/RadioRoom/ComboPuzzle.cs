@@ -25,7 +25,7 @@ public class ComboPuzzle : DisplayUIRoomObject
     public Sprite unlockedSprite;
     public Sprite lockedSprite;
 
-    private int[] lastUpdatedCode = null;
+    private static int[] lastUpdatedCode = null;
 
     private static bool complete = false;
 
