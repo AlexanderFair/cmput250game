@@ -82,8 +82,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b720367d5f6bf684082721cd5895f570, type: 3}
   - {fileID: 21300000, guid: 68280f083c2aace4480936b4e8590139, type: 3}
   dialogueOnClickFrozen:
-  - dialog: This pipe is frozen, I can not move it until hot water run through this
-      pipe and melt the ice.
+  - dialog: "The pipe won\u2019t budge.. I need to thaw it."
+    animation: 1
+    disableInput: 0
+    big: 0
+  - dialog: Redirecting this hot water to the pipe would unfreeze it.
     animation: 1
     disableInput: 0
     big: 0

@@ -249,9 +249,9 @@ MonoBehaviour:
     disableInput: 0
     big: 0
   completeCodePrompts:
-  - dialog: "<i>The radio sputters a static crackling, this code doesn\u2019t go
-      here.</i>"
-    animation: 2
+  - dialog: "<i>The radio sputters a static crackling,</i> this code doesn\u2019t
+      go here."
+    animation: 1
     disableInput: 0
     big: 0
   - dialog: "<i>The frequency fails to break through the wall of static whir, but

@@ -269,10 +269,9 @@ MonoBehaviour:
   liquidAmount: 50
   isCompleted: 0
   lockedPrompt:
-  - dialog: '<i>You trace the path of the snaking pipes throughout the room, ultimately
-      finding yourself staring up at the metallic heart of the heating system. However,
-      the boiler is cold to the touch: the machine has been cut off from its supply
-      of hot water.</i>'
+  - dialog: <i>You trace the path of the snaking pipes throughout the room and find
+      yourself staring up at the metallic heart of the heating system. Unsurprisingly
+      given the frigid bite to the air, boiler is cold to the touch.</i>
     animation: 2
     disableInput: 0
     big: 0
